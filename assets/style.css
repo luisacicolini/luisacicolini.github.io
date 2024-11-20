@@ -1,0 +1,138 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 20px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    background: #333;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 45%;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    float: left;
+    clear: both;
+    transform: translateX(-110%);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    float: right;
+    clear: both;
+    transform: translateX(110%);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+}
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    left: 0%;
+    transform: translate(50%, -50%);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .timeline-content {
+        width: 90%;
+        transform: none !important;
+        float: none;
+        clear: none;
+    }
+
+    .timeline::before {
+        left: 5%;
+    }
+
+    .timeline-content::after {
+        left: 5%;
+    }
+}
