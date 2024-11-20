@@ -1,6 +1,3 @@
-# Ignore the private folder
-private/
-
 # Ignore temporary files
 *.tmp
 *.log
