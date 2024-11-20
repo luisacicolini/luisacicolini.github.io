@@ -1,0 +1,24 @@
+things I want to read:
+
+
+- https://vita.had.co.nz/papers/tidy-data.pdf
+- https://kyl.neocities.org/books/%5BTEC%20TUF%5D%20the%20visual%20display%20of%20quantitative%20information.pdf
+- https://mblondin.espaceweb.usherbrooke.ca/automata/files/book_authors.pdf
+- https://core.ac.uk/download/pdf/81980704.pdf
+- https://books.google.co.uk/books?hl=en&lr=&id=homqCAAAQBAJ&oi=fnd&pg=PA1&dq=automata+algebra+ring&ots=6cOyw08DRn&sig=fYQ_O2dspczGvdtIMmLd_3u8-Lk&redir_esc=y#v=onepage&q=automata%20algebra%20ring&f=false
+- https://ptolemy.berkeley.edu/publications/papers/91/consistency/LeeConsistency.pdf
+- https://perso.ens-lyon.fr/yannick.zakowski/papers/gpaco.pdf
+- https://dl.acm.org/doi/abs/10.1145/2103621.2103666
+- https://www.jstor.org/stable/1993511
+- https://repositum.tuwien.at/bitstream/20.500.12708/20717/1/Esik-2012-Modern%20Automata%20Theory-ao.pdf
+- https://stem.elearning.unipd.it/pluginfile.php/525538/mod_resource/content/2/dispensa.pdf
+- https://ir.cwi.nl/pub/28550/rutten.pdf 
+- https://link.springer.com/book/10.1007/978-3-0348-0154-6
+- https://ics.uci.edu/~eppstein/junkyard/euler/
+- https://leanprover.github.io/theorem_proving_in_lean/theorem_proving_in_lean.pdf
+- https://cgi.cse.unsw.edu.au/~cs3153/20T1/Week%2002/2Fri/Slides%20Condensed.pdf
+- https://dl.acm.org/doi/pdf/10.1145/3656457
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9049884&tag=1
+- https://hal.science/hal-01206882/file/arrays_Horn_articleHAL.pdf
+- https://dl.acm.org/doi/abs/10.1145/1217975.1218001
+- https://adriann.github.io/Ullman%20subgraph%20isomorphism.html 
