@@ -1,0 +1,179 @@
+\documentclass[]{article}
+%
+\usepackage[utf8]{inputenc} % below are various important packages
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{textcomp} 
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{latexsym}
+\usepackage{amssymb}	
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{scrlayer-scrpage}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{framed}
+\usepackage{hyperref} 
+\usepackage{pgf,tikz,pgfplots} % possibility to insert geogebra graphs
+\usepackage{mathrsfs}
+\pgfplotsset{compat=1.15}\usetikzlibrary{arrows} % part of geogebra package
+\usepackage{qrcode} % insert qr codes
+\usepackage{multicol}
+\usepackage{yfonts}
+\usepackage{multirow}
+\usepackage{xurl}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsthm}
+
+\usepackage{titling}
+\newtheorem{definition}{Definition}
+\setlength{\droptitle}{-10em}
+
+% Add to length for wider margins
+\addtolength{\textwidth}{5cm} % right to margin
+\addtolength{\hoffset}{-2.5cm} % left to margin
+\addtolength{\voffset}{-1.5cm} % to top
+\addtolength{\textheight}{3.5cm} % to bottom
+
+% Headers-Footers
+\definecolor{gro}{gray}{0.6} % define color
+\setkomafont{pagehead}{\normalfont\sffamily} % define header
+\setkomafont{pagefoot}{\normalfont\sffamily} % define footer
+\addtokomafont{headsepline}{\color{gro}} % define header horizontal line
+\addtokomafont{footsepline}{\color{gro}} % define footer horizontal line
+	\ihead{\color{gro} Foundations of Operations Research} % header (i=inner=left)
+	\ohead{\color{gro} Minimart Project} % header (c=center)
+	\ifoot{\color{gro} } % footer (i=inner=left)
+	\ofoot{\color{gro} } % footer (o=outer=right)
+
+
+\renewcommand{\familydefault}{\sfdefault} % font
+\linespread{1.2} % increase line spacing
+
+\begin{document}
+\title{Book of things}
+\author{Luisa Cicolini}
+\maketitle 
+
+\section{rutten}
+
+\paragraph{Algebras}
+
+\begin{definition}
+    A Functor $\mathcal{F}: \mathcal{C} \rightarrow \mathcal{D}$, where $\mathcal{C}$ and $\mathcal{D}$ are categories, 
+    assigns (1) to any object $A\in \mathcal{C}$ an object $\mathcal{F}(A)\in \mathcal{D}$, (2) to any arrow $f:A\rightarrow B\in \mathcal{C}$ an 
+    arrow $\mathcal{F}(f) : \mathcal{F}(A) \rightarrow \mathcal{F}(B) \in \mathcal{D}$, such that (3) $\mathcal{F}$ preserves composition and identies. 
+\end{definition}
+
+\begin{definition}
+    Let $\mathcal{F}: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. An $\mathcal{F}-$algebra is a pair $(A,\alpha)$ consisting of an obhect $A$ and an arrow 
+    $\alpha:\mathcal{F}(A)\rightarrow A$. $\mathcal{F}$ is the type, $A$ is the carrier, $\alpha$ is the structure map of the algebra.
+\end{definition}
+
+\paragraph{Example} $(\mathbb{N}, [zero, succ])$ is an $N$-algebra, defined via functor $N:Set\rightarrow Set$ for everty set $X$ by $N(X)=1+X$
+
+\begin{definition}
+    Let $F: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. 
+    An homomorphism of $F$-algebras $(A,\alpha)$, $(B,\beta)$ is an arrow $f:A\rightarrow B$ such that $f\circ \alpha = \beta\circ F(f)$:
+    \begin{itemize}
+        \item $F(A)\xrightarrow{F(f)}F(B)$
+        \item $F(A)\xrightarrow{\alpha}A$
+        \item $F(B)\xrightarrow{\beta}B$
+        \item $A\xrightarrow{f}B$
+    \end{itemize}
+    For this definition to make sense $F$ must be a functor and act not only on objects, but also on arrows.
+\end{definition}
+
+\paragraph{Coalgebras}
+\begin{definition}
+    Let $\mathcal{F}: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. An $\mathcal{F}-$coalgebra is a pair $(A,\alpha)$ consisting of an obhect $A$ and an arrow 
+    $\alpha:A\rightarrow \mathcal{F}(A)$. $\mathcal{F}$ is the type, $A$ is the carrier, $\alpha$ is the structure map of the coalgebra.
+\end{definition}
+
+Coalgebras are like algebras, but the structure map is reversed.
+
+\begin{definition}
+    Let $F: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. 
+    An homomorphism of $F$-algebras $(A,\alpha)$, $(B,\beta)$ is an arrow $f:A\rightarrow B$ such that $\beta\circ f = F(f)\circ \alpha$:
+    \begin{itemize}
+        \item $F(A)\xrightarrow{F(f)}F(B)$
+        \item $A\xrightarrow{\alpha}F(A)$
+        \item $B\xrightarrow{\beta}F(B)$
+        \item $A\xrightarrow{f}B$
+    \end{itemize}
+    For this definition to make sense $F$ must be a functor and act not only on objects, but also on arrows.
+\end{definition}
+
+Coalgebras are the dual form of algebra and are derived via the categorical principle of duality.
+
+\paragraph{Inductive and coinductive definitions}
+
+\begin{definition}
+    Let $F: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. 
+    An initial $F$-algebra is an $F$-algebra that is an \textit{initial object} in the category of all $F$-algebras and $F$ $(A,\alpha)$, $(B,\beta)$ is an arrow $f:A\rightarrow B$ such that $\beta\circ f = F(f)\circ \alpha$:
+    \begin{itemize}
+        \item $F(A)\xrightarrow{F(f)}F(B)$
+        \item $A\xrightarrow{\alpha}F(A)$
+        \item $B\xrightarrow{\beta}F(B)$
+        \item $A\xrightarrow{f}B$
+    \end{itemize}
+    For this definition to make sense $F$ must be a functor and act not only on objects, but also on arrows.
+\end{definition}
+
+
+\section{Modern Automata Theory}
+
+\paragraph{Finite automata} 
+\begin{definition}
+    A semiring is a set $A$ equipped with two binary operations $+$ and $\cdot$ and two constant elements $0,1$ such that:
+    \begin{enumerate}
+        \item $\langle A, +, 0\rangle$ is a commutative monoid (= set of elements with an associative, commutative binary operation and an identity element)
+        \item $\langle A, \cdot, 1\rangle$ is a monoid (= set of elements with an associative binary operation and an identity element)
+        \item the following distribution laws hold for all elements: $a \cdot (b+c) = a \cdot b + a \cdot c$, $(a + b)\cdot c = a\cdot c + b\cdot c$
+        \item $0\cdot a = a\cdot 0 = 0$ for every $a$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    A starsemiring is a semiring equipped with an additional unary operation $*$. Example of starsemirings: $\langle \mathbb{B}, +, \cdot, *, 0, 1 \rangle$ with $0*=1*=1$
+\end{definition}
+
+\begin{definition}
+    A Conway semiring is a starsemiring that satisfies the sum-star-equation:
+    \begin{equation}
+        (a+b)^* = (a^*b)^*a^*
+    \end{equation}
+     and the product-star-equation:
+    \begin{equation}
+        (ab)^* = 1 + a(ba)^*b
+    \end{equation}
+     Example: semiring $\langle 2^{\Sigma^*}, \cup, \cdot, *, \emptyset, \{ \epsilon \} \rangle$ of formal languages over $\Sigma$ with $L^*=\cup_{n\geq 0}L^n$ for all $L \subseteq \Sigma^*$
+\end{definition}
+
+A way to highlight the connection between graphs and automata:
+
+\begin{definition}
+    Consider a Conway semiring $A$ and its subset $A'$. 
+    A finite automaton $A'$-automaton $\textfrak{U}=(n,M,S,P), n \geq 1$ is given by:
+    \begin{enumerate}
+        \item a transition matrix $M\in (A' \cup \{0,1\})^{n\times n}$
+        \item an initial state vector $S\in (A' \cup \{0,1\})^{1\times n}$
+        \item a final state vector $P\in (A' \cup \{0,1\})^{n\times 1}$
+    \end{enumerate}
+    The behavior $||\textfrak{U}||$ of $\textfrak{U}$ is defined by 
+    \begin{equation}
+        ||\textfrak{U}|| = \Sigma_{1 \leq i_1, i_2 \leq n} S_{i_1} (M^*)_{i_1,i_2} P_{i_2} = S M^* P
+    \end{equation}
+\end{definition}
+
+\paragraph{Context-free grammars and algebraic systems}
+
+\section{FSM representation in hardware}
+
+\end{document}

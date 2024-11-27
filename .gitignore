@@ -1,5 +1,8 @@
 # Ignore temporary files
 *.tmp
+*.out
+*.pdf
+*.aux
 *.log
 
 # Ignore system files
