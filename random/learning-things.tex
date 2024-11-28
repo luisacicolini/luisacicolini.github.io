@@ -1,8 +1,8 @@
 \documentclass[]{article}
 %
 \usepackage[utf8]{inputenc} % below are various important packages
-\usepackage{lmodern}
 \usepackage[T1]{fontenc}
+\usepackage{helvet}
 \usepackage[english]{babel}
 \usepackage{textcomp} 
 \usepackage{amsmath}
@@ -23,6 +23,7 @@
 \usepackage{multicol}
 \usepackage{yfonts}
 \usepackage{multirow}
+\usepackage{stmaryrd}
 \usepackage{xurl}
 \usepackage{tabularx}
 \usepackage{enumitem}
@@ -31,8 +32,11 @@
 \usepackage{graphicx}
 \usepackage{amsthm}
 
+\renewcommand{\rmdefault}{phv}
+
 \usepackage{titling}
 \newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
 \setlength{\droptitle}{-10em}
 
 % Add to length for wider margins
@@ -41,19 +45,6 @@
 \addtolength{\voffset}{-1.5cm} % to top
 \addtolength{\textheight}{3.5cm} % to bottom
 
-% Headers-Footers
-\definecolor{gro}{gray}{0.6} % define color
-\setkomafont{pagehead}{\normalfont\sffamily} % define header
-\setkomafont{pagefoot}{\normalfont\sffamily} % define footer
-\addtokomafont{headsepline}{\color{gro}} % define header horizontal line
-\addtokomafont{footsepline}{\color{gro}} % define footer horizontal line
-	\ihead{\color{gro} Foundations of Operations Research} % header (i=inner=left)
-	\ohead{\color{gro} Minimart Project} % header (c=center)
-	\ifoot{\color{gro} } % footer (i=inner=left)
-	\ofoot{\color{gro} } % footer (o=outer=right)
-
-
-\renewcommand{\familydefault}{\sfdefault} % font
 \linespread{1.2} % increase line spacing
 
 \begin{document}
@@ -61,9 +52,11 @@
 \author{Luisa Cicolini}
 \maketitle 
 
-\section{rutten}
+\section{Books}
 
-\paragraph{Algebras}
+\subsection{the method of coalgebra - j. rutten }
+
+\paragraph{algebras}
 
 \begin{definition}
     A Functor $\mathcal{F}: \mathcal{C} \rightarrow \mathcal{D}$, where $\mathcal{C}$ and $\mathcal{D}$ are categories, 
@@ -76,7 +69,7 @@
     $\alpha:\mathcal{F}(A)\rightarrow A$. $\mathcal{F}$ is the type, $A$ is the carrier, $\alpha$ is the structure map of the algebra.
 \end{definition}
 
-\paragraph{Example} $(\mathbb{N}, [zero, succ])$ is an $N$-algebra, defined via functor $N:Set\rightarrow Set$ for everty set $X$ by $N(X)=1+X$
+\paragraph{example} $(\mathbb{N}, [zero, succ])$ is an $N$-algebra, defined via functor $N:Set\rightarrow Set$ for everty set $X$ by $N(X)=1+X$
 
 \begin{definition}
     Let $F: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. 
@@ -90,7 +83,7 @@
     For this definition to make sense $F$ must be a functor and act not only on objects, but also on arrows.
 \end{definition}
 
-\paragraph{Coalgebras}
+\paragraph{coalgebras}
 \begin{definition}
     Let $\mathcal{F}: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. An $\mathcal{F}-$coalgebra is a pair $(A,\alpha)$ consisting of an obhect $A$ and an arrow 
     $\alpha:A\rightarrow \mathcal{F}(A)$. $\mathcal{F}$ is the type, $A$ is the carrier, $\alpha$ is the structure map of the coalgebra.
@@ -112,7 +105,7 @@ Coalgebras are like algebras, but the structure map is reversed.
 
 Coalgebras are the dual form of algebra and are derived via the categorical principle of duality.
 
-\paragraph{Inductive and coinductive definitions}
+\paragraph{inductive and coinductive definitions}
 
 \begin{definition}
     Let $F: \mathcal{C} \rightarrow \mathcal{C}$ be a functor. 
@@ -127,9 +120,9 @@ Coalgebras are the dual form of algebra and are derived via the categorical prin
 \end{definition}
 
 
-\section{Modern Automata Theory}
+\subssection{modern automata theory - z. \'esik}
 
-\paragraph{Finite automata} 
+\paragraph{finite automata} 
 \begin{definition}
     A semiring is a set $A$ equipped with two binary operations $+$ and $\cdot$ and two constant elements $0,1$ such that:
     \begin{enumerate}
@@ -172,8 +165,171 @@ A way to highlight the connection between graphs and automata:
     \end{equation}
 \end{definition}
 
-\paragraph{Context-free grammars and algebraic systems}
+\paragraph{context-free grammars and algebraic systems}
 
-\section{FSM representation in hardware}
+\section{Papers}
+
+\subsection{finite presentations of infinite structures: automata and interpretations - a. blumensath et al.}
+
+\paragraph{definitions}
+
+Some domanis of infinite buf finitely presentable structures: 
+\begin{itemize}
+    \item recursive structure: countable structures whose functions and relations are computable, 
+        their domain is typically too large 
+    \item constraint database: modern database model admitting infinite relations presented by quantifier-free formulae
+        over a fized background structure. A constraint database consists of a context structure $\textfrak{U}$ and a set $\{\phi_1, ..., \phi_m\}$ of quantifier-free formulae defining the database relations
+    \item metafinite strucutres: two-sorted structures consisting of a finite structure $\textfrak{U}$, a background structure $\textfrak{R}$ (usually infinite but fixed) and a class of weight functions from finite to infinite part. For example: finite graphs whose edges are weighted by real numbers. 
+    \item automatic structures: their functions and relations are represented by finite automata. A relational strucutren $\textfrak{U}=(A, R_1, ..., R_m)$ is automatic if there exists a regular language $L_\delta \subseteq \Sigma^*$ naming the elements in $\textfrak{U}$
+        and a function $\nu : L_\delta \rightarrow A$ mapping every $w\in L_\delta$ to the element of $\textfrak{U}$ that it represents. 
+        $\nu$ must be surjective but necessarily injective (everything has a name, can have more than one). 
+        Finite automata must be able to recognize (1) whether wro words in $L_\delta$ name the same elements and (2) for each $R_i \in \textfrak{U}$ whether a given tuple of words in $L_\delta$ names a tuple in $R_i$.
+        Using automata over infinite words we obtain $\omega-$automatic structures, which may have uncountable cardinality. 
+        Overall, automatic structures admit effective and automatic evaluation on all first-order queries. 
+        \begin{theorem}
+            The model-checking problem for $FO(\exists^\omega)$, first order logic extended by quantifier "there are infinitely many" is decidable on the domain of $\omega$-automatic structures. 
+        \end{theorem}
+    \item tree-automatic structures: defined by automata on finite or infinite trees, natural generalization of automatic structures 
+    \item tree-interpretable structures: structures that are interpretable on the infinite binary tree $\mathcal{T}^2=(\{0,1\}^*, \sigma_0, \sigma_1)$ via one-dimensional monadic second-order interpretation. 
+        they form a proper subclass of automatic structures that generalizes various notions of infinite graphs. Examples: context free graphs (= configuration graphs of PDA), HR- and VR-equational graphs, prefix-recognizable graphs.
+        \begin{theorem}
+            For any graph $G=(V,(E_a)_{a\in A})$ the followign are equivalent: 
+            (1) G is tree-interpretable,
+            (2) G is prefix-recognizable,
+            (3) G is VR-equational,
+            (4) G is the restriction to a regular set of the configuration graph of a PDA with $\epsilon$-transitions.
+        \end{theorem}
+    \item tree-constructible structures: Caucal hierarchy
+    \item ground tree rewriting graphs 
+\end{itemize}
+\begin{definition}
+    A relational structure $\textfrak{U}$ is automatic if there exists a regular language $L_\delta \subseteq \Sigma^*$ and a surjective function $\nu : L_\delta \rightarrow A$ such that the relation 
+    \begin{equation}
+        L_\epsilon := \{(w, w')\in :L_\delta \times L_\delta\;|\;\nu w = \nu w'\}\subseteq \Sigma^* \times \Sigma^*
+    \end{equation}
+    and, for all predicates $R\subseteq A^r$ of $\textfrak{U}$, the relations 
+    \begin{equation}
+        L_R := \{\overline{w}\in (L_\delta)^r\;|\;(\nu w_1,...,\nu w_r)\in R\}\subseteq (\Sigma^*)^r
+    \end{equation}
+    are regular. An arbitrary structure is automatic iif its relational variant is. 
+\end{definition}
+All finite structures are automatic, and all automatic structures are $\omega$-automatic.
+\begin{definition}
+    Let $L$ be a logic and $\textfrak{U}=(A, R_0,..., R_n)$ and $\textfrak{B}$ relational structures. A (k-dimensional) L-interpretation of $\textfrak{U}$ in $\textfrak{B}$ is a sequence
+    \begin{equation}
+        \mathcal{I} := \langle \delta(\overline{x}), \epsilon(\overline{x}, \overline{y}), \phi_{R_0}(\overline{x}_1,...,\overline{x}_r),...., \phi_{R_n}(\overline{x}_1,...,\overline{x}_s)\rangle
+    \end{equation}
+    of L-formulae of the vocabulary of $\textfrak{B}$ (where each tuple $\overline{x}, \overline{y}, \overline{x_i}$ consists of k variables) such that
+    \begin{equation}
+        \textfrak{U} \cong \mathcal{I}(\textfrak{B}) := (\delta^\textfrak{B},(\phi_{R_0})^\textfrak{B},...,(\phi_{R_n})^\textfrak{B})/\epsilon^\textfrak{B}
+    \end{equation}
+\end{definition}
+\begin{theorem}
+    If $\mathcal{I} : \textfrak{U}\leq_{FO} \textfrak{B}$, then 
+    \begin{equation}
+        \textfrak{U} \models \phi (\mathcal{I}{\overline{b}})\;\; iif \;\; \textfrak{B}\models \phi^\mathcal{I} (\overline{b}) \;\; for\; all\; \phi\in FO\;\; and \overline{b}\subseteq \delta^\textfrak{B} 
+    \end{equation}
+\end{theorem}
+This theorem states that for any logic L a notion of interpretation is suitable if a similar statement holds and if the logic is closed under $\phi \mapsto \phi^\mathcal{I}$
+The classes of autimatic, $\omega$-automatic structures are closed under 
+(1) extensions by definable relations, (2) factorizations by definable congruences, (3) substructures with definable universe and (4) finite powers. 
+
+\paragraph{model checking and query evaluation}
+\begin{itemize}
+    \item model checking: given a structure $\textfrak{U}$, a formula $\phi(\overline{x})$ and a tuple of parameters $\overline{a}$ in $\textfrak{U}$, decide whethere $\textfrak{U}\models \phi(\overline{a})$
+    \item query evaluation: given a presentation of a structure $\textfrak{U}$ and a formula $\phi(\overline{x})$, compute a presentation of $(\textfrak{U},\phi^\textfrak{U})$, i.e., given automata for the relations of $\textfrak{U}$ 
+    construct an automaton that recognizes $\phi^\textfrak{U}$.
+\end{itemize}
+All first-order queries on ($\omega-$)automatic structures are computable since: 
+\begin{theorem}
+    If $\textfrak{U}\leq \textfrak{B}$ and $\textfrak{B}$ is ($\omega$-)automatic, then so is $\textfrak{U}$.
+\end{theorem}
+Every ($\omega$-)automatic structure has an injective presentation.
+Reachability is undecidable for automatic structures. 
+It is undedicable whether two automatic structures are isomorphic.
+
+\subsection{abstract interpretation from B\"uchi Automata - m. hoffman et al.}
+From a given BA, build an abstract lattice with the following properties: 
+\begin{itemize}
+    \item there is a Galois connection between it and the infinite lattice of languages of finite and infinite words over a given alphabet
+    \item the abstraction is faithful wrt. acceptance
+    \item least fixpoints and $\omega-$iterations can be computed on the level of the abstract lattice
+\end{itemize}
+one can develop an abstract interpretation to check whether finite and infinite traces of a recursive program are accepted by a policy automaton. 
+this approach is more flexible for integration with data types, objects, higher-order functions (easier reasoning?)
+
+\section{b\"uchi, lindenbaum, tarski: a program analysis appetizer - v. d'silva et al.}
+There are various approaches to prove the correctness of a program:
+\begin{itemize}
+    \item satisfiability-based: bounded executions and errors of $P$ are encoded as a formulae $Exec(P)$ and $Err$, respectively. 
+        If no bounded execution violates the assertion, then: $\vdash Exec(P)\implies \neg Err $. Solvers prove this by showing $Exec(P)\land Err$ unsatisfiable.
+    \item model checking: check whether program $P$ is a model of formula $\neg Err$: $P\models \neg Err$
+    \item automata-theoretic: the executions of program $P$ are words accepted by automaton $\mathcal{A}_P$, erroneous executions are words accepted by $\mathcal{A}_{Err}$. Program 
+        $P$ contains no assertion violation if $\mathcal{L}(\mathcal{A}_P\times {A}_{Err})=\emptyset$
+    \item lattice-theoretic: originated from programming language semantics and compiler construction, relies on abstract interpretation to interpret program $P$ and assertion $Err$ in a lattice A of approximation. 
+        The program is error-free if the lattice element denoted by $P$ is separate from the lattice element denoted by the error: $\llbracket P \rrbracket_A \sqcap \llbracket Err \rrbracket_A \sqsubseteq \perp$
+\end{itemize}
+One can move in between these representations:
+\begin{itemize}
+    \item automata ($\mathcal{L}(\mathcal{A}_{P}\times \mathcal{A}_{Err})\subseteq \emptyset$) $\xrightarrow{b\"uchi's theorem}$ logic ($\vdash Exec(P)\implies \neg Err $)
+    \item automata ($\mathcal{L}(\mathcal{A}_{P}\times \mathcal{A}_{Err})\subseteq \emptyset$) $\xrightarrow{\mathcal{L}}$ concrete lattice ($\mathcal{P}(Exec), \subseteq$)
+    \item logic ($\vdash Exec(P)\implies \neg Err $) $\xrightarrow{mod}$ concrete lattice ($\mathcal{P}(Exec), \subseteq$)
+    \item logic ($\vdash Exec(P)\implies \neg Err $) $\xrightarrow{Lindenbaum-Tarski}$ abstract lattice ($\llbracket P \rrbracket_A \sqcap \llbracket Err \rrbracket_A \sqsubseteq \perp$)
+    \item concrete lattice ($\mathcal{P}(Exec), \subseteq$) $\xrightarrow{abs}$ abstract lattice ($\llbracket P \rrbracket_A \sqcap \llbracket Err \rrbracket_A \sqsubseteq \perp$)
+    \item abstract lattice ($\llbracket P \rrbracket_A \sqcap \llbracket Err \rrbracket_A \sqsubseteq \perp$) $\xrightarrow{conc}$ concrete lattice ($\mathcal{P}(Exec), \subseteq$)  
+\end{itemize}
+Loop invariants are fixed points of functions on lattices. 
+
+\section{a sat-based procedure for verifying finite state machines in ACL2 - w. hunt et al.}
+\begin{itemize}
+    \item sulfa properties converted into sat (cnf): 
+    \item We present an algorithm for converting ACL2 conjectures into conjunctive normal form (CNF),
+        which we then output and check with an external satisfiability solver. 
+        The procedure is directly available as an ACL2 proof request. 
+        When the SAT tool is successful, a theorem  is added to the ACL2 system database as a lemma for use
+        in future proof attempts. 
+\end{itemize}
+
+\section{cell morphing: from array programs to array-free horn clauses - d. monniaux et al.}
+
+From our programs with arrays, we generate nonlinear Horn clauses over scalar variables only,
+    in a common format with clear and unambiguous logical semantics, for which there exist several
+    solvers. We thus avoid the use of solvers operating over arrays, which are still very immature.
+
+\section{inductive approach to spacer - t. tsukada et al.}
+
+\begin{itemize}
+    \item as linear CHC: an approach called property-directed reachability proposed as a solver of finite model-checking 
+    that corresponds to linear CHCs over finite data domain, also applied to non linear CHCs (GPDR)
+    \item Spacer is based on several new ideas, but the key to refutational completeness is a technique 
+    called model-based projection. It is used to divide the set of local candidates
+    of counterexamples into a finite number of classes, and the finiteness of the classes allows an
+    exhaustive search for candidates of global counterexamples in a finite number of steps.
+    \item the refutational completeness of spacer seems to be a matter of discussion? there exists a refutationally
+    complete variant
+\end{itemize}
+
+\section{thoughts and ideas}
+
+\begin{itemize}
+    \item a compositional approach to hardware verification exploiting high level abstractions (dialects)
+    for progressive and verified lowering, using fsms as a proxy to represent dialects' semantics, 
+    based on the assumption that the automata-theoretic approach is better than the logic one (in this specific case? in general? based on what?).
+    \item so for example a problem with logic representation is that it scales quite poorly with the number of variables involved
+    \item a decision procedure such as the one we have already is easily extensible to multiple variables? 
+    \item the key difference between the two approaches is that for the logic formulae we need to use smt solvers, which are typically very good under 
+    very constrained circumstances (e.g. fsm x chc), instead when we have an automaton we can "just" explore the automaton and use some 
+    heuristics to optimize its exploration and prune the state space. which solvers do too so idk if there's a real benefit in there. 
+    but certainly representing things as automata is easier than massaging an smt formula. 
+    \item in theory we can use automatic structures on domains that are broader than bool, although i suppose their complexity scales quite poorly. 
+    \item Things we want to say and do over the three years: 
+    (1) formalize high level abstractions as FSMs (papers on how to use FSMs to represent dataflow? requires representing actual handshake)
+    (2) extend fsm dialect to represent buechi automata 
+    (3) reason about designs in terms of omega-languages, ltl and ctl
+    (4) make verification of designs modular and prpogressive as the design becomes more complex.
+\end{itemize}
+
+
+
 
 \end{document}
