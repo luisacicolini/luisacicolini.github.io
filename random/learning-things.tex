@@ -120,7 +120,7 @@ Coalgebras are the dual form of algebra and are derived via the categorical prin
 \end{definition}
 
 
-\subssection{modern automata theory - z. \'esik}
+\subsection{modern automata theory - z. \'esik}
 
 \paragraph{finite automata} 
 \begin{definition}
@@ -280,7 +280,7 @@ One can move in between these representations:
 \end{itemize}
 Loop invariants are fixed points of functions on lattices. 
 
-\section{a sat-based procedure for verifying finite state machines in ACL2 - w. hunt et al.}
+\subsection{a sat-based procedure for verifying finite state machines in ACL2 - w. hunt et al.}
 \begin{itemize}
     \item sulfa properties converted into sat (cnf): 
     \item We present an algorithm for converting ACL2 conjectures into conjunctive normal form (CNF),
@@ -290,13 +290,13 @@ Loop invariants are fixed points of functions on lattices.
         in future proof attempts. 
 \end{itemize}
 
-\section{cell morphing: from array programs to array-free horn clauses - d. monniaux et al.}
+\subsection{cell morphing: from array programs to array-free horn clauses - d. monniaux et al.}
 
 From our programs with arrays, we generate nonlinear Horn clauses over scalar variables only,
     in a common format with clear and unambiguous logical semantics, for which there exist several
     solvers. We thus avoid the use of solvers operating over arrays, which are still very immature.
 
-\section{inductive approach to spacer - t. tsukada et al.}
+\subsection{inductive approach to spacer - t. tsukada et al.}
 
 \begin{itemize}
     \item as linear CHC: an approach called property-directed reachability proposed as a solver of finite model-checking 
@@ -308,6 +308,47 @@ From our programs with arrays, we generate nonlinear Horn clauses over scalar va
     \item the refutational completeness of spacer seems to be a matter of discussion? there exists a refutationally
     complete variant
 \end{itemize}
+
+\subsection{formal verification at higher levels of abstraction - d. kroening et al., 2007}
+
+\begin{itemize}
+    \item Algorithms that operate at the bit-level are unable to
+    exploit the structure provided by the higher abstraction levels,
+    and thus, are less scalable $\rightarrow$ high level models: (1) word-level verification with predicate abstraction and smt solvers, (2) term-level modeling and their combination for scalable verification 
+    \item Abstraction techniques reduce
+    the state space by mapping the set of states of the actual,
+    concrete system to an abstract, and smaller, set of states in a
+    way that preserves the relevant behaviors of the system $\rightarrow$ might be nice to have hierarchy in this?
+    \item Capacity is the main challenge for formal verification
+    tools. Given a high-level model, word-level reasoning can
+    increase the capacity of formal verification tools significantly
+    when compared to a net-list level tool. We discuss decision
+    procedures (SMT solvers) for bit-vector arithmetic, and give
+    an overview of predicate abstraction, a word-level assertion
+    checking technique.
+\end{itemize}
+
+\subsection{high-level abstractions and modular debugging for FPGA design validation - y. iskander et al., 2014}
+The developed approach provides two means of directly validating synthesized hardware designs.
+The first allows the original high-level model written in C or C++ to be directly coupled to the synthesized
+hardware, abstracting away the traditional gate-level view of designs. A high-level programmatic interface
+allows the synthesized design to be validated directly by the software reference model. The second approach
+provides an alternative view to FPGAs within the scope of a traditional software debugger. This debug
+framework leverages partially reconfigurable regions to accelerate the modification of dynamic, software-like
+breakpoints for low-level analysis and provides a automatable, scriptable, command-line interface directly
+to a running design on an FPGA.
+
+\subsection{fsm anomaly detection using formal analysis - f. farahmandi et al., 2017}
+
+The proposed method tries to find inconsistencies between the specification and FSM implementation through manipulation of respective polynomials.
+Security properties (such as a safe transition to a protected state) are derived using specification polynomials and verified against implementation polynomials. In a case of a failure, the vulnerability is reported. While existing methods can verify legal transitions, our approach tries to solve the important and non-trivial problem of detecting illegal accesses to the design states (e.g., protected states). 
+
+\subsection{spot: an extensible model checking library using transition-based generalize b\"uchi automata - a. duret-lutx et al., 2004}
+
+b\"uchi automata $\rightarrow$ trableaux before encoding
+
+\subsection{nuSMV: a new symbolic model verifier - a. cimatti et al.}
+
 
 \section{thoughts and ideas}
 
