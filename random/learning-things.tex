@@ -345,7 +345,7 @@ Security properties (such as a safe transition to a protected state) are derived
 
 \subsection{spot: an extensible model checking library using transition-based generalize b\"uchi automata - a. duret-lutx et al., 2004}
 
-b\"uchi automata $\rightarrow$ trableaux before encoding
+b\"uchi automata $\rightarrow$ trableaux before encoding 
 
 \subsection{nuSMV: a new symbolic model verifier - a. cimatti et al.}
 
@@ -354,20 +354,24 @@ b\"uchi automata $\rightarrow$ trableaux before encoding
 
 \begin{itemize}
     \item a compositional approach to hardware verification exploiting high level abstractions (dialects)
-    for progressive and verified lowering, using fsms as a proxy to represent dialects' semantics, 
-    based on the assumption that the automata-theoretic approach is better than the logic one (in this specific case? in general? based on what?).
+        for progressive and verified lowering, using fsms as a proxy to represent dialects' semantics, 
+        based on the assumption that the automata-theoretic approach is better than the logic one (in this specific case? in general? based on what?).
     \item so for example a problem with logic representation is that it scales quite poorly with the number of variables involved
     \item a decision procedure such as the one we have already is easily extensible to multiple variables? 
     \item the key difference between the two approaches is that for the logic formulae we need to use smt solvers, which are typically very good under 
-    very constrained circumstances (e.g. fsm x chc), instead when we have an automaton we can "just" explore the automaton and use some 
-    heuristics to optimize its exploration and prune the state space. which solvers do too so idk if there's a real benefit in there. 
-    but certainly representing things as automata is easier than massaging an smt formula. 
+        very constrained circumstances (e.g. fsm x chc), instead when we have an automaton we can "just" explore the automaton and use some 
+        heuristics to optimize its exploration and prune the state space. which solvers do too so idk if there's a real benefit in there. 
+        but certainly representing things as automata is easier than massaging an smt formula. 
     \item in theory we can use automatic structures on domains that are broader than bool, although i suppose their complexity scales quite poorly. 
     \item Things we want to say and do over the three years: 
-    (1) formalize high level abstractions as FSMs (papers on how to use FSMs to represent dataflow? requires representing actual handshake)
-    (2) extend fsm dialect to represent buechi automata 
-    (3) reason about designs in terms of omega-languages, ltl and ctl
-    (4) make verification of designs modular and prpogressive as the design becomes more complex.
+        (1) formalize high level abstractions as FSMs (papers on how to use FSMs to represent dataflow? requires representing actual handshake)
+        (2) extend fsm dialect to represent buechi automata 
+        (3) reason about designs in terms of omega-languages, ltl and ctl
+        (4) make verification of designs modular and prpogressive as the design becomes more complex.
+    \item there are three fundamentally equivalent ways to analyze a program and verify it: automata-theoretic approach, logic approach, abstract interpretation. 
+        we can move between the three, but beign able to exploit their characteristics and differences to perform and optimize different analyses could make our life esier. 
+        automata are good for (1) temporal logic stuff and (2) concurrent designs etc, so how am i planning to use this in a compiler thingy? 
+        in hardware modeling ltl stuff is useful! but here we're talking about compilers? 
 \end{itemize}
 
 
