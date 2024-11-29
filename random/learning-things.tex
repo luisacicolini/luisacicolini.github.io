@@ -372,6 +372,11 @@ b\"uchi automata $\rightarrow$ trableaux before encoding
         we can move between the three, but beign able to exploit their characteristics and differences to perform and optimize different analyses could make our life esier. 
         automata are good for (1) temporal logic stuff and (2) concurrent designs etc, so how am i planning to use this in a compiler thingy? 
         in hardware modeling ltl stuff is useful! but here we're talking about compilers? 
+    \item can fsms help in modeling the gray area between dataflow and rtl?
+    \item fsms are good for LTL and temporal logic. we already have smt for model checking. for temporal properties (which, crucially, are very important for hw) buechi automata are our best shot. 
+        integrating BA in circt would give us another very powerful tool for verification, complementing the work that is currently being done with smt but with a focus on temporal (modal?) logics. 
+        having this in a framework that is by design modular and reusability oriented is a great combo because we can exploit all the algorithm that enable to easily manipulate automata (a well scoped and known problem)
+        and this would make our life easier 
 \end{itemize}
 
 
