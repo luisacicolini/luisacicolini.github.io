@@ -345,10 +345,11 @@ Security properties (such as a safe transition to a protected state) are derived
 
 \subsection{spot: an extensible model checking library using transition-based generalize b\"uchi automata - a. duret-lutx et al., 2004}
 
-b\"uchi automata $\rightarrow$ trableaux before encoding 
+b\"uchi automata $\rightarrow$ tableaux before encoding 
 
-\subsection{nuSMV: a new symbolic model verifier - a. cimatti et al.}
+\subsection{eliminating excessive dynamism of dataflow circuits using model cheecking - xu et al., 20223}
 
+In this work, we present a verification framework based on model checking to systematically reduce the hardware complexity of dataflow circuits.
 
 \section{thoughts and ideas}
 
@@ -375,11 +376,69 @@ b\"uchi automata $\rightarrow$ trableaux before encoding
     \item can fsms help in modeling the gray area between dataflow and rtl?
     \item fsms are good for LTL and temporal logic. we already have smt for model checking. for temporal properties (which, crucially, are very important for hw) buechi automata are our best shot. 
         integrating BA in circt would give us another very powerful tool for verification, complementing the work that is currently being done with smt but with a focus on temporal (modal?) logics. 
-        having this in a framework that is by design modular and reusability oriented is a great combo because we can exploit all the algorithm that enable to easily manipulate automata (a well scoped and known problem)
-        and this would make our life easier 
+        having this in a framework that is by design modular and reusability oriented is a great combo because we can exploit all the algorithms that enable to easily manipulate automata (a well scoped and known problem)
+        and this would make our life easier. furthermore, if we encode the so-obtained automata in an itp such as lean, we might even get the additional benefit that we can reason about it, write theorems, 
+        prove the lowering correct. 
+    \item dialects semantics is just a sequence of operations really. can we encode that in some sort of automaton like the ones we have for bitvectors? 
+    \item itps can be a game changer in (1) the progressive verificat on of hw designs and (2) the verification of lowerings and optimization sin compilers
+    \item buechi automata as an easier interface to reason about ltl properties on the design?
+    \item does it make sense to use buechi automata to reason about ?
 \end{itemize}
 
+\begin{figure}
+    \centering 
+    \includegraphics[width=0.8\columnwidth]{proposal-idea.pdf}
+\end{figure}
 
+\paragraph{title: ITPs for hardware verification}
 
+It is common knowledge that hardware design is a complex field standing on a wide variety of different tools. 
+
+Hardware verification is a fundamental aspect of this procedure. 
+
+On the one hand, improving its efficiency by making the verification progressive and parallel to the lowering can significantly improve and speed up the overall design procedure.
+
+On the other hand, the verification of the compilation toolchain itself is a valuable complement to the verification of the design, which would significantly improve the trustworthiness of these tools and 
+ease the verification of designs themselves. 
+
+However, reasoning about the semantics of such a complex procedure proved quite complex, due to the variety of behaviors involved in the lowering.
+
+ITPs can provide an effective support in reasoning about such semantics, providing it is encoded correctly, allowing to flexibly verify the equivalence of designs
+at different levels of abstractions.
+
+\paragraph{the importance of verification in compilers}
+\begin{itemize}
+    \item crucial components: we need to (1) verify their lowerings and (2) verify their output 
+    \item especially in hardware "the end of moore's law etc", formal verification is a crucial step and often a bottleneck. would be nice to make it progressive and verify
+    \item automata-based verification makes no sense to verify the compiler per se, since there's no ltl property that we want to check within the lowering 
+    \item denote the semantics of dialect as automata? 
+\end{itemize}
+
+\paragraph{verification techniques and their use in compilers}
+\begin{itemize}
+    \item program analysis techniques (e.g. abstract interpretation )
+\end{itemize}
+
+\paragraph{why lean}
+\begin{itemize}
+    \item easy compositional approach, easy to extend, customize, relatively easy to write theorems to prove equivalence using lean-mlir 
+\end{itemize}
+
+\paragraph{research proposal and challenges}
+
+\begin{itemize}
+    \item convert a design into a buechi automaton and verify a property progressively as the design is lowered and compiled 
+    \item compiler verification: extract dialects semantics using buechi automata 
+    \item automata-based approach to the verification of compiler lowerings and designs at higher level of abstractions 
+    \item can we encode the semantics of a dialect in an omega automaton?
+\end{itemize}
+
+\paragraph{timeline}
+\begin{itemize}
+    \item add most circt dialect to lean-mlir, verify lowerings
+    \item write (in lean) a tool that can extract a buechi automaton from a generic circt design in a certain dialect
+    \item define buechi automata structure and conversion 
+\end{itemize}
+\paragraph{conclusion} 
 
 \end{document}
