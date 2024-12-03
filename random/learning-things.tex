@@ -392,6 +392,10 @@ In this work, we present a verification framework based on model checking to sys
 
 \paragraph{ITPs to Democratize Hardware Verification}
 
+% polished abstract 
+
+Hardware design is an inherently complex task, requiring a through understanding of numerous components and tools. 
+Verification plays a crucial role in this process, due to the 
 
 Hardware design is well known to be a complex task, in which verification plays a fundamental role due to the enormous risks and costs involved in printing mistakes. 
 
@@ -399,6 +403,10 @@ Domain Specific Languages (DSLs) are powerful tools that can significantly ease 
 
 The CIRCT framework comprises various dialects that represents different hardware abstractions (e.g. FSMs and dataflow circuits) and the lowerings from one to another, 
 making the compilation of high-level representation of a design into a low-level output (e.g. SystemVerilog) progressive.
+
+And this approach has proven successful because it fosters reusability and progressive optimization of the designs (it is currently employed in real-world hardware design)
+
+
 
 Integrating verification in one such framework is a complex task that requires taking into account the semantics of the different dialects, as well as the correctness of all 
 the lowerings and optimization steps involved in the compilation of a single design. 
@@ -409,82 +417,99 @@ in an attempt to extract useful informati~on from higher-level abstractions and 
 (2) an ad-hoc unrolling bounded model checker that checks designs at RTL level. 
 (3) the AIG dialect, a novel addition to the circt ecosytstem, that exploits AIG as most hardware model checkers do, 
 (4) lowering from RTL to BTOR2 representation
-However, none of these approaches allows to flexibly reason about and massage the semantics of dialects, to reason about the equivalence between models 
-and in particular about the semantics in cases that represent typical grey areas, where different representations converge (e.g. latency-insensitive vs. cycle-based visions).
-
-As a consequence, fully taking advantage of the semantics of the higher level dialects to guide the lower-level verification steps is currently complex and uniquely relies 
-on the smt dialect. 
-
-
-In unicornland we want : 
-(1) a proper verification flow that exploits high level information to guide verification at 
-lower levels and 
-(2) the possibility to reason about the correctness of the lowering itsef. 
-
-and we want these things to unlock 
-(1) the possibility of verifying properties at higher level and 
-(2) ensure that the prop holds throughout the lowering as long as the semantics are correctly formalized 
-
-
-and the reason why this currently has not been done is because reasoning about the semantics of such a tool that encombasses many different representation working in wildly different 
-ways is complex (there is no much documentation) 
-
-however we have a powerful tool on our side: lean4 makes it easier because with tools such as lean-mlir we can formalize the semantics of a dialects 
-and easily test it, test the correctness of the semantics given the examples in the framework and verify the lowerings themselves too. 
-
-
-Moreover, due to the high risks involved in making a mistake when printing a circuit, hardware verification is a fundamental step of hardware design.
-
-For this reason, numerous solutions exist to accelerate and optimize the verification of hardware designs, as well as the verification of the overall
-compilation procedure.
-
-In particular, there are three main approaches to verification: logic (SMT and SAT solvers), automata-theoretic (Buechi Automata), and semantics-based ones (abstract interpretation). 
-
-Currently, most hardware verification tools heavily rely on SMT and SAT solvers and focus on the verification at lower level of abstractions. 
-
-There is always some kind of interface or abstraction that we need to use as a middle ground to encode the semantics of the problem we are trying to solve: 
-
-
-we can convert the design into SAT/SMT formulae, we can extract the FSM from the SystemVerilog and then encode the FSM as a set of formulae. 
-
-verification typically happens at the end of the design process. 
-
-The CIRCT framework represents an innovative approach to hardware design, that applies the MLIR principles to hardware design. 
-
-And this approach has proven successful because it fosters reusability and progressive optimization of the designs (it is currently employed in real-world hardware design)
-
-
-
-% what's the problem
-
-However, confining the verification of a design to the bottom of the design process means (1) discarding all the structural and semantics information present at higher abstraction 
-levels of abstractions, which could instead guide the verification procedure and (2) preventing designers from safely taking advantage of different thought paradigms (e.g. dataflow) that call for 
-unique sets of optimizations and characteristics.  
-
-we want to (1) let high-level information about the circuit influence and guide the verification progressive as the lowering happens 
-(2) let the reasoning about high-level semantics influence fill the gaps that currently exists since the semantics is not well formalized.
-semantics that are not well formalized are a proxy for mistakes.
-it is important to define semantics carefully and to take full advantage of it. 
-
-% why is it hard to solve
-
-formalizign the semantics of CIRCT is generally a complex task because of how different the tasks are. 
 
 while lowering them to SMT formulae proved a good approach, but suffers from scalability issues (SMT solvers are very good in a very restricted field of problem e.g. arithmetic constraints)
 complementing this approach with more high level reasoning about the semantics (see the three equivalent ways we have to prove things) allows fully exploiting the information we can extract at higher abstraction levels
 and simultaneously verify the lowerings and the designs 
 
-% what's the solution 
+MOreover, there is always some kind of interface or abstraction that we need to use as a middle ground to encode the semantics of the problem we are trying to solve: 
 
-the solution is that i spend the next four years of my life thinking very intensely about the semantics of circt dialects, taking extra care in formalizing their semantics such that it is correct and expressive enough 
-to reason about the subtle border between different abstractions (e.g. latency insensitive vs. circuit oriented)
+And in fact, none of these approaches allows to flexibly reason about and massage the semantics of dialects, to reason about the equivalence between models 
+and in particular about the semantics in cases that represent typical grey areas, where different representations converge (e.g. latency-insensitive vs. cycle-based visions).
 
-% what's the outcome 
+Moreover, confining the verification of a design to the bottom of the design process means (1) discarding all the structural and semantics information present at higher abstraction 
+levels of abstractions, which could instead guide the verification procedure and (2) preventing designers from safely taking advantage of different thought paradigms (e.g. dataflow) that call for 
+unique sets of optimizations and characteristics. 
+
+Currently, taking advantage of the semantics of the higher level dialects to guide the lower-level verification steps is currently complex and uniquely relies 
+on the smt dialect. 
+
+However, formalizign the semantics of CIRCT is generally a complex task because of how different the dialects are. MOreover the reason why this currently has not been done is because reasoning about the semantics of such a tool that encombasses many different representation working in wildly different 
+ways is complex (there is no much documentation) 
+
+
+overall we want to : 
+(1) let high-level information about the circuit influence and guide the verification progressive as the lowering happens 
+(2) let the reasoning about high-level semantics influence fill the gaps that currently exists since the semantics is not well formalized.
+semantics that are not well formalized are a proxy for mistakes
+(3) exploit the formalized semantics to reason about the lowerings' correctness
+it is important to define semantics carefully and to take full advantage of it, which is why thinking very intensely about the semantics of circt dialects, taking extra care in formalizing their semantics such that it is correct and expressive enough 
+to reason about the subtle border between different abstractions (e.g. latency insensitive vs. circuit oriented). semsntics are powerful if you knwo how to use them
+
+and we want these things to unlock 
+(1) the possibility of verifying properties at higher level and 
+(2) ensure that the prop holds throughout the lowering as long as the semantics are correctly formalized 
 
 starting from the circt abstractions that define two significantlyt different ways to think about circuits dataflow and fsm -> put them together and formalize the gray area laying in between different abstractions
 and concretely a framework where one can easily add new things and what not 
 
-this shall open the doors to integrating further verification techniquest (e.g. automata-theoretic approaches)
+as a stretch goal, this shall open the doors to integrating further verification techniquest (e.g. automata-theoretic approaches)
+
+
+
+
+however we have a powerful tool on our side: lean4 makes it easier because with tools such as lean-mlir we can formalize the semantics of a dialects 
+and easily test it, test the correctness of the semantics given the examples in the framework and verify the lowerings themselves too. 
+
+
+
+
+
+% chatGPT's envisioning of the thing 
+
+
+
+
+Hardware design is inherently complex, with verification playing a critical role in mitigating the high risks and costs associated with errors. 
+Domain-Specific Languages (DSLs) streamline this process by enabling designers to reason at various levels of abstraction. 
+CIRCT, a framework for hardware compilation, leverages multiple dialects (e.g., FSMs, dataflow circuits) and systematic lowering techniques to transform high-level 
+representations into lower-level outputs like SystemVerilog, promoting reusability and progressive optimization.
+
+Integrating verification into CIRCT presents unique challenges due to the need to formalize and validate the semantics of diverse dialects, as well as the 
+correctness of transformations and optimizations applied during compilation. Current efforts include:
+
+    The SMT Dialect, which encodes semantics into SMT formulas for progressive verification.
+    An RTL-Level Bounded Model Checker, tailored for specific scenarios.
+    The AIG Dialect, which adopts And-Inverter Graphs for model checking.
+    Lowerings to BTOR2, a standard representation for hardware verification.
+
+While these approaches are effective in isolation, they are limited by scalability issues and lack a unifying semantic framework to reason about equivalences and grey areas (e.g., latency-insensitive vs. cycle-based paradigms). 
+Furthermore, confining verification to low-level representations discards valuable structural and semantic insights present at higher abstraction levels, 
+hindering designers from fully leveraging different paradigms like dataflow and FSM.
+
+To address these gaps, we propose a systematic formalization of CIRCT semantics that enables:
+
+    High-level semantic guidance for progressive verification.
+    Robust reasoning about dialects and their transformations, bridging gaps in current methodologies.
+    Validation of lowerings through well-defined and expressive semantics, particularly across subtle abstraction boundaries.
+
+This approach aims to unlock the ability to verify properties at high levels of abstraction and ensure their preservation throughout the lowering process. 
+Lean4 and tools like Lean-MLIR can facilitate this effort, enabling precise formalization and automated testing of dialect semantics and transformations. 
+Long-term, this foundational work could support integration of advanced verification techniques, such as automata-theoretic approaches, and foster the creation of a modular framework for evolving hardware verification.
+
+
+
+
+
+
+
+% what's the solution 
+
+% the solution is that i spend the next four years of my life 
+
+% what's the outcome 
+
+
 
 
 % Hardware desigin is complex, frameworks such as CIRCT try to make the process smoother, fostering reusability 
