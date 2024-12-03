@@ -392,19 +392,44 @@ In this work, we present a verification framework based on model checking to sys
 
 \paragraph{title: ITPs for hardware verification}
 
+
+
+
+
+
+
+
+
 It is common knowledge that hardware design is a complex field standing on a wide variety of different tools. 
-
-Hardware verification is a fundamental aspect of this procedure. 
-
-On the one hand, improving its efficiency by making the verification progressive and parallel to the lowering can significantly improve and speed up the overall design procedure.
-
+Hardware verification is a fundamental aspect of hardware design, since we only want to actually print the circuits that work as expected.
+On the one hand, improving the efficiency of hardware design by making the verification progressive and parallel to the lowering can significantly improve and speed up the overall design procedure.
 On the other hand, the verification of the compilation toolchain itself is a valuable complement to the verification of the design, which would significantly improve the trustworthiness of these tools and 
 ease the verification of designs themselves. 
+Moreover, if a lowering is verified and proven to be correct, a property we are checking at a certain level will hold at a lower level, too. 
 
-However, reasoning about the semantics of such a complex procedure proved quite complex, due to the variety of behaviors involved in the lowering.
+For this reason, numerous works have attempted to simplify and accelerate the verification of designs and propose end-to-end verified compilers.
+However, no solution currently takes advantage of both strategies. // i think this is a lie
 
-ITPs can provide an effective support in reasoning about such semantics, providing it is encoded correctly, allowing to flexibly verify the equivalence of designs
-at different levels of abstractions.
+We want to be able to reason about the semantics of the lowerings and of the design at the same time and within the same context. 
+ITPs, and in particular Lean4, are extremely flexible tool that allows encoding the semantics at different stages of the compilation and reasoning about the equivalence of designs 
+at different abstraction levels, as well as the correctness of the actual lowering taking place 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \paragraph{the importance of verification in compilers}
 \begin{itemize}
