@@ -4,6 +4,8 @@
 *.pdf
 *.aux
 *.log
+*.o
+*.hi
 
 # Ignore system files
 .DS_Store
