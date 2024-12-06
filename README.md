@@ -1,6 +1,6 @@
 ### Hello, world!
  
-✨ Luisa, 25yo, Compilers and Formal Languages enthusiast. I also enjoy logics, a lot.
+✨ Luisa, Compilers and Formal Languages enthusiast. I also enjoy logics, a lot.
 
 ✨ Sometimes singer and art lover - fascinated by creativity in all its shapes
 
