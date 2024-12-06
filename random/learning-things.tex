@@ -390,14 +390,57 @@ In this work, we present a verification framework based on model checking to sys
     \includegraphics[width=0.8\columnwidth]{proposal-idea.pdf}
 \end{figure}
 
-\paragraph{Democratizing hardware verification by exploiting semantics for high-level abstractions}
+\newpage
 
-Hardware design is inherently complex, requiring a thorough understanding of numerous components and tools. Verification plays a crucial role in this process as it can uncover expensive and potentially critical mistakes before the tapeout. The CIRCT compiler framework introduces several dialects representing domain-specific Intermediate Representations (IRs), allowing the progressive compilation of high-level abstractions, such as Finite State Machines, into lower-level representations, such as Verilog, via different lowerings. This approach proved successful in fostering the reusability of the code and the introduction of specific optimizations at different abstraction levels, relying on the progressive lowering of the code. Moreover, being able to optimize and reason on a design at different abstraction levels is especially appealing from a hardware designer’s perspective. However, guaranteeing correctness in such a complex compiler design requires careful reflection on the semantics of the various IRs involved and the lowerings between them. Correctness is especially important for hardware since a flawed design can lead to billions of pounds lost. A promising approach to tackle this key problem is to include formal semantics in the CIRCT framework directly. For example, the SMT dialect, which encodes the dialects' semantics as SMT formulae, allows the verification of designs at higher abstraction levels. 
+\section{Democratizing hardware verification by exploiting semantics for high-level abstractions}
 
-CIRCT's higher-level abstractions provide valuable information about the design's structure, which can be exploited to both verify semantics at a higher level and extract useful information that can serve lower-level verification tools. Taking advantage of this aspect is fundamental to building a verification toolchain that fully exploits the unique characteristics of the CIRCT ecosystem, allowing designers to leverage the expressive power of different representations such as dataflow and FSM ones. However, extracting useful high-level information remains a complex task, due to the scarce formalization and the lack of precise semantics for CIRCT's dialects. Overall, accurately formalizing the semantics of such diverse dialects and abstractions remains a major challenge and is critical for verifying the correctness of the optimizations and lowerings involved.
 
-To address this challenge, we propose a systematic formalization of CIRCT dialects' semantics at different abstraction levels, paving the way for verifying the framework’s lowerings and optimizations. Works such as Lean-MLIR have already proved the benefits of embedding dialects' semantics in Lean4, an open-source programming language and Theorem Prover providing a flexible environment to write verified code. Pursuing this direction, we aim at formalizing more high-level abstractions and dialects, also considering those relying on radically different design paradigms from traditional imperative or functional IRs, such as the Dynamic Control (DC) dialect. This will require careful mathematical modeling of complex, dataflow-like behavior to fill existing gaps in the informal model, e,g, where latency-insensitive and circuit-based semantics meet. Besides introducing a powerful means to reason about dialects' semantics and the overall correctness of the compilation, this work will also lay the foundations for including higher-level verification techniques into CIRCT, for example, those leveraging automata-theoretic approaches. 
+\subsection{Introduction}
+
+Hardware design is inherently complex, requiring a thorough understanding of numerous components and tools. 
+Verification plays a crucial role in this process as it can uncover expensive and potentially critical mistakes before the tapeout. 
+The CIRCT compiler framework introduces several dialects representing domain-specific Intermediate Representations (IRs), 
+allowing the progressive compilation of high-level abstractions, such as Finite State Machines, into lower-level representations,
+such as Verilog, via different lowerings. This approach proved successful in fostering the reusability of the code and the introduction 
+of specific optimizations at different abstraction levels, relying on the progressive lowering of the code. 
+Moreover, being able to optimize and reason on a design at different abstraction levels is especially appealing from a 
+hardware designer’s perspective. However, guaranteeing correctness in such a complex compiler design requires careful reflection 
+on the semantics of the various IRs involved and the lowerings between them. 
+Correctness is especially important for hardware since a flawed design can lead to billions of pounds lost. 
+A promising approach to tackle this key problem is to include formal semantics in the CIRCT framework directly. 
+For example, the SMT dialect, which encodes the dialects' semantics as SMT formulae, allows the verification of designs at higher abstraction levels. 
+
+CIRCT's higher-level abstractions provide valuable information about the design's structure, 
+which can be exploited to both verify semantics at a higher level and extract useful information that can serve lower-level verification tools. 
+Taking advantage of this aspect is fundamental to building a verification toolchain that fully exploits the unique characteristics of the CIRCT ecosystem, 
+allowing designers to leverage the expressive power of different representations such as dataflow and FSM ones. 
+However, extracting useful high-level information remains a complex task, due to the scarce formalization and the lack of precise semantics for CIRCT's dialects. 
+Overall, accurately formalizing the semantics of such diverse dialects and abstractions remains a major challenge and is critical for verifying the correctness 
+of the optimizations and lowerings involved.
+
+To address this challenge, we propose a systematic formalization of CIRCT dialects' semantics at different abstraction levels, paving the way for verifying the 
+framework’s lowerings and optimizations. Works such as Lean-MLIR have already proved the benefits of embedding dialects' semantics in Lean4, 
+an open-source programming language and Theorem Prover providing a flexible environment to write verified code. Pursuing this direction, 
+we aim at formalizing more high-level abstractions and dialects, also considering those relying on radically different design paradigms from traditional 
+imperative or functional IRs, such as the Dynamic Control (DC) dialect. This will require careful mathematical modeling of complex, 
+dataflow-like behavior to fill existing gaps in the informal model, e,g, where latency-insensitive and circuit-based semantics meet. 
+Besides introducing a powerful means to reason about dialects' semantics and the overall correctness of the compilation, 
+this work will also lay the foundations for including higher-level verification techniques into CIRCT, for example, those leveraging automata-theoretic approaches. 
 
 Overall, we believe that this work paves the way for filling and reasoning about subtle semantics gaps in hardware abstractions, by introducing formally verified semantics in the CIRCT ecosystem.
+
+\subsection{Background and Related Work}
+
+\paragraph{Works about higher level abstractions for hardware verification}
+CoSA IR, FSM verification in ACL2,  
+
+\paragraph{Works about hardware semantics formalization}
+
+\paragraph{Works about dataflow formalization}
+
+\subsection{Problem Definition}
+
+\subsection{Research Organization}
+
 
 \end{document}
