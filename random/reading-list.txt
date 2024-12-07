@@ -45,3 +45,6 @@ things I want to read:
 - https://igl.ethz.ch/projects/3dsmocking/3dsmocking_paper.pdf
 - https://dl.acm.org/doi/pdf/10.1145/3592449
 - https://capra.cs.cornell.edu/latte21/paper/19.pdf
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5185393
+- https://learnyouahaskell.com/modules#data-list 
+- https://en.wikipedia.org/wiki/Werwolf 
