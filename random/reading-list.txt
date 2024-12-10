@@ -48,3 +48,12 @@ things I want to read:
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5185393
 - https://learnyouahaskell.com/modules#data-list 
 - https://en.wikipedia.org/wiki/Werwolf 
+- https://www.mynecchi.com/upload/files/IM_NC-103D(H72D1)(EN)(190702).pdf 
+- https://www.janome.com/globalassets/necchi/machine-manuals/inst-book-necchi-ex60.pdf
+- https://www.reddit.com/r/rust/comments/lms0ay/pijul_the_mathematically_sound_version_control/
+- https://pijul.org/model/
+- https://old.reddit.com/r/math/
+- https://james-hanson.github.io/wiki/Monster_model
+- https://old.reddit.com/r/math/comments/1h60or9/whats_the_largest_finite_structure_you_know_or/
+- https://old.reddit.com/r/math/comments/1h4v9yx/how_monstrously_long_papers_are_made/
+- https://old.reddit.com/r/math/comments/1h5wezw/interesting_question_related_to_the_divergence/
