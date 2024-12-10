@@ -3,13 +3,13 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fffaf0; /* Light autumn beige */
-    color: #4d3319;           /* Dark brown */
+    background-color: #FFF8E7; /* Light beige */
+    color: #4D2C19;           /* Dark brown */
     line-height: 1.6;
 }
 
 header {
-    background-color: #b5651d; /* Warm orange */
+    background-color: #D2691E; /* Burnt orange */
     color: white;
     padding: 1rem;
     text-align: center;
@@ -25,74 +25,54 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* Blog Section */
-#blog {
-    padding: 2rem;
-    background-color: #ffedd5; /* Light peach */
-    margin: 1rem auto;
+/* Timeline */
+#timeline .timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    padding: 10px;
+    border-left: 4px solid #8B0000; /* Deep red */
+}
+
+#timeline .timestamp {
+    flex-basis: 20%;
+    background-color: #F5C85C; /* Mustard yellow */
+    color: #4D2C19; /* Text color */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#timeline .details {
+    flex-basis: 75%;
+    background-color: #FFF8E7;
+    padding: 10px;
     border-radius: 8px;
 }
 
-#blog article {
-    margin-bottom: 1.5rem;
-}
-
-#blog a {
-    color: #b5651d; /* Warm orange */
-    text-decoration: none;
-}
-
-/* Projects Section */
-#projects {
-    padding: 2rem;
-    background-color: #f5deb3; /* Wheat color */
-    margin: 1rem auto;
-    border-radius: 8px;
-}
-
-#projects ul {
+/* Reading List */
+#reading-list ul {
     list-style: none;
     padding: 0;
 }
 
-#projects li {
-    margin: 0.5rem 0;
+#reading-list li {
+    margin: 10px 0;
 }
 
-/* Timeline Section */
-#timeline {
-    padding: 2rem;
+#reading-list a {
+    color: #D2691E;
+    text-decoration: none;
 }
 
-.timeline-item {
-    display: flex;
-    margin-bottom: 2rem;
-}
-
-.timestamp {
-    flex-basis: 20%;
-    background-color: #d2691e; /* Chocolate */
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 8px 0 0 8px;
-}
-
-.details {
-    flex-basis: 80%;
-    background-color: #f4a460; /* Sandy brown */
-    padding: 1rem;
-    border-radius: 0 8px 8px 0;
-}
-
-.details h3 {
-    margin: 0;
+#reading-list a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #b5651d;
+    background-color: #8B0000; /* Deep red */
     color: white;
 }
