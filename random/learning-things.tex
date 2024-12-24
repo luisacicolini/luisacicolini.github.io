@@ -443,4 +443,146 @@ CoSA IR, FSM verification in ACL2,
 \subsection{Research Organization}
 
 
+\section{Summaries of read papers}
+
+\subsection{Theory of latency-insensitive design}
+\begin{itemize}
+    \item Latency-insensitive designs are synchronous distributed
+    systems and are realized by composing functional modules that exchange data 
+    on communication channels according to an appropriate protocol.
+    \item The
+    theory may be applied as a rigorous basis to design complex
+    digital systems by simply composing predesigned and verified
+    components so that the composition satisfies, formally and “by
+    construction,” the required properties of synchronization and
+    communication
+    \item According to our approach, the
+    system can be thought as completely synchronous, i.e., just as a
+    collection of modules that communicate by means of channels
+    having “zero delay,” i.e., a delay negligible with respect to the pe-
+    riod of the common clock signal (synchronous assumption).
+    \item However,theproposedtheoryguaranteesthatitisnotnec-
+    essary to complete costly redesign iterations or to slow down the
+    real clock. The key idea is borrowed from pipelining [10], [11]:
+    partition the long wires into segments whose lengths satisfy the
+    timing requirements imposed by the real clock by inserting logic
+    locks called relay stations, which have a function similar to the
+    one of latches on a pipelined data path
+    \item The key point of this approach is to relax
+    timeconstraintsduringtheearlyphasesofthedesignwhencorrect
+    measures of the delay paths among the modules are not yet avail-
+    able.
+    \item Two systems
+    are latency equivalent if on every channel, they present the same
+    data streams, i.e., the same ordered sequence of data, but, pos-
+    sibly, with different timing. We show that for patient processes,
+    the notion of latency equivalence is compositional by proving
+    the following theorems: 1) the intersection of two patient pro-
+    cesses is a patient process; 2) given two pairs of latency equiv-
+    alent patient processes, their pairwise intersections are also la-
+    tency equivalent; and 3) for all pairs of strict processes
+    and patient processes , if is latency equivalent to
+    and is latency equivalent to , then their intersections are
+    latency equivalent. As a consequence, we can derive the major
+    result of our theory: if all processes in a strict system are re-
+    placed by corresponding patient processes, then the resulting
+    system is patient and latency equivalent to the original one. 
+\end{itemize}
+
+Insight: latency-insensitive design is useful and allows faster iterations on 
+the design/faster development in general.
+
+\subsection{The Essence of Bluespec}
+
+A paper so beautiful and clean that I somehow wish I had written.
+
+\begin{itemize}
+    \item The commercial BSV compiler relies on a static analysis
+    to do ORAAT-preserving concurrent scheduling of rules. Its
+    static analysis, combined with user-provided annotations
+    (e.g. descending urgency and execution order), generally
+    creates excellent circuits. This approach, however, is not sat-
+    isfactory for two reasons. (1) The static analysis should be
+    an abstraction of the dynamic semantics of a program. BSV’s
+    dynamic semantics applies only to one-rule-at-a-time execu-
+    tions, and the cycle-level semantics necessarily depends on
+    the static analysis of rules. (2) BSV programmers often think
+    deliberately about static-analysis details and even change
+    their code to nudge the compiler in the right direction to
+    achieve the desired degree of concurrency.
+    \item Tradi-
+    tional HDLs like Verilog and VHDL are structural in the sense
+    that they describe interconnections of boxes, i.e., Boolean
+    gates and registers. The main problem with such languages is
+    that they provide inadequate type checking and lack precise
+    semantics, which makes verification and design refinement
+    a Herculean task.
+    \item A cycle-accurate description is essential to understand the
+    performance of a hardware circuit. Such descriptions, how-
+    ever, often complicate reasoning about functional proper-
+    ties of the hardware. 
+\end{itemize}
+insight: very useful related work section, gives tons of 
+interesting facts about pros and cons of different approaches 
+and highlights their shortcomings. 
+idea: abstract interpretation for more efficient simulation
+and verification starting from the definition of circt dialects'
+semantics. in lean4. 
+
+\section{Semantics Driven Hardware Design, Implementation, and Verification with ReWire}
+
+\begin{itemize}
+    \item This paper presents ReWire,
+    a functional programming language providing a suitable founda-
+    tion for formal verification of hardware designs, and a compiler for
+    that language that translates high-level, semantics-driven designs
+    directly into working hardware. 
+    \item 
+\end{itemize}
+
+\section{Learning Semantic Representations to Verify Hardware Designs}
+
+example of how hardware abstractons' semantics is extracted.
+
+\begin{itemize}
+    \item Design2Vec, a deep architecture that learns
+    semantic abstractions of hardware designs
+    \item RTL designs are typically simulated using an RTL design simulator, which does not suffice for
+    the design goals of our analysis. For use with machine learning, we choose to represent RTL as a
+    control data flow graph (CDFG). The CDFG we construct for each Verilog RTL program encodes the
+    program’s simulation semantics, so that our models may make inferences about the their behavior
+
+\end{itemize}
+
+\section{Experience with embedding hardware description languages in HOL}
+
+interesting tech report. 
+
+\section{What are the Semantics of Hardware}
+\begin{itemize}
+    \item We propose an endeavor to formalize
+    and relate each level of semantics using abstract interpretation.
+    \item There are at least three major points of view on implementing
+    interpreters/simulators. If the language resembles sequential code
+    (e.g. HLS), then the host software-language semantics are often
+    appealed to. In functional HDLs, some dataflow interpretation[ 15 ]
+    is commonly used. Verilog itself uses a form of event-based simu-
+    lation that resembles dataflow[ 1 ]. Lastly, many high-performance
+    simulators flatten module hierarchy, eliminate loops by breaking
+    the circuit at registers, and compile a single transition function for
+    updating the state at each synchronous clock.
+    \item the dataflow point of
+    view (which is the most similar to our proposal) does not handle
+    combinational loops and other lower-level aspects of hardware
+    simulation
+    \item Our idea is to use the theoretical framework of Abstract Interpre-
+    tation [7] to define semantics, and therefore reference interpreters,
+    for HDLs at multiple levels of Abstraction
+    \item New “just-in-time” [19 ] or distributed simulation methods pro-
+    pose to separately compile parts of circuits that must then “synchro-
+    nize” or converge via communication. The fix-point formulation
+    of semantics clarifies the conditions under which such simulations
+    converge to a unique solution.
+\end{itemize}
+
 \end{document}
