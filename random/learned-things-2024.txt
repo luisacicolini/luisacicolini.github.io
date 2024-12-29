@@ -1,4 +1,4 @@
-things I've learned over 2024: 
+things I've learned in 2024: 
 . LTL
 . started to learn model checking 
 . talk at LLVM-dev
