@@ -1,13 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import {Content as readingListContent} from '../content/reading-list.md';
+import * as latelyUpTo from '../content/lately-up-to.md';
 ---
-<BaseLayout title="Timeline">
+
+
+<BaseLayout title="lately-up-to">
   <Header/>
   <main>
-    <h1>Timeline</h1>
+    <h1>Lately up to:</h1>
     <ul>
-      <li>event</li>
+      <li> [Nov. 24] I recently went back to painting and embarked on a quest to paint poetry I like. </li>
     </ul>
+	<h1>Things I want to read:</h1>
+    <readingListContent />
   </main>
 </BaseLayout>
