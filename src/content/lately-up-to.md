@@ -1,5 +1,6 @@
 ---
 title: "Lately up to"
+layout: ../layouts/BaseLayout.astro
 ---
 
 # Lately up to: 

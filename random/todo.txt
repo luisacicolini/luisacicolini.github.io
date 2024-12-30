@@ -13,6 +13,7 @@ todo
 . llvm us travel expenses
 . cgo pub
 . write my own processor 
+. answer emails 
 
 done 
 

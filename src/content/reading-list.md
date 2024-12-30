@@ -1,5 +1,6 @@
 ---
 title: "Reading List"
+layout: ../layouts/BaseLayout.astro
 ---
 
 # Things I want to read
