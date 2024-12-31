@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: research-proposal.aux
+The style file: acm.bst
+Database file #1: biblio.bib
+Warning--I didn't find a database entry for "zhao2024kcirct"
+Warning--to sort, need author or key in circt
+Warning--to sort, need author or key in symbiyosys
+You've used 21 entries,
+            2253 wiz_defined-function locations,
+            655 strings with 8498 characters,
+and the built_in function-call counts, 8244 in all, are:
+= -- 775
+> -- 423
+< -- 1
++ -- 175
+- -- 152
+* -- 610
+:= -- 1268
+add.period$ -- 62
+call.type$ -- 21
+change.case$ -- 138
+chr.to.int$ -- 0
+cite$ -- 23
+duplicate$ -- 351
+empty$ -- 661
+format.name$ -- 152
+if$ -- 1770
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 18
+newline$ -- 106
+num.names$ -- 40
+pop$ -- 188
+preamble$ -- 1
+purify$ -- 117
+quote$ -- 0
+skip$ -- 240
+stack$ -- 0
+substring$ -- 418
+swap$ -- 114
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 84
+warning$ -- 2
+while$ -- 74
+width$ -- 23
+write$ -- 215
+(There were 3 warnings)

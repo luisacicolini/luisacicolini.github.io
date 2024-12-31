@@ -1,0 +1,139 @@
+\begin{thebibliography}{10}
+
+\bibitem{circt}
+Circt.
+\newblock https://circt.llvm.org/, Online.
+
+\bibitem{symbiyosys}
+Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
+\newblock Accessed 24/11/21.
+
+\bibitem{bachrach2012chisel}
+{\sc Bachrach, J., Vo, H., Richards, B., Lee, Y., Waterman, A., Avi\v{z}ienis,
+  R., Wawrzynek, J., and Asanovi\'{c}, K.}
+\newblock Chisel: constructing hardware in a scala embedded language.
+\newblock In {\em Proceedings of the 49th Annual Design Automation
+  Conference\/} (New York, NY, USA, 2012), DAC '12, Association for Computing
+  Machinery, p.~1216–1225.
+
+\bibitem{bernstein2021semantics}
+{\sc Bernstein, G.~L., and Ragan-Kelley, J.}
+\newblock What are the semantics of hardware.
+\newblock In {\em Workshop on Languages, Tools, and Techniques for Accelerator
+  Design (LATTE)\/} (2021).
+
+\bibitem{bhat2024verifying}
+{\sc Bhat, S., Keizer, A., Hughes, C., Goens, A., and Grosser, T.}
+\newblock Verifying peephole rewriting in ssa compiler irs.
+\newblock {\em arXiv preprint arXiv:2407.03685\/} (2024).
+
+\bibitem{aiger2}
+{\sc Biere, A., Heljanko, K., and Wieringa, S.}
+\newblock {AIGER 1.9} and beyond.
+\newblock Tech. Rep. 11/2, Institute for Formal Models and Verification,
+  Johannes Kepler University, Altenbergerstr. 69, 4040 Linz, Austria, 2011.
+
+\bibitem{bourgeat2020essence}
+{\sc Bourgeat, T., Pit-Claudel, C., Chlipala, A., and Arvind}.
+\newblock The essence of bluespec: a core language for rule-based hardware
+  design.
+\newblock In {\em Proceedings of the 41st ACM SIGPLAN Conference on Programming
+  Language Design and Implementation\/} (2020), pp.~243--257.
+
+\bibitem{carloni2001theory}
+{\sc Carloni, L.~P., McMillan, K.~L., and Sangiovanni-Vincentelli, A.~L.}
+\newblock Theory of latency-insensitive design.
+\newblock {\em IEEE Transactions on computer-aided design of integrated
+  circuits and systems 20}, 9 (2001), 1059--1076.
+
+\bibitem{chen2021leveraging}
+{\sc Chen, J., and He, F.}
+\newblock Leveraging control flow knowledge in smt solving of program
+  verification.
+\newblock {\em ACM Transactions on Software Engineering and Methodology (TOSEM)
+  30}, 4 (2021), 1--26.
+
+\bibitem{mlir_circt}
+{\sc Eldridge, S., Barua, P., Chapyzhenka, A., Izraelevitz, A., Koenig, J.,
+  Lattner, C., Lenharth, A., Leontiev, G., Schuiki, F., Sunder, R., Young, A.,
+  and Xia, R.}
+\newblock {MLIR as Hardware Compiler Infrastructure}.
+\newblock In {\em WOSET '21: Workshop on Open Source EDA Technology\/} (2021),
+  SiFive.
+
+\bibitem{gurfinkel2022program}
+{\sc Gurfinkel, A.}
+\newblock Program verification with constrained horn clauses.
+\newblock In {\em International Conference on Computer Aided Verification\/}
+  (2022), Springer, pp.~19--29.
+
+\bibitem{huang2018instruction}
+{\sc Huang, B.-Y., Zhang, H., Subramanyan, P., Vizel, Y., Gupta, A., and Malik,
+  S.}
+\newblock Instruction-level abstraction (ila) a uniform specification for
+  system-on-chip (soc) verification.
+\newblock {\em ACM Transactions on Design Automation of Electronic Systems
+  (TODAES) 24}, 1 (2018), 1--24.
+
+\bibitem{malik2008hardware}
+{\sc Malik, S.}
+\newblock Hardware verification: Techniques, methodology and solutions.
+\newblock In {\em Tools and Algorithms for the Construction and Analysis of
+  Systems: 14th International Conference, TACAS 2008, Held as Part of the Joint
+  European Conferences on Theory and Practice of Software, ETAPS 2008,
+  Budapest, Hungary, March 29-April 6, 2008. Proceedings 14\/} (2008),
+  Springer, pp.~1--1.
+
+\bibitem{mattarei2018cosa}
+{\sc Mattarei, C., Mann, M., Barrett, C., Daly, R.~G., Huff, D., and Hanrahan,
+  P.}
+\newblock Cosa: Integrated verification for agile hardware design.
+\newblock In {\em 2018 Formal Methods in Computer Aided Design (FMCAD)\/}
+  (2018), IEEE, pp.~1--5.
+
+\bibitem{melham1988abstraction}
+{\sc Melham, T.~F.}
+\newblock Abstraction mechanisms for hardware verification.
+\newblock In {\em VLSI Specification, Verification and Synthesis}. Springer,
+  1988, pp.~267--291.
+
+\bibitem{mukherjee2015hardware}
+{\sc Mukherjee, R., Kroening, D., and Melham, T.}
+\newblock Hardware verification using software analyzers.
+\newblock In {\em 2015 IEEE Computer Society Annual Symposium on VLSI\/}
+  (2015), IEEE, pp.~7--12.
+
+\bibitem{btor2}
+{\sc Niemetz, A., Preiner, M., Wolf, C., and Biere, A.}
+\newblock Btor2 , btormc and boolector 3.0.
+\newblock In {\em International Conference on Computer Aided Verification\/}
+  (2018).
+
+\bibitem{niemetz2018btor2}
+{\sc Niemetz, A., Preiner, M., Wolf, C., and Biere, A.}
+\newblock Btor2 , btormc and boolector 3.0.
+\newblock In {\em Computer Aided Verification\/} (Cham, 2018), H.~Chockler and
+  G.~Weissenbacher, Eds., Springer International Publishing, pp.~587--595.
+
+\bibitem{bluespec}
+{\sc Nikhil, R.}
+\newblock Bluespec system verilog: efficient, correct rtl from high level
+  specifications.
+\newblock In {\em Proceedings. Second ACM and IEEE International Conference on
+  Formal Methods and Models for Co-Design, 2004. MEMOCODE '04.\/} (2004),
+  pp.~69--70.
+
+\bibitem{procter2015semantics}
+{\sc Procter, A., Harrison, W.~L., Graves, I., Becchi, M., and Allwein, G.}
+\newblock Semantics driven hardware design, implementation, and verification
+  with rewire.
+\newblock In {\em Proceedings of the 16th ACM SIGPLAN/SIGBED Conference on
+  Languages, Compilers and Tools for Embedded Systems 2015 CD-ROM\/} (2015),
+  pp.~1--10.
+
+\bibitem{witharana2022survey}
+{\sc Witharana, H., Lyu, Y., Charles, S., and Mishra, P.}
+\newblock A survey on assertion-based hardware verification.
+\newblock {\em ACM Computing Surveys (CSUR) 54}, 11s (2022), 1--33.
+
+\end{thebibliography}

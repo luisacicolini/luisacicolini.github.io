@@ -61,3 +61,5 @@ layout: ../layouts/BaseLayout.astro
 - https://old.reddit.com/r/math/comments/1h60or9/whats_the_largest_finite_structure_you_know_or/
 - https://old.reddit.com/r/math/comments/1h4v9yx/how_monstrously_long_papers_are_made/
 - https://old.reddit.com/r/math/comments/1h5wezw/interesting_question_related_to_the_divergence/
+- https://www.sasjournal.org/index.php/home/article/view/68 
+- 
