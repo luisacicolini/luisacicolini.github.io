@@ -77,22 +77,22 @@
 
 \begin{figure*}[ht]
     \includegraphics[scale=0.8]{semantics.pdf}
-    \caption{Formalizing the semantics (S) of CIRCT dialects in Lean4 will allows us to (1) verify the compilation and equivalence 
-    between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property 
-    (P) holds for a designs (D) at a certain level.}
+    \caption{Formalizing the semantics (S) of CIRCT dialects in Lean4 allows us to (1) verify the compilation and equivalence 
+    between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property  % verification approaches in verified environment sounds weird
+    (P) holds for a design (D) at a certain level.}
 \end{figure*}
 
 Hardware design is inherently complex, requiring a thorough understanding of numerous components and tools. 
 Verification is crucial in the design process as it can uncover expensive and potentially critical mistakes before the tape-out.
-The CIRCT project~\cite{circt, mlir_circt} introduces a novel concept of hardware compiler, comprising different domain-specific abstractions (\textit{dialects}), 
-frontends and backends that make the compilation of a design progressive, through numerous lowerings among different dialects. 
+The CIRCT project~\cite{circt, mlir_circt} introduces a novel concept of hardware compiler, comprising different domain-specific abstractions (\textit{dialects}),  %concept->conception maybe
+frontends and backends that make the compilation of a design progressive, through numerous lowerings among different dialects.  % among -> through?
 Exploiting these abstractions allows the designers to reason about different aspects of the design separately and introduce various 
 optimizations at different levels of abstraction.
-In brief, CIRCT~\cite{circt, mlir_circt} allowing the progressive compilation of high-level abstractions, such as Finite State Machines, into lower-level representations, 
+In brief, CIRCT~\cite{circt, mlir_circt} allows the progressive compilation of high-level abstractions, such as Finite State Machines, into lower-level representations, 
 such as Verilog, via different lowerings. 
 This approach proved successful in increasing the reusability of the code and introducing specific optimizations at different abstraction levels, 
 by relying on the progressive lowering of the code. 
-Being able to optimize and reason on a design at various abstraction levels is especially appealing from a hardware 
+Being able to optimize and reason about a design at various abstraction levels is especially appealing from a hardware 
 designer's perspective. 
 Moreover, CIRCT's higher-level abstractions provide valuable information about the design's structure, 
 which is available to perform preliminary verification tasks at a higher level, verify the compilation itself, 
