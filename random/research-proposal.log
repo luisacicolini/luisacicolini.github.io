@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  1 JAN 2025 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  1 JAN 2025 16:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1549,7 +1549,7 @@ ntly, I will spend
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (3.34679pt too wide) in paragraph at lines 233--237
+Overfull \hbox (3.34679pt too wide) in paragraph at lines 233--240
 []\T1/LinuxLibertineT-TLF/b/n/10.95 (-20) Explore dif-fer-ent ver-i-fi-ca-tion 
 strate-gies\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) , such
  []
@@ -1562,8 +1562,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4.4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.
-enc}]
+ [4.4]
 Underfull \hbox (badness 3514) in paragraph at lines 54--58
 []\T1/LinuxLibertineT-TLF/m/sc/9 (+20) Carloni, L. P., McMil-lan, K. L., and Sa
 ngiovanni-
@@ -1585,7 +1584,8 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [5.5]
+) [5.5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp
+.enc}]
 (./research-proposal.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1601,7 +1601,7 @@ Here is how much of TeX's memory you used:
  48252 multiletter control sequences out of 15000+600000
  680747 words of font info for 335 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,12n,131p,1344b,759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,131p,1344b,755s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
 a-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/Lin
 BiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/
@@ -1609,7 +1609,7 @@ LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libert
 ine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb>
-Output written on research-proposal.pdf (5 pages, 456956 bytes).
+Output written on research-proposal.pdf (5 pages, 457015 bytes).
 PDF statistics:
  180 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams
