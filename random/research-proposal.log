@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  1 JAN 2025 21:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  1 JAN 2025 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1469,23 +1469,36 @@ Package pdftex.def Info: semantics.pdf  used on input line 79.
 Class acmart Warning: A possible image without description on input line 83.
 
 
-Package natbib Warning: Citation `circt' on page 1 undefined on input line 87.
+Package natbib Warning: Citation `circt' on page 1 undefined on input line 88.
 
 
 Package natbib Warning: Citation `mlir_circt' on page 1 undefined on input line
- 87.
+ 88.
+
+
+Package natbib Warning: Citation `circt' on page 1 undefined on input line 92.
+
+
+Package natbib Warning: Citation `mlir_circt' on page 1 undefined on input line
+ 92.
 
 
 Package natbib Warning: Citation `huang2018instruction' on page 1 undefined on 
-input line 98.
+input line 100.
 
 
 Package natbib Warning: Citation `chen2021leveraging' on page 1 undefined on in
-put line 98.
+put line 100.
 
 
 Package natbib Warning: Citation `mattarei2018cosa' on page 1 undefined on inpu
-t line 98.
+t line 100.
+
+
+Overfull \hbox (10.74124pt too wide) in paragraph at lines 88--101
+\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) that make the com-pi-la-tion of a de-si
+gn pro-gres-sive, through
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1493,31 +1506,31 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Package natbib Warning: Citation `melham1988abstraction' on page 1 undefined on
- input line 110.
+ input line 112.
 
 
 Package natbib Warning: Citation `bourgeat2020essence' on page 1 undefined on i
-nput line 111.
+nput line 113.
 
 
 Package natbib Warning: Citation `bluespec' on page 1 undefined on input line 1
-11.
+13.
 
 
 Package natbib Warning: Citation `procter2015semantics' on page 1 undefined on 
-input line 116.
+input line 118.
 
 
 Package natbib Warning: Citation `bachrach2012chisel' on page 1 undefined on in
-put line 118.
+put line 120.
 
 
 Package natbib Warning: Citation `bernstein2021semantics' on page 1 undefined o
-n input line 119.
+n input line 121.
 
 
 Package natbib Warning: Citation `carloni2001theory' on page 1 undefined on inp
-ut line 126.
+ut line 128.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1531,57 +1544,57 @@ r/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package acronym Info: Label `acro:ir' newly defined as it shall be overridden
-although it is yet undefined on input line 135.
+although it is yet undefined on input line 137.
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 13
-6.
+8.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 136.
+(Font)              scaled to size 10.95pt on input line 138.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 
-Package natbib Warning: Citation `btor2' on page 2 undefined on input line 136.
+Package natbib Warning: Citation `btor2' on page 2 undefined on input line 138.
 
 
 
 Package natbib Warning: Citation `niemetz2018btor2' on page 2 undefined on inpu
-t line 136.
+t line 138.
 
 
-Package natbib Warning: Citation `aiger2' on page 2 undefined on input line 136
+Package natbib Warning: Citation `aiger2' on page 2 undefined on input line 138
 .
 
 
 Package natbib Warning: Citation `barrett2010smt' on page 2 undefined on input 
-line 136.
+line 138.
 
 
 Package natbib Warning: Citation `barrett2010smt' on page 2 undefined on input 
-line 139.
+line 141.
 
 
 Package natbib Warning: Citation `gurfinkel2022program' on page 2 undefined on 
-input line 143.
+input line 145.
 
 Package acronym Info: Label `acro:rtl' newly defined as it shall be overridden
-although it is yet undefined on input line 144.
+although it is yet undefined on input line 146.
 
 Package natbib Warning: Citation `zhao2024k' on page 2 undefined on input line 
-145.
+147.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 148.
+(Font)              scaled to size 10.95pt on input line 150.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 148.
+(Font)              scaled to size 9.0pt on input line 150.
 
 
 Package fancyhdr Warning: \footskip is too small (12.0pt): 
@@ -1592,56 +1605,60 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 } <./semantics.pdf>]
 
 Package natbib Warning: Citation `bhat2024verifying' on page 3 undefined on inp
-ut line 149.
+ut line 151.
 
 
 Package natbib Warning: Citation `de2008z3' on page 3 undefined on input line 1
-52.
+54.
 
 
 Package natbib Warning: Citation `bvdecide' on page 3 undefined on input line 1
-63.
+65.
+
+<logistics.pdf, id=54, 569.12625pt x 236.885pt>
+File: logistics.pdf Graphic file (type pdf)
+<use logistics.pdf>
+Package pdftex.def Info: logistics.pdf  used on input line 172.
+(pdftex.def)             Requested size: 455.30162pt x 189.50824pt.
+
+Class acmart Warning: A possible image without description on input line 185.
 
 
 Package natbib Warning: Citation `bhat2024verifying' on page 3 undefined on inp
-ut line 172.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ut line 190.
 
 
 Package natbib Warning: Citation `symbiyosys' on page 3 undefined on input line
- 184.
+ 202.
 
 
 Package natbib Warning: Citation `witharana2022survey' on page 3 undefined on i
-nput line 184.
+nput line 202.
 
 
-Package natbib Warning: Citation `de2008z3' on page 3 undefined on input line 1
-85.
+Package natbib Warning: Citation `de2008z3' on page 3 undefined on input line 2
+03.
 
 
 Package natbib Warning: Citation `mukherjee2015hardware' on page 3 undefined on
- input line 194.
+ input line 212.
 
 
 Package natbib Warning: Citation `malik2008hardware' on page 3 undefined on inp
-ut line 194.
+ut line 212.
 
 
 Package natbib Warning: Citation `bernstein2021semantics' on page 3 undefined o
-n input line 197.
+n input line 215.
 
 
-Overfull \hbox (5.05557pt too wide) in paragraph at lines 193--200
+Overfull \hbox (5.05557pt too wide) in paragraph at lines 211--218
 \T1/LinuxLibertineT-TLF/m/n/10.95 (-20) where the ap-pli-ca-tion of dif-fer-ent
  ver-i-fi-ca-tion ap-proaches
  []
 
 
-Overfull \hbox (2.74774pt too wide) in paragraph at lines 193--200
+Overfull \hbox (2.74774pt too wide) in paragraph at lines 211--218
 \T1/LinuxLibertineT-TLF/m/n/10.95 (-20) is pos-si-ble and ben-e-fi-cial. Ex-plo
 r-ing dif-fer-ent ap-proaches
  []
@@ -1656,29 +1673,30 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [3.3]
-<logistics.pdf, id=59, 569.12625pt x 236.885pt>
-File: logistics.pdf Graphic file (type pdf)
-<use logistics.pdf>
-Package pdftex.def Info: logistics.pdf  used on input line 216.
-(pdftex.def)             Requested size: 455.30162pt x 189.50824pt.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Class acmart Warning: A possible image without description on input line 218.
+
+LaTeX Warning: Reference `fig:logistics' on page 4 undefined on input line 233.
 
 
-Overfull \hbox (6.54199pt too wide) in paragraph at lines 220--221
-\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) This re-search pro-posal com-prises thr
-ee mile-stones, which
+
+Overfull \hbox (10.2302pt too wide) in paragraph at lines 236--247
+\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) the for-mal-iza-tion of latency-insensi
+tive be-haviours
  []
 
 
-Overfull \hbox (8.59181pt too wide) in paragraph at lines 222--231
-\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) accurate rep-re-sen-ta-tion. Sub-se-que
-ntly, I will spend
- []
+Underfull \vbox (badness 1803) has occurred while \output is active []
 
 
-Overfull \hbox (3.34679pt too wide) in paragraph at lines 234--241
+
+Package fancyhdr Warning: \footskip is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\footskip}{13.0pt}.
+
+[4.4 <./logistics.pdf>]
+Overfull \hbox (3.34679pt too wide) in paragraph at lines 253--260
 []\T1/LinuxLibertineT-TLF/b/n/10.95 (-20) Explore dif-fer-ent ver-i-fi-ca-tion 
 strate-gies\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) , such
  []
@@ -1694,33 +1712,35 @@ Class acmart Warning: Some images may lack descriptions.
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
-[4.4]
-
-Package fancyhdr Warning: \footskip is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.0pt, for example:
-(fancyhdr)                \setlength{\footskip}{13.0pt}.
-
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [5.5 <./logistics.pdf>] (./research-proposal.aux)
+) [5.5]
+(./research-proposal.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `research-proposal.out' has not changed.
 (rerunfilecheck)             Checksum: 60B423E3E047F04305DDCFEB5D869DC5;629.
  ) 
 Here is how much of TeX's memory you used:
- 26683 strings out of 474104
- 443900 string characters out of 5743467
+ 26692 strings out of 474104
+ 444094 string characters out of 5743467
  1951493 words of memory out of 5000000
- 48174 multiletter control sequences out of 15000+600000
- 658438 words of font info for 248 fonts, out of 8000000 for 9000
+ 48176 multiletter control sequences out of 15000+600000
+ 658960 words of font info for 252 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,12n,131p,1344b,670s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,131p,1367b,681s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
 a-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/Lin
 BiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/
@@ -1728,10 +1748,10 @@ LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libert
 ine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb>
-Output written on research-proposal.pdf (5 pages, 436332 bytes).
+Output written on research-proposal.pdf (5 pages, 438686 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
  37435 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -4,6 +4,7 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \AC@reset@newl@bel
 \citation{circt,mlir_circt}
+\citation{circt,mlir_circt}
 \citation{huang2018instruction,chen2021leveraging,mattarei2018cosa}
 \citation{melham1988abstraction}
 \citation{bourgeat2020essence}
@@ -40,7 +41,7 @@
 \citation{barrett2010smt}
 \citation{gurfinkel2022program}
 \citation{zhao2024k}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Formalizing the semantics (S) of CIRCT dialects in Lean4 will allows us to (1) verify the compilation and equivalence between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property (P) holds for a designs (D) at a certain level.}}{2}{figure.caption.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Formalizing the semantics (S) of CIRCT dialects in Lean4 allows us to (1) verify the compilation and equivalence between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property (P) holds for a design (D) at a certain level.}}{2}{figure.caption.2}\protected@file@percent }
 \AC@undonewlabel{acro:ir}
 \newlabel{acro:ir}{{2}{2}{Related Work}{section*.3}{}}
 \newlabel{acro:ir@cref}{{[section][2][]2}{[1][2][]2}}
@@ -59,6 +60,11 @@
 \acronymused{rtl}
 \acronymused{ir}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Research Direction and Challenges}{3}{section.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC) This phase will require careful study of existing works, especially concerning the formalization of latency-insensitive behaviours in DC and their interface with cycle-accurate representation. The next three months will be devoted to the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). One more month will be necessary to tackle the engineering involved in combining all these dialects in the Lean-MLIR framework and ensuring they work flexibly and their integration is functional. During the the last four months of the first year I will the correctness of the lowerings from the higher-level abstractions to RTL, collaborating with Thomas Bourgeat's research group at EPFL. The second year will be dedicated to implementing the property specifications in Lean-MLIR. I also aim to visit Fondazione Bruno Kessler (FBK) and University of Trento during this time. During the last year I will investigate alternative decision procedure and verification frameworks, collaborating with Caterina Urban's research group at ENS. }}{4}{figure.caption.5}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:logistics}{{2}{4}{I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC) This phase will require careful study of existing works, especially concerning the formalization of latency-insensitive behaviours in DC and their interface with cycle-accurate representation. The next three months will be devoted to the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). One more month will be necessary to tackle the engineering involved in combining all these dialects in the Lean-MLIR framework and ensuring they work flexibly and their integration is functional. During the the last four months of the first year I will the correctness of the lowerings from the higher-level abstractions to RTL, collaborating with Thomas Bourgeat's research group at EPFL. The second year will be dedicated to implementing the property specifications in Lean-MLIR. I also aim to visit Fondazione Bruno Kessler (FBK) and University of Trento during this time. During the last year I will investigate alternative decision procedure and verification frameworks, collaborating with Caterina Urban's research group at ENS}{figure.caption.5}{}}
+\newlabel{fig:logistics@cref}{{[figure][2][]2}{[1][3][]4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Research Organization}{4}{section.4}\protected@file@percent }
 \bibstyle{acm}
 \bibdata{biblio}
 \newlabel{tocindent-1}{0pt}
@@ -66,7 +72,5 @@
 \newlabel{tocindent1}{5.09174pt}
 \newlabel{tocindent2}{0pt}
 \newlabel{tocindent3}{0pt}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Research Organization}{4}{section.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces logistics}}{5}{figure.caption.5}\protected@file@percent }
 \newlabel{TotPages}{{5}{5}{}{page.5}{}}
 \gdef \@abspage@last{5}

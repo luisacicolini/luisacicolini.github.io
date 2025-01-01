@@ -168,6 +168,22 @@ This fact demonstrates the potential of Lean4 in the field of verification and t
 
 \section{Research Direction and Challenges}
 
+\begin{figure*}[ht]
+    \includegraphics[scale=0.8]{logistics.pdf}
+    \caption{I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC)  This phase will require careful study of existing works, especially concerning the formalization of latency-insensitive 
+    behaviours in DC and their interface with cycle-accurate representation. 
+    The next three months will be devoted to the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). 
+    One more month will be necessary to tackle the engineering involved in combining all these dialects in the Lean-MLIR framework and ensuring they work 
+    flexibly and their integration is functional. During the the last four months of the first year I will the correctness of the lowerings from the higher-level 
+    abstractions to RTL, collaborating with Thomas Bourgeat's research group at EPFL. 
+    The second year will be dedicated to implementing the property specifications in Lean-MLIR. I also aim to visit Fondazione Bruno Kessler (FBK) and University of Trento 
+    during this time. 
+    During the last year I will investigate alternative decision procedure and verification frameworks, collaborating with 
+    Caterina Urban's research group at ENS.
+    }
+    \label{fig:logistics}
+\end{figure*}
+
 During my PhD, I aim to enhance verification efforts for the CIRCT infrastructure by formalizing the semantics of its dialects 
 to enable the verification of lowerings and optimizations, the adoption of novel verification techniques, 
 and the progressive verification of designs' properties. 
@@ -214,33 +230,39 @@ in the CIRCT ecosystem.
 
 \section{Research Organization}
 
-\begin{figure*}[ht]
-    \includegraphics[scale=0.8]{logistics.pdf}
-    \caption{logistics}
-\end{figure*}
-
+Figure~\ref{fig:logistics} summarizes the organization of my PhD.
 This research proposal comprises three milestones, which I plan to distribute in the three years of the PhD: 
 \begin{enumerate}
     \item The goal of the first year is to \textbf{formalize the semantics of a first subset of high-level CIRCT dialects} (namely FSM, Handshake and DC) 
- and \textbf{verify their lowering to RTL level within Lean-MLIR}. This step is fundamental for the verification of the entire compilation. 
- To achieve this goal, I will spend the first four months of the PhD implementing in Lean4 the semantics of two high-level dialects (FSM, DC) and 
- the optimizations they involve. This phase will require careful study of existing works, especially concerning the formalization of latency-insensitive 
+ and \textbf{verify their lowering to RTL level within Lean-MLIR}.
+ This phase will require careful study of existing works, especially concerning the formalization of latency-insensitive 
  behaviours in DC and their interface with cycle-accurate representation. 
- Subsequently, I will spend the next three months implementing the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). 
- One more month will be necessary to tackle the engineering aspects involved in combining all these dialects in the Lean-MLIR framework and ensuring they work 
- flexibly and their integration is functional. I will spend the last four months of the first year proving the correctness of the lowerings from the higher-level 
- abstractions to RTL, including the optimizations involved. 
+ Then, I will implement the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq) and 
+ spend some time on the engineering aspects involved in combining all these dialects in Lean-MLIR. 
+ As a final task for the first year, I will prove the correctness of the lowerings from the higher-level 
+ abstractions to RTL, including some of the optimizations involved.
+ I will aim to publish the formally verified semantics resulting from this work at PLDI and present it at LLVM-dev meetings.
+ Thomas Bourgeat and his research group represent an excellent collaboration opportunity at this stage of the Ph.D., because of 
+ their expertise in the area of hardware semantics definition and verification. 
     \item \textbf{Bringing designs’ verification at a higher abstraction level, exploiting different dialects and their formalized semantics}. 
  At this point, a crucial step is understanding how to correctly specify relevant properties, which will require thorough readings in the state of the art. 
  Moreover, I plan to add further dialects to the Lean-MLIR framework during the second year. 
+ During the second year I intend to also collaborate with Stefano Tonetta's research group at Fondazione Bruno Kessler (FBK), due to their 
+ expertise in the development of verification techniques and solvers. 
+ CAV is the ideal conference to publish the output of this second year.
     \item \textbf{Explore different verification strategies}, such as automata-theoretic approaches and abstract interpretation frameworks, 
  to fully take advantage of the formalized semantics. During the last year, I plan to take advantage of the effort put into effectively formalizing CIRCT dialects. 
  I will investigate how other verification techniques can further take advantage of the formalized semantics to improve the 
  guarantees concerning the design’s behaviour, aiming to reduce the number of necessary iterations. 
- I will also devote part of the last year to writing the PhD thesis, which will focus on how CIRCT and Lean4 are 
+ To work on these topics I intend to collaborate with Caterina Urban's research group at ENS, given the high-impact work 
+ they carried out in the field of abstract interpretation and semantics analysis. 
+ PLDI and POPL are the conference targets to publish the output of the last year. 
+    \item I plan to spend 6 additional months writing the Ph.D. thesis, which will focus on how CIRCT and Lean4 are 
  a unique combination of tools to make hardware verification flexible and extensible, bending its tools to fit 
  different designs and techniques.
 \end{enumerate}
+Since I intend to continue my path in academia after the Ph.D., the work of the next 3.5 years is a starting point to 
+become an expert in this field, build valuable connections and lay the foundations for the research work to come. 
 
 \thispagestyle{empty}
 \bibliographystyle{acm}
