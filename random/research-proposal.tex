@@ -134,20 +134,26 @@ requiring to
 
 \section{Related Work}
 
-Given the paramount importance of verification in hardware design, numerous works tackled the formalization and definition of 
-semantics in hardware description languages, considering different levels of abstraction~\cite{melham1988abstraction}. 
+Previous works tackled the formalization and definition of semantics in hardware description languages, considering different levels of abstraction~\cite{melham1988abstraction}. 
+There also exist promising efforts bridging hardware compilers, and CIRCT specifically, with formal methods. 
+However, these are currently limited in exploiting high-level abstractions due to the complexity of the verification tools they rely on, 
+for example classical SMT solvers.
+Lean4 is currently the best option for reasoning about the semantics of CIRCT-like infrastructures, as proven by Lean-MLIR~\cite{bhat2024verifying}, 
+as it provides a flexible and verified environment to encode domain-specific dialects.
+
 Koika~\cite{bourgeat2020essence} directly derives from Bluespec~\cite{bluespec} and features novel and deterministic operational semantics, 
 including a verified compiler to circuits. In particular, Koika highlights the importance of cycle-accurate description (and semantics) 
 when dealing with the performance of circuits without compromising on the straightforward description of their functional properties. 
 In particular, the authors highlight how traditional HDLs and HLS compilers lack precise semantics, making it especially hard to 
 describe complex interactions between different modules.
+
 ReWire~\cite{procter2015semantics} introduces a functional programming language with a compiler that translates the high-level 
 description of a design into working hardware relying on the language's semantics to describe its behaviour.
+
 Chisel~\cite{bachrach2012chisel} is another powerful structural language embedded in Scala, also used as a frontend for CIRCT. 
+
 Finally, Bernstein et al. ~\cite{bernstein2021semantics} suggest exploiting abstract interpretation to formalize and represent 
 different hardware abstractions, which require focusing on different aspects of the semantics. 
-% In particular, this work considers the differences in event-based semantics (e.g. the ones commonly used for dataflow abstractions) 
-% and semantics derived from sequential code description languages (e.g. in HLS workflow). 
 The authors use abstract interpretation to describe the semantics at different levels of abstraction, 
 mainly focusing on the representations used in the early phase of the design when reasoning at the latency-insensitive level of the hardware representation.
 In particular, the semantics of latency-insensitive abstractions and their relationship to cycle-based representations are incredibly challenging. 
