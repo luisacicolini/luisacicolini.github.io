@@ -86,28 +86,50 @@
     (P) holds for a design (D) at a certain level.}
 \end{figure*}
 
-Hardware design is inherently complex, requiring a thorough understanding of numerous components and tools. 
-Verification is crucial in the design process as it can uncover expensive and potentially critical mistakes before the tape-out.
+Design modern hardware is an incredibly complex procedure, 
+the more so as the demand for domain-specific architectures increases
+to make up for the decline of general-purpose ones [cite asanovic, hp]. 
+Verification plays a crucial role in the process, as it can uncover 
+expensive and potentially critical mistakes before the tape-out: yet, 
+it also represents a bottleneck for the design procedure. 
 
-The CIRCT project~\cite{circt, mlir_circt} introduces a novel concept of hardware compiler, comprising different domain-specific abstractions (\textit{dialects}),  %concept->conception maybe
-frontends and backends that make the compilation of a design progressive, through numerous lowerings through different dialects. 
-Exploiting these abstractions allows the designers to reason about different aspects of the design separately and introduce various 
-optimizations at different levels of abstraction.
+To address the hardware design challenge, the CIRCT project~\cite{circt, mlir_circt} introduces 
+a novel concept of hardware compiler, supporting different frontends and backends, and comprising 
+different domain-specific abstractions (\textit{dialects}) that make 
+the compilation of a design progressive, 
+through different lowerings and dialects. 
+Thanks to tailored domain-specific abstractions, CIRCT allows designers to use effective 
+local reasoning to analyze and optimize the numerous domain-specific concepts it models.
 In brief, CIRCT~\cite{circt, mlir_circt} allows the progressive compilation of high-level abstractions, such as Finite State Machines, into lower-level representations, 
 such as Verilog, via different lowerings. 
-This approach proved successful in increasing the reusability of the code and introducing specific optimizations at different abstraction levels, 
-by relying on the progressive lowering of the code. 
+This approach proved successful in introducing domain-specific optimizations at different abstraction levels, 
+by relying on the progressive lowering of the code, outputting production-quality, optimized code [cite companies]. 
 Being able to optimize and reason about a design at various abstraction levels is especially appealing from a hardware 
 designer's perspective. 
-Moreover, CIRCT's higher-level abstractions provide valuable information about the design's structure, 
-which is available to perform verification tasks at a higher level, verify the compilation itself, 
-and extract useful information that can serve lower-level verification tools~\cite{huang2018instruction, chen2021leveraging, mattarei2018cosa}. 
 
-\textbf{Taking advantage of high-level abstractions is fundamental to building a verification toolchain that fully exploits the unique characteristics 
-of the CIRCT ecosystem}. This allows verification tools to leverage the expressive power of different representations, for example, dataflow and \ac{fsm}. 
-However, extracting useful high-level information remains a complex task due to the scarce formalization and the lack of precise 
-semantics for CIRCT dialects. Overall, accurately formalizing the semantics of such diverse dialects and abstractions remains a 
-significant challenge and is critical for verifying the correctness of the designs, optimizations and lowerings involved in the compilation. 
+Exploiting the valuable information higher-level abstractions contain to bring verification 
+tasks at a higher level and guide lower-level verification tooling already proved successful
+in certain specific cases~\cite{huang2018instruction, chen2021leveraging, mattarei2018cosa}.
+CIRCT represents an excellent infrastructure to expand and make the most of this approach, 
+given the amount of domain-specific abstractions it includes.
+
+\textbf{Bridging domain-specific abstractions and 
+verification tooling is a necessary step to make sure that 
+verification is up-to-speed with the recent domain-specific hardware 
+design trends}. 
+The CIRCT ecosystem is a perfect playground for this kind of reasoning 
+about hardware verification, providing numerous high-level abstractions.
+These characteristics allows verification tools to leverage the 
+expressive power of different representations, for example, dataflow and \ac{fsm}. 
+However, taking advantage of such high-level information remains a complex task due 
+to the scarce formalization and the lack of precise 
+semantics for CIRCT dialects. 
+Overall, the formal verification of the semantics of such diverse dialects 
+and domain-specific abstractions remains a critical challenge, 
+requiring to
+(1) precisely defining the semantics of the dialects relying on little-to-no documentation, 
+(2) identifying and using effective automatic reasoning tools for the formalization, 
+(c) updating the semantics as the design is lowered through different abstractions. 
 
 
 \section{Related Work}
