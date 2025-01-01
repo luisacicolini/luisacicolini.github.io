@@ -58,7 +58,7 @@
     Hardware verification is a fundamental step of the hardware design process, preventing expensive and potentially critical 
     mistakes.
     As the complexity of hardware designs increases, so does the need for more efficient verification strategies that can 
-    make the overall design procedure smoother.
+    make the overall design procedure smoother. % smoothen the overall...?
     In this context, exploiting higher-level hardware representations can be a game changer in verifying the designs 
     progressively during its lowering and exploring different verification approaches that do not work 
     with lower-level hardware representations. 
@@ -77,22 +77,24 @@
 
 \begin{figure*}[ht]
     \includegraphics[scale=0.8]{semantics.pdf}
-    \caption{Formalizing the semantics (S) of CIRCT dialects in Lean4 will allows us to (1) verify the compilation and equivalence 
-    between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property 
-    (P) holds for a designs (D) at a certain level.}
+    \caption{Formalizing the semantics (S) of CIRCT dialects in Lean4 allows us to (1) verify the compilation and equivalence 
+    between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property  % verification approaches in verified environment sounds weird
+    (P) holds for a design (D) at a certain level.}
 \end{figure*}
 
 Hardware design is inherently complex, requiring a thorough understanding of numerous components and tools. 
 Verification is crucial in the design process as it can uncover expensive and potentially critical mistakes before the tape-out.
-The CIRCT project~\cite{circt, mlir_circt} introduces a novel concept of a multi-level hardware compiler.
-This comprises of different domain-specific abstractions (\textit{dialects}), 
-frontends and backends that make the compilation of a harware design progressive, through numerous lowerings among different dialects. 
+
+The CIRCT project~\cite{circt, mlir_circt} introduces a novel concept of hardware compiler, comprising different domain-specific abstractions (\textit{dialects}),  %concept->conception maybe
+frontends and backends that make the compilation of a design progressive, through numerous lowerings through different dialects. 
 Exploiting these abstractions allows the designers to reason about different aspects of the design separately and introduce various 
 optimizations at different levels of abstraction.
+In brief, CIRCT~\cite{circt, mlir_circt} allows the progressive compilation of high-level abstractions, such as Finite State Machines, into lower-level representations, 
+such as Verilog, via different lowerings. 
 This approach proved successful in increasing the reusability of the code and introducing specific optimizations at different abstraction levels, 
 by relying on the progressive lowering of the code. 
-Being able to optimize and reason on a design at various abstraction levels is especially appealing from a hardware 
-designer's perspective.
+Being able to optimize and reason about a design at various abstraction levels is especially appealing from a hardware 
+designer's perspective. 
 Moreover, CIRCT's higher-level abstractions provide valuable information about the design's structure, 
 which is available to perform verification tasks at a higher level, verify the compilation itself, 
 and extract useful information that can serve lower-level verification tools~\cite{huang2018instruction, chen2021leveraging, mattarei2018cosa}. 
@@ -122,7 +124,7 @@ different hardware abstractions, which require focusing on different aspects of 
 % and semantics derived from sequential code description languages (e.g. in HLS workflow). 
 The authors use abstract interpretation to describe the semantics at different levels of abstraction, 
 mainly focusing on the representations used in the early phase of the design when reasoning at the latency-insensitive level of the hardware representation.
-In particular, the semantics of latency-insensitive abstractions and their relationship to cycle-based representation are incredibly challenging. 
+In particular, the semantics of latency-insensitive abstractions and their relationship to cycle-based representations are incredibly challenging. 
 In this context, Carloni et al. ~\cite{carloni2001theory} introduce a theory to describe and represent latency-insensitive circuits and systems. 
 The idea is to represent complex systems considering their single functional components and communication according to a specific protocol. 
 The theory introduced allows for the composition of such single components into a complex system to satisfy synchronization and communication properties. 
@@ -135,8 +137,8 @@ guarantees concerning the designs and, ultimately, the compilation itself.
 Due to the complexity of its environment, correctness guarantees in CIRCT require careful reflection on the semantics of the various \acp{ir} involved and the lowerings between them. 
 To tackle this problem, CIRCT features different lowerings to standard hardware verification formats, such as \texttt{btor2}~\cite{btor2, niemetz2018btor2}, \texttt{aig}~\cite{aiger2} and \texttt{SMT-LIB}~\cite{barrett2010smt}, 
 that contribute to integrating verification within the hardware design process.
-In particular, the SMT dialect represents one means towards formalizing dialects' semantics at different levels. 
-In fact, this dialect comprises most SMT-LIB~\cite{barrett2010smt} operators and is the endpoint of various lowerings from different dialects, 
+In particular, the SMT dialect represents one means of formalizing dialects' semantics at different levels. 
+In fact, this dialect comprises most SMT-LIB~\cite{barrett2010smt} operators and is the endpoint of various lowerings from different dialects, % comprises -> encompasses
 meaning that their semantics is encoded in SMT-LIB and can be exported to SMT-LIB for verification.
 The dialect is part of the compiler verification and optimization efforts currently under development in a research group at the 
 University of Cambridge, with whom I have worked for the past year. 
@@ -152,7 +154,7 @@ In fact, when using typical verification methods, such as SMT and SAT solvers, w
 As an example, consider z3~\cite{de2008z3}: it consists of a huge C++ codebase, it is not verified, and these characteristics make the extension
 of its tactics and logics incredibly hard. 
 As a consequence, optimizing the job of the SMT solver, for example by introducing tactics that exploit domain-specific knowledge available at 
-higher abstraction levels is not a practically viable solution. 
+higher abstraction levels is not a practically viable solution. % would smt experts agree with this? :)
 Instead, Lean4 provides a flexible and verified environment to expand CIRCT's verification tooling, 
 making it possible to write theorems that encode certain domain-specific behaviours and successfully guide the verification, 
 with a significantly higher degree of trust. 
