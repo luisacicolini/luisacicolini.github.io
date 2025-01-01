@@ -60,15 +60,15 @@
     As the complexity of hardware designs increases, so does the need for more efficient verification strategies that can 
     make the overall design procedure smoother. % smoothen the overall...?
     In this context, exploiting higher-level hardware representations can be a game changer in verifying the designs 
-    progressively during their lowering and explore different verification approaches that do not work with 
-    lower-level hardware representations. % the part after the and doesnt make sense gramamtically, rephrase.
+    progressively during its lowering and exploring different verification approaches that do not work 
+    with lower-level hardware representations. 
     However, efficiently extracting such high-level information remains a challenge due to the lack of formalized semantics  
-    for high-level abstractions, which often rely on very specific structures, for example, \acp{fsm}.
+    for high-level abstractions, which often rely on very specific structures such as \acp{fsm}.
     With this work, I aim to build the necessary infrastructure that can exploit such information,
-    by formalizing the semantics of different hardware abstractions within the CIRCT ecosystem, to 
+    by formalizing the semantics of different hardware abstractions within the CIRCT ecosystem of hardware design tools, to 
     (1) extract relevant higher-level information that can guide lower-level verification efforts, 
-    (2) verify (parts of) the CIRCT compiler itself, % and?
-    (3) explore different approaches to the verification of higher-level representations, thus distributing verification 
+    (2) formally verify (parts of) the CIRCT compiler itself, 
+    (3) explore different approaches to the verification of higher-level representation, thus distributing verification 
     efforts throughout the overall design procedure. 
 }
 
@@ -84,8 +84,9 @@
 
 Hardware design is inherently complex, requiring a thorough understanding of numerous components and tools. 
 Verification is crucial in the design process as it can uncover expensive and potentially critical mistakes before the tape-out.
+
 The CIRCT project~\cite{circt, mlir_circt} introduces a novel concept of hardware compiler, comprising different domain-specific abstractions (\textit{dialects}),  %concept->conception maybe
-frontends and backends that make the compilation of a design progressive, through numerous lowerings among different dialects.  % among -> through?
+frontends and backends that make the compilation of a design progressive, through numerous lowerings through different dialects. 
 Exploiting these abstractions allows the designers to reason about different aspects of the design separately and introduce various 
 optimizations at different levels of abstraction.
 In brief, CIRCT~\cite{circt, mlir_circt} allows the progressive compilation of high-level abstractions, such as Finite State Machines, into lower-level representations, 
@@ -95,15 +96,14 @@ by relying on the progressive lowering of the code.
 Being able to optimize and reason about a design at various abstraction levels is especially appealing from a hardware 
 designer's perspective. 
 Moreover, CIRCT's higher-level abstractions provide valuable information about the design's structure, 
-which is available to perform preliminary verification tasks at a higher level, verify the compilation itself, 
+which is available to perform verification tasks at a higher level, verify the compilation itself, 
 and extract useful information that can serve lower-level verification tools~\cite{huang2018instruction, chen2021leveraging, mattarei2018cosa}. 
 
 \textbf{Taking advantage of high-level abstractions is fundamental to building a verification toolchain that fully exploits the unique characteristics 
-of the CIRCT ecosystem}, allowing designers to leverage the expressive power of different representations, for example, dataflow and \ac{fsm}. 
+of the CIRCT ecosystem}. This allows verification tools to leverage the expressive power of different representations, for example, dataflow and \ac{fsm}. 
 However, extracting useful high-level information remains a complex task due to the scarce formalization and the lack of precise 
 semantics for CIRCT dialects. Overall, accurately formalizing the semantics of such diverse dialects and abstractions remains a 
 significant challenge and is critical for verifying the correctness of the designs, optimizations and lowerings involved in the compilation. 
-
 
 
 \section{Related Work}
@@ -159,7 +159,7 @@ Instead, Lean4 provides a flexible and verified environment to expand CIRCT's ve
 making it possible to write theorems that encode certain domain-specific behaviours and successfully guide the verification, 
 with a significantly higher degree of trust. 
 This characteristics also makes Lean4 the perfect environment to experiment with further, verified verification 
-methods, for example abstract interpretation.
+methods such as abstract interpretation.
 Lean4 already proved very effective in building white-box automation techniques for bitvector manipulation (to which I contributed)
 and verification. 
 In particular the \texttt{bv\_decide} tactic~\cite{bvdecide} represents a first effort in this space, implementing a verified bitblaster and 
@@ -180,8 +180,8 @@ Besides introducing a powerful means to reason about dialects' semantics and the
 this work will also lay the foundations for including higher-level verification techniques into CIRCT, for example, those leveraging automata-theoretic 
 and abstract-interpretation-based approaches. 
 
-This work takes advantage of CIRCT's great potential, lying in the high-level information available at different abstraction levels it provides, 
-and combines it with Lean4's flexibility and trust. 
+This work takes advantage of CIRCT's high-level information at different abstraction levels,
+and combines it with Lean4's flexibility and minimal trusted codebase. 
 Until now, encoding high-level information in standard lower-level hardware verification techniques 
 (such as assertion-based verification or SMT solvers) has been very complex ~\cite{symbiyosys, witharana2022survey}, 
 due to the scarce flexibility of the tools involved (e.g. z3~\cite{de2008z3}) and the limited number of abstractions they support. 
@@ -197,12 +197,10 @@ Exploring different approaches in the context of hardware verification is curren
 with a suitable abstraction that can be digested by alternative verification methodologies, such as abstract interpretation frameworks. 
 Nevertheless, preliminary studies suggested the effectiveness of these methodologies, 
 especially at specific abstraction levels~\cite{bernstein2021semantics}. 
-Formalizing the semantics of CIRCT dialects is a game-changer in this context, the more so when the formalization 
-lives in a verified environment such as the one Lean4 offers. 
+Formalizing the semantics of CIRCT dialects in an interactive theorem prover is a game-changer in this context,
+as it proves a stable foundation to explore many verification strategies.
 
-
-
-Lean4 is a fertile and open-source environment to work on verification frameworks thanks to its flexibility, versatility and trust level. 
+Lean4 is a fertile, open-source environment to work on verification frameworks thanks to its flexibility, versatility and trust level. 
 Moreover, working in an open-source environment is an incredibly valuable aspect of this work, as it significantly increases the quality of the output - thanks to peer-review processes - 
 and creates impact, being available to numerous users.  
 
@@ -216,6 +214,11 @@ in the CIRCT ecosystem.
 
 \section{Research Organization}
 
+\begin{figure*}[ht]
+    \includegraphics[scale=0.8]{logistics.pdf}
+    \caption{logistics}
+\end{figure*}
+
 This research proposal comprises three milestones, which I plan to distribute in the three years of the PhD: 
 \begin{enumerate}
     \item The goal of the first year is to \textbf{formalize the semantics of a first subset of high-level CIRCT dialects} (namely FSM, Handshake and DC) 
@@ -228,7 +231,7 @@ This research proposal comprises three milestones, which I plan to distribute in
  flexibly and their integration is functional. I will spend the last four months of the first year proving the correctness of the lowerings from the higher-level 
  abstractions to RTL, including the optimizations involved. 
     \item \textbf{Bringing designs’ verification at a higher abstraction level, exploiting different dialects and their formalized semantics}. 
- At this point, a crucial step is understanding how to correctly specify relevant properties, which will require thorough readings in the State of the Art. 
+ At this point, a crucial step is understanding how to correctly specify relevant properties, which will require thorough readings in the state of the art. 
  Moreover, I plan to add further dialects to the Lean-MLIR framework during the second year. 
     \item \textbf{Explore different verification strategies}, such as automata-theoretic approaches and abstract interpretation frameworks, 
  to fully take advantage of the formalized semantics. During the last year, I plan to take advantage of the effort put into effectively formalizing CIRCT dialects. 
