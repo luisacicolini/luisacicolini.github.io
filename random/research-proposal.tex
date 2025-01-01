@@ -124,7 +124,7 @@ different hardware abstractions, which require focusing on different aspects of 
 % and semantics derived from sequential code description languages (e.g. in HLS workflow). 
 The authors use abstract interpretation to describe the semantics at different levels of abstraction, 
 mainly focusing on the representations used in the early phase of the design when reasoning at the latency-insensitive level of the hardware representation.
-In particular, the semantics of latency-insensitive abstractions and their relationship to cycle-based representation are incredibly challenging. 
+In particular, the semantics of latency-insensitive abstractions and their relationship to cycle-based representations are incredibly challenging. 
 In this context, Carloni et al. ~\cite{carloni2001theory} introduce a theory to describe and represent latency-insensitive circuits and systems. 
 The idea is to represent complex systems considering their single functional components and communication according to a specific protocol. 
 The theory introduced allows for the composition of such single components into a complex system to satisfy synchronization and communication properties. 
@@ -137,8 +137,8 @@ guarantees concerning the designs and, ultimately, the compilation itself.
 Due to the complexity of its environment, correctness guarantees in CIRCT require careful reflection on the semantics of the various \acp{ir} involved and the lowerings between them. 
 To tackle this problem, CIRCT features different lowerings to standard hardware verification formats, such as \texttt{btor2}~\cite{btor2, niemetz2018btor2}, \texttt{aig}~\cite{aiger2} and \texttt{SMT-LIB}~\cite{barrett2010smt}, 
 that contribute to integrating verification within the hardware design process.
-In particular, the SMT dialect represents one means towards formalizing dialects' semantics at different levels. 
-In fact, this dialect comprises most SMT-LIB~\cite{barrett2010smt} operators and is the endpoint of various lowerings from different dialects, 
+In particular, the SMT dialect represents one means of formalizing dialects' semantics at different levels. 
+In fact, this dialect comprises most SMT-LIB~\cite{barrett2010smt} operators and is the endpoint of various lowerings from different dialects, % comprises -> encompasses
 meaning that their semantics is encoded in SMT-LIB and can be exported to SMT-LIB for verification.
 The dialect is part of the compiler verification and optimization efforts currently under development in a research group at the 
 University of Cambridge, with whom I have worked for the past year. 
@@ -154,13 +154,13 @@ In fact, when using typical verification methods, such as SMT and SAT solvers, w
 As an example, consider z3~\cite{de2008z3}: it consists of a huge C++ codebase, it is not verified, and these characteristics make the extension
 of its tactics and logics incredibly hard. 
 As a consequence, optimizing the job of the SMT solver, for example by introducing tactics that exploit domain-specific knowledge available at 
-higher abstraction levels is not a practically viable solution. 
+higher abstraction levels is not a practically viable solution. % would smt experts agree with this? :)
 Instead, Lean4 provides a flexible and verified environment to expand CIRCT's verification tooling, 
 making it possible to write theorems that encode certain domain-specific behaviours and successfully guide the verification, 
 with a significantly higher degree of trust. 
 This characteristics also makes Lean4 the perfect environment to experiment with further, verified verification 
 methods, for example abstract interpretation.
-Lean4 already proved very effective in building white-box automation techniques for bitvectors manipulation (to which I contributed)
+Lean4 already proved very effective in building white-box automation techniques for bitvector manipulation (to which I contributed)
 and verification. 
 In particular the \texttt{bv\_decide} tactic~\cite{bvdecide} represents a first effort in this space, implementing a verified bitblaster and 
 LRAT checker. 
