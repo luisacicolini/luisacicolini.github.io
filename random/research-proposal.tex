@@ -35,7 +35,7 @@
 \acrodef{re}[RE]{Regular Expression}
 \acrodef{nlp}[NLP]{Natural Language Processing}
 \acrodef{ast}[AST]{Abstract Syntax Tree}
-\acrodef{fsa}[FSA]{Finite State Automaton}
+\acrodef{eda}[EDA]{Electronic Design Automation}
 \acrodef{itp}[ITP]{Interactive Theorem Proving}
 \acrodef{cegar}[CEGAR]{Counterexample-Guided Abstraction Refinement}
 
@@ -58,19 +58,23 @@
     Hardware verification is a fundamental step of the hardware design process, preventing expensive and potentially critical 
     mistakes.
     As the complexity of hardware designs increases, so does the need for more efficient verification strategies that can 
-    make the overall design procedure smoother. % smoothen the overall...?
-    In this context, exploiting higher-level hardware representations can be a game changer in verifying the designs 
-    progressively during its lowering and exploring different verification approaches that do not work 
-    with lower-level hardware representations. 
-    However, efficiently extracting such high-level information remains a challenge due to the lack of formalized semantics  
-    for high-level abstractions, which often rely on very specific structures such as \acp{fsm}.
-    With this work, I aim to build the necessary infrastructure that can exploit such information,
-    by formalizing the semantics of different hardware abstractions within the CIRCT ecosystem of hardware design tools, to 
-    (1) extract relevant higher-level information that can guide lower-level verification efforts, 
-    (2) formally verify (parts of) the CIRCT compiler itself, 
-    (3) explore different approaches to the verification of higher-level representation, thus distributing verification 
-    efforts throughout the overall design procedure. 
-}
+    streamline the overall process.
+    The CIRCT \ac{eda} stack has recently shown that explicit representations of higher-level, domain-specific 
+    hardware enable the effective generation of optimized Verilog code.
+    Such higher-level hardware representations can be a game changer in verifying the designs 
+    progressively as they are lowered and exploring novel, domain-specific verification approaches. 
+    In fact, taking advantage of these representations for verification purposes remains a challenge due to the lack of 
+    formalized semantics for high-level abstractions, which often rely on domain-specific structures such as \acp{fsm}.
+    In my Ph.D. I will exploit modern multi-level EDA approaches to formally verify the semantics of high-level, domain-specific 
+    hardware abstractions, making the manipulation and verification of their semantics scalable and white-box.
+    In particular, I aim to    
+    (1) formalize higher-level abstractions to lower-level verification efforts, 
+    (2) verify transformations from several high-level level abstractions to low-level ones (e.g. in the CIRCT ecosystem)
+    (3) explore domain-specific decision procedures and reasoning frameworks for the verification of higher-level abstractions beyond SMT solvers, 
+    thus such that the verification evolves as the design is lowered. 
+    This work will make hardware verification accessible in the early stages of the design process, in a white-box framework 
+    that can take advantage of different domain-specific abstractions.
+}   
 
 
 \section{Introduction}
@@ -170,8 +174,7 @@ This fact demonstrates the potential of Lean4 in the field of verification and t
 
 \begin{figure*}[ht]
     \includegraphics[scale=0.8]{logistics.pdf}
-    \caption{I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC)  This phase will require careful study of existing works, especially concerning the formalization of latency-insensitive 
-    behaviours in DC and their interface with cycle-accurate representation. 
+    \caption{I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC).
     The next three months will be devoted to the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). 
     One more month will be necessary to tackle the engineering involved in combining all these dialects in the Lean-MLIR framework and ensuring they work 
     flexibly and their integration is functional. During the the last four months of the first year I will the correctness of the lowerings from the higher-level 
