@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{bvdecide}
+bv\_decide.
+\newblock Online.
+
 \bibitem{circt}
 Circt.
 \newblock https://circt.llvm.org/, Online.
@@ -15,6 +19,12 @@ Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
 \newblock In {\em Proceedings of the 49th Annual Design Automation
   Conference\/} (New York, NY, USA, 2012), DAC '12, Association for Computing
   Machinery, p.~1216–1225.
+
+\bibitem{barrett2010smt}
+{\sc Barrett, C., Stump, A., Tinelli, C., et~al.}
+\newblock The smt-lib standard: Version 2.0.
+\newblock In {\em Proceedings of the 8th international workshop on
+  satisfiability modulo theories (Edinburgh, UK)\/} (2010), vol.~13, p.~14.
 
 \bibitem{bernstein2021semantics}
 {\sc Bernstein, G.~L., and Ragan-Kelley, J.}
@@ -52,6 +62,12 @@ Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
   verification.
 \newblock {\em ACM Transactions on Software Engineering and Methodology (TOSEM)
   30}, 4 (2021), 1--26.
+
+\bibitem{de2008z3}
+{\sc De~Moura, L., and Bj{\o}rner, N.}
+\newblock Z3: An efficient smt solver.
+\newblock In {\em International conference on Tools and Algorithms for the
+  Construction and Analysis of Systems\/} (2008), Springer, pp.~337--340.
 
 \bibitem{mlir_circt}
 {\sc Eldridge, S., Barua, P., Chapyzhenka, A., Izraelevitz, A., Koenig, J.,
@@ -135,5 +151,11 @@ Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
 {\sc Witharana, H., Lyu, Y., Charles, S., and Mishra, P.}
 \newblock A survey on assertion-based hardware verification.
 \newblock {\em ACM Computing Surveys (CSUR) 54}, 11s (2022), 1--33.
+
+\bibitem{zhao2024k}
+{\sc Zhao, J., Kang, J., and Zhao, Y.}
+\newblock K-circt: A layered, composable, and executable formal semantics for
+  circt hardware irs.
+\newblock {\em arXiv preprint arXiv:2404.18756\/} (2024).
 
 \end{thebibliography}
