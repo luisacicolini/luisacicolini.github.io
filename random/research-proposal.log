@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  1 JAN 2025 16:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  1 JAN 2025 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1596,7 +1596,7 @@ Package rerunfilecheck Info: File `research-proposal.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  26923 strings out of 474104
- 449739 string characters out of 5743467
+ 449733 string characters out of 5743467
  1951493 words of memory out of 5000000
  48252 multiletter control sequences out of 15000+600000
  680747 words of font info for 335 fonts, out of 8000000 for 9000
@@ -1609,7 +1609,7 @@ LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libert
 ine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb>
-Output written on research-proposal.pdf (5 pages, 457015 bytes).
+Output written on research-proposal.pdf (5 pages, 457000 bytes).
 PDF statistics:
  180 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams
