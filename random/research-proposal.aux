@@ -8,7 +8,7 @@
 \citation{circt,mlir_circt}
 \citation{circt,mlir_circt}
 \citation{circt_sifive}
-\citation{huang2018instruction,chen2021leveraging,mattarei2018cosa,hunt2006sat}
+\citation{huang2018instruction,mattarei2018cosa,hunt2006sat}
 \newacro{fsm}[FSM]{Finite State Machine}
 \newacro{dsa}[DSA]{Domain-Specific Architecture}
 \newacro{rei}[REI]{Regular Expression Inference}
@@ -18,7 +18,7 @@
 \newacro{nlp}[NLP]{Natural Language Processing}
 \newacro{ast}[AST]{Abstract Syntax Tree}
 \newacro{eda}[EDA]{Electronic Design Automation}
-\newacro{itp}[ITP]{Interactive Theorem Proving}
+\newacro{itp}[ITP]{Interactive Theorem Prover}
 \newacro{chc}[CHC]{Constrained Horn Clause}
 \newacro{gpu}[GPU]{Graphic Processing Unit}
 \newacro{fpga}[FPGA]{Field Programmable Gate Array}
@@ -53,6 +53,9 @@
 \citation{hunt2006sat}
 \citation{carloni2001theory}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Formalizing the semantics (S) of CIRCT dialects in Lean4 will allow us to (1) verify the compilation and equivalence between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property (P) holds for a design (D) at a certain level.}}{2}{figure.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:semantics}{{1}{2}{Formalizing the semantics (S) of CIRCT dialects in Lean4 will allow us to (1) verify the compilation and equivalence between different abstractions, (2) explore novel verification approaches in a verified environment, (3) verify whether a property (P) holds for a design (D) at a certain level}{figure.caption.3}{}}
+\newlabel{fig:semantics@cref}{{[figure][1][]1}{[1][1][]2}}
 \AC@undonewlabel{acro:itp}
 \newlabel{acro:itp}{{1}{2}{Introduction}{section*.6}{}}
 \newlabel{acro:itp@cref}{{[section][1][]1}{[1][1][]2}}
@@ -86,20 +89,20 @@
 \acronymused{ir}
 \citation{mukherjee2015hardware,malik2008hardware}
 \citation{bernstein2021semantics}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC) and studying the state-of-the-art works concerning the semantics of these domain-specific representations. Then, I plan to spend three more months implementing the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). During the following month, I will work on combining these dialects in the Lean-MLIR framework to ensure the correctness of the overall semantics and their flexibility and functionality. During the last four months of the first year, I will prove the correctness of the lowerings from the higher-level abstractions to RTL, collaborating with Thomas Bourgeat's research group at EPFL. The second year will focus on implementing the property specifications in Lean-MLIR. I also aim to visit Fondazione Bruno Kessler (FBK) and the University of Trento. I will investigate alternative decision procedures and verification frameworks for domain-specific representations during the last year, collaborating with Caterina Urban's research group at ENS. PLDI, POPL, and CAV are the leading conferences I intend to target, in addition to LLVM developer meetings. }}{4}{figure.caption.8}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:logistics}{{2}{4}{I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC) and studying the state-of-the-art works concerning the semantics of these domain-specific representations. Then, I plan to spend three more months implementing the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). During the following month, I will work on combining these dialects in the Lean-MLIR framework to ensure the correctness of the overall semantics and their flexibility and functionality. During the last four months of the first year, I will prove the correctness of the lowerings from the higher-level abstractions to RTL, collaborating with Thomas Bourgeat's research group at EPFL. The second year will focus on implementing the property specifications in Lean-MLIR. I also aim to visit Fondazione Bruno Kessler (FBK) and the University of Trento. I will investigate alternative decision procedures and verification frameworks for domain-specific representations during the last year, collaborating with Caterina Urban's research group at ENS. PLDI, POPL, and CAV are the leading conferences I intend to target, in addition to LLVM developer meetings}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC) and studying the state-of-the-art works concerning the semantics of these domain-specific representations. Then, I plan to spend three more months implementing the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). During the following month, I will work on combining these dialects in the Lean-MLIR framework to ensure the correctness of the overall semantics and their flexibility and functionality. During the last four months of the first year, I will prove the correctness of the lowerings from the higher-level abstractions to RTL, collaborating with Thomas Bourgeat's research group at EPFL. The second year will focus on implementing the property specifications in Lean-MLIR. I also aim to visit Fondazione Bruno Kessler (FBK) and the University of Trento. I will investigate alternative decision procedures and verification frameworks for domain-specific representations during the last year, collaborating with Caterina Urban's research group at ENS. PLDI, POPL, and CAV are the leading conferences I intend to target, in addition to LLVM developer meetings. Besides these three years, I plan to spend 6 additional months working on my thesis. }}{4}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:logistics}{{2}{4}{I will spend the first four months of the PhD implementing in Lean4 the semantics of three high-level dialects (FSM, Handshake, DC) and studying the state-of-the-art works concerning the semantics of these domain-specific representations. Then, I plan to spend three more months implementing the semantics of the CIRCT dialects necessary for the RTL-level representation (Hardware, Comb, Seq). During the following month, I will work on combining these dialects in the Lean-MLIR framework to ensure the correctness of the overall semantics and their flexibility and functionality. During the last four months of the first year, I will prove the correctness of the lowerings from the higher-level abstractions to RTL, collaborating with Thomas Bourgeat's research group at EPFL. The second year will focus on implementing the property specifications in Lean-MLIR. I also aim to visit Fondazione Bruno Kessler (FBK) and the University of Trento. I will investigate alternative decision procedures and verification frameworks for domain-specific representations during the last year, collaborating with Caterina Urban's research group at ENS. PLDI, POPL, and CAV are the leading conferences I intend to target, in addition to LLVM developer meetings. Besides these three years, I plan to spend 6 additional months working on my thesis}{figure.caption.8}{}}
 \newlabel{fig:logistics@cref}{{[figure][2][]2}{[1][3][]4}}
 \acronymused{fsm}
 \acronymused{ir}
+\acronymused{itp}
+\acronymused{eda}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Research Organization}{5}{section.4}\protected@file@percent }
+\acronymused{itp}
 \bibstyle{acm}
 \bibdata{biblio}
 \bibcite{bvdecide}{{1}{}{{}}{{}}}
 \bibcite{circt}{{2}{}{{}}{{}}}
 \bibcite{circt_sifive}{{3}{}{{}}{{}}}
-\acronymused{eda}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Research Organization}{5}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{5}{section*.10}\protected@file@percent }
 \bibcite{symbiyosys}{{4}{}{{}}{{}}}
 \bibcite{asanovic2006landscape}{{5}{}{{}}{{}}}
 \bibcite{bachrach2012chisel}{{6}{}{{}}{{}}}
@@ -109,27 +112,29 @@
 \bibcite{aiger2}{{10}{}{{}}{{}}}
 \bibcite{bourgeat2020essence}{{11}{}{{}}{{}}}
 \bibcite{carloni2001theory}{{12}{}{{}}{{}}}
-\bibcite{chen2021leveraging}{{13}{}{{}}{{}}}
-\bibcite{de2008z3}{{14}{}{{}}{{}}}
-\bibcite{mlir_circt}{{15}{}{{}}{{}}}
-\bibcite{wilson2020verifstudy}{{16}{}{{}}{{}}}
-\bibcite{foster2013design}{{17}{}{{}}{{}}}
-\bibcite{gurfinkel2022program}{{18}{}{{}}{{}}}
-\bibcite{hennessy2018new}{{19}{}{{}}{{}}}
-\bibcite{huang2018instruction}{{20}{}{{}}{{}}}
-\bibcite{hunt2006sat}{{21}{}{{}}{{}}}
-\bibcite{mlir}{{22}{}{{}}{{}}}
-\bibcite{malik2008hardware}{{23}{}{{}}{{}}}
-\bibcite{mattarei2018cosa}{{24}{}{{}}{{}}}
-\bibcite{melham1988abstraction}{{25}{}{{}}{{}}}
-\bibcite{mukherjee2015hardware}{{26}{}{{}}{{}}}
-\bibcite{btor2}{{27}{}{{}}{{}}}
-\bibcite{niemetz2018btor2}{{28}{}{{}}{{}}}
-\bibcite{bluespec}{{29}{}{{}}{{}}}
-\bibcite{procter2015semantics}{{30}{}{{}}{{}}}
-\bibcite{vasudevan2021learning}{{31}{}{{}}{{}}}
-\bibcite{witharana2022survey}{{32}{}{{}}{{}}}
-\bibcite{zhao2024k}{{33}{}{{}}{{}}}
+\bibcite{de2008z3}{{13}{}{{}}{{}}}
+\bibcite{mlir_circt}{{14}{}{{}}{{}}}
+\bibcite{wilson2020verifstudy}{{15}{}{{}}{{}}}
+\bibcite{foster2013design}{{16}{}{{}}{{}}}
+\bibcite{gurfinkel2022program}{{17}{}{{}}{{}}}
+\bibcite{hennessy2018new}{{18}{}{{}}{{}}}
+\bibcite{huang2018instruction}{{19}{}{{}}{{}}}
+\bibcite{hunt2006sat}{{20}{}{{}}{{}}}
+\bibcite{mlir}{{21}{}{{}}{{}}}
+\bibcite{malik2008hardware}{{22}{}{{}}{{}}}
+\bibcite{mattarei2018cosa}{{23}{}{{}}{{}}}
+\bibcite{melham1988abstraction}{{24}{}{{}}{{}}}
+\bibcite{mukherjee2015hardware}{{25}{}{{}}{{}}}
+\bibcite{btor2}{{26}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{6}{section.5}\protected@file@percent }
+\acronymused{itp}
+\@writefile{toc}{\contentsline {section}{References}{6}{section*.10}\protected@file@percent }
+\bibcite{niemetz2018btor2}{{27}{}{{}}{{}}}
+\bibcite{bluespec}{{28}{}{{}}{{}}}
+\bibcite{procter2015semantics}{{29}{}{{}}{{}}}
+\bibcite{vasudevan2021learning}{{30}{}{{}}{{}}}
+\bibcite{witharana2022survey}{{31}{}{{}}{{}}}
+\bibcite{zhao2024k}{{32}{}{{}}{{}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{5.09174pt}

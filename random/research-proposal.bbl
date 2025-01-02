@@ -65,13 +65,6 @@ Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
 \newblock {\em IEEE Transactions on computer-aided design of integrated
   circuits and systems 20}, 9 (2001), 1059--1076.
 
-\bibitem{chen2021leveraging}
-{\sc Chen, J., and He, F.}
-\newblock Leveraging control flow knowledge in smt solving of program
-  verification.
-\newblock {\em ACM Transactions on Software Engineering and Methodology (TOSEM)
-  30}, 4 (2021), 1--26.
-
 \bibitem{de2008z3}
 {\sc De~Moura, L., and Bj{\o}rner, N.}
 \newblock Z3: An efficient smt solver.
