@@ -8,9 +8,18 @@ bv\_decide.
 Circt.
 \newblock https://circt.llvm.org/, Online.
 
+\bibitem{circt_sifive}
+Circt for sifive.
+\newblock https://github.com/sifive/chisel-circt, Online.
+
 \bibitem{symbiyosys}
 Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
 \newblock Accessed 24/11/21.
+
+\bibitem{asanovic2006landscape}
+{\sc Asanovic, K., Bodik, R., Catanzaro, B., Gebis, J., Husbands, P., Keutzer,
+  K., Patterson, D., Plishker, W., Shalf, J., and Williams, S.~W.}
+\newblock The landscape of parallel computing research: A view from berkeley.
 
 \bibitem{bachrach2012chisel}
 {\sc Bachrach, J., Vo, H., Richards, B., Lee, Y., Waterman, A., Avi\v{z}ienis,
@@ -77,11 +86,29 @@ Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
 \newblock In {\em WOSET '21: Workshop on Open Source EDA Technology\/} (2021),
   SiFive.
 
+\bibitem{wilson2020verifstudy}
+{\sc Foster, H.}
+\newblock {The 2020 Wilson Research Group Functional Verification Study}.
+\newblock Tech. rep., Siemens, 2020.
+
+\bibitem{foster2013design}
+{\sc Foster, H.~D.}
+\newblock Why the design productivity gap never happened.
+\newblock In {\em 2013 IEEE/ACM International Conference on Computer-Aided
+  Design (ICCAD)\/} (2013), IEEE, pp.~581--584.
+
 \bibitem{gurfinkel2022program}
 {\sc Gurfinkel, A.}
 \newblock Program verification with constrained horn clauses.
 \newblock In {\em International Conference on Computer Aided Verification\/}
   (2022), Springer, pp.~19--29.
+
+\bibitem{hennessy2018new}
+{\sc Hennessy, J., and Patterson, D.}
+\newblock A new golden age for computer architecture: domain-specific
+  hardware/software co-design, enhanced.
+\newblock In {\em ACM/IEEE 45th Annual International Symposium on Computer
+  Architecture (ISCA)\/} (2018).
 
 \bibitem{huang2018instruction}
 {\sc Huang, B.-Y., Zhang, H., Subramanyan, P., Vizel, Y., Gupta, A., and Malik,
@@ -90,6 +117,17 @@ Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
   system-on-chip (soc) verification.
 \newblock {\em ACM Transactions on Design Automation of Electronic Systems
   (TODAES) 24}, 1 (2018), 1--24.
+
+\bibitem{hunt2006sat}
+{\sc Hunt~Jr, W.~A., and Reeber, E.}
+\newblock A sat-based procedure for verifying finite state machines in acl2.
+\newblock In {\em Proceedings of the sixth international workshop on the ACL2
+  theorem prover and its applications\/} (2006), pp.~127--135.
+
+\bibitem{mlir}
+{\sc Lattner, C., Amini, M., Bondhugula, U., Cohen, A., Davis, A., Pienaar, J.,
+  Riddle, R., Shpeisman, T., Vasilache, N., and Zinenko, O.}
+\newblock Mlir: A compiler infrastructure for the end of moore's law, 2020.
 
 \bibitem{malik2008hardware}
 {\sc Malik, S.}
@@ -146,6 +184,13 @@ Symbiyosys (sby) -- front-end for yosys-based formal verification flows.
 \newblock In {\em Proceedings of the 16th ACM SIGPLAN/SIGBED Conference on
   Languages, Compilers and Tools for Embedded Systems 2015 CD-ROM\/} (2015),
   pp.~1--10.
+
+\bibitem{vasudevan2021learning}
+{\sc Vasudevan, S., Jiang, W.~J., Bieber, D., Singh, R., Ho, C.~R., Sutton, C.,
+  et~al.}
+\newblock Learning semantic representations to verify hardware designs.
+\newblock {\em Advances in Neural Information Processing Systems 34\/} (2021),
+  23491--23504.
 
 \bibitem{witharana2022survey}
 {\sc Witharana, H., Lyu, Y., Charles, S., and Mishra, P.}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 08:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1452,33 +1452,39 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 54.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 77.
+(Font)              scaled to size 10.95pt on input line 69.
 Package acronym Info: Label `acro:eda' newly defined as it shall be overridden
-although it is yet undefined on input line 77.
+although it is yet undefined on input line 69.
 Package acronym Info: Label `acro:fsm' newly defined as it shall be overridden
-although it is yet undefined on input line 77.
+although it is yet undefined on input line 69.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 80.
+(Font)              scaled to size 10.95pt on input line 72.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 80.
+(Font)              scaled to size 14.4pt on input line 72.
 <semantics.pdf, id=27, 511.9125pt x 259.97125pt>
 File: semantics.pdf Graphic file (type pdf)
 <use semantics.pdf>
-Package pdftex.def Info: semantics.pdf  used on input line 83.
+Package pdftex.def Info: semantics.pdf  used on input line 75.
 (pdftex.def)             Requested size: 409.53056pt x 207.97728pt.
 
 
-Class acmart Warning: A possible image without description on input line 87.
+Class acmart Warning: A possible image without description on input line 79.
+
+Package acronym Info: Label `acro:ir' newly defined as it shall be overridden
+although it is yet undefined on input line 85.
+Package acronym Info: Label `acro:rtl' newly defined as it shall be overridden
+although it is yet undefined on input line 85.
+
+Overfull \hbox (1.09413pt too wide) in paragraph at lines 81--89
+\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) Designing mod-ern hard-ware is in-cred-
+i-bly com-plex, even
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (2.50156pt too wide) in paragraph at lines 119--133
-\T1/LinuxLibertineT-TLF/b/n/10.95 (-20) domain-specific hard-ware de-sign trend
-s\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) . The CIRCT
- []
-
+Package acronym Info: Label `acro:itp' newly defined as it shall be overridden
+although it is yet undefined on input line 97.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1491,12 +1497,18 @@ r/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Overfull \hbox (6.2424pt too wide) in paragraph at lines 120--125
+\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) where dif-fer-ent ab-strac-tions meet, 
+e.g. latency-insensitive
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 163.
+(Font)              scaled to size 10.95pt on input line 125.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 163.
+(Font)              scaled to size 9.0pt on input line 125.
 
 
 Package fancyhdr Warning: \footskip is too small (12.0pt): 
@@ -1504,30 +1516,34 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [2.2 <./semantics.pdf>]
-Package acronym Info: Label `acro:ir' newly defined as it shall be overridden
-although it is yet undefined on input line 169.
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 17
-0.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 12
+9.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 170.
+(Font)              scaled to size 10.95pt on input line 129.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package acronym Info: Label `acro:rtl' newly defined as it shall be overridden
-although it is yet undefined on input line 178.
-<logistics.pdf, id=95, 569.12625pt x 236.885pt>
+Package acronym Info: Label `acro:chc' newly defined as it shall be overridden
+although it is yet undefined on input line 143.
+
+
+Package acronym Warning: Acronym `chc' is not defined on input line 143.
+
+
+Package acronym Warning: Acronym `chc' is not defined on input line 143.
+
+<logistics.pdf, id=114, 569.12625pt x 236.885pt>
 File: logistics.pdf Graphic file (type pdf)
 <use logistics.pdf>
-Package pdftex.def Info: logistics.pdf  used on input line 204.
+Package pdftex.def Info: logistics.pdf  used on input line 153.
 (pdftex.def)             Requested size: 455.30162pt x 189.50824pt.
 
-
-Class acmart Warning: A possible image without description on input line 216.
+Class acmart Warning: A possible image without description on input line 163.
 
 
 Underfull \vbox (badness 1558) has occurred while \output is active []
@@ -1543,13 +1559,13 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (5.05557pt too wide) in paragraph at lines 242--249
+Overfull \hbox (5.05557pt too wide) in paragraph at lines 178--182
 \T1/LinuxLibertineT-TLF/m/n/10.95 (-20) where the ap-pli-ca-tion of dif-fer-ent
  ver-i-fi-ca-tion ap-proaches
  []
 
 
-Overfull \hbox (2.74774pt too wide) in paragraph at lines 242--249
+Overfull \hbox (2.74774pt too wide) in paragraph at lines 178--182
 \T1/LinuxLibertineT-TLF/m/n/10.95 (-20) is pos-si-ble and ben-e-fi-cial. Ex-plo
 r-ing dif-fer-ent ap-proaches
  []
@@ -1564,27 +1580,27 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 (fancyhdr)                \setlength{\footskip}{13.0pt}.
 
 [4.4 <./logistics.pdf>]
-Overfull \hbox (10.2302pt too wide) in paragraph at lines 267--278
+Overfull \hbox (10.2302pt too wide) in paragraph at lines 192--198
 \T1/LinuxLibertineT-TLF/m/n/10.95 (-20) the for-mal-iza-tion of latency-insensi
 tive be-haviours
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (3.34679pt too wide) in paragraph at lines 284--291
+Overfull \hbox (3.34679pt too wide) in paragraph at lines 203--208
 []\T1/LinuxLibertineT-TLF/b/n/10.95 (-20) Explore dif-fer-ent ver-i-fi-ca-tion 
 strate-gies\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) , such
  []
 
 (./research-proposal.bbl
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 9.0pt on input line 16.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 19.
+Underfull \vbox (badness 1577) has occurred while \output is active []
+
  [5.5]
-Underfull \hbox (badness 3514) in paragraph at lines 54--58
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
+(Font)              scaled to size 9.0pt on input line 20.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 28.
+
+Underfull \hbox (badness 3514) in paragraph at lines 63--67
 []\T1/LinuxLibertineT-TLF/m/sc/9 (+20) Carloni, L. P., McMil-lan, K. L., and Sa
 ngiovanni-
  []
@@ -1592,37 +1608,46 @@ ngiovanni-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \footskip is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.0pt, for example:
+(fancyhdr)                \setlength{\footskip}{13.0pt}.
+
+[6.6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.e
+nc}])
 
 Class acmart Warning: Some images may lack descriptions.
 
 
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
+Overfull \vbox (2.142pt too high) has occurred while \output is active []
+
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [6.6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp
-.enc}]
+) [7.7]
 (./research-proposal.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
 Package rerunfilecheck Info: File `research-proposal.out' has not changed.
-(rerunfilecheck)             Checksum: EBB10D47EF3847D8034D3EC78B7F4A5A;723.
+(rerunfilecheck)             Checksum: 6A68E02463BD577740F65015175C32B5;724.
  ) 
 Here is how much of TeX's memory you used:
- 26948 strings out of 474104
- 450212 string characters out of 5743467
- 1950493 words of memory out of 5000000
- 48267 multiletter control sequences out of 15000+600000
- 681269 words of font info for 339 fonts, out of 8000000 for 9000
+ 27011 strings out of 474104
+ 451498 string characters out of 5743467
+ 1954493 words of memory out of 5000000
+ 48304 multiletter control sequences out of 15000+600000
+ 683004 words of font info for 349 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,12n,131p,1344b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,131p,1413b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
 a-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/Lin
 BiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/
@@ -1630,10 +1655,10 @@ LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libert
 ine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb>
-Output written on research-proposal.pdf (6 pages, 483097 bytes).
+Output written on research-proposal.pdf (7 pages, 486418 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
+ 237 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
  49731 words of extra memory for PDF output out of 51595 (max. 10000000)
 
