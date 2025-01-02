@@ -16,6 +16,8 @@ todo
 . answer emails 
 . fluid dynamics (scilean)
 . update post-publication plots 
+. degustazione
+. reverse PR
 
 done 
 

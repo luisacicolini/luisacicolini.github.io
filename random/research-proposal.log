@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 00:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 08:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1616,11 +1616,11 @@ Package rerunfilecheck Info: File `research-proposal.out' has not changed.
 (rerunfilecheck)             Checksum: EBB10D47EF3847D8034D3EC78B7F4A5A;723.
  ) 
 Here is how much of TeX's memory you used:
- 26951 strings out of 474104
- 450284 string characters out of 5743467
+ 26948 strings out of 474104
+ 450212 string characters out of 5743467
  1950493 words of memory out of 5000000
  48267 multiletter control sequences out of 15000+600000
- 681640 words of font info for 341 fonts, out of 8000000 for 9000
+ 681269 words of font info for 339 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,12n,131p,1344b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
@@ -1630,7 +1630,7 @@ LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libert
 ine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb>
-Output written on research-proposal.pdf (6 pages, 483115 bytes).
+Output written on research-proposal.pdf (6 pages, 483097 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  174 compressed objects within 2 object streams
