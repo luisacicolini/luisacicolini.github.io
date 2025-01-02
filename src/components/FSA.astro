@@ -1,30 +1,31 @@
 ---
 const states = [
-  { id: "home", label: "Hi, I'm Luisa!", cx: 100, cy: 100, link: "/" },
-  { id: "learn", label: "I am learning things", cx: 250, cy: 100, link: "/learn" },
-  { id: "do", label: "I am doing things", cx: 400, cy: 100, link: "/do" },
-  { id: "reading list", label: "My reading list", cx: 400, cy: 100, link: "/reading" },
-  { id: "read list", label: "My read list", cx: 400, cy: 100, link: "/read" },
-  { id: "artcraft", label: "Art & Craft", cx: 400, cy: 100, link: "/artcraft" },
-  { id: "music", label: "Music", cx: 400, cy: 100, link: "/music" },
-  { id: "codemath", label: "Code & Maths", cx: 400, cy: 100, link: "/codemaths" },
-  { id: "science", label: "Science", cx: 400, cy: 100, link: "/science" },
-  { id: "life", label: "Life", cx: 400, cy: 100, link: "/life" },
-
+  { id: "home", label: "Hi, I'm Luisa!", cx: 150, cy: 50, link: "/" },
+  { id: "learn", label: "I am learning things", cx: 150, cy: 150, link: "/learn" },
+  { id: "write", label: "I am writing things", cx: 150, cy: 250, link: "/learn" },
+  { id: "do", label: "I am doing things", cx: 150, cy: 350, link: "/do" },
+  { id: "reading list", label: "My reading list", cx: 350, cy: 150, link: "/reading" },
+  { id: "read list", label: "My read list", cx: 350, cy: 200, link: "/read" },
+  { id: "life", label: "Life", cx: 350, cy: 250, link: "/life" },
+  { id: "science", label: "Science", cx: 350, cy: 300, link: "/science" },
+  { id: "artcraft", label: "Art & Craft", cx: 350, cy: 350, link: "/artcraft" },
+  { id: "music", label: "Music", cx: 350, cy: 400, link: "/music" },
 ];
+
 const transitions = [
   { from: "home", to: "learn" },
+  { from: "home", to: "write" },
   { from: "home", to: "do" },
   { from: "learn", to: "reading list" },
   { from: "learn", to: "read list" },
   { from: "learn", to: "life" },
   { from: "learn", to: "science" },
   { from: "do", to: "artcraft" },
-  { from: "do", to: "artcraft" },
   { from: "do", to: "music" },
 ];
 ---
-<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
   <!-- Arrowhead marker -->
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -52,8 +53,10 @@ const transitions = [
   {states.map((state) => (
     <>
       <a href={state.link}>
-        <circle class="state" cx={state.cx} cy={state.cy} r="30" />
-        <text x={state.cx} y={state.cy + 5} text-anchor="middle" fill="#fff">{state.label}</text>
+        <circle class="state" cx={state.cx} cy={state.cy} r="50" />
+        <text x={state.cx} y={state.cy + 5} text-anchor="middle" fill="#fff" font-size="14px" font-weight="bold">
+          {state.label}
+        </text>
       </a>
     </>
   ))}
