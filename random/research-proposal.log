@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1531,11 +1531,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package acronym Info: Label `acro:chc' newly defined as it shall be overridden
 although it is yet undefined on input line 143.
 
-
-Package acronym Warning: Acronym `chc' is not defined on input line 143.
-
-
-Package acronym Warning: Acronym `chc' is not defined on input line 143.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 <logistics.pdf, id=114, 569.12625pt x 236.885pt>
 File: logistics.pdf Graphic file (type pdf)
@@ -1543,10 +1539,11 @@ File: logistics.pdf Graphic file (type pdf)
 Package pdftex.def Info: logistics.pdf  used on input line 153.
 (pdftex.def)             Requested size: 455.30162pt x 189.50824pt.
 
+
 Class acmart Warning: A possible image without description on input line 163.
 
 
-Underfull \vbox (badness 1558) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1592,7 +1589,7 @@ strate-gies\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) , such
  []
 
 (./research-proposal.bbl
-Underfull \vbox (badness 1577) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5.5]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
@@ -1623,7 +1620,7 @@ nc}])
 Class acmart Warning: Some images may lack descriptions.
 
 
-Overfull \vbox (2.142pt too high) has occurred while \output is active []
+Overfull \vbox (1.642pt too high) has occurred while \output is active []
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1641,13 +1638,13 @@ Package rerunfilecheck Info: File `research-proposal.out' has not changed.
 (rerunfilecheck)             Checksum: 6A68E02463BD577740F65015175C32B5;724.
  ) 
 Here is how much of TeX's memory you used:
- 27011 strings out of 474104
- 451498 string characters out of 5743467
- 1954493 words of memory out of 5000000
- 48304 multiletter control sequences out of 15000+600000
+ 27010 strings out of 474104
+ 451490 string characters out of 5743467
+ 1955493 words of memory out of 5000000
+ 48303 multiletter control sequences out of 15000+600000
  683004 words of font info for 349 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,12n,131p,1413b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,131p,1413b,861s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
 a-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/Lin
 BiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/
@@ -1655,7 +1652,7 @@ LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libert
 ine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb>
-Output written on research-proposal.pdf (7 pages, 486418 bytes).
+Output written on research-proposal.pdf (7 pages, 486481 bytes).
 PDF statistics:
  237 PDF objects out of 1000 (max. 8388607)
  201 compressed objects within 3 object streams
