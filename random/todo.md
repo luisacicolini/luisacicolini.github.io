@@ -16,10 +16,9 @@ todo
 . answer emails 
 . fluid dynamics (scilean)
 . update post-publication plots 
-. degustazione
 . reverse PR
 
 done 
-
+. degustazione
 . set up personal website 
 . reverse and bitvec PRs for lean4

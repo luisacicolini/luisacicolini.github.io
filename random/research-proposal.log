@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  2 JAN 2025 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1533,7 +1533,7 @@ although it is yet undefined on input line 143.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<logistics.pdf, id=114, 569.12625pt x 236.885pt>
+<logistics.pdf, id=121, 569.12625pt x 236.885pt>
 File: logistics.pdf Graphic file (type pdf)
 <use logistics.pdf>
 Package pdftex.def Info: logistics.pdf  used on input line 153.
@@ -1543,7 +1543,13 @@ Package pdftex.def Info: logistics.pdf  used on input line 153.
 Class acmart Warning: A possible image without description on input line 163.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (1.09787pt too wide) in paragraph at lines 170--173
+\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) ing those re-ly-ing on rad-i-cally dif-
+fer-ent de-sign paradigms
+ []
+
+
+Underfull \vbox (badness 1558) has occurred while \output is active []
 
 
 
@@ -1554,18 +1560,6 @@ Package fancyhdr Warning: \footskip is too small (12.0pt):
 [3.3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc
 }]
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (5.05557pt too wide) in paragraph at lines 178--182
-\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) where the ap-pli-ca-tion of dif-fer-ent
- ver-i-fi-ca-tion ap-proaches
- []
-
-
-Overfull \hbox (2.74774pt too wide) in paragraph at lines 178--182
-\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) is pos-si-ble and ben-e-fi-cial. Ex-plo
-r-ing dif-fer-ent ap-proaches
- []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1589,7 +1583,7 @@ strate-gies\T1/LinuxLibertineT-TLF/m/n/10.95 (-20) , such
  []
 
 (./research-proposal.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1577) has occurred while \output is active []
 
  [5.5]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
@@ -1620,7 +1614,7 @@ nc}])
 Class acmart Warning: Some images may lack descriptions.
 
 
-Overfull \vbox (1.642pt too high) has occurred while \output is active []
+Overfull \vbox (2.142pt too high) has occurred while \output is active []
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1640,11 +1634,11 @@ Package rerunfilecheck Info: File `research-proposal.out' has not changed.
 Here is how much of TeX's memory you used:
  27010 strings out of 474104
  451490 string characters out of 5743467
- 1955493 words of memory out of 5000000
+ 1954493 words of memory out of 5000000
  48303 multiletter control sequences out of 15000+600000
  683004 words of font info for 349 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,12n,131p,1413b,861s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,131p,1413b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
 a-zi4r.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/Lin
 BiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/
@@ -1652,10 +1646,10 @@ LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libert
 ine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/li
 bertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb>
-Output written on research-proposal.pdf (7 pages, 486481 bytes).
+Output written on research-proposal.pdf (7 pages, 467098 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
+ 244 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  59 named destinations out of 1000 (max. 500000)
  49731 words of extra memory for PDF output out of 51595 (max. 10000000)
 

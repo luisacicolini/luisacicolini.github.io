@@ -84,7 +84,7 @@ To address these challenges, the CIRCT project~\cite{circt, mlir_circt} introduc
 Thanks to tailored domain-specific abstractions, CIRCT allows designers to use local reasoning to analyze and optimize the numerous domain-specific concepts it models.
 For example, in CIRCT~\cite{circt, mlir_circt}, high-level abstractions such as \acp{fsm} or latency-insensitive \acp{ir} are optimized and progressively lowered to \ac{rtl} and Verilog, generating production-quality, optimized code~\cite{circt_sifive}. 
 Besides making hardware design more flexible, the high-level abstractions CIRCT exposes also have great potential for verification.
-Exploiting higher-level abstractions to bring verification tasks to a higher level and guide lower-level verification tooling already proved a successful approach~\cite{huang2018instruction, chen2021leveraging, mattarei2018cosa, hunt2006sat}.
+Exploiting higher-level abstractions to bring verification tasks to a higher abstraction level and complement lower-level verification tooling already proved a successful approach~\cite{huang2018instruction, chen2021leveraging, mattarei2018cosa, hunt2006sat}.
 CIRCT represents an excellent infrastructure to expand and make the most of this approach, given the domain-specific abstractions it includes.
 
 Overall, \textbf{bridging domain-specific abstractions and verification tooling} is a fundamental step to make sure that verification is up-to-speed with the recent domain-specific hardware design trends, and CIRCT is the perfect environment to validate this approach, thanks to the numerous abstractions it provides. 
@@ -163,19 +163,19 @@ Moreover, thanks to its flexibility, Lean4 represents the perfect environment to
 \end{figure*}
 
 During my PhD, I aim to enhance verification efforts for the CIRCT infrastructure by formally verifying the semantics of its dialects to enable the verification of lowerings and optimizations, the progressive verification of designs' properties, and the adoption of novel verification techniques. 
+My work combines CIRCT's high-level information at different abstraction levels with Lean4's flexibility and minimal trusted codebase. 
+Until now, verifying high-level abstractions with standard lower-level hardware verification techniques (such as assertion-based verification or SMT solvers) has been very complex ~\cite{symbiyosys, witharana2022survey}, due to the scarce flexibility of the tools involved (e.g. z3~\cite{de2008z3}) and the limited number of abstractions they support. 
+With this work, I aim to formalize the high-level \acp{ir} CIRCT exposes to bring verification to a higher abstraction level and possibly guide the effort of lower-level, classical verification approaches, relying on the flexibility of Lean4.
+
 Following the path indicated by Lean-MLIR~\cite{bhat2024verifying}, I intend to formalize more high-level abstractions and dialects, starting from the \ac{fsm} dialect and also considering those relying on radically different design paradigms from traditional imperative or functional \acp{ir}, such as the Dynamic Control (DC) dialect. 
 This aspect will require careful mathematical modelling of complex, dataflow-like behaviour to fill gaps in the informal model, e.g. where latency-insensitive and circuit-based semantics meet. 
-Besides introducing a powerful means to reason about dialects' semantics and the overall correctness of the compilation and the designs, this work will also lay the foundations for including higher-level verification techniques into CIRCT, for example, those leveraging automata-theoretic and abstract-interpretation-based approaches. 
+Moreover, the formalization of dialects within Lean4 will also enable the verification of compiler passes, offering further guarantees for the correctness of CIRCT itself. 
 
-This work combines CIRCT's high-level information at different abstraction levels with Lean4's flexibility and minimal trusted codebase. 
-Until now, verifying high-level abstractions with standard lower-level hardware verification techniques (such as assertion-based verification or SMT solvers) has been very complex ~\cite{symbiyosys, witharana2022survey}, due to the scarce flexibility of the tools involved (e.g. z3~\cite{de2008z3}) and the limited number of abstractions they support. 
-With this work, I aim to formalize the high-level information CIRCT exposes to bring verification to a higher level and possibly guide the effort of lower-level, classical verification approaches, relying on the flexibility of Lean4.
-The formalization of dialects within Lean4 also enables the verification of compiler passes, offering further guarantees for the correctness of CIRCT itself. 
-
-Lean4 is a fertile, open-source environment to work on verification frameworks thanks to its flexibility, versatility, and trust level. 
+Overall, Lean4 is a fertile, open-source environment to work on verification frameworks thanks to its flexibility, versatility, and trust level. 
 Moreover, working in an open-source environment is an incredibly valuable aspect of this work, as it significantly increases the quality of the output - thanks to peer-review processes - and creates impact, being available to numerous users.  
 
-Moreover, formalizing the semantics of CIRCT dialects allows semantics manipulation up to a point where the application of different verification approaches is possible and beneficial. 
+Besides introducing a powerful means to reason about dialects' semantics and the overall correctness of the compilation and the designs, this work will also lay the foundations for including higher-level verification techniques into CIRCT, for example, automata-theoretic and abstract-interpretation-based approaches. 
+Formalizing the semantics of CIRCT dialects allows semantics manipulation up to a point where the application of domain-specific verification approaches and decision procedures is possible and beneficial. 
 Exploring different approaches in the context of hardware verification is currently a challenge~\cite{mukherjee2015hardware, malik2008hardware}, requiring significant effort to bridge the hardware level with a suitable abstraction that alternative verification methodologies, such as abstract interpretation frameworks, can digest. 
 Nevertheless, preliminary studies suggested the effectiveness of these methodologies, especially at specific abstraction levels~\cite{bernstein2021semantics}. 
 Formalizing the semantics of CIRCT dialects in an interactive theorem prover is a game-changer in this context, as it proves a stable foundation to explore many verification strategies.
