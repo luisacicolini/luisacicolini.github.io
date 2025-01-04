@@ -62,4 +62,8 @@ layout: ../layouts/BaseLayout.astro
 - https://old.reddit.com/r/math/comments/1h4v9yx/how_monstrously_long_papers_are_made/
 - https://old.reddit.com/r/math/comments/1h5wezw/interesting_question_related_to_the_divergence/
 - https://www.sasjournal.org/index.php/home/article/view/68 
-- 
+- http://forkinganddividing.com/#_02_52
+- https://www.accesstoinsight.org/lib/authors/various/wheel186.html 
+- https://www.sciencedirect.com/topics/computer-science/hardware-description-languages
+- https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/
+- https://alastairreid.github.io/papers/CAV_16/

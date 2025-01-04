@@ -13,10 +13,10 @@ todo
 - [ ] write my own processor 
 - [ ] answer emails 
 - [ ] fluid dynamics (scilean)
-- [ ] update post-publication plots 
-- [ ] reverse PR
 
 done 
+- [x] update post-publication plots 
+- [x] reverse PR
 - [x] degustazione
 - [x] set up personal website 
 - [x] reverse and bitvec PRs for lean4

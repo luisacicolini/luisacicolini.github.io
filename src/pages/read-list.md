@@ -2,26 +2,30 @@
 title: "Read List"
 layout: ../layouts/BaseLayout.astro
 ---
+# 2025 
+
+- https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/
+- 
 
 # 2024
 
-- Il dottor Stranamore ovvero: come ho imparato a non preoccuparmi e ad amare la bomba - Peter George
-- Cronache della Galassia - Isaac Asimov
-- The Doors of Perception & Heaven and Hell - Aldous Huxley
-- The Glass Bead Game - Herman Hesse
-- Sottomissione - Michel Houellebecq 
-- Il Muro - Jean-Paul Sartre
-- Sulla sponda del fiume Piedra mi sono seduta e ho pianto - Paulo Coelho
-- Bar Sport - Stefano Benni
+- il dottor stranamore ovvero: come ho imparato a non preoccuparmi e ad amare la bomba - peter george
+- cronache della galassia - isaac asimov
+- the doors of perception & heaven and hell - aldous huxley
+- the glass bead game - herman hesse
+- sottomissione - michel houellebecq 
+- il muro - jean-paul sartre
+- sulla sponda del fiume piedra mi sono seduta e ho pianto - paulo coelho
+- bar sport - stefano benni
 
 # 2023
 
-- La canzone di achille - Madeline Miller
-- A Psalm for the wild-built - Becky Chambers
+- la canzone di achille - madeline miller
+- a psalm for the wild-built - becky bhambers
 - memoirs of hadrian - marguerite yourcenar
 - il lupo della steppa - herman hesse
-- Piove per esigenze di trama: La prima indagine del Commissario Elfo - nicolo' targhetta
+- piove per esigenze di trama: la prima indagine del commissario elfo - nicolo' targhetta
 - le ore - michael cunningham
-- Amore lontano: Il romanzo della parola attraverso i secoli - sebastiano vassalli 
-- In mezzo al mare. Sette atti comici - mattia torre
+- amore lontano: il romanzo della parola attraverso i secoli - sebastiano vassalli 
+- in mezzo al mare. sette atti comici - mattia torre
 - ragazzi di vita - pier paolo pasolini
