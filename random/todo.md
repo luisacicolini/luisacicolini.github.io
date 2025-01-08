@@ -1,20 +1,17 @@
-todo 
-
 - [ ] prettify website (add automaton)
-- [ ] add comb/arith semantics in lean-mlir
-- [ ] test arith + dc (~ scf infrastructure existing already)
+- [ ] add comb in lean-mlir
+- [ ] add arith in lean-mlir
+- [ ] test arith + dc (~ scf infrastructure)
 - [ ] lean-dc paper (writing)
 - [ ] update grosser.es website with recordings
 - [ ] set up mailing list with the addresses for the next social 
 - [ ] refactor thesis code and work on transaction 
 - [ ] record some music 
 - [ ] llvm us travel expenses
-- [ ] cgo pub
+- [x] cgo pub
 - [ ] write my own processor 
-- [ ] answer emails 
 - [ ] fluid dynamics (scilean)
-
-done 
+- [ ] smtlib - lean - mlir issue
 - [x] update post-publication plots 
 - [x] reverse PR
 - [x] degustazione
@@ -22,4 +19,7 @@ done
 - [x] reverse and bitvec PRs for lean4
 - [x] finish proposal
 - [x] add acl2 to fsm paper (related work)
-
+- [x] answer emails 
+- [ ] haskell homework
+- [ ] look into fsm-svex compilation
+- [ ] fix mod in fsm 
