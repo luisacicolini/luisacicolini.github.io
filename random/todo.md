@@ -11,7 +11,7 @@
 - [x] cgo pub
 - [ ] write my own processor 
 - [ ] fluid dynamics (scilean)
-- [ ] smtlib - lean - mlir issue
+- [ ] smtlib - lean - mlir overflow
 - [x] update post-publication plots 
 - [x] reverse PR
 - [x] degustazione
@@ -22,4 +22,10 @@
 - [x] answer emails 
 - [ ] haskell homework
 - [ ] look into fsm-svex compilation
-- [ ] fix mod in fsm 
+- [x] fix mod in fsm 
+- [ ] close comb PR, add comb-DC integration in lean-mlir
+- [ ] push bitvec PRs
+- [ ] finish ac_nf fix
+- [ ] compiler social recording
+- [ ] add llvm social playlist to the website
+- [ ] FSM compilation with svex for acl2

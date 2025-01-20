@@ -67,3 +67,9 @@ layout: ../layouts/BaseLayout.astro
 - https://www.sciencedirect.com/topics/computer-science/hardware-description-languages
 - https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/
 - https://alastairreid.github.io/papers/CAV_16/
+- https://infoscience.epfl.ch/server/api/core/bitstreams/53d40326-975c-4341-9d1c-668ca0784bf8/content
+- https://www.cs.utexas.edu/~moore/acl2/manuals/current/manual/index-seo.php?xkey=SV____SVEX-COMPILATION
+- https://ia903108.us.archive.org/16/items/ThurstonTheGeometryAndTopologyOfThreeManifolds/Thurston__The_Geometry_And_Topology_Of_Three-Manifolds.pdf
+- https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory
+- https://www.cs.utexas.edu/~boyer/ftp/nqthm/
+- https://www.learndatalogtoday.org/
