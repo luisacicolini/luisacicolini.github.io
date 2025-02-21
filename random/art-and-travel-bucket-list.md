@@ -14,3 +14,4 @@
 - [ ] Learn how to grow my own veggies
 - [ ] Learn about wine tasting
 - [ ] faces and drops
+- [ ] i looked into the abyss and said uwu

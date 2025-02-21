@@ -1,17 +1,27 @@
+# Travel plans
+- [ ] milan : apr. 6-7
+- [ ] home : apr. 7 - 24
+- [ ] scotland  : apr. 24 - 27 
+- [ ] south korea/japan : june?
+- [ ] home : august
+- [ ] rome : august?
+- [ ] us : october?
+- [ ] madeira : august?
+- [ ] india : dec?
+
+# todo
 - [ ] prettify website (add automaton)
 - [ ] add comb in lean-mlir
-- [ ] add arith in lean-mlir
-- [ ] test arith + dc (~ scf infrastructure)
+- [ ] test comb + dc (~ scf infrastructure)
 - [ ] lean-dc paper (writing)
-- [ ] update grosser.es website with recordings
-- [ ] set up mailing list with the addresses for the next social 
+- [ ] update grosser.es website with llvm-dev playlist
+- [x] set up mailing list with the addresses for the next social 
 - [ ] refactor thesis code and work on transaction 
 - [ ] record some music 
-- [ ] llvm us travel expenses
+- [x] llvm us travel expenses
 - [x] cgo pub
 - [ ] write my own processor 
 - [ ] fluid dynamics (scilean)
-- [ ] smtlib - lean - mlir overflow
 - [x] update post-publication plots 
 - [x] reverse PR
 - [x] degustazione
@@ -21,11 +31,33 @@
 - [x] add acl2 to fsm paper (related work)
 - [x] answer emails 
 - [ ] haskell homework
-- [ ] look into fsm-svex compilation
+- [x] look into fsm-svex compilation
 - [x] fix mod in fsm 
-- [ ] close comb PR, add comb-DC integration in lean-mlir
-- [ ] push bitvec PRs
-- [ ] finish ac_nf fix
-- [ ] compiler social recording
-- [ ] add llvm social playlist to the website
-- [ ] FSM compilation with svex for acl2
+- [x] push bitvec PRs
+- [x] finish ac_nf fix
+- [x] compiler social recording
+- [x] FSM compilation with svex for acl2
+- [x] dc email
+- [x] comb variadic inputs 
+- [x] smt-lean overflow stuff
+- [x] mathlib updates
+- [ ] write about understanding omega tactic
+- [x] send dc email
+- [ ] pizza payments
+- [x] compilation time measurements
+- [ ] ask Anna about fsm-svex compilation examples
+- [x] CGO early bird mail 
+- [x] answer the cgo mail for registration info
+- [x] compiler social mail merge
+- [x] extractLsb PR
+- [x] replicate PR
+- [ ] beq-acnf PR 
+- [x] overflow PR 
+- [x] umod PR
+- [x] sandwich seminar mailing list 
+- [x] previous ARM people 
+- [x] PL people mailing list/theory tea
+- [ ] close comb PR 
+
+
+
