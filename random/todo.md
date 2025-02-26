@@ -1,12 +1,12 @@
 # Travel plans
 - [ ] milan : apr. 6-7
 - [ ] home : apr. 7 - 24
+- [ ] rome : apr. 11 - 13
 - [ ] scotland  : apr. 24 - 27 
 - [ ] south korea/japan : june?
 - [ ] home : august
-- [ ] rome : august?
-- [ ] us : october?
 - [ ] madeira : august?
+- [ ] us : october?
 - [ ] india : dec?
 
 # todo
