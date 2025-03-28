@@ -1,7 +1,7 @@
 - [ ] gnomo che si specchia nello stagno e vede piccola luce
 - [ ] a shipwreck 
 - [ ] uomo nella foresta con lanterna e luce che si diffonde 
-- [ ] skin tearing off 
+- [x] skin tearing off 
 - [ ] people are moved by different things
 - [ ] an elaboration on the library of babel through the viewpoint of an inhabitant
 - [ ] "like morphine but for poetry"
@@ -15,3 +15,5 @@
 - [ ] Learn about wine tasting
 - [ ] faces and drops
 - [ ] i looked into the abyss and said uwu
+- [ ] galaxy brains and giant egos
+- [x] people are moved by different things 

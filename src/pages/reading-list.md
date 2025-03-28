@@ -73,3 +73,11 @@ layout: ../layouts/BaseLayout.astro
 - https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory
 - https://www.cs.utexas.edu/~boyer/ftp/nqthm/
 - https://www.learndatalogtoday.org/
+- acl2::why-4vec-logic
+- https://pimbook.org/
+- https://ncatlab.org/nlab/show/category+theory
+- https://www.cs.ubc.ca/~mrg/cs513/2019-2/reading/ReadingList.html
+- https://fmv.jku.at/papers/BiereArthoSchuppan-FMICS02.pdf
+- https://www.jeremykun.com/2016/03/05/my-graduate-career-in-math/
+- abstract algebra by art something
+- yt lectures by benedict gross 

@@ -1,10 +1,10 @@
 # Travel plans
-- [ ] milan : apr. 6-7
+- [ ] milan : apr. 3-4
 - [ ] home : apr. 7 - 24
 - [ ] rome : apr. 11 - 13
 - [ ] scotland  : apr. 24 - 27 
 - [ ] south korea/japan : june?
-- [ ] home : august
+- [ ] home : september
 - [ ] madeira : august?
 - [ ] us : october?
 - [ ] india : dec?
@@ -43,7 +43,7 @@
 - [x] mathlib updates
 - [ ] write about understanding omega tactic
 - [x] send dc email
-- [ ] pizza payments
+- [x] pizza payments
 - [x] compilation time measurements
 - [ ] ask Anna about fsm-svex compilation examples
 - [x] CGO early bird mail 
@@ -51,13 +51,17 @@
 - [x] compiler social mail merge
 - [x] extractLsb PR
 - [x] replicate PR
-- [ ] beq-acnf PR 
+- [x] beq-acnf PR 
 - [x] overflow PR 
 - [x] umod PR
 - [x] sandwich seminar mailing list 
 - [x] previous ARM people 
 - [x] PL people mailing list/theory tea
 - [ ] close comb PR 
-
+- [x] visa reimbursement mail 
+- [x] poster session emails 
+- [x] docs to accept phd
+- 
+- 
 
 
