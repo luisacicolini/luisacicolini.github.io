@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import * as greatPost from './src/posts/2025.md';
+const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+---
+
 ---
 <BaseLayout title="welcome-home">
   <Header/>
@@ -9,5 +13,12 @@ import Header from '../components/Header.astro';
   <a href="read-list">things i've read</a>
   <a href="reading-list">things i want to read</a>
   <a href="lately-up-to">things i'm up to lately</a>
+  <p>{greatPost.frontmatter.compiledContent()}</p>  
   </main>
 </BaseLayout>
+
+
+
+
+
+---
