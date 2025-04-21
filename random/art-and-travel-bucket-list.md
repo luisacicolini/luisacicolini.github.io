@@ -17,3 +17,4 @@
 - [ ] i looked into the abyss and said uwu
 - [x] galaxy brains and giant egos
 - [x] people are moved by different things 
+- [ ] ominous cobra-cow friendship
