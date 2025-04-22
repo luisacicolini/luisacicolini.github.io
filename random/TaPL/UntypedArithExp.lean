@@ -113,141 +113,7 @@ inductive t'.EvaluatesTo : t' → t' → Prop
 
 /-- exercise 3.5.14: show that theorem 3.5.4 also holds for t' -/
 theorem OneStepDeterminacy' (a b c : t') (hab : t'.EvaluatesTo a b) (hac : t'.EvaluatesTo a c) : b = c := by
-  revert c
-  induction hab
-  · -- ind. hp : (ite True t₃ t₂) → c
-    case EvaluatesToTrue t₃ t₂ =>
-      intros c cIteTrue
-      -- given the shape of cIteTrue : (t'.True.ite t₃ t₂).EvaluatesTo c
-      -- EvaluatesTo is either EvaluatesToTrue or EvaluatesToIf
-      cases cIteTrue
-      · case EvaluatesToTrue => rfl
-      · case EvaluatesToIf hEvalTrue => cases hEvalTrue
-  · -- ind. hp : (ite False t₃ t₂) → c
-    case EvaluatesToFalse t₃ t₂ =>
-      intro c cIteFalse
-      cases cIteFalse
-      · case EvaluatesToFalse => rfl
-      · case EvaluatesToIf hEvalFalse => cases hEvalFalse
-  · -- ind. hp : (ite t₁ t₃ t₂) → c
-    case EvaluatesToIf t₂ t₃ c' c hcEvalToc hcEvalToCImpc =>
-    intro c hcIte
-    -- given the shape of hcIte it can be either EvaluatesToTrue, EvaluatesToFalse, EvaluatesToIf
-    -- Lean automatically remove the non-relevant cases
-    cases hcIte
-    · case EvaluatesToTrue => cases hcEvalToc
-    · case EvaluatesToFalse => cases hcEvalToc
-    · case EvaluatesToIf c hEvaluatesTo =>
-        rw [hcEvalToCImpc]
-        exact hEvaluatesTo
-  · -- ind. hp : t₁.succ → c
-    case EvaluatesToSucc t t₁ t₁EvaluatesToT t₁EvaluatesToc =>
-    intro t t₁SuccEvalTo
-    cases t₁SuccEvalTo
-    case EvaluatesToSucc t₁ ht₁EvalTo =>
-      simp only [t'.succ.injEq]
-      exact t₁EvaluatesToc t₁ ht₁EvalTo
-  · -- ind. hp : zero.pred → c
-    case EvaluatesToZero =>
-    intro c hZeroPred
-    cases hZeroPred
-    · case EvaluatesToZero => rfl
-    · case EvaluatesToPred hZeroEvaluatesTo => cases hZeroEvaluatesTo
-  · -- ind. hp: pred (succ (t₁)) → c
-    case EvaluatesToPredSucc t₁ =>
-    -- hp : t₁.succ.pred → c
-    intro c ht₁SuccPredEvalToc
-    -- given the shape of ht₁SuccPredEvalToc,
-    -- it can be either EvaluatesToPredSucc or EvaluatesToPred
-    cases t₁.succ.pred
-    · case True =>
-        cases t₁
-        · case True =>
-            cases ht₁SuccPredEvalToc
-            · case EvaluatesToPredSucc => rfl
-            · case EvaluatesToPred hTrueEvalToPred =>
-              cases hTrueEvalToPred
-              · case EvaluatesToSucc hTrueEvalToSuccPred =>
-                cases hTrueEvalToSuccPred -- contradiction
-        · case False =>
-            cases ht₁SuccPredEvalToc
-            · case EvaluatesToPredSucc => rfl
-            · case EvaluatesToPred hFalseSuccEvalTo =>
-                cases hFalseSuccEvalTo
-                · case EvaluatesToSucc hFalseEvalToSuccPred =>
-                  cases hFalseEvalToSuccPred
-        · case ite a b c =>
-            cases ht₁SuccPredEvalToc
-            · case EvaluatesToPredSucc =>  rfl
-            · case EvaluatesToPred hIteSuccEvalTo =>
-              cases hIteSuccEvalTo
-              case EvaluatesToSucc a₁ b₁ c₁ hIteEvalTo =>
-                cases hIteEvalTo
-                · case EvaluatesToTrue =>
-
-
-                    sorry
-                · case EvaluatesToFalse =>
-                    · case True =>
-                    sorry
-                ·
-                  sorry
-        · case zero => sorry
-        · case succ u => sorry
-        · case pred u => sorry
-        · case iszero u => sorry
-    · case False =>
-        sorry
-    · case ite a b c =>
-        sorry
-    · case zero =>
-        sorry
-    · case succ u =>
-        sorry
-    · case pred u =>
-        sorry
-    · case iszero u =>
-        sorry
-  · case EvaluatesToPred t₁ t₁ t hT₁EvalToc =>
-    intro t₁ t₁PredEvalToT₁
-    -- three rules might have neen used for the reduction
-    -- however, none of the lhs of these rules overlap, meaning
-    -- that the same rule has been used to derive a → b and a → c
-    cases t₁PredEvalToT₁
-    · case EvaluatesToZero =>
-        sorry
-    · case EvaluatesToPredSucc => sorry
-    · case EvaluatesToPred t₁ t₁EvalToT₁ => sorry
-      -- exact congrArg t'.pred (hT₁EvalToc t₁ t₁EvalToT₁)
-  · case EvaluatesToIsZeroZero =>
-      intro c hZeroIsZeroEval
-      cases hZeroIsZeroEval
-      · case EvaluatesToIsZeroZero => rfl
-      · case EvaluatesToIsZero t₁ hZeroEvalTo =>
-        -- there's only one case to evaluate t'.zero
-        -- that yields t'.True = t₁.iszero
-        cases hZeroEvalTo
-  · case EvaluatesToIsZeroSucc =>
-    intro c hSuccIsZeroEval
-    cases hSuccIsZeroEval
-    · case EvaluatesToIsZeroSucc => rfl
-    · case EvaluatesToIsZero t₁ t₁' hSuccEvalTo =>
-        cases hSuccEvalTo
-        · sorry
-  · case EvaluatesToIsZero hEvalTocEq hEvalTocImp =>
-    intro c ht₁IsZeroEvalTo
-    cases ht₁IsZeroEvalTo
-    · case EvaluatesToIsZeroZero t₁ =>
-        sorry
-    · case EvaluatesToIsZeroSucc t₁ t₂ =>
-        sorry
-    · case EvaluatesToIsZero t₁ ht₁EvalTo =>
-        sorry
-
-
-/-- exercise 3.5.14: show that theorem 3.5.4 also holds for t' -/
-theorem OneStepDeterminacy'' (a b c : t') (hab : t'.EvaluatesTo a b) (hac : t'.EvaluatesTo a c) : b = c := by
-  revert c
+  revert c -- bring hypothesis hac into the goal
   induction hab
   · -- a [EvaluatesToTrue]→ b
     -- i.e. a = (ite true b t) [EvaluatesToTrue]→ b
@@ -283,25 +149,31 @@ theorem OneStepDeterminacy'' (a b c : t') (hab : t'.EvaluatesTo a b) (hac : t'.E
     -- i.e. a [EvaluatesToIf] → b
     -- in this case, we know that b will be something like b = ite b1 a2 a3
     -- and given a = ite a1 a2 a3, to have a [EvaluatesToIf] → b we need a1 → b1
-    case EvaluatesToIf a b a2 a3 ha1EvalTob1 ha1EvalTocImp =>
-    -- ha1EvalTocImp : ∀ (c : t'), a.EvaluatesTo c → b = c
-    -- is the inductive hypothesis (a [EvaluatesTo]→ c) → b = c
-    -- note that we are supposing already that a [EvaluatesToIf]→ b
-    intro c hIteEval
+    case EvaluatesToIf a1 b1 a2 a3 haEvalTob haEvalTocImp =>
+    -- haEvalTocImp : ∀ (c : t'), a1.EvaluatesTo c → b1 = c is the inductive hypothesis
+    -- note that we are also supposing that a1 [EvaluatesToIf]→ b1
+    intros c hIteEval
     -- we study the reductions that apply to hIteEval
     -- under the hypotheses that
-    -- (1) (a → c) → b = c
-    -- (2) a → b
+    -- (1) (a1 → c1) → b1 = c1
+    -- (2) a1 → b1
     -- given the hypothesis
     cases hIteEval
-    · -- if (ite a1 a2 a3) [EvaluatesToTrue]→ c
-      -- and by (2) we know (a1 → b) [EvaluatesToIf]→ ((ite a1 a2 a3) → (ite b a2 a3))
-      -- then we require a1 → true, and already b1 → true, thus true → b1 which is absurd
-      case EvaluatesToTrue => cases ha1EvalTob1
-    ·
-      sorry
-    ·
-      sorry
+    · -- we suppose a1 [EvaluatesToTrue]→ c
+      -- from (2) it follows that true → b, which is absurd
+      case EvaluatesToTrue => cases haEvalTob
+    · -- absurd as above
+      case EvaluatesToFalse => cases haEvalTob
+    · -- we suppose a1 [EvaluatesToIf]→ c
+      -- from (2) we know a1 → b1 : the evaluation rule applied to a must be the same
+      case EvaluatesToIf haEvalToc1 => rfl
+
+
+
+
+
+
+
   · sorry
   · sorry
   · sorry
