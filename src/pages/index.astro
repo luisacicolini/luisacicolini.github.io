@@ -5,11 +5,10 @@ import { getCollection } from 'astro:content';
 const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
----
 <BaseLayout title="welcome-home">
   <Header/>
   <main>
-  <h1>Welcome to my very broken and very work-in-progress website!</h1>
+  <h1>Welcome :)</h1>
   <a href="read-list">things i've read</a> 
   <br>
   <a href="reading-list">things i want to read</a>
