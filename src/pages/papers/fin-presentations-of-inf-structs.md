@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title:"finite presentations of infinite structures: automata and interpretations - a. blumensath et al."
+title: "finite presentations of infinite structures: automata and interpretations - a. blumensath et al."
 ---
 
 #### def

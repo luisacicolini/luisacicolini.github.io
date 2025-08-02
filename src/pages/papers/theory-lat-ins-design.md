@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title:theory of latency-insensitive design - carloni et al., 2003
+title: theory of latency-insensitive design - carloni et al., 2003
 ---
 - Latency-insensitive designs are synchronous distributed systems and are realized by composing functional modules that exchange data on communication channels according to an appropriate protocol.
 - The theory may be applied as a rigorous basis to design complex digital systems by simply composing predesigned and verified components so that the composition satisfies, formally and “by construction,” the required properties of synchronization and communication

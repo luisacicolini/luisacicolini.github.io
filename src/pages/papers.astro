@@ -4,7 +4,13 @@ import { getCollection } from 'astro:content';
 const papers = Object.values(import.meta.glob('./papers/*.md', { eager: true }));
 ---
 
-<p>attended talks:</p>
-<ul>
-  {papers.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-</ul>
+<BaseLayout title="papers-read">
+  <main>
+  <p>some papers:</p>
+  <ul>
+    {papers.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+  </ul>
+  </main>
+</BaseLayout>
+
+
