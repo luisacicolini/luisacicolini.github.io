@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import * as greatPost from './src/posts/2025.md';
+import { getCollection } from 'astro:content';
 const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
@@ -10,15 +10,18 @@ const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
   <Header/>
   <main>
   <h1>Welcome to my very broken and very work-in-progress website!</h1>
-  <a href="read-list">things i've read</a>
+  <a href="read-list">things i've read</a> 
+  <br>
   <a href="reading-list">things i want to read</a>
-  <a href="lately-up-to">things i'm up to lately</a>
-  <p>{greatPost.frontmatter.compiledContent()}</p>  
+  <br>
+  <a href="papers">papers I've read</a>
+  <br>
+  <a href="talks">talks I attended</a>
+  <br>
   </main>
 </BaseLayout>
 
-
-
-
-
----
+<p>Things I'm learning:</p>
+<ul>
+  {posts.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+</ul>

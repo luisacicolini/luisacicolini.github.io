@@ -1,0 +1,12 @@
+---
+title: theory of latency-insensitive design - carloni et al., 2003
+---
+- Latency-insensitive designs are synchronous distributed systems and are realized by composing functional modules that exchange data on communication channels according to an appropriate protocol.
+- The theory may be applied as a rigorous basis to design complex digital systems by simply composing predesigned and verified components so that the composition satisfies, formally and “by construction,” the required properties of synchronization and communication
+- According to our approach, the system can be thought as completely synchronous, i.e., just as a collection of modules that communicate by means of channels having “zero delay,” i.e., a delay negligible with respect to the pe- riod of the common clock signal (synchronous assumption).
+- However,the proposed theory guarantees that it is not necessary to complete costly redesign iterations or to slow down the real clock. The key idea is borrowed from pipelining [10], [11]: partition the long wires into segments whose lengths satisfy the timing requirements imposed by the real clock by inserting logic locks called relay stations, which have a function similar to the one of latches on a pipelined data path
+- The key point of this approach is to relax time constraints during the early phases of the design when correct measures of the delay paths among the modules are not yet available.
+- Two systems are latency equivalent if on every channel, they present the same data streams, i.e., the same ordered sequence of data, but, pos- sibly, with different timing. We show that for patient processes, the notion of latency equivalence is compositional by proving the following theorems: 1) the intersection of two patient pro- cesses is a patient process; 2) given two pairs of latency equiv- alent patient processes, their pairwise intersections are also la- tency equivalent; and 3) for all pairs of strict processes and patient processes , if is latency equivalent to and is latency equivalent to , then their intersections are latency equivalent. As a consequence, we can derive the major result of our theory: if all processes in a strict system are re- placed by corresponding patient processes, then the resulting system is patient and latency equivalent to the original one. 
+
+Insight: latency-insensitive design is useful and allows faster iterations on 
+the design/faster development in general.
