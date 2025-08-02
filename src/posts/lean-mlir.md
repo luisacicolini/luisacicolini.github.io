@@ -1,3 +1,8 @@
+---
+title: "lean-mlir"
+layout: ../layouts/BaseLayout.astro
+---
+
 -- # Lean-MLIR spiritual retreat
 -- NOTE: Monadic Code Needs Pointfree Theorems
 -- -------------------------------------------
@@ -2699,6 +2704,3 @@ binding of `top : Lets ..` is the current binding of a particular zipper. -/
 -- def Expr.ctxt : Expr d Γ eff t → Ctxt d.Ty := fun _ => Γ
 
 -- end TypeProjections
-
-
--- # Long-term planning

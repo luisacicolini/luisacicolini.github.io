@@ -81,3 +81,22 @@ layout: ../layouts/BaseLayout.astro
 - https://www.jeremykun.com/2016/03/05/my-graduate-career-in-math/
 - abstract algebra by art something
 - yt lectures by benedict gross 
+- https://link.springer.com/chapter/10.1007/3-540-61780-9_64
+- https://arxiv.org/abs/2205.11703v1#
+- https://iis-people.ee.ethz.ch/~zimmi/publications/sop_synthesis.pdf 
+- https://web.archive.org/web/20190905131552/http://www.hilgart.org/enformy/dma-Chap7.htm
+- https://dl.acm.org/doi/pdf/10.1145/3706628.3708872 
+- https://dl.acm.org/doi/pdf/10.1145/3597614
+- https://blog.regehr.org/
+- https://homotopytypetheory.org/2015/09/25/realcohesion/
+- https://wp.doc.ic.ac.uk/vetss/wp-content/uploads/sites/122/2019/10/Sewell-Fixing-the-Foundations-with-Semantics-and-Capabilities.pdf
+- https://www.cs.ox.ac.uk/tom.melham/pub/Gao-2021-EFV.pdf 
+- https://alastairreid.github.io/papers/cav2016_isa_formal.pdf
+- https://dl.acm.org/doi/pdf/10.1145/3591234
+- https://dl.acm.org/doi/pdf/10.1145/3624722 
+- https://math.stackexchange.com/questions/472134/what-is-the-relation-between-a-banach-space-and-a-hilbert-space
+- https://www.danielgratzer.com/papers/type-theory-book.pdf 
+- https://oeis.org/search?q=Popcount&language=english&go=Search 
+- https://github.com/leanprover/reference-manual/pull/451/files
+- https://tiu-edu.uz/media/books/2024/05/28/1664976801.pdf 
+- https://terrytao.wordpress.com/2025/05/31/a-lean-companion-to-analysis-i/
