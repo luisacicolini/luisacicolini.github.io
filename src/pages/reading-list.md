@@ -1,10 +1,8 @@
 ---
-layout: ../../layouts/BaseLayout.astro
-title:"Reading List"
+layout: ../layouts/BaseLayout.astro
+title: "Reading List"
 ---
-
 # Things I want to read
-
 - https://vita.had.co.nz/papers/tidy-data.pdf
 - https://kyl.neocities.org/books/%5BTEC%20TUF%5D%20the%20visual%20display%20of%20quantitative%20information.pdf
 - https://mblondin.espaceweb.usherbrooke.ca/automata/files/book_authors.pdf

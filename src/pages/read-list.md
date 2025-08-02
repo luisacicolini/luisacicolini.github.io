@@ -1,14 +1,11 @@
 ---
-layout: ../../layouts/BaseLayout.astro
-title:"Read List"
+layout: ../layouts/BaseLayout.astro
+title: "Read List"
 ---
 # 2025 
-
 - https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/
 - 
-
 # 2024
-
 - il dottor stranamore ovvero: come ho imparato a non preoccuparmi e ad amare la bomba - peter george
 - cronache della galassia - isaac asimov
 - the doors of perception & heaven and hell - aldous huxley
@@ -17,9 +14,7 @@ title:"Read List"
 - il muro - jean-paul sartre
 - sulla sponda del fiume piedra mi sono seduta e ho pianto - paulo coelho
 - bar sport - stefano benni
-
 # 2023
-
 - la canzone di achille - madeline miller
 - a psalm for the wild-built - becky bhambers
 - memoirs of hadrian - marguerite yourcenar
