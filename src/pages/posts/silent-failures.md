@@ -2,6 +2,9 @@
 layout: ../../layouts/BaseLayout.astro
 title: "silent failures"
 ---
+
+# Silent failures 
+
 It's important to acknowledge *why* things go wrong, instead of acknowledging a failure and just move on with life. People don't always do that, but it's actually important (especially when working in a group, especially when working in a group of *opinionated people*). Being aware of why things go wrong helps us understand how to avoid similar failures.
 It seems like people don't always *actually* want what they claim they want: it's important to reflect on *actions* besides words.
 If you say you want something, but don't get it when presented with an opportunity, it might be the case to reflect on *why* you want it and what you *expect* from it.

@@ -2,6 +2,8 @@
 layout: ../../layouts/BaseLayout.astro
 title: "my research"
 ---
+# Research ideas 
+
 Formal verification is well known to be an intense task in the hardware design pipeline, taking up to 50% of the total design time (cite here).
 In particular, the verification and testing of designs is a task typically taking place at the end of the compilation, with compiled designs consisting of
 very big, detailed and low-level representations.

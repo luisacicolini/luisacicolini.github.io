@@ -2,6 +2,128 @@
 layout: ../../layouts/BaseLayout.astro
 title: "knaster-tarski theorem"
 ---
+
+*WIP*
+
+# Knaster-Tarski theorem in type theory
+statement: *the set of fixed points of a monotone function over a complete lattice is itself a complete lattice*. 
+
+We start by definining the elements that live in the statement. 
+
+### Lattice
+A *lattice* is a set of elements $L$ such that 
+1. there exists two binary operations $meet (\land)$ and $join (\lor)$ such that 
+- $\land$ is associative: $\forall x, y, z \in L, (x \land y)\land z = x \land (y\land z)$
+- $\land$ is commutative: $\forall x, y \in L, x \land y = x \land x$
+- $\land$ is idempotent: $\forall x \in L, x \land x = x$
+- $\lor$ is associative: $\forall x, y, z \in L, (x \lor y)\lor z = x \lor (y\lor z)$
+- $\lor$ is commutative: $\forall x, y \in L, x \lor y = x \lor x$
+- $\lor$ is idempotent: $\forall x \in L, x \lor x = x$
+2. there exists two elements $\top$ and $\bot$ such that 
+- $\top$ is an identity element for $\land$: $\forall x \in L, x\land \top = x$
+- $\bot$ is an absorbing element for $\land$: $\forall x \in L, x\land \bot = \bot$
+- $\bot$ is an identity element for $\lor$: $\forall x \in L, x\lor \bot = x$
+- $\top$ is an absorbing element for $\lor$: $\forall x \in L, x\lor \top = \top$
+3. there exists a partial order, which we indicate as $\le$, such that 
+- $\bot$ is below everything: $\forall x, \bot \le x$
+- $\top$ is above everything: $\forall x, x \le \top$
+- $x \land y$ is the "greatest lower bound (GLB) of x and y", where: 
+    (i) the lower bound of $x, y$ is $p = LB (x, y)$ if $p \le x$ and $p \le y$
+    (ii) $p$ is the greatest lower bound if $\forall q, q = LB (x, y)$, where $q \le x$ and $q \le y$, 
+        we also have $q \le p$
+- $x \lor y$ is the "least upper bound (LUB) of x and y", where: 
+    (i) the upper bound of $x, y$ is $p = UB (x, y)$ if $x \le p$ and $y \le p$
+    (ii) $p$ is the least upper bound if $\forall q, q = UB (x, y)$, where $x \le q$ and $y \le q$, 
+        we also have $p \le q$
+
+From the definitions we have: 
+- $x \land y \le x$ and $x \land y \le y$
+- $x \lor y \ge x$ and $x \lor y \ge y$
+- $x \land (y \lor z) \le ((x\land y)\lor(x\land z))$
+    ```
+                   ⊤
+                   |
+                 x ∨ y       "join" : LUB
+                 /   \
+                /     \
+                x      y
+                \     /
+                 \   /
+                 x ∧ y       "meet" : GLB
+                   |
+                   ⊥
+    ```
+
+Other examples:
+- Given any set, the set of its subsets is a lattice, with the partial order $\subseteq$
+- $\mathbb{R}$ between $[0,1]$ is a latice with $\land$ being `max`, $\lor$ being `min`, 
+    and the order relation being $\le$
+- same for $\mathbb{Q}$ between $[0,1]$
+
+We can also reason the other way around and get a lattice out of a partial order: consider $\mathbb{Q}[0,1]$ with order relation $\le$, we need to define $meet$ and $join$. 
+
+We can have a lattice with $d = \top$, $a = \bot$ and $a \land c = a$, $b \land c = a$ ...
+```
+         d
+        / \
+       b   c
+        \ /
+         a
+```
+    
+In this case:
+```
+         d
+        / \
+       c   e
+       | x |
+       b   f
+        \ /
+         a
+```
+We have a lattice with $d = \top$, $a = \bot$ and $b \land f = e$, but also $b \land f = c$?
+In this lattice we can't decide what's the actual LUB between c and e. This goes against the actual definition of join, hence this is not a lattice.
+To make this a proper lattice we can just add: 
+```
+      d
+     / \
+    c - e
+    | x |
+    b   f
+     \ /
+      a
+```
+meaning that $b \land f = c$ since $c \le e$, and it can't be $b \land f = e$ since $e$ is not the *least* upper bound.
+
+If a partial order fails to become a lattice it's usually because there's no $\top$, no $\bot$ or 
+two elements don't have a unique LUB\GLB.
+
+Another example with sets: let's consider $S = \mathbb{N}$ and a lattice $L$, a set containing: 
+1. $S$
+2. All finite subsets of $S$: $T \;|\; T\subseteq S \; and \; |T|\le \infty$
+For example, this will include the nodes: 
+```
+    ...
+        {1, 2, 3}    {1, 2, 4}
+        /      |     /   |
+       /       |    /    |
+    {3}       {1, 2}    {4}
+    ...
+```
+We'll have 
+- $\top := S$
+- $\bot := \empty$
+- $\land := \cap$, which is GLB, in fact: 
+    $S\cap T$ is the GLB of $(S, T) \iff$ (1) $S\cap T \le S$ and (2) $S\cap T \le T$ and (3) $\forall V, V \le S$ and $V \le T \implies V \le S \cap T$
+    1. $S\cap T\le S$: $\forall x, x\in S\cap T = \{x\;|\; x\in S \; and\; x\in T\} \implies x\in S$
+    2. analogously, $S\cap T \le T$
+    3. $\forall V, V \le S$ and $V \le T \implies V \le S \cap T$, but we know $\forall x\in V, x \in S$ and $\forall x\in V, x \in T$ and $\forall x\in V, x \in T\cap S$ is the same as saying that $x\in S$ and $x\in T$
+- $\lor := \cup$
+
+We now need to define a *complete* lattice:
+
+# Knaster-Tarski theorem in analysis
+
 let us recall some definitions:
 · lattice := set of points with two functions join and meet : L × L → L
             and two elements sup and inf : L

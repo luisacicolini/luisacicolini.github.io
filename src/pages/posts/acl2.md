@@ -2,7 +2,7 @@
 layout: ../../layouts/BaseLayout.astro
 title: "acl2"
 ---
-### FSM extraction with ACL2
+# FSM extraction with ACL2
 
 ACL2 is a very nice proof assistant, that contains a bunch of libraries (`books`), each of which contains theorems useful for formal verification.
 In particular, they have a tool to verify SystemVerilog designs by extracting a FSM from the design (the FSM format is called `svex`) such that it can be fed to a SAT solver (Hunt 2006).
