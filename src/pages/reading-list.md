@@ -77,8 +77,8 @@ title: "Reading List"
 - https://www.cs.ubc.ca/~mrg/cs513/2019-2/reading/ReadingList.html
 - https://fmv.jku.at/papers/BiereArthoSchuppan-FMICS02.pdf
 - https://www.jeremykun.com/2016/03/05/my-graduate-career-in-math/
-- abstract algebra by art something
-- yt lectures by benedict gross 
+- Algebra - Artin
+- https://www.youtube.com/playlist?list=PLzVTusWerVcIzewg9dQxOKl9_62kTgOgI
 - https://link.springer.com/chapter/10.1007/3-540-61780-9_64
 - https://arxiv.org/abs/2205.11703v1#
 - https://iis-people.ee.ethz.ch/~zimmi/publications/sop_synthesis.pdf 
@@ -98,3 +98,4 @@ title: "Reading List"
 - https://github.com/leanprover/reference-manual/pull/451/files
 - https://tiu-edu.uz/media/books/2024/05/28/1664976801.pdf 
 - https://terrytao.wordpress.com/2025/05/31/a-lean-companion-to-analysis-i/
+- Modal Logic for Open Minds
