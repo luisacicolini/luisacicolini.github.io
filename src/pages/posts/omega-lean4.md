@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: "omega tactic in lean4"
 ---
 `omega` is a very cool and powerful tactic in the Lean framework, made to solve linear optimization problems.

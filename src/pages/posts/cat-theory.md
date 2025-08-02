@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: "a mini intro to category theory"
 ---
 model something

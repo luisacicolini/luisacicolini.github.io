@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: cgo 2024
 ---
 # CGO 2024

@@ -1,6 +1,6 @@
 ---
-title: "Read List"
-layout: ../layouts/BaseLayout.astro
+layout: ../../layouts/BaseLayout.astro
+title:"Read List"
 ---
 # 2025 
 

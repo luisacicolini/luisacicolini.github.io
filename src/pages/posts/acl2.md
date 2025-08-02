@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: "acl2"
 ---
 ACL2 is a very nice proof assistant, that contains a bunch of libraries (`books`), each of which contains theorems useful for formal verification.

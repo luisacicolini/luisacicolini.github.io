@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: "knaster-tarski theorem"
 ---
 let us recall some definitions:

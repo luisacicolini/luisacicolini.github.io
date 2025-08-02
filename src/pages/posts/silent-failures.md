@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: "silent failures"
 ---
 It's important to acknowledge *why* things go wrong, instead of acknowledging a failure and just move on with life. People don't always do that, but it's actually important (especially when working in a group, especially when working in a group of *opinionated people*). Being aware of why things go wrong helps us understand how to avoid similar failures.

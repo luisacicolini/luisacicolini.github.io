@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: dept. seminars
 ---
 ## 24.05.24 Lizy John: HW design with/for ML

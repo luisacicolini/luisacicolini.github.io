@@ -1,8 +1,11 @@
 ---
 const { title } = Astro.props;
+import "../styles/global.css";
 ---
+
 <html lang="en">
   <head>
+    <slot name="head" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -22,9 +25,14 @@ const { title } = Astro.props;
         text-decoration: underline;
       }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Helvetica Neue', sans-serif;
+      }
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
   </head>
-
   <body>
     <slot />
   </body>

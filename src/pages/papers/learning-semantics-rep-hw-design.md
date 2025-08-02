@@ -1,5 +1,6 @@
 ---
-title: Learning Semantic Representations to Verify Hardware Designs}
+layout: ../../layouts/BaseLayout.astro
+title:Learning Semantic Representations to Verify Hardware Designs}
 ---
 example of how hardware abstractons' semantics is extracted.
 

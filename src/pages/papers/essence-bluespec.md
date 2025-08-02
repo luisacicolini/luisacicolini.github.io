@@ -1,5 +1,6 @@
 ---
-title: The Essence of Bluespec
+layout: ../../layouts/BaseLayout.astro
+title:The Essence of Bluespec
 ---
 A paper so beautiful and clean that I somehow wish I had written.
 

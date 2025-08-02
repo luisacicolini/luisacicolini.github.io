@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 title: "my research"
 ---
 Formal verification is well known to be an intense task in the hardware design pipeline, taking up to 50% of the total design time (cite here).
