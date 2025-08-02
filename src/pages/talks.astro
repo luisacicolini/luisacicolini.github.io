@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 const talks = Object.values(import.meta.glob('./talks/*.md', { eager: true }));
-
 ---
 
 <p>attended talks:</p>

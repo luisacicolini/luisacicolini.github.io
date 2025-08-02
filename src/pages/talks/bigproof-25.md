@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: bit proof 2025
+title: big proof 2025
 ---
 
 ## Kevin Buzzard - Formalizing Fermat: How it's going
