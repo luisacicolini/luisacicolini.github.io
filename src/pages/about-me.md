@@ -64,7 +64,7 @@ present my work at Facebook and at the Lawrence Berkeley National Laboratory.
 
 **mar. 18** joined [NECSTLab](https://necst.it/) as a research student
 
-**july 17** graduated high school
+**july 17** graduated high school: after spending 5 years learning about ancient greek, latin and philosophy i'm now off to engineering school :)
 
 **july 17** passed Cambridge Proficiency English - CEFR C2 (and failed Goethe Zertifikat C1 - CEFR C1)
 
