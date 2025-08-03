@@ -4,8 +4,11 @@ title: "more about me"
 ---
 
 ## Nice to meet you!
-My name is Luisa, I am a formal methods enthusiast, and I like thinking about logics and creativity.
-I'm currently a research assistant at the university of cambridge.
+My name is Luisa, I am an automata and formal methods enthusiast - currently on a quest to learn more about logics
+and maths. 
+I also enjoy painting, sewing clothes and music - I played the piano and sang in various bands for a long time, and still love doing it when I get the chance to!
+
+I'm currently a research assistant at the university of Cambridge, here's a bit of what i've been up to lately: 
 
 **mar. 25** i'm the [publicity chair](https://2026.cgo.org/committee/cgo-2026-organizing-committee) for CGO'26
 
