@@ -13,14 +13,16 @@ const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
   <br>
   <a href="reading-list">things i want to read</a>
   <br>
-  <a href="papers">papers I've read</a>
+  <a href="about-me">find out what i'm up to</a>
   <br>
-  <a href="talks">talks I attended</a>
+  <a href="papers">papers i've read</a>
+  <br>
+  <a href="talks">talks i attended</a>
   <br>
   </main>
 </BaseLayout>
 
-<p>Things I'm learning:</p>
+<p>Things i'm learning:</p>
 <ul>
   {posts.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
 </ul>
