@@ -15,7 +15,7 @@ I'm currently a research assistant at the university of cambridge.
 
 **mar. 24** in Copenhagen to be a student volunteer at PLDI'24 - my first time at a more "theoretical" conference: made me realize how much more I need to study and learn to shift towards more theoretical research!
 
-**mar. 24** started of my job as a research assistant at the University of Cambridge
+**mar. 24** started my job as a research assistant at the University of Cambridge
 
 **mar. 24** briefly back in Edinburgh to be a student volunteer at CGO'24
 
