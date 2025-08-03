@@ -70,4 +70,4 @@ present my work at Facebook and at the Lawrence Berkeley National Laboratory.
 
 **july 16** passed Goethe Zertifikat B2 - CEFR B2
 
-**sept. 16** in Trento to participate in the NASA Challenge, with out project of [mapping of alpine glaciers](http://www.ghiacciaitrentini.altervista.org/)!
+**sept. 16** in Trento to take part in the NASA Challenge, with our project to [map of alpine glaciers](http://www.ghiacciaitrentini.altervista.org/)!
