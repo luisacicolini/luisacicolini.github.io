@@ -12,6 +12,8 @@ I'm currently a research assistant at the university of Cambridge, here's a bit 
 
 **mar. 25** i'm the [publicity chair](https://2026.cgo.org/committee/cgo-2026-organizing-committee) for CGO'26
 
+**dec. 24** i'm an artifact evaluator for [CGO'25](https://2025.cgo.org/)
+
 **oct. 24** again in California, this time presenting a technical talk ["Exploiting MLIR Abstractions for Hardware Verification"](https://www.youtube.com/watch?v=ga0VHhwmKMM&t=682s) at LLVM-dev! my first time at an LLVM-dev meeting, and I met so many inspiring people :)
 
 **mar. 24** i'm the [publicity chair](https://2025.cgo.org/committee/cgo-2025-organizing-committee) for CGO'25
