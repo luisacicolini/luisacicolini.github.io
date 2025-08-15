@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "learning-pyramid*
+title: "learning-pyramid"
 ---
 *WIP*
 
