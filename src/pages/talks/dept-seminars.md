@@ -33,10 +33,7 @@ is designed such that reductions still work nicely.
 - reading suggestion: [a few constructions on constructors](https://research-portal.st-andrews.ac.uk/en/publications/a-few-constructions-on-constructors)
 - [trampolines](https://hackernoon.com/on-recursion-and-trampolining-uxf3tvx)
 more complex recursive functions: e.g. `ackermann` function
-- well founded rec is stronger than struct, bu twhy would we use struct rec? because 
-(1) it does not ask for explicit proof
-(2) it enables good kernel reduction behaviour, which is useful for types definition and kernel computation (e.g. `rfl`, `bv_decide`)
--> connection to proof irrelevance?
+
 - problem: how do we make sure that our proof means *actually* what we mean? always a problem in ITP!
 ```lean 
 theorem sum_of_n (n : Nat):
