@@ -200,3 +200,23 @@ newParSum:  .     .     x     x     x     x     x     x
 
 4th call (hypothetical): validNodes = 1 → return
 ```
+
+With the currently existing Lean4 infrastructure, the parallel prefix sum circuit can only exist if *flattened*, meaning that we take 
+a bunch of vectors we want to sum and concatenate them into a single, longer vector. 
+
+The core of the implementation does not change, and in fact its *denotation* is proven!
+
+### a note on the denotation 
+
+When I say *"the circuit denotes to a function `f` over bitvecs"*, it means that the circuit behaves exactly like that function. 
+To prove this, we start with a bitvector `x`, a circuit `xc`, and a proof that circuit `xc` denotes to `x` (*"`xc` behaves exacly like `x`*). 
+Then, we need to consider every port in the circuit and make sure that the behaviors it allows are the same allowed by the function and yield the same results
+
+Moving on to our popcount circuit: we want to prove that it denotes to the popcount function over bitvectors `BitVec.popCount`.
+The high-level idea is very simple: we define some functions over bitvectors that behave as the nodes we introduced for popcount 
+(a function to extend each bit into a `w`-long word and concatenate it, a function to take two `w`-long words and add them, etc ...)
+and first prove that the popcount nodes we introduce behave exactly like those functions.
+
+Very high-level, we want to say that every bit of the circuit behaves as a certain function, and the circuit as a whole behaves as the combination of said functions. 
+The last and crucial step of this proof requires showing that the whole parallel prefix sum behaves as the "intuitive" popcount circuit ("if bit at position `i` is true then add 1, else add 0"), which is the complex part...
+but we made some more progress with the proof thanks to [bollu](https://www.pixel-druid.com), which is way more complex than anything I've ever done with Lean (and tbh, with any other language really). 
