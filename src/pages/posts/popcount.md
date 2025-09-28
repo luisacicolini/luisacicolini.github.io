@@ -178,3 +178,25 @@ b0=1       b1=1
 ```
 without the zero-extension we'd have overflow :(. 
 
+```
+first time i call blastAddVec from go
+oldParSum:  .     .     .     .     .     .     .     .     validNodes = 8, usedNodes = 0
+newParSum:  .     x     x     x     x     x     x     x
+
+oldParSum:  .     .     .     .     .     .     .     .     validNodes = 8, usedNodes = 2
+newParSum:  .     .     x     x     x     x     x     x
+
+..
+
+newParSum:  .     .     .     .     x     x     x     x     validNodes = 8, usedNodes = 8
+
+2nd time i call blastAddVec from go
+oldParSum:  .     .     .     .     x     x     x     x     validNodes = 4, usedNodes = 0
+newParSum:  .     .     x     x     x     x     x     x
+
+3rd time i call blastAddVec from go
+  .     .     x     x     x     x     x     x
+  .     x     x     x     x     x     x     x
+
+4th call (hypothetical): validNodes = 1 → return
+```

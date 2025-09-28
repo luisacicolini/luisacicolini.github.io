@@ -10,6 +10,12 @@ I also enjoy painting, sewing clothes and music - I played the piano and sang in
 
 I'm currently a research assistant at the university of Cambridge, here's a bit of what i've been up to lately: 
 
+**oct. 25** i'm attending + student-volunteering at OOPSLA'25 in Singapore
+
+**oct. 25** i'm attending HASE'25 in Taipei
+
+**june 25** i'm attending [Big Proof'25](https://www.newton.ac.uk/event/bprw03/)
+
 **mar. 25** i'm the [publicity chair](https://2026.cgo.org/committee/cgo-2026-organizing-committee) for CGO'26
 
 **dec. 24** i'm an artifact evaluator for [CGO'25](https://2025.cgo.org/)
