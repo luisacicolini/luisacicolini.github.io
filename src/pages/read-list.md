@@ -5,6 +5,7 @@ title: "Read List"
 # 2025 
 - https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/
 - il silenzio è cosa viva - chandra candiani
+- la fata carabina - daniel pennac 
 # 2024
 - il dottor stranamore ovvero: come ho imparato a non preoccuparmi e ad amare la bomba - peter george
 - cronache della galassia - isaac asimov
