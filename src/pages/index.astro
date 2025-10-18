@@ -24,17 +24,23 @@ const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }))
 </BaseLayout>
 
 <p>Things i'm learning:</p>
-<ul>
+<ul class="posts">
   {posts.map(post => {
     const raw = post.frontmatter?.date;
     const formatted = raw
-      ? new Date(raw).toLocaleDateString(undefined, { year: 'numeric', month: 'short'})
+      ? new Date(raw).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) // e.g. "Oct"
       : '';
     return (
       <li>
+        {raw ? <time class="post-date" datetime={raw}>{formatted}</time> : <span class="post-date" />}
         <a href={post.url}>{post.frontmatter.title}</a>
-        {raw ? <span> — <time datetime={raw}>{formatted}</time></span> : null}
       </li>
     );
   })}
 </ul>
+
+<style>
+  .posts { list-style: none; padding: 0; margin: 0; }
+  .posts li { display: flex; align-items: center; gap: 0.6rem; padding: 0.25rem 0; }
+  .post-date { width: 3.25rem; color: #6b7280; font-size: 0.95rem; text-align: left; }
+</style>
