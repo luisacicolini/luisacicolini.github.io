@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "knaster-tarski theorem"
+date: "05.28.2025"
 ---
 
 *WIP*

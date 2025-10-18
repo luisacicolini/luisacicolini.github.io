@@ -2,7 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
-const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }))
+  .sort((a, b) => {
+    const da = a.frontmatter?.date ? new Date(a.frontmatter.date) : 0;
+    const db = b.frontmatter?.date ? new Date(b.frontmatter.date) : 0;
+    return db - da; // newest first; use da - db for oldest first
+  });
 ---
 
 <BaseLayout title="welcome-home">
@@ -20,5 +25,16 @@ const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 
 <p>Things i'm learning:</p>
 <ul>
-  {posts.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+  {posts.map(post => {
+    const raw = post.frontmatter?.date;
+    const formatted = raw
+      ? new Date(raw).toLocaleDateString(undefined, { year: 'numeric', month: 'short'})
+      : '';
+    return (
+      <li>
+        <a href={post.url}>{post.frontmatter.title}</a>
+        {raw ? <span> — <time datetime={raw}>{formatted}</time></span> : null}
+      </li>
+    );
+  })}
 </ul>

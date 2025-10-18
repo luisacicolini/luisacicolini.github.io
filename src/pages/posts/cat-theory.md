@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "a very very small intro to category theory"
+date: "02.10.2023"
 ---
 # a very very small intro to category theory
 to model something we can use: 

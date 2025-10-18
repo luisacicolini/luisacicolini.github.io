@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "the essence of bluespec"
+date: "03.20.2024"
 ---
 A paper so beautiful and clean that I somehow wish I had written it!
 

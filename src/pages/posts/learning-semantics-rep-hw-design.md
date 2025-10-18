@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "semantics for hardware design"
+date: "02.28.2024"
 ---
 example of how hardware abstractons' semantics is extracted.
 

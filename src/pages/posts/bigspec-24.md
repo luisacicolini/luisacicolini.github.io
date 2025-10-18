@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "big spec 2025"
+date: "10.11.2024"
 ---
 
 ## Sandrine Blazy - Some challenges and work in progress in verified compilation of realistic languages

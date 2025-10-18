@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "acl2"
+date: "02.28.2025"
 ---
 # FSM extraction with ACL2
 

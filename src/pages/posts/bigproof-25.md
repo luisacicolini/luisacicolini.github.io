@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: big proof 2025
+title: "big proof 2025"
+date: "06.13.2025"
 ---
 
 ## Kevin Buzzard - Formalizing Fermat: How it's going

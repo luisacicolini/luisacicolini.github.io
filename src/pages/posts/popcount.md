@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "population count"
+date: "08.28.2025"
 ---
 *WIP*
 # Popcount Circuits 

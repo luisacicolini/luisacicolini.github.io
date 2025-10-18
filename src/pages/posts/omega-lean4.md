@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "omega tactic in lean4"
+date: "01.28.2054"
 ---
 *WIP*
 

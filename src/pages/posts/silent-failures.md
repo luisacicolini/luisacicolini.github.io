@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "silent failures"
+date: "03.30.2023"
 ---
 
 # Silent failures 

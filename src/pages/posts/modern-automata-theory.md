@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "modern automata theory - z. esik"
+date: "06.28.2024"
 ---
 
 ## finite automata

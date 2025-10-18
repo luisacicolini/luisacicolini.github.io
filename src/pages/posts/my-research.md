@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "my research"
+date: "12.28.2024"
 ---
 # Research ideas 
 
