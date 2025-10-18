@@ -3,8 +3,6 @@ layout: ../../layouts/BaseLayout.astro
 title: "cgo 2024"
 date: "03.20.2024"
 ---
-# CGO 2024
-
 ## M. O’Boyle Keynote, CC
 - Compilers redux vs. End of Moore’s law, rough ~3.6% improvement
 - Architecture can’t do it alone
