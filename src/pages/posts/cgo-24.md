@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: cgo 2024
+title: "cgo 2024"
 ---
 # CGO 2024
 
@@ -70,9 +70,7 @@ title: cgo 2024
 ## Katsumi Okuda - AskIt: Unified Programming Interface for Programming with Large Language Models
 
 - Communication: program <- function call → program, human <-programming language → program, human <-natural language→ LLM-based system
-- Question: program <-?→ LLM → use DSL to:
-    - LLM as part of a program
-    - ???
+- Question: program <-?→ LLM → use DSL for LLM as part of a program
 - Emergent abilities of LLMs = directly answerable questions
 - GPT-4 as a parser: make prompt → send prompt → extract result
 - AskIt: define type → define function → call function

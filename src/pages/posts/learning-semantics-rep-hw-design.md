@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: Learning Semantic Representations to Verify Hardware Designs}
+title: "semantics for hardware design"
 ---
 example of how hardware abstractons' semantics is extracted.
 
@@ -8,8 +8,6 @@ example of how hardware abstractons' semantics is extracted.
 - RTL designs are typically simulated using an RTL design simulator, which does not suffice for the design goals of our analysis. For use with machine learning, we choose to represent RTL as a control data flow graph (CDFG). The CDFG we construct for each Verilog RTL program encodes the program’s simulation semantics, so that our models may make inferences about the their behavior
 
 ## Experience with embedding hardware description languages in HOL
-
-interesting tech report. 
 
 ## What are the Semantics of Hardware, Bernstein et al., 2021
 - We propose an endeavor to formalize and relate each level of semantics using abstract interpretation.

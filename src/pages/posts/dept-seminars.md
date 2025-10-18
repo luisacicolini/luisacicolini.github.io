@@ -50,4 +50,4 @@ theorem sum_of_n (n : Nat):
 #check sum_of_n -- shows the actual proof term
 ```
 
-- questions: Knaster Tarski, proof irrelevance in the presentation, `partial_fixpoint`, monad
+- Q: Knaster Tarski, proof irrelevance in the presentation, `partial_fixpoint`, monad

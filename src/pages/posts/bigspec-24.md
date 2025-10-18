@@ -1,11 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: big spec 2025
+title: "big spec 2025"
 ---
-
-- christopher pulte, ben simner, catalin hritcu, michael sammler
-- what’s special about hypervisors verification?
-- back to the building blocks (white house paper?)
 
 ## Sandrine Blazy - Some challenges and work in progress in verified compilation of realistic languages
 
@@ -26,7 +22,7 @@ title: big spec 2025
         - component: independent CU, consumes/produces tokens, async connection, may be stateful
         - channel,: transfer token, unbounded queue
         - semantics: execute anything that has enough inputs, scheduling is implementation dependent → semantics is independent of scheduling, dynamic scheduling = execution only constrained by availability of input data
-- why do we have to write induction by hand?
+- question: why do we have to write induction by hand?
 
 ## Alastair Reid - Engineering large, multipurpose microprocessor specifications (using the x86-64 architecture as a case study)
 
@@ -41,7 +37,7 @@ title: big spec 2025
 - systemVerilog → SVEX + SVTV → framework to define, unroll, evaluate FSMs, translate everything into FSMs and then use that
 - specialized rewriter for multipliers
 
-# random thoughts and ideas
+# (my own) random thoughts and ideas 
 
 - a compositional approach to hardware verification exploiting high level abstractions (dialects) for progressive and verified lowering, using fsms as a proxy to represent dialects' semantics, based on the assumption that the automata-theoretic approach is better than the logic one (in this specific case? in general? based on what?).
 - so for example a problem with logic representation is that it scales quite poorly with the number of variables involved

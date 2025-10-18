@@ -28,12 +28,9 @@ title: big proof 2025
     idea: treat types as sets and elements as elements of the set (= obv model of dtt in zfc)
 - grothendieck universes?
 - lean is proven consistent if zfc with ω inaccessible is consistent
-    1. if Γ |- α : P then  ⟦Γ |- α ⟧g ⊆ |⬝|
-    ????
-- lsp???
-- definitional inversion theorem??
+- definitional inversion theorem
 
 ## Paola Iannone - Lean for teaching university mathematics
 
 - students struggle to adjust to the rigour and language of university maths
-- claim: students cannot `understand` proofs
+- can students `understand` proofs?
