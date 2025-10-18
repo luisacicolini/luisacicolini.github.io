@@ -23,13 +23,4 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-random/2024-learned-things.md
-random/research-proposal.aux
-random/research-proposal.aux
-random/research-proposal.blg
-random/research-proposal.out
-random/research-proposal.log
-random/todo.md
-random/students.md
-random/misc.md
-random/friday-update.md
+git-ignored/
