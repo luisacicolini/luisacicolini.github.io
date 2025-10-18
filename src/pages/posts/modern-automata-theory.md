@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "modern automata theory - z. \'esik"
+title: "modern automata theory - z. esik"
 ---
 
 ## finite automata
