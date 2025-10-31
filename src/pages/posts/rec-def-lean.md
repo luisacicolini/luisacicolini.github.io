@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "recursicv definitions in lean - joachim breitner"
+title: "recursive definitions in lean - joachim breitner"
 date: "08.15.2025"
 ---
 
