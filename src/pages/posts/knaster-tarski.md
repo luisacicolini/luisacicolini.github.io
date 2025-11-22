@@ -4,9 +4,7 @@ title: "knaster-tarski theorem"
 date: "05.28.2025"
 ---
 
-*WIP*
-
-# Knaster-Tarski theorem in type theory
+# knaster-tarski theorem in type theory
 Based on a very patient and kind explanation by [bollu](https://pixel-druid.com/). 
 It's taking me more than four months to understand the gist of this theorem and its implication and uses, 
 hopefully writing down what I got to so far will be helpful on this quest.

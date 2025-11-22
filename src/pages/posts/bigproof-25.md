@@ -4,6 +4,8 @@ title: "big proof 2025"
 date: "06.13.2025"
 ---
 
+# big proof 2025
+
 ## Kevin Buzzard - Formalizing Fermat: How it's going
 
 - if you prove things at the right level of generality proofs are better!

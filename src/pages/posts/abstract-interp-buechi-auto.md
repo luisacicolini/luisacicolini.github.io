@@ -3,6 +3,9 @@ layout: ../../layouts/BaseLayout.astro
 title: "abstract interpretation from B\"uchi Automata - m. hoffman et al."
 date: "09.30.2023"
 ---
+
+# abstract interpretation from b\"uchi automata
+
 From a given BA, build an abstract lattice with the following properties: 
 - there is a Galois connection between it and the infinite lattice of languages of finite and infinite words over a given alphabet
 - the abstraction is faithful wrt. acceptance

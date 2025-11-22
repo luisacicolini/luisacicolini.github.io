@@ -3,6 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "semantics for hardware design"
 date: "02.28.2024"
 ---
+# semantics for hardware design
 example of how hardware abstractons' semantics is extracted.
 
 - Design2Vec, a deep architecture that learns emantic abstractions of hardware designs

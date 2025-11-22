@@ -5,7 +5,7 @@ date: "01.28.2024"
 ---
 *WIP*
 
-# Omega in Lean4
+# omega tactic in lean
 
 `omega` is a very cool and powerful tactic in the Lean framework, made to solve linear optimization problems.
 Consider the following clauses:

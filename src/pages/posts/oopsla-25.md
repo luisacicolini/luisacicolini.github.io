@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "OOPSLA'25"
 date: "11.15.2025"
 ---
-
+# OOPSLA'25
 Attending ICFP and OOPSLA 2025 was definitely *an experience*. 
 There's so much to learn out there and it can be overwhelming - makes me feel like there's really 
 not enough time to learn all the things I would like to learn ☹️

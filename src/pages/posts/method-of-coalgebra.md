@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "the method of coalgebra - j. rutten"
 date: "06.28.2024"
 ---
-
+# the method of coalgebra
 ## algebras
 
 ### def

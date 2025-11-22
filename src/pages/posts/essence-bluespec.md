@@ -3,6 +3,9 @@ layout: ../../layouts/BaseLayout.astro
 title: "the essence of bluespec"
 date: "03.20.2024"
 ---
+
+# the essence of bluespec
+
 A paper so beautiful and clean that I somehow wish I had written it!
 
 - The commercial BSV compiler relies on a static analysis to do ORAAT-preserving concurrent scheduling of rules. Its static analysis, combined with user-provided annotations (e.g. descending urgency and execution order), generally creates excellent circuits. This approach, however, is not sat- isfactory for two reasons. (1) The static analysis should be an abstraction of the dynamic semantics of a program. BSV’s dynamic semantics applies only to one-rule-at-a-time execu- tions, and the cycle-level semantics necessarily depends on the static analysis of rules. (2) BSV programmers often think deliberately about static-analysis details and even change their code to nudge the compiler in the right direction to achieve the desired degree of concurrency.

@@ -4,6 +4,8 @@ title: "big spec 2025"
 date: "10.11.2024"
 ---
 
+# big spec 2025
+
 ## Sandrine Blazy - Some challenges and work in progress in verified compilation of realistic languages
 
 - many intermediate languages (IRs) necessary to verify compilers (eg compcert) → IR design is important

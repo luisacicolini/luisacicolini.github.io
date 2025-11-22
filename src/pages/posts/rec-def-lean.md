@@ -4,6 +4,8 @@ title: "recursive definitions in lean - joachim breitner"
 date: "08.15.2025"
 ---
 
+# recursive definitions in lean
+
 - cool intro trick: ask questions to get a feeling of who's in the audience + remember to repeat questions
 - Lean = theorem proving + writing code 
 - kernel: only check the proof term -> we can see these proof terms.

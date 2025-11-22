@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "acl2"
 date: "02.28.2025"
 ---
-# FSM extraction with ACL2
+# fsm extraction with acl2
 
 ACL2 is a very nice proof assistant, that contains a bunch of libraries (`books`), each of which contains theorems useful for formal verification.
 In particular, they have a tool to verify SystemVerilog designs by extracting a FSM from the design (the FSM format is called `svex`) such that it can be fed to a SAT solver (Hunt 2006).
@@ -77,3 +77,8 @@ A short guide to extract a FSM from a SystemVerilog design:
 -> use `(set-iprint t)` to enable debug mode!
 
 Emacs has a lot of commands, knowing them is quite useful.
+
+# fsm verification with acl2
+
+- sulfa properties converted into sat (cnf): 
+- converting ACL2 conjectures into conjunctive normal form (CNF), which we then output and check with an external satisfiability solver. The procedure is directly available as an ACL2 proof request. When the SAT tool is successful, a theorem is added to the ACL2 system database as a lemma for use in future proof attempts. 

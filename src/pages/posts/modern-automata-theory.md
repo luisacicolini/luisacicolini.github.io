@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "modern automata theory - z. esik"
 date: "06.28.2024"
 ---
-
+# modern automata theory
 ## finite automata
 ### def
 A semiring is a set $A$ equipped with two binary operations $+$ and $\cdot$ and two constant elements $0,1$ such that:

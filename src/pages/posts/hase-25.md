@@ -4,7 +4,7 @@ title: "HASE'2025"
 date: "10.24.2025"
 ---
 
-# High Assurance Systems Engineering, Taipei, 9-10 Oct. 2025
+# HASE'25
 
 This October, I had the chance to fly out to Taipei for the [HASE](https://hase-workshop.org/) conference, for its comeback after the previous [2020 edition](https://conf.researchr.org/series/hase). 
 It's been an inspiring event and I learned a lot of things, some of which are worth writing down (and hopefully looking back to in a few months or years from now). 

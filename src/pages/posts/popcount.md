@@ -4,9 +4,9 @@ title: "population count"
 date: "08.28.2025"
 ---
 *WIP*
-# Popcount Circuits 
+# population count 
 
-`popcount` is a common assembly primitive that counts the numbers of bits set to `1` in a bitvector. 
+`popcount` (or `cpop`) is a common assembly primitive that counts the numbers of bits set to `1` in a bitvector. 
 There are [various ways](https://nimrod.blog/posts/algorithms-behind-popcount/) to implement this, and 
 I tried implementing them as circuits that Lean's bitblaster `bv_decide` can digest. The challenge for me 
 were mainly 
