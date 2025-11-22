@@ -24,6 +24,7 @@ export const collections = {
   papers: papers, 
   talks: talks };
 
+
 export default defineConfig({
   base: '/luisacicolini.github.io/', 
 });
