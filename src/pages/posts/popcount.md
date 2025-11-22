@@ -87,7 +87,7 @@ fun( ) {
 ```
 
 
-## bitblasting circuit with [brian Kernighan's algorithm](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan): 
+## attempt 1: bitblasting circuit with [brian Kernighan's algorithm](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan): 
 This algorithm basically subtracts `1` and `and`s the bitvector until it's `0`: 
 ```
     unsigned int v; // count the number of bits set in v
@@ -122,12 +122,12 @@ popCount (x, iter, acc)
 I benched this circuit within `bv_decide` and ultimately it is not as fast as I was expecting, and scales really bad. 
 I found understanding why something is more or less digestible by a SAT solver particularly challenging.
 
-## intuitive bitblasting circuit for popcount
+## attempt 2: intuitive bitblasting circuit for popcount
 An alternative circuit is the most ["naive"](https://github.com/leanprover/lean4/pull/9469) one we can come up with: 
 for each bit in the input we generate an `if-then-else` node where the condition is "`bit = 0`". 
 This circuit performs better than Kernighan's in this context, but still scales quite dramatically. 
 
-## divide-et-impera bitblasting circuit for popcount
+## attempt 3: divide-et-impera bitblasting circuit for popcount
 The final alternative is to use a divide-and-conquer strategy, which is what for example [Hackers' Delight](https://github.com/hcs0/Hackers-Delight/blob/master/pop.c.txt) proposes 
 (the SWAR algorithm is an even-more-specialized-and-optimized circuit). The idea is to use bitmasks an shifts to `and` bits 
 such that after `log2 w` operations (where `w` is the width of the input) eventually we'll have the final number. 

@@ -9,6 +9,8 @@ title: "timeline"
 
 **oct. 25** i'm attending HASE'25 in Taipei
 
+**oct. 25** started PhD!
+
 **june 25** i'm attending [Big Proof'25](https://www.newton.ac.uk/event/bprw03/)
 
 **mar. 25** i'm the [publicity chair](https://2026.cgo.org/committee/cgo-2026-organizing-committee) for CGO'26
