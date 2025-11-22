@@ -4,7 +4,7 @@ title: "buechi, lindenbaum, tarski: a program analysis appetizer"
 date: "10.30.2023"
 ---
 # [buechi, lindenbaum, tarski: a program analysis appetizer](https://pm.inf.ethz.ch/publications/DSilvaUrban16a.pdf)
-a paper by v. d'silva, c. urban
+### a paper by v. d'silva, c. urban
 
 There are various approaches to prove the correctness of a program:
 - satisfiability-based: bounded executions and errors of $P$ are encoded as a formulae $Exec(P)$ and $Err$, respectively. 

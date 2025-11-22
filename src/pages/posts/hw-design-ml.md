@@ -4,7 +4,7 @@ title: "hw design with/for ml"
 date: "05.24.2024"
 ---
 # hw design with/for ml
-a talk by l. john
+### a talk by l. john
 
 - Exploit SW optimization first
 - Add hard matrix multiplier blocks to FPGA → how many? trade off: small area 3-5% (“Tensor Slices”) doubles the throughput for ML applications, w\out increasing the overall area, no extra general purpose connection required, no slowdown in non-ML benchmarks

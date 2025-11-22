@@ -4,7 +4,7 @@ title: "modern automata theory"
 date: "06.28.2024"
 ---
 # [modern automata theory](https://repositum.tuwien.at/bitstream/20.500.12708/20717/1/Esik-2012-Modern%20Automata%20Theory-ao.pdf)
-a book by z. esik, w. kuich
+### a book by z. esik, w. kuich
 
 ## finite automata
 ### def

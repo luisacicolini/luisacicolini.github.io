@@ -5,7 +5,7 @@ date: "03.20.2024"
 ---
 
 # [the essence of bluespec](https://dl.acm.org/doi/pdf/10.1145/3385412.3385965)
-a paper by t. bourgeat, c. pit-claudel, a. chlipala, arvind
+### a paper by t. bourgeat, c. pit-claudel, a. chlipala, arvind
 
 A work so beautiful and clean that I somehow wish I had written it!
 

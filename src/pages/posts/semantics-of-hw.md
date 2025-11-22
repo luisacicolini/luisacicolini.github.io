@@ -5,7 +5,7 @@ date: "10.30.2023"
 
 ---
 # [what are the semantics of hardware](https://capra.cs.cornell.edu/latte21/paper/19.pdf)
-a paper by g. bernstein, j. ragan-kelley
+### a paper by g. bernstein, j. ragan-kelley
 
 - We propose an endeavor to formalize and relate each level of semantics using abstract interpretation.
 - There are at least three major points of view on implementing interpreters/simulators. If the language resembles sequential code (e.g. HLS), then the host software-language semantics are often appealed to. In functional HDLs, some dataflow interpretation[ 15 ] is commonly used. Verilog itself uses a form of event-based simu- lation that resembles dataflow[ 1 ]. Lastly, many high-performance simulators flatten module hierarchy, eliminate loops by breaking the circuit at registers, and compile a single transition function for updating the state at each synchronous clock.

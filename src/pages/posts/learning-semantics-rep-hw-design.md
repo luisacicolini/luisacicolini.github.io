@@ -4,7 +4,7 @@ title: "learning semantic representations to verify hardware designs"
 date: "02.28.2024"
 ---
 # [learning semantic representations to verify hardware designs](https://proceedings.neurips.cc/paper/2021/hash/c5aa65949d20f6b20e1a922c13d974e7-Abstract.html)
-a paper by s. vasudevan, w.j. jiang, d. bieber, r. singh, c.r. ho, c. sutton
+### a paper by s. vasudevan, w.j. jiang, d. bieber, r. singh, c.r. ho, c. sutton
 
 - example of how hardware abstractons' semantics is extracted.
 - Design2Vec, a deep architecture that learns emantic abstractions of hardware designs
