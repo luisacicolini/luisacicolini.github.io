@@ -8,10 +8,11 @@ My name is Luisa, I am an automata and formal methods enthusiast - currently on 
 and maths. 
 I also enjoy painting, sewing clothes and music - I played the piano and sang in various bands for a long time, and still love doing it when I get the chance to!
 
-I'm currently a PhD student at the university of Cambridge, working at the intersection of hardware verification and verified decision procedures for compilers with [Lean4](https://github.com/leanprover/lean4).
+I'm currently a PhD student at the university of Cambridge, working on the cool maths we need to mechanize 
+hardware semantics with [Lean4](https://github.com/leanprover/lean4).
 here's a bit of what i've been up to lately: 
 
-**oct. 25** i'm attending + student-volunteering at OOPSLA'25 in Singapore
+**oct. 25** i'm attending & student-volunteering at OOPSLA'25 in Singapore
 
 **oct. 25** i'm attending HASE'25 in Taipei
 
