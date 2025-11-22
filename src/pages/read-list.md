@@ -8,6 +8,8 @@ title: "Read List"
 - la fata carabina - daniel pennac 
 - ingegneria della vita adulta - giorgia fumo 
 - the man who mistook his wife for a hat - oliver sacks
+- a prayer for the crown-shy - becky chambers
+- speaking of siva - allama prabhu, mahadeviyakka, devara dasimayya
 # 2024
 - il dottor stranamore ovvero: come ho imparato a non preoccuparmi e ad amare la bomba - peter george
 - cronache della galassia - isaac asimov
