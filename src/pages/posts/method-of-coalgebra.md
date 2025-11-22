@@ -4,6 +4,8 @@ title: "the method of coalgebra"
 date: "06.28.2024"
 ---
 # [the method of coalgebra](https://ir.cwi.nl/pub/28550/rutten.pdf)
+a book by j. rutten
+
 ## algebras
 
 ### def

@@ -1,10 +1,11 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "recursive definitions in lean - joachim breitner"
+title: "recursive definitions in lean"
 date: "08.15.2025"
 ---
 
 # recursive definitions in lean
+a talk by j. breitner
 
 *the kernel does not have recursion and will reject defs that are recursive*
 
