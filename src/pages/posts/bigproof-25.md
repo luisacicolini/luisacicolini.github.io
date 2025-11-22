@@ -8,7 +8,7 @@ date: "06.13.2025"
 
 ## Kevin Buzzard - Formalizing Fermat: How it's going
 
-- if you prove things at the right level of generality proofs are better!
+a very important lesson about proofs: **if you prove things at the right level of generality proofs are better!**
 
 ## Mario Carneiro - Metatheory in Lean
 
