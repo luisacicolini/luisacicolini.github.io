@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "PLDI'2024"
+title: "PLDI'24"
 date: "06.30.2024"
 ---
 ## Recent Advances in Floating-point (Static) Analyses
