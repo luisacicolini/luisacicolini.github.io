@@ -1,0 +1,166 @@
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1cm,columnsep=0.8cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{Peach}{HTML}{FFB092}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+\colorlet{heading}{Peach}
+\colorlet{headingrule}{Peach}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{Peach}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Luisa Cicolini}
+
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%% You can add multiple photos on the left or right
+\personalinfo{%
+  \printinfo{}{creativity and formal methods enthusiast, PhD student at the University of Cambridge}
+  \smallskip
+  
+  \email{luisacicolini@gmail.com}
+  \homepage{luisacicolini.github.io/}
+  \github{luisacicolini}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+
+\cvsection{\href{https://github.com/luisacicolini}{Projects}}
+
+\cvevent{Formalized Semantics For Hardware Verification}{}{September 2024 - present}{}
+My research targets the \textbf{formalization of hardware abstractions in Lean}.
+I am interested in \textbf{bridging maths and hardware verification}, giving formalized (and formally verifiable!)
+semantics to hardware concepts and building the infrastructure necessary to enable reasoning about 
+these concepts from a hardware perspective. 
+The two abstractions I work with at the moment are \textbf{bitvectors}, for the formalization of combinational logic, and \textbf{coinduction}, 
+the latency-insensitive abstractions. \\
+\smallskip
+\cvevent{Formalized RISC-V Instruction Set Architecture}{}{March 2025 - present}{}
+I contribute to the development of a \href{https://github.com/opencompl/riscv-lean}{\textbf{fully-bitblastable library for the RISC-V Instruction Set}}, proven equivalent to the Sail processor model.\\
+\smallskip
+\cvevent{\texttt{BitVec} in Lean4}{}{July 2024 - present}{}
+I am among \textbf{\href{https://github.com/leanprover/lean4}{Lean4}'s top 30 contributors}, 
+working on the development of Lean's bitvector library and verified bitblaster.\\
+\smallskip
+\cvevent{Model Checking For CIRCT}{}{September 2023 - present}{}
+I worked on formalizing the semantics of \textbf{\href{https://circt.llvm.org}{CIRCT}'s Finite State Machine (FSM) dialect}, 
+enabling CIRCT to integrate verification at a higher level of the stack. \\
+\smallskip
+\cvevent{Accelerating Regular Expressions Matching}{}{March 2022 - September 2023}{}
+I worked on the \textbf{Multi-Finite-State-Automaton} model, aimed at accelerating regex pattern matching. 
+
+\cvsection{Talks \& Publications}
+\begin{itemize}
+\item H. B\"oving, S. B. Mala, L. CICOLINI, et al. 
+\href{https://dl.acm.org/doi/pdf/10.1145/3763167}{“\textit{Interactive Bitvector Reasoning using Verified Bit-Blasting},”}, \textbf{OOPSLA'25}
+\item \href{https://llvm.swoogo.com/2024devmtg/session/2512718/exploiting-mlir-abstractions-for-hardware-verification}
+{B. Healy, L. CICOLINI
+{“\textit{Exploiting MLIR Abstractions for Hardware Verification},”} technical talk at \textbf{LLVM-dev 2024}} 
+\item L. CICOLINI, F. Carloni, et al.,
+\href{https://ieeexplore.ieee.org/iel7/10444766/10444770/10444810.pdf}{“\textit{One Automaton to Rule Them All: Beyond Multiple Regular Expressions Execution},”} \textbf{CGO'24}
+\item B. Branchini, G. Gerometta, L. CICOLINI, et al.,
+\href{https://ieeexplore.ieee.org/iel7/9937201/9937203/09937706.pdf}{“\textit{Surfing the wavefront of genome alignment},”} \textbf{ISCAS'22}
+\end{itemize}
+
+\begin{paracol}{2}
+  
+\cvsection{Education}
+% faGraduationCap
+\cvachievement{\faLaptop}{University of Cambridge, UK}
+\begin{itemize}
+\item 2025-present, \textbf{Ph.D. Student} with the \href{https://www.cl.cam.ac.uk/research/cascade/}{Cascade} Centre
+\item 2024-2025, \textbf{Research Assistant}
+\end{itemize}
+\cvachievement{\faPlane}{University of Edinburgh, UK}
+\begin{itemize}
+\item 2023, \textbf{Postgraduate Visiting Research Student}
+\item 2023, \textbf{Teaching Assistant} - Theoretical Computer Science
+\end{itemize}
+\cvachievement{\faGraduationCap}{Politecnico di Milano, Italy}
+\begin{itemize}
+\item 2024, Abilitazione Professionale - Ingegnere dell'Informazione
+\item 2021-2023, \textbf{M.Sc. Computer Science and Engineering}
+\item 2022, \textbf{Tutor} - Progetto di Algoritmi e Principi dell'Informatica
+\item 2021, \textbf{Tutor} - Informatica A
+\item 2020-2023, Member - \href{https://en.polifoniapolimi.it/}{Polifonia} Student Association
+\item 2020-2023, Member/Chair - \href{https://www.ieee.org/membership/women/}{IEEE Women In Engineering SB}
+\item 2020, Mentee - \href{https://leadthefuture.tech}{\textbf{Lead the Future}}
+\item 2018-2023, Research Student - \href{https://necst.it}{NECSTLab} and \href{https://necstcamp.necst.it/}{NECSTCamp} 
+\item 2017-2020, \textbf{B.Sc. Energy Engineering}
+\end{itemize}
+\cvachievement{\faPlane}{Technische Universitaet Muenchen, Germany}
+\begin{itemize}
+\item 2019-2020, \textbf{Exchange Student} (Erasmus)
+\end{itemize}
+\switchcolumn
+
+\cvsection{Certificates}
+\begin{itemize}
+    \item \textbf{Goethe Zertifikat B2} - CEFR B2 - 2016
+    \item \textbf{Cambridge Proficiency English} - CEFR C2 - 2017
+    \item \textbf{TOEFL iBT} - 116/120 - 2023
+    % \item \textbf{Neural Networks and Deep Learning} - by DeepLearning.AI, Coursera, (Iss. 2020)
+\end{itemize}
+
+\cvsection{Misc}
+\begin{itemize}
+    \item I volunteered with \textbf{kids} and \textbf{elderlies} during summer camps. 
+    \item I enjoy playing the \textbf{piano} and \textbf{singing}. I started studying \textbf{music} as a kid and have since performed with different bands - I still love joining a jam session whenever I can. 
+    \item I was a student volunteer at \textbf{DATE} (2019 and 2022 (virtual)), \textbf{PLDI} (2024), \textbf{OOPSLA} (2025). 
+    \item I was the \textbf{CGO} Publicity Chair in 2024, 2025, 2026.
+    \item I am part of \href{https://leadthefuture.tech}{\textbf{Lead the Future}} - first as a mentee, now as a mentor. I find \textbf{meaning} in sharing my experience (and mistakes) with younger students and members of the community. 
+\end{itemize}
+
+\end{paracol}
+
+
+\end{document}
