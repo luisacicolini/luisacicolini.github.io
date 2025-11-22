@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "HASE'2025"
+title: "HASE'25"
 date: "10.24.2025"
 ---
 
