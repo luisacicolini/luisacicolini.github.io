@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "big proof 2025"
+title: "Big Proof '25"
 date: "06.13.2025"
 ---
 

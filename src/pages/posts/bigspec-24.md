@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "big spec 2025"
+title: "Big Spec '24"
 date: "10.11.2024"
 ---
 
