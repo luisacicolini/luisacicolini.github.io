@@ -3,7 +3,6 @@ layout: ../../layouts/BaseLayout.astro
 title: "population count"
 date: "08.28.2025"
 ---
-*WIP*
 # population count 
 
 `popcount` (or `cpop`) is a common assembly primitive that counts the numbers of bits set to `1` in a bitvector. 
@@ -88,7 +87,7 @@ fun( ) {
 ```
 
 
-## [Brian Kernighan's algorithm](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan): 
+## bitblasting circuit with [brian Kernighan's algorithm](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan): 
 This algorithm basically subtracts `1` and `and`s the bitvector until it's `0`: 
 ```
     unsigned int v; // count the number of bits set in v
@@ -123,13 +122,14 @@ popCount (x, iter, acc)
 I benched this circuit within `bv_decide` and ultimately it is not as fast as I was expecting, and scales really bad. 
 I found understanding why something is more or less digestible by a SAT solver particularly challenging.
 
-## Intuitive popcount
+## intuitive bitblasting circuit for popcount
 An alternative circuit is the most ["naive"](https://github.com/leanprover/lean4/pull/9469) one we can come up with: 
 for each bit in the input we generate an `if-then-else` node where the condition is "`bit = 0`". 
 This circuit performs better than Kernighan's in this context, but still scales quite dramatically. 
 
-## Divide-et-impera popcount
-The final alternative is to use a divide-and-conquer strategy, which is what for example [Hackers' Delight](https://github.com/hcs0/Hackers-Delight/blob/master/pop.c.txt) proposes, namely the SWAR algorithm. The idea is to use bitmasks an shifts to `and` bits 
+## divide-et-impera bitblasting circuit for popcount
+The final alternative is to use a divide-and-conquer strategy, which is what for example [Hackers' Delight](https://github.com/hcs0/Hackers-Delight/blob/master/pop.c.txt) proposes 
+(the SWAR algorithm is an even-more-specialized-and-optimized circuit). The idea is to use bitmasks an shifts to `and` bits 
 such that after `log2 w` operations (where `w` is the width of the input) eventually we'll have the final number. 
 
 In the SAT solver, I [implemented](https://github.com/leanprover/lean4/pull/9730) a slightly more general circuit that allows me to avoid generating the magic constants. 
@@ -168,7 +168,7 @@ add 1                                       ( + ).zExt 8   ...                ( 
                                                            \ /
 add log2 w                                                ( + ).zExt w
 ```
-Note that we really need this extention, otherwise we won't be able to count correctly, for example, in the first
+Note that we *really* need this extention, otherwise we won't be able to count correctly, for example, in the first
 set of add nodes: 
 ```
 b0=1       b1=1 
@@ -219,5 +219,12 @@ The high-level idea is very simple: we define some functions over bitvectors tha
 and first prove that the popcount nodes we introduce behave exactly like those functions.
 
 Very high-level, we want to say that every bit of the circuit behaves as a certain function, and the circuit as a whole behaves as the combination of said functions. 
-The last and crucial step of this proof requires showing that the whole parallel prefix sum behaves as the "intuitive" popcount circuit ("if bit at position `i` is true then add 1, else add 0"), which is the complex part...
-but we made some more progress with the proof thanks to [bollu](https://www.pixel-druid.com), which is way more complex than anything I've ever done with Lean (and tbh, with any other language really). 
+
+### proving that parallel prefix sum and *intuitive* sum are equivalent
+
+The last and crucial step of this proof requires showing that the whole parallel prefix sum behaves as the "intuitive" popcount circuit ("*if bit at position `i` is true then add 1, else add 0*"), which is the complex part. 
+The proof is making progess, also thanks to [bollu](https://www.pixel-druid.com), and is the most complex thing I've ever done in Lean (and tbh, with any other language really). 
+
+The proof proceeds with two steps: 
+1. We want to prove that the sum of the nodes at any depth `d` of the parallel-prefix-sum tree is constant 
+2. The sum of nodes at the very first level (i.e., when the addenda are the zero-extended bits) is equivalent to the sum of all the "*if bit at position `i` is true then add 1, else add 0*" we would unfold. 

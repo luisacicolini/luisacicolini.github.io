@@ -3,7 +3,8 @@ layout: ../../layouts/BaseLayout.astro
 title: "a very very small intro to category theory"
 date: "02.10.2025"
 ---
-# a very very small intro to category theory
+# a very small intro to category theory
+
 to model something we can use: 
 - sets, functions between sets
 - vector spaces, maps between vec spaces 
@@ -151,7 +152,8 @@ A *colimit* is like product but arrows go in the opposite direction:
         ----- A   B ------
 ```
 for sets this corresponds to disjoint union ("smallest thing")
-an example I don't understand:
+
+example 1: 
 ```
                  f
               A --> B
@@ -159,8 +161,9 @@ an example I don't understand:
               v     v
               C .. > B |_| C / f ~ g ("B disjoint union C quotiented by ~")
 ```
---> the product is unique modulo isomorphisms
-another example I don't understand:
+the product is unique modulo isomorphisms
+
+example 2: 
 ```
              C ---- D
             A        E              ===>                E,A         or          A,C - D,E
@@ -169,5 +172,5 @@ another example I don't understand:
             |     /
             B    F
 ```
-and defining different colimits gives you different ways to glue up these things and define different shapes (e.g. torus)
---> you need category theory to discuss the glueing
+defining different colimits gives us different ways to *glue up* these things and define different shapes (e.g. torus)
+\{\rightarrow\} category theory discusses the *glueing*
