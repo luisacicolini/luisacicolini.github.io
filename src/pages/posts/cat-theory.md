@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "a very very small intro to category theory"
+title: "a small intro to category theory"
 date: "02.10.2025"
 ---
-# a very small intro to category theory
+# a small intro to category theory
 
 to model something we can use: 
 - sets, functions between sets
