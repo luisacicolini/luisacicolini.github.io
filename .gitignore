@@ -24,3 +24,20 @@ pnpm-debug.log*
 .idea/
 
 git-ignored/
+src/pages/cv/cv.aux
+src/pages/cv/cv.bbl
+src/pages/cv/cv.bcf
+src/pages/cv/cv.fdb_latexmk
+src/pages/cv/cv.fls
+src/pages/cv/cv.log
+src/pages/cv/cv.out
+src/pages/cv/cv.run.xml
+src/pages/cv/cv.synctex.gz
+src/pages/cv/cv.tex
+src/pages/cv/makefile
+src/pages/cv/pdfa.xmpi
+src/pages/cv/pubs-authoryear.tex
+src/pages/cv/pubs-num.tex
+src/pages/cv/README.md
+src/pages/cv/references.bib
+
