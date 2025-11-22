@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "the method of coalgebra - j. rutten"
+title: "the method of coalgebra"
 date: "06.28.2024"
 ---
-# the method of coalgebra
+# [the method of coalgebra](https://ir.cwi.nl/pub/28550/rutten.pdf)
 ## algebras
 
 ### def

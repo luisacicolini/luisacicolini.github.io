@@ -5,9 +5,9 @@ date: "05.28.2025"
 ---
 
 # knaster-tarski theorem in type theory
+
 Based on a very patient and kind explanation by [bollu](https://pixel-druid.com/). 
-It's taking me more than four months to understand the gist of this theorem and its implication and uses, 
-hopefully writing down what I got to so far will be helpful on this quest.
+It's taking me a lot to understand the gist of this theorem and its implication and uses.
 
 statement: *the set of fixed points of a monotone function over a complete lattice is itself a complete lattice*. 
 we will need a bunch of definitions around lattices to get to the theorem. 
@@ -287,9 +287,9 @@ For example, when defining the type `Nat`, the constructor might have a paramete
 ```
 the positivity check ensures that the function `f` mapping a set of candidates for `Nat` to a new, 
 larger set is indeed a monotone function on the lattice of all possible subsets of `Nat`.
-On the complete lattice $L = \{S \;|\;\ S\subseteq \mathbb{N}}$, the function we use to construct
+On the complete lattice $L = \{S \;|\;\ S\subseteq \mathbb{N}\}$, the function we use to construct
 the type is $f(S) = \{0\}\cup \{\forall s\in S, succ(s)\}$ and checking its monotonicity ensures that the 
 $f$ has a fixed point, i.e. a set $S = f(S)$ ensuring the validity of the construction. 
 
 
-TODO: find an example with a non monotone function!
+*I am on a quest for an example with a non monotone function and would love a suggestion on this!*

@@ -1,11 +1,9 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "lean-mlir"
+title: "lean-mlir misc"
 date: "02.28.2025"
 ---
-*WIP*
-
-# Lean-MLIR things
+# lean-mlir misc
 
 - `variable (d : Dialect) [DialectSignature d]` instantiates the core data structure `(Expr, Com)`, it is intrinsically well typed: typing rules are baked into the data structure,
 - this is done by asking the dialect to provide (via a signature) the type class: class `DialectSignature`: is a map from operations to the signature

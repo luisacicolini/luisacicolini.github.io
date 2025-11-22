@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "finite presentations of infinite structures: automata and interpretations - a. blumensath et al."
+title: "finite presentations of infinite structures: automata and interpretations"
 date: "09.30.2023"
 ---
-# finite presentations of infinite structures: automata and interpretations
+# [finite presentations of infinite structures: automata and interpretations](https://link.springer.com/content/pdf/10.1007/s00224-004-1133-y.pdf)
 
 #### def
 Some domanis of infinite but finitely presentable structures: 

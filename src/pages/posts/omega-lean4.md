@@ -3,26 +3,51 @@ layout: ../../layouts/BaseLayout.astro
 title: "omega tactic in lean4"
 date: "01.28.2024"
 ---
-*WIP*
-
 # omega tactic in lean
 
-`omega` is a very cool and powerful tactic in the Lean framework, made to solve linear optimization problems.
-Consider the following clauses:
-EX
-Clearly, there is no x that can satisfy both these parameters: `omega` will tell us that it could find no x satisfying both.
-Another example:
-EX
-There exists (at least... depending on our domain of interest :p) *at least* one x satisfying both constraints.
-We say that the problem is *satisfiable* and sleep tight at night knowing that this problem exists.
+`omega` is a lean tactic that solvec linear optimization problems. It's one of the first tactics I used and learning how it works helped me 
+understanding how to better express the boundaries of the problems I want to solve (in my case most of my constraints had to do with the boundedness of bitvectors' values).
+Some examples: 
 
-Now if we consider non-linear functions, `omega` won't work as expected, e.g. :
-EX
-What `omega` does in this case is to assign a dummy name to x ^ 2, considering it another variable of the problem:
-EX
-Knowing about these assignments is very important to reason about more complex functions, whose constraints are known, e.g.:
-EX
-In this case `omega` won't be able to solve the problem, since it does not know power and does not know that 2 ^ w is strictly positive.
-However, if we add:
-EX
-since the variable assigned to 2 ^ w is anyways constrained enough.
+1. Given the following hypotheses on `a` and `b`, it's impossible for their sum to be greater than `20`. 
+    ```lean4
+    example {a b : Nat} (ha : a < 10) (hb : b < 10) :
+        a + b > 20 := by omega 
+    /- omega could not prove the goal:
+        a possible counterexample may satisfy the constraints
+          0 ≤ d ≤ 9
+          0 ≤ c ≤ 9
+          c + d ≤ 20
+        where
+         c := ↑a
+         d := ↑b
+    -/
+
+2. For any values of `a` and `b` their sum will be greater than `20`: 
+    ```lean4
+    example {a b : Nat} (ha : a > 10) (hb : b > 10) :
+        a + b > 20 := by omega ✅
+
+
+Now if we consider non-linear functions, `omega` won't work e.g. :
+
+3. Even though we know that in maths `a * b` with `a > 10` and `b > 10` will necessarily be greater than `10`, `omega` can't reason about non-linear operations such as non-constant multiplication:
+    ```lean4 
+    example {a b : Nat} (ha : a > 10) (hb : b > 10) :
+        a * b + b > 20 := by omega
+
+    /- omega could not prove the goal:
+        a possible counterexample may satisfy the constraints
+        e ≥ 0
+        d ≥ 11
+        d + e ≤ 20
+        c ≥ 11
+        where
+        c := ↑a
+        d := ↑b
+        e := ↑a * ↑b
+4. In these cases, `omega` will try to shadow the operands it can't recognize, treating them as a variable whose constraints are unknown, and reason about whatever else remains in the expression. 
+    The example below is *true* regardless of whatever value `a * b` can have!
+    ```lean4 
+    example {a b : Nat} (ha : a > 10) (hb : b > 10) :
+        a * b + b + a > 20 := by omega ✅

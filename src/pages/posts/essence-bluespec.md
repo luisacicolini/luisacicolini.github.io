@@ -4,7 +4,7 @@ title: "the essence of bluespec"
 date: "03.20.2024"
 ---
 
-# the essence of bluespec
+# [the essence of bluespec](https://dl.acm.org/doi/pdf/10.1145/3385412.3385965)
 
 A paper so beautiful and clean that I somehow wish I had written it!
 
