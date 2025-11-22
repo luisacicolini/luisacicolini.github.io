@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "cgo 2024"
+title: "CGO'2024"
 date: "03.20.2024"
 ---
 
