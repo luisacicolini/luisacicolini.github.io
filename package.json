@@ -12,7 +12,7 @@
     "@astrojs/mdx": "^4.0.3",
     "@astrojs/sitemap": "^3.4.2",
     "@astropub/md": "^1.0.0",
-    "astro": "^5.12.8",
+    "astro": "^5.16.0",
     "katex": "^0.16.22",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
