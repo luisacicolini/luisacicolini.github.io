@@ -55,3 +55,7 @@ inspiration for works I thought were stuck ... and made friends.
 - [interpolation in z3](https://www.cs.utexas.edu/~hunt/FMCAD/fmcad11/papers/81.pdf)
 - [non-linear invariants generation](https://dl.acm.org/doi/10.1145/964001.964028)
 - [an introduction to bisimulation and coinduction](https://www.cs.unibo.it/~sangio/DOC_public/corsoFL.pdf)
+- [hazel](https://neurocy.notion.site/Hazel-Crash-Course-659f6b5807864d68a7fb723ff467811c) and [hazelnut](https://arxiv.org/pdf/1607.04180)
+- the marvelous semantics of [machine knitting](https://uwplse.org/2025/03/31/Algebraic-Knitting.html)
+- [a coinductive calculus of streams](https://research.vu.nl/ws/portalfiles/portal/2409636/219599.pdf)
+- [foundations of digital circuits](https://arxiv.org/abs/2502.08497)
