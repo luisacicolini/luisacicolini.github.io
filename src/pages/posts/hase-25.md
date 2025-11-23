@@ -9,12 +9,6 @@ date: "10.24.2025"
 This October, I had the chance to fly out to Taipei for the [HASE](https://hase-workshop.org/) conference, for its comeback after the previous [2020 edition](https://conf.researchr.org/series/hase). 
 It's been an inspiring event and I learned a lot of things, some of which are worth writing down (and hopefully looking back to in a few months or years from now). 
 
-**Taipei** is a very safe and interesting city (at least in my experience): I took a day before the conference to visit it and was not disappointed. 
-I especially appreciated brewing tea in a [quiet and small tea house](https://www.tripadvisor.com.sg/Restaurant_Review-g13811269-d8593098-Reviews-Qinhtian_Tea_House-Da_an_Taipei.html) and a lovely walk through the tea plantation in [Maokong](https://english.gondola.taipei/) (with more tea, obviously).
-The night markets are also definitely worth a visit: meals there are delicious and cheap, with great food variety: I saw so many things I can't really name!
-Taiwan in general seems to have a lot to offer, and I hope to be back, maybe for a trek or some surf lessons :)
-
-So after this first day of sightseeing, I spent the rest of my time in Taiwan at the HASE conference. 
 It was immediately clear that HASE has a very different organisation from other conferences: no pre-organised talks, a relatively small number of attendees, and an overall setup that really favours 1:1 interaction *with everyone*, focusing on problems/challenges/solutions in any area concerned with building high assurance systems. 
 This means that attendees can have very different backgrounds and objectives: formal verification in all its theoretical/mathematical/practical flavors and with different languages, hardware architects and designers working at various levels of abstraction, cryptography and security experts, industry people, academia people...
 
