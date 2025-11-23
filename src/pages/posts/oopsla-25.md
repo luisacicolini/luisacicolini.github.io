@@ -51,4 +51,7 @@ inspiration for works I thought were stuck ... and made friends.
 - [waterfall](https://www.cs.utexas.edu/~moore/acl2/v8-5/combined-manual/index.html?topic=ACL2____HINTS-AND-THE-WATERFALL) in acl2 - thanks to my new-acl2-friend!
 - [type universes as kripke worlds](https://dl.acm.org/doi/abs/10.1145/3747532): I loved studying Kripke frames and worlds - this work uses them to model very concrete semantics. 
     It was nice to bump into Kripke again :)
-- theory of bitvector interpolation: a lot of cool bitvector maths (and open questions) to study here!
+- theory of bitvector interpolation: a lot of cool bitvector maths (and open questions), for example [here](https://link.springer.com/content/pdf/10.1007/s10703-021-00372-6.pdf) and [here](https://link.springer.com/content/pdf/10.1007/978-3-030-45190-5_5.pdf)
+- [interpolation in z3](https://www.cs.utexas.edu/~hunt/FMCAD/fmcad11/papers/81.pdf)
+- [non-linear invariants generation](https://dl.acm.org/doi/10.1145/964001.964028)
+- [an introduction to bisimulation and coinduction](https://www.cs.unibo.it/~sangio/DOC_public/corsoFL.pdf)

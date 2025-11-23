@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "things to do in singapore"
-date: "10.12.2025"
+date: "10.18.2025"
 ---
 
 # things to do in singapore 
