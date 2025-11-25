@@ -9,7 +9,7 @@ date: 2025-11-25
 When working on adding the [popcount circuit](https://luisacicolini.github.io/posts/popcount/) to `bv_decide`, 
 the most complex proof required proving that summing a list of numbers via a parallel prefix sum circuit is equivalent summing them 
 recursively (*sum each element of the list until all have been added*). 
-Here is the gist of the proof (thank you [bollu](https://pixel-druid.com/))
+Here is the gist of the proof (thank you [bollu](https://pixel-druid.com/)).
 
 I started with a recursive definition of addition on a list: 
 
