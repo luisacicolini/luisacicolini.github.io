@@ -1,27 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import { getCollection } from 'astro:content';
-const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }))
-  .sort((a, b) => {
-    const da = a.frontmatter?.date ? new Date(a.frontmatter.date) : 0;
-    const db = b.frontmatter?.date ? new Date(b.frontmatter.date) : 0;
-    return db - da; // newest first; use da - db for oldest first
-  });
+import { getCollection } from 'astro:content'; 
+
+const allPosts = await getCollection('posts');
+
+const posts = allPosts.sort((a, b) => {
+    const da = a.data.date ? new Date(a.data.date) : 0;
+    const db = b.data.date ? new Date(b.data.date) : 0;
+    return db - da; // newest first
+});
 ---
+
 
 <BaseLayout title="hello">
   <Header/>
   <main>
-  <h1>Hello :)</h1>
-  A list of <a href="read-list">things i've read</a>, of <a href="reading-list">things i want to read</a>, of <a href="about-me">things i've been up to</a>, a list of things i'm learning:
+    <h1>Hello :)</h1>
+    A list of <a href="read-list">things i've read</a>, of <a href="reading-list">things i want to read</a>, of <a href="about-me">things i've been up to</a>, a list of things i'm learning:
   </main>
 </BaseLayout>
 
 <p></p>
 <ul class="posts">
-  {posts.map(post => {
-    const raw = post.frontmatter?.date;
+  {posts.map(post => { // This now references the sorted array
+    // Access data via 'post.data'
+    const raw = post.data.date; 
     const formatted = raw
       ? new Date(raw).toLocaleDateString(undefined, {day: 'numeric', month: 'short', year: 'numeric' })
       : '';
@@ -29,15 +33,16 @@ const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }))
     return (
       <li>
         {raw ? <time class="post-date" datetime={raw}>{formatted}</time> : <span class="post-date" />}
-        <a href={post.url}>{post.frontmatter.title}</a>
+        {/* Link using the slug, assuming your site is in the root (which the BaseLayout setup implies) */}
+        <a href={`/posts/${post.slug}`}>{post.data.title}</a>
       </li>
     );
   })}
 </ul>
 
 
-
 <style>
+  /* Styles remain the same */
   .posts { list-style: none; padding: 0; margin: 0; }
   .posts li { display: flex; align-items: center; gap: 0.6rem; padding: 0.25rem 0; }
   .post-date {display: inline-block; color: #6b7280; font-size: 0.95rem; text-align: left; 

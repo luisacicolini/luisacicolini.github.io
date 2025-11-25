@@ -1,0 +1,45 @@
+---
+
+title: "PLDI'24"
+date: 2024-06-30
+---
+
+# PLDI'24
+
+## SpEQ: Translation of Sparse Codes using Equivalences
+
+- Nasa Parallel Benchmarks!!
+- verify sparsity → equivalence check between dense and compressed = precondition for sparsity over input data → stuttering bisimulation
+- semantics is important and can be an interesting proxy for optimizations
+
+## Compiling with Abstract Interpretation
+
+- ai framework for compilation + use comp result to improve ai
+- ai = combine multiple analyses to collaborate/increase precision → can it be used for transformations?
+- free algebra domains generate programs as analysis result + domain functors for comp passes + online comp to SSA
+- ai: propagate analysis until fixed point
+
+## Towards Trustworthy Automated Program Verifiers: Formally Validating Translations into an Intermediate Verification Language
+
+- soundness of intermediate verification language program = frontend + backend
+- frontend soundness: ivl correct ⇒ backend correct
+- pb: no formal guarantees on implementations in practice + nontrivial implementations
+- cont: simulation methodology for source and ivl + certifying adaptation of viper-to-boogie translation
+- very interesting choice of ordering: first cont + results then challenges
+- ch1: semantic gap viper-boogie
+- ch2: diversity
+- ch3: non locality
+- pb: relating viper method and boogie procedure → p simulates m = decompose simulation into small semantic concerns + tactics for simulation of resulting concerns
+
+## Verified Extraction from Coq to OCaml
+
+- hand writing = control of optimization + bugs
+- solution: high level languages
+- pb: verifying aggressively opt compilers is very hard
+- first work: 2 stage compiler for hig level func lang + combinators to tinker with lowerl level details = verified
+- now the lowering algo is verified
+- reshape operators (invertible) → rewrite framework exploiting verified equivalences
+
+## Hyper Hoare Logic: (Dis-)Proving Program Hyperproperties
+
+- demanded abstract interpretation graph
