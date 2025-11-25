@@ -318,7 +318,7 @@ theorem pps_eq_rec_of_lt (l : List Nat) (hl : 0 < l.length) :
   simp
 ```
 
-For completeness, here the remaining theorems used in these proofs are: 
+For completeness, the remaining/auxilliary theorems used in these proofs are: 
 ```lean
 theorem cons_recursive_addition (newEl : Nat) (l : List Nat) :
   recursive_addition (newEl :: l) = newEl + recursive_addition l := by rfl
