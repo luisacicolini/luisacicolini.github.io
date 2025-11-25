@@ -60,7 +60,7 @@ inspiration for works I thought were stuck ... and made friends.
 - [a coinductive calculus of streams](https://research.vu.nl/ws/portalfiles/portal/2409636/219599.pdf)
 - [foundations of digital circuits](https://arxiv.org/abs/2502.08497)
 
-# things to do in singapore 
+## things to do in singapore 
 
 - hawkers centres: I loved lau pa sat and people's park
 - sentosa cableway and island: a very interesting piece of humanity 

@@ -100,7 +100,7 @@ Integrating both approaches in a solver requires a lot of work, and we seem to s
 - [egglog](https://github.com/egraphs-good/egglog) 
 - [arvind](https://scholar.google.com/citations?user=_BqpjCgAAAAJ&hl=en&oi=ao)'s works 
 
-# things to do in taipei 
+## things to do in taipei 
 
 **Taipei** is a very safe and interesting city (at least in my experience): I took a day before the conference to visit it and was not disappointed. 
 I especially appreciated brewing tea in a [quiet and small tea house](https://www.tripadvisor.com.sg/Restaurant_Review-g13811269-d8593098-Reviews-Qinhtian_Tea_House-Da_an_Taipei.html) and a lovely walk through the tea plantation in [Maokong](https://english.gondola.taipei/) (with more tea, obviously).
