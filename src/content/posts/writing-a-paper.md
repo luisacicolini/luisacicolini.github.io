@@ -77,9 +77,11 @@ I find it pretty hard, in fact, and try to remember that:
     *How do we communicate our availabilities? How do we force decisions when we get stuck?* 
     
  I find it much easier to work in a context where the answer to these questions is clear.
+ 
 2. A paper is *just a paper* (again courtesy of my literature high-school prof, who would remind us that *a grade is just the result of a 2h performance*). 
  It does not say anything about our value as people and can be influenced by a lot of factors, many of which we can't control. 
  It's important to remember that we're all humans, we make mistakes (and we will, in fact, make mistakes: a lot of them). Disagreements over technical issues are not personal, and neither are judgments over a sentence/section/chapter. 
+
 3. Science is a collaborative effort and is (should be?) about the pleasure we find in discovering and improving human understanding. 
  It's okay to not present the best, fastest, smartest thing possible. The purpose of science is to *advance knowledge*, whether the knowledge is about something that works 
  amazingly or about something that does not work. 
