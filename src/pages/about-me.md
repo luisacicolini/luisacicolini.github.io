@@ -5,6 +5,8 @@ title: "timeline"
 
 ## a bit of what i've been up to lately: 
 
+**dec. 25** i'm attending [ItaLean'25](https://pitmonticone.github.io/ItaLean2025/) in Bologna
+
 **oct. 25** i'm attending & student-volunteering at OOPSLA'25 in Singapore
 
 **oct. 25** i'm attending HASE'25 in Taipei
