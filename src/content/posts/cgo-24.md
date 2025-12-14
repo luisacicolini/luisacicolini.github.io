@@ -1,6 +1,6 @@
 ---
 
-title: "CGO'2024"
+title: "CGO'24"
 date: 2024-03-20
 ---
 
