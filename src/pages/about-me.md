@@ -29,7 +29,7 @@ title: "timeline"
         hiddenItems.forEach(item => {
           item.style.display = 'grid'; 
         });
-        toggleButton.textContent = 'Hide';
+        toggleButton.textContent = 'hide';
       } else {
         hiddenItems.forEach(item => {
           item.style.display = 'none';
@@ -51,155 +51,156 @@ title: "timeline"
 <ul class="timeline">
   <li>
     <span class="date">dec. 25</span>
-    <span class="activity">i'm attending <a href="https://pitmonticone.github.io/ItaLean2025/">ItaLean'25</a> in Bologna</span>
+    <span class="activity"> Attending <a href="https://pitmonticone.github.io/ItaLean2025/">ItaLean'25</a> in Bologna</span>
   </li>
   <li>
     <span class="date">oct. 25</span>
-    <span class="activity">i'm attending & student-volunteering at OOPSLA'25 in Singapore</span>
+    <span class="activity"> Attending & student-volunteering at <a href ="https://2025.splashcon.org/track/OOPSLA?">OOPSLA'25</a> in Singapore</span>
   </li>
   <li>
     <span class="date">oct. 25</span>
-    <span class="activity">i'm attending HASE'25 in Taipei</span>
+    <span class="activity"> Attending <a href = "https://hase-workshop.org/">HASE'25</a> in Taipei</span>
   </li>
   <li>
     <span class="date">oct. 25</span>
-    <span class="activity">started PhD!</span>
+    <span class="activity"> I am a PhD student at the University of Cambridge 🥳</span>
+  </li>
+  <li>
+    <span class="date">sept. 25</span>
+    <span class="activity"> After being a mentee, I am now a mentor with <a href="https://leadthefuture.tech">Lead the Future</a>!</span>
   </li>
   <li>
     <span class="date">jun. 25</span>
-    <span class="activity">i'm attending <a href="https://www.newton.ac.uk/event/bprw03/">Big Proof'25</a></span>
+    <span class="activity"> Attending <a href="https://www.newton.ac.uk/event/bprw03/">Big Proof'25</a></span>
   </li>
   <li>
     <span class="date">mar. 25</span>
-    <span class="activity">i'm the <a href="https://2026.cgo.org/committee/cgo-2026-organizing-committee">publicity chair</a> for CGO'26</span>
+    <span class="activity"> I am the publicity chair for <a href="https://2026.cgo.org/">CGO'25</a></span>
   </li>
   <li>
     <span class="date">dec. 24</span>
-    <span class="activity">i'm an artifact evaluator for <a href="https://2025.cgo.org/">CGO'25</a></span>
+    <span class="activity"> I am an artifact evaluator for <a href="https://2025.cgo.org/">CGO'25</a></span>
   </li>
   <li>
     <span class="date">oct. 24</span>
-    <span class="activity">again in California, this time presenting a technical talk <a href="https://www.youtube.com/watch?v=ga0VHhwmKMM&amp;t=682s">"Exploiting MLIR Abstractions for Hardware Verification"</a> at LLVM-dev! my first time at an LLVM-dev meeting, and I met so many inspiring people :)</span>
+    <span class="activity"> My first LLVM-dev meeting in Santa Clara (CA, USA), presenting our work <a href="https://www.youtube.com/watch?v=ga0VHhwmKMM&amp;t=682s">"Exploiting MLIR Abstractions for Hardware Verification"</a></span>
   </li>
   <li>
     <span class="date">mar. 24</span>
-    <span class="activity">i'm the <a href="https://2025.cgo.org/committee/cgo-2025-organizing-committee">publicity chair</a> for CGO'25</span>
+    <span class="activity"> I am the publicity chair for <a href="https://2025.cgo.org/">CGO'25</a></span>
   </li>
   <li>
     <span class="date">mar. 24</span>
-    <span class="activity">in Copenhagen to be a student volunteer at PLDI'24 - my first time at a more "theoretical" conference: made me realize how much more I need to study and learn to shift towards more theoretical research!</span>
+    <span class="activity"> Attending & student-volunteering at <a href="https://pldi24.sigplan.org/">PLDI'24</a> in Copenhagen - 
+    my first time at a more "theoretical" conference made me realize how much theory I need to study!</span>
   </li>
   <li>
     <span class="date">mar. 24</span>
-    <span class="activity">started my job as a research assistant at the University of Cambridge</span>
+    <span class="activity"> Started working as a research assistant at the University of Cambridge</span>
   </li>
   <li>
     <span class="date">mar. 24</span>
-    <span class="activity">briefly back in Edinburgh to be a student volunteer at CGO'24</span>
+    <span class="activity"> Attending & student-volunteering at <a href="https://conf.researchr.org/home/cgo-2024">CGO'24</a></span>
   </li>
   <li>
     <span class="date">feb. 24</span>
-    <span class="activity">got my Abilitazione Professionale - Ingegnere dell'Informazione</span>
+    <span class="activity"> Got my Abilitazione Professionale as Ingegnere dell'Informazione</span>
   </li>
   <li>
     <span class="date">jan. 24</span>
-    <span class="activity">i'm the <a href="https://conf.researchr.org/committee/cgo-2024/cgo-2024-organizing-committee">publicity chair</a> for CGO'24</span>
+    <span class="activity"> I am the publicity chair for <a href="https://conf.researchr.org/home/cgo-2024">CGO'24</a></span>
   </li>
   <li>
     <span class="date">dec. 23</span>
-    <span class="activity">the whole research lab moved to Cambridge! I'm now a visiting research student at the University of Cambridge.</span>
+    <span class="activity"> Our lab moved to Cambridge and I'm now a visiting research student at the University of Cambridge</span>
   </li>
   <li>
     <span class="date">oct. 23</span>
-    <span class="activity">got my MSc in Computer Science Engineering from Politecnico di Milano</span>
+    <span class="activity"> Got my MSc in Computer Science Engineering from Politecnico di Milano</span>
   </li>
   <li>
     <span class="date">oct. 23</span>
-    <span class="activity">our paper <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=q1-QIqUAAAAJ&amp;citation_for_view=q1-QIqUAAAAJ:u-x6o8ySG0sC">"One Automaton to Rule Them All: Beyond Multiple Regular Expressions Execution"</a> is accepted at CGO'24 :)</span>
+    <span class="activity"> Our paper <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=q1-QIqUAAAAJ&amp;citation_for_view=q1-QIqUAAAAJ:u-x6o8ySG0sC">"One Automaton to Rule Them All: Beyond Multiple Regular Expressions Execution"</a> is accepted at <a href="https://conf.researchr.org/home/cgo-2024">CGO'24</a> 🥹</span>
   </li>
   <li>
     <span class="date">oct. 23</span>
-    <span class="activity">TA-ing <code>Theoretical Computer Science</code></span>
+    <span class="activity"> I am the TA for the <code>Theoretical Computer Science</code> course at the University of Edinburgh</span>
   </li>
   <li>
     <span class="date">sep. 23</span>
-    <span class="activity">moved to Edinburgh to join prof. <a href="https://grosser.science/">Tobias Grosser's group</a> as a visiting research student</span>
+    <span class="activity"> I am moving to Edinburgh and joining prof. <a href="https://grosser.science/">Tobias Grosser's group</a> as a post-graduate visiting research student</span>
   </li>
   <li>
     <span class="date">sep. 22</span>
-    <span class="activity">our paper <a href="https://ieeexplore.ieee.org/iel7/9937201/9937203/09937706.pdf">"Surfing the wavefront of genome alignment"</a> is accepted at ISCAS 2022 :)</span>
+    <span class="activity"> Our paper <a href="https://ieeexplore.ieee.org/iel7/9937201/9937203/09937706.pdf">"Surfing the wavefront of genome alignment"</a> is accepted at ISCAS'22</span>
   </li>
   <li>
     <span class="date">jul. 22</span>
-    <span class="activity">became chair of <a href="https://www.ieee.org/membership/women/">WIE</a> in the Politecnico di Milano IEEE Student Branch</span>
+    <span class="activity"> I am the chair of the <a href="https://www.ieee.org/membership/women/">WIE</a> chapter for the Politecnico di Milano IEEE Student Branch</span>
   </li>
   <li>
     <span class="date">mar. 22</span>
-    <span class="activity">student volunteer at DATE'22 conference (online)</span>
+    <span class="activity"> I am a student volunteer at DATE'22 conference (online)</span>
   </li>
   <li>
     <span class="date">jan. 22</span>
-    <span class="activity">tutoring <code>Algoritmi e Principi dell'Informatica</code> project course for computer science engineers</span>
+    <span class="activity"> I am tutoring the <code>Algoritmi e Principi dell'Informatica</code> project course for computer science engineers at Politecnico di Milano</span>
   </li>
   <li>
     <span class="date">sep. 21</span>
-    <span class="activity">in Rome presenting <a href="https://www.deib.polimi.it/eng/news/details/1004"><code>CareLivers</code></a>, our finalist project at Alfathon, hosted by Alfasigma</span>
+    <span class="activity"> I am in Rome presenting <a href="https://www.deib.polimi.it/eng/news/details/1004"><code>CareLivers</code></a>, our finalist project at Alfathon, hosted by Alfasigma</span>
   </li>
   <li>
     <span class="date">sep. 21</span>
-    <span class="activity">tutoring <code>Informatica A</code> course for mathematical engineers</span>
+    <span class="activity"> I am tutoring the <code>Informatica A</code> course for mathematical engineers at Politecnico di Milano</span>
   </li>
   <li>
     <span class="date">sep. 20</span>
-    <span class="activity">joined the Politecnico di Milano IEEE Student Branch - <a href="https://www.ieee.org/membership/women/">WIE</a> as a student member</span>
+    <span class="activity"> I joined the Politecnico di Milano IEEE Student Branch - <a href="https://www.ieee.org/membership/women/">WIE</a> chapter as a student member</span>
   </li>
   <li>
     <span class="date">sep. 20</span>
-    <span class="activity">joined <a href="https://www.polifoniapolimi.it/">Polifonia</a> as a student member: after a few years i'm enthusiastically back to singing in a choir and performing on stage &lt;3</span>
+    <span class="activity"> I joined <a href="https://www.polifoniapolimi.it/">Polifonia</a> as a student member and am enthusiastically back to singing in a choir and performing on stage 🥰</span>
   </li>
   <li>
     <span class="date">sep. 20</span>
-    <span class="activity">got my BSc in Energy Engineering from Politecnico di Milano</span>
-  </li>
-  <li>
-    <span class="date">jun. 20</span>
-    <span class="activity">passed Neural Networks and Deep Learning - by DeepLearning.AI on Coursera</span>
+    <span class="activity"> I got my BSc in Energy Engineering from Politecnico di Milano</span>
   </li>
   <li>
     <span class="date">sep. 20</span>
-    <span class="activity">mentee with <a href="https://leadthefuture.tech">Lead the Future</a></span>
+    <span class="activity"> I am a mentee with <a href="https://leadthefuture.tech">Lead the Future</a></span>
   </li>
   <li>
     <span class="date">sep. 19</span>
-    <span class="activity">in Munich for the next six months for an Erasmus at TUM - Machinenwesen Dept.</span>
+    <span class="activity"> I am moving to Munich for the next six months for an Erasmus at TUM - Machinenwesen Dept.</span>
   </li>
   <li>
     <span class="date">jun. 19</span>
-    <span class="activity">my first time in San Francisco for NGCX with <a href="https://necst.it/">NECSTLab</a>! I got to present my work at Facebook and at the Lawrence Berkeley National Laboratory.</span>
+    <span class="activity"> I am in San Francisco for the first time, attending the tenth Necst Group Conference (NGCX) with <a href="https://necst.it/">NECSTLab</a> and presenting my work at Facebook and at the Lawrence Berkeley National Laboratory.</span>
   </li>
   <li>
     <span class="date">mar. 19</span>
-    <span class="activity">in Florence to be a student volunteer at DATE'19</span>
+    <span class="activity"> I am attending and student-volunteering at DATE'19</span>
   </li>
   <li>
     <span class="date">mar. 18</span>
-    <span class="activity">joined <a href="https://necst.it/">NECSTLab</a> as a research student</span>
+    <span class="activity"> I am joining <a href="https://necst.it/">NECSTLab</a> as a research student</span>
   </li>
   <li>
     <span class="date">july 17</span>
-    <span class="activity">graduated high school: after spending 5 years learning about ancient greek, latin and philosophy i'm now off to engineering school :)</span>
+    <span class="activity"> After graduating high school (and spending 5 years learning about ancient greek, latin and philosophy) I am off to engineering school 🥳</span>
   </li>
   <li>
     <span class="date">july 17</span>
-    <span class="activity">passed Cambridge Proficiency English - CEFR C2 (and failed Goethe Zertifikat C1 - CEFR C1)</span>
+    <span class="activity"> I passed the Cambridge Proficiency English - CEFR C2 exam - and failed the Goethe Zertifikat C1 - CEFR C1 exam</span>
   </li>
   <li>
     <span class="date">july 16</span>
-    <span class="activity">passed Goethe Zertifikat B2 - CEFR B2</span>
+    <span class="activity"> I passed the Goethe Zertifikat B2 - CEFR B2 exam</span>
   </li>
   <li>
     <span class="date">sep. 16</span>
-    <span class="activity">in Trento to take part in the NASA Challenge, with our project to <a href="http://www.ghiacciaitrentini.altervista.org/">map of alpine glaciers</a>!</span>
+    <span class="activity"> I am in Trento to take part in the NASA Challenge, with our project to <a href="http://www.ghiacciaitrentini.altervista.org/">map of alpine glaciers</a>!</span>
   </li>
 </ul>
 
@@ -239,6 +240,7 @@ title: "timeline"
   
   .expand-button {
     background: none;
+    font-family: inherit;
     border: 1px solid #14591D; /* Add a subtle border */
     padding: 0.5rem 1rem;
     cursor: pointer;
