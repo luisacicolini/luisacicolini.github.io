@@ -24,7 +24,7 @@ The circuit we construct for `bv_decide` has an And-Inverted-Graph (AIG) structu
 the main property we want to maintain is the *linearity* of the circuit. 
 Basically, we want to make sure that we only *add* nodes to the circuit and never modify/update them, and 
 that we have a *unique* aig as well. 
-If we're careful enough, in the end, we'll have a circuit that is correct (!!) and that is al
+If we're careful enough, in the end, we'll have a circuit that is correct (!!) and that is also efficient. 
 
 ### a note on tail recursion:
 > Tail recursion is defined as a recursive function in which the recursive call is the last statement that is executed by the function. 
