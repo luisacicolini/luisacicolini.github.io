@@ -32,17 +32,39 @@ If we're careful enough, in the end, we'll have a circuit that is correct (!!) a
 
 The main reason we want our functions to be tail-recursive has to do with stack optimization. 
 With regular recursive functions, whenever we perform a new function call we also push a new stack frame on the stack, until the base case is reached.
-```
-        call n      call (n - 1)      call (n - 2)          ...             base case
 
-stack:                                                      ...             sfr 0
-stack:                                                      ...             ...
-stack:                                                      ...             sfr (n - 4)
-stack:                                                      ...             sfr (n - 3)
-stack:                                sfr (n - 2)           ...             sfr (n - 2)
-stack:              sfr (n - 1)       sfr (n - 1)           ...             sfr (n - 1)
-stack:  sfr n       sfr n             sfr n                 ...             sfr n
+```mermaid
+---
+config:
+  theme: 'forest'
+  timeline:
+    disableMulticolor: true
+---
+timeline
+    n: sfr n
+    (n - 1): sfr n
+           : sfr (n - 1)
+           : sfr (n - 2)
+           
+    (n - 2): sfr n
+           : sfr (n - 1)
+           : sfr (n - 2)
+    
+    ... : sfr n
+        : sfr (n - 1)
+        : sfr (n - 2)
+        : sfr (n - 3)
+        : ...
+        
+    
+    0 : sfr n
+        : sfr (n - 1)
+        : sfr (n - 2)
+        : sfr (n - 3)
+        : ...
+        : sfr 0
 ```
+
 Once the base case is reached, the program needs to traverse backwards the previous stack frames to eventually return the value. 
 
 With tail-recursion, we avoid this backward-traversal of the stack: the last function call will already contain the output value we're looking for!
@@ -52,7 +74,7 @@ the function: its value gets updated at every calls and corresponds to the state
 From a pure compiler perspective, tail-recursive calls can be replaced by iterations (["contol flows to the end of the function body after each call"](https://digitallibrary.srisathyasaicollege.in/bitstream/123456789/6801/1/Alfred%20V.%20Aho%2C%20Monica%20S.%20Lam%2C%20Ravi%20Sethi%2C%20Jeffrey%20D.%20Ullman-Compilers%20-%20Principles%2C%20Techniques%2C%20and%20Tools-Pearson_Addison%20Wesley%20%282006%29.pdf)): this replacement imporves the compiled program's performance. 
 
 To understand why this is useful, I found the following example particularly useful (from the [dragon book](https://digitallibrary.srisathyasaicollege.in/bitstream/123456789/6801/1/Alfred%20V.%20Aho%2C%20Monica%20S.%20Lam%2C%20Ravi%20Sethi%2C%20Jeffrey%20D.%20Ullman-Compilers%20-%20Principles%2C%20Techniques%2C%20and%20Tools-Pearson_Addison%20Wesley%20%282006%29.pdf)):
-```
+```python
 fun( ) {
     if lookahead = '+' then 
         consume('+')
@@ -69,7 +91,7 @@ fun( ) {
 }
 ```
 that can be rewritten as
-```
+```python
 fun( ) {
     L:  if lookahead = '+' then 
             consume('+')
@@ -89,18 +111,18 @@ fun( ) {
 
 ## attempt 1: bitblasting circuit with [brian Kernighan's algorithm](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan): 
 This algorithm basically subtracts `1` and `and`s the bitvector until it's `0`: 
-```
-    unsigned int v; // count the number of bits set in v
-    unsigned int c; // c accumulates the total bits set in v
+```python
+    unsigned int v; # count the number of bits set in v
+    unsigned int c; # c accumulates the total bits set in v
     for (c = 0; v; c++)
     {
-    v &= v - 1; // clear the least significant bit set
+    v &= v - 1; # clear the least significant bit set
     }
 ```
 In the [circuit](https://github.com/leanprover/lean4/pull/9416/files), this translates to a series of `and` and `sub` nodes that needs to represent `x` at the right recursion level. 
 A difficulty with this circuit is that for example, at iteration `c = i` the value of `v` will be the result of `i` `and` operations, and when we design the 
 circuit tail-recursively, we need to keep that in mind and use another function `auxAnd` that computes the `and` of `v` and `v-1` exactly `i` times:
-```
+```python
 auxAnd (x, iter) {
     if 0 < iter 
         x &= x - 1
@@ -134,73 +156,119 @@ such that after `log2 w` operations (where `w` is the width of the input) eventu
 
 In the SAT solver, I [implemented](https://github.com/leanprover/lean4/pull/9730) a slightly more general circuit that allows me to avoid generating the magic constants. 
 Eventually, my circuit is a [prefix sum](https://en.wikipedia.org/wiki/Prefix_sum) circuit: we zero-extend each 
-bit in the input (of width `w`) to have width `w` and then add them in couples, until a single add node is left: 
+bit in the input (of width `w`) to have width `w` and then add them in couples, until a single add node is left (i.e., after $\lceil log_2 w\rceil$ layers): 
+
+```mermaid
+graph TB;
+    E(...)
+    A(b0 = b.get 0)-->G(zext b0 w)
+    B(b1 = b.get 1)-->H(zext b1 w)
+    C(b2 = b.get 2)-->I(zext b2 w)
+    D(b3 = b.get 3)-->J(zext b3 w)
+    F(bw1 = b.get w - 1)-->K(zext bw1 w)
+    G-->L((+))
+    H-->L
+    I-->M((+))
+    J-->M
+    E-->N((+))
+    K-->N
+    L-->O((...))
+    M-->O((...))
+    N-->P((...))
+    O-->Q((+))
+    P-->Q((+))
+
 ```
-input word      b0              b1              b2              b3               ...           b(w-1)
-zero extend     b0.zExt w       b1.zExt w       b2.zExt w       b3.zExt w        ...           b(w-1).zExt w        
-                        \        /                      \        /                         \        /
-                         \      /                        \      /                           \      /
-add 0                       +                               +              ...                  +              
-                             \                             /                                   /
-                              -----------------------------                     ---------------        
-                                            |                                   |
-add 1                                       +              ...                  +    
-                                             \             ...                 /
-...                                                     ...  ...
-                                                           \ /
-add log2 w                                                  +
-```
+
 The reason why we zero-extend each bit immediately to `w` is to have inputs with the same size on for all add nodes. 
 The alternative to this would be extending by one bit at a time, which is very finnicky and eventually not 
 particularly effective: 
+
+```mermaid
+graph TB;
+    A(b0 = b.get 0)-->G(zext b0 2)
+    B(b1 = b.get 1)-->H(zext b1 2)
+    C(b2 = b.get 2)-->I(zext b2 2)
+    D(b3 = b.get 3)-->J(zext b3 2)
+    E(...)
+    F(bw1 = b.get w - 1)-->K(zext bw1 2)
+    G-->L((+))
+    H-->L
+    L-->R((zext 4))
+    I-->M((+))
+    J-->M
+    K-->N
+    N-->S((zext 4))
+    S-->P((...))
+    P-->V((zext 8))
+    M-->T((zext 4))
+    R-->O((+))
+    T-->O((+))
+    E-->N((+))
+    O-->U((zext 8))
+    U-->X((...))
+    V-->W((...))
+    W-->Q((+))
+    X-->Q((+))
 ```
-input word      b0              b1              b2              b3               ...           b(w-1)
-zero extend     b0.zExt 2       b1.zExt 2       b2.zExt 2       b3.zExt 2        ...           b(w-1).zExt 2        
-                        \        /                      \        /                         \        /
-                         \      /                        \      /                           \      /
-add 0                     ( + ).zExt 4                    ( + ).zExt 4       ...              ( + ).zExt 4    
-                             \                             /                                   /
-                              -----------------------------                     ---------------        
-                                            |                                   |
-add 1                                       ( + ).zExt 8   ...                ( + ).zExt 8
-                                             \             ...                 /
-...                                                     ...  ...
-                                                           \ /
-add log2 w                                                ( + ).zExt w
-```
+
 Note that we *really* need this extention, otherwise we won't be able to count correctly, for example, in the first
 set of add nodes: 
+```mermaid
+graph TB
+A(b0=1)-->B((+))
+C(b1=1)-->B((+))
+B-->D(10)
 ```
-b0=1       b1=1 
-    \     /
-       +
-       |
-       10
+without the zero-extension we'd have overflow ☹️. 
+
+With `w=8`, at the first `blastAddVec` call from `go` we construct the first layer of addition: 
+```mermaid
+graph TB
+A(b0)-->B((+))
+C(b1)-->B((+))
+D(b2)-->E((+))
+L(b3)-->E((+))
+F(b4)-->G((+))
+H(b5)-->G((+))
+I(b6)-->J((+))
+K(b7)-->J((+))
 ```
-without the zero-extension we'd have overflow :(. 
-
+And at the second call we build the third: 
+```mermaid
+graph TB
+A(b0)-->B((+))
+C(b1)-->B((+))
+D(b2)-->E((+))
+L(b3)-->E((+))
+F(b4)-->G((+))
+H(b5)-->G((+))
+I(b6)-->J((+))
+K(b7)-->J((+))
+B-->M((+))
+E-->M((+))
+G-->N((+))
+J-->N((+))
 ```
-first time i call blastAddVec from go
-oldParSum:  .     .     .     .     .     .     .     .     validNodes = 8, usedNodes = 0
-newParSum:  .     x     x     x     x     x     x     x
-
-oldParSum:  .     .     .     .     .     .     .     .     validNodes = 8, usedNodes = 2
-newParSum:  .     .     x     x     x     x     x     x
-
-..
-
-newParSum:  .     .     .     .     x     x     x     x     validNodes = 8, usedNodes = 8
-
-2nd time i call blastAddVec from go
-oldParSum:  .     .     .     .     x     x     x     x     validNodes = 4, usedNodes = 0
-newParSum:  .     .     x     x     x     x     x     x
-
-3rd time i call blastAddVec from go
-  .     .     x     x     x     x     x     x
-  .     x     x     x     x     x     x     x
-
-4th call (hypothetical): validNodes = 1 → return
+At the third call we build the fourth, containing the last addition: 
+```mermaid
+graph TB
+A(b0)-->B((+))
+C(b1)-->B((+))
+D(b2)-->E((+))
+L(b3)-->E((+))
+F(b4)-->G((+))
+H(b5)-->G((+))
+I(b6)-->J((+))
+K(b7)-->J((+))
+B-->M((+))
+E-->M((+))
+G-->N((+))
+J-->N((+))
+M-->O((+))
+N-->O((+))
 ```
+And at the fourth call we can return, given that we have one node only remaining. 
 
 With the currently existing Lean4 infrastructure, the parallel prefix sum circuit can only exist if *flattened*, meaning that we take 
 a bunch of vectors we want to sum and concatenate them into a single, longer vector. 
@@ -228,3 +296,5 @@ The proof is making progess, also thanks to [bollu](https://www.pixel-druid.com)
 The proof proceeds with two steps: 
 1. We want to prove that the sum of the nodes at any depth `d` of the parallel-prefix-sum tree is constant 
 2. The sum of nodes at the very first level (i.e., when the addenda are the zero-extended bits) is equivalent to the sum of all the "*if bit at position `i` is true then add 1, else add 0*" we would unfold. 
+
+*update - 08.12.25:* I finally managed to finish the correctness proof 🥳
