@@ -4,7 +4,7 @@ body {
   margin: 0 auto;
   max-width: 900px; 
   padding: 0 1rem;
-  background-color: #ffffffd4;
+  background-color: #EDF7D2;
 }
 
 article {
@@ -14,5 +14,6 @@ article {
 
 h1, h2, h3 {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  color: #14591D; 
 }
 
