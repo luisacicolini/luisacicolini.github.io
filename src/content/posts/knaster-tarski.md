@@ -243,15 +243,59 @@ these weird functions are all finite approximations of the factorial function (u
 
 We now can build a monotone function from this space of functions to itself $m = (\mathbb{N} \rightarrow L) \rightarrow (\mathbb{N} \rightarrow L)$, 
 i.e. $m(f) = x\mapsto if\;\; x = 0\;\; then\; 1\;\; else\;\; x * f(n - 1)$: 
+
+```mermaid
+---
+config:
+  theme: 'forest'
+  timeline:
+    disableMulticolor: true
+---
+timeline
+    - : f0 = fun x => ⊥  
+      : f1 = m f0        
+      : f2 = m f1        
+      : f3 = m f2        
+      : f4 = m f3        
+      : f1 ∪ f2     
+      
+    0 : ⊥ 
+      : 1
+      : 1
+      : 1
+      : 1
+      : 1
+    
+    1 : ⊥ 
+      : ⊥
+      : 1
+      : 1
+      : 1
+      : 1
+    
+    2 : we cheat and
+      : ⊥
+      : ⊥
+      : 2
+      : 2
+      : ⊥
+      
+    3 : multiply a natural 
+      : ...
+      : ⊥
+      : ⊥
+      : 6
+      : we take the join 
+    
+    4 : number by ⊥
+      : ...
+      : ⊥
+      : ⊥
+      : ⊥
+      : of {f1(0), f(0)} etc    
+    
 ```
-                         0          1          2          3          4          5       ...
-    f0 = fun x => ⊥      ⊥          ⊥ ...
-    f1 = m f0            1          ⊥          ⊥ ... we cheat, because we're multiplying a natural number by ⊥!
-    f2 = m f1            1          1          ⊥          ⊥         ⊥ ...
-    f3 = m f2            1          1          2          ⊥          ⊥ ...
-    f4 = m f3            1          1          2          6          ⊥ ...
-    f1 ∪ f2              1          1          ⊥ ... we take the join (upper) element of {f1(0), f(0)}, etc.
-```
+
 given two said functions we define $f \le g \iff \forall x, f(x) ≤ g(x) \implies m(f) \le m(g)$
 
 A concrete construction of naturals using this setting: 
@@ -277,8 +321,8 @@ $f (x) = x + 1$
 In lean, the *positivity check* verifies that the function we're using to build a type is monotone!
 
 For example, when defining the type `Nat`, the constructor might have a parameter of type `Nat`, e.g. : 
-```
-    Nat : 
+```lean4
+def Nat : 
     | zero : Nat
     | succ (n : Nat) : Nat
 
