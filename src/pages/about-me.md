@@ -46,7 +46,7 @@ title: "timeline"
   });
 </script>
 
-## a bit of what i've been up to lately: 
+## What I've been up to: 
 
 <ul class="timeline">
   <li>
