@@ -41,19 +41,16 @@ From the definitions we have:
 - $x \land y \le x$ and $x \land y \le y$
 - $x \lor y \ge x$ and $x \lor y \ge y$
 - $x \land (y \lor z) \le ((x\land y)\lor(x\land z))$
-    ```
-                   ⊤
-                   |
-                 x ∨ y       "join" : LUB
-                 /   \
-                /     \
-                x      y
-                \     /
-                 \   /
-                 x ∧ y       "meet" : GLB
-                   |
-                   ⊥
-    ```
+```mermaid
+graph
+A($$\top $$)-->B(join: $$x\lor y$$ = LUB)
+B-->C($$x$$)
+B-->D($$y$$)
+C-->E(meet:$$x\land y$$ =GLB)
+D-->E
+E-->F($$\bot$$)
+```
+
 
 Other examples:
 - Given any set, the set of its subsets is a lattice, with the partial order $\subseteq$
@@ -64,35 +61,39 @@ Other examples:
 We can also reason the other way around and get a lattice out of a partial order: consider $\mathbb{Q}[0,1]$ with order relation $\le$, we need to define $meet$ and $join$. 
 
 We can have a lattice with $d = \top$, $a = \bot$ and $a \land c = a$, $b \land c = a$ ...
+```mermaid
+graph TB
+A((d))-->B((b))
+A((d))-->C((c))
+B-->E((a))
+C-->E((a))
 ```
-         d
-        / \
-       b   c
-        \ /
-         a
-```
-    
 In this case:
-```
-         d
-        / \
-       c   e
-       | x |
-       b   f
-        \ /
-         a
+```mermaid
+graph TB
+    A((d))-->B((c))
+    A((d))-->C((e))
+    B-->D((b))
+    B-->E((f))
+    C-->D
+    C-->E
+    D-->G((a))
+    E-->G
 ```
 We have a lattice with $d = \top$, $a = \bot$ and $b \land f = e$, but also $b \land f = c$?
 In this lattice we can't decide what's the actual LUB between c and e. This goes against the actual definition of join, hence this is not a lattice.
 To make this a proper lattice we can just add: 
-```
-      d
-     / \
-    c - e
-    | x |
-    b   f
-     \ /
-      a
+```mermaid
+graph TB
+    A((d))-->B((c))
+    A((d))-->C((e))
+    B-->D((b))
+    B-->E((f))
+    B-->C
+    C-->D
+    C-->E
+    D-->G((a))
+    E-->G
 ```
 meaning that $b \land f = c$ since $c \le e$, and it can't be $b \land f = e$ since $e$ is not the *least* upper bound.
 
@@ -134,18 +135,15 @@ have a LUB (join, or in this case $\cup$ suffices), but not every infinite colle
 To handle the join over an infinite collection of elements, we need more guarantees. 
 
 The same happens for meet: let's consider $L' = \{S\;|\; S = \empty \lor S \subseteq \mathbb{N} : |S| = \infty\}$, which looks  something like: 
-```
-         ℕ
-       / | \
-      /  |  \
-  ℕ\{0}  |  ℕ\{2} ...
-         |      |
-        ℕ\{1}   |
-            \   |
-             \  |
-            ℕ\{1, 2}
-             ...
-        {}
+```mermaid
+graph TB
+A(ℕ)-->B(ℕ \ 0)
+A-->C(ℕ \ 1)
+A-->D(ℕ \ 2)
+C-->E(ℕ \ 1, 2)
+D-->E
+E-->F(...)
+A-->G(...)
 ```
 We can build an infinite collection of elements whose intersections is finite, for example consider 
 $c =  \mathbb{N}\backslash \{1\}, \mathbb{N}\backslash \{1,2\}, \{4\}, ..., \mathbb{N}\backslash \{1, 2, ..., k + 1\}, \forall k\in \mathbb{N}$. 

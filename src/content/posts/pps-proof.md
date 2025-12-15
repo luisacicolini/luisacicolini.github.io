@@ -23,7 +23,7 @@ def recursive_addition (l : List Nat) : Nat :=
 
 Recall that the parallel prefix sum circuit for a list of natural numbers `l` works as follows: 
 ```mermaid
-graph TB;
+graph TB
     A(l.get 0)-->B((+))
     C(l.get 1)-->B
     D(l.get 2)-->E((+))
