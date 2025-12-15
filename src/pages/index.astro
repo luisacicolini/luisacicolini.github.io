@@ -8,7 +8,7 @@ const allPosts = await getCollection('posts');
 const posts = allPosts.sort((a, b) => {
     const da = a.data.date ? new Date(a.data.date) : 0;
     const db = b.data.date ? new Date(b.data.date) : 0;
-    return db - da; // newest first
+    return db - da;
 });
 ---
 
@@ -23,8 +23,7 @@ const posts = allPosts.sort((a, b) => {
 
 <p></p>
 <ul class="posts">
-  {posts.map(post => { // This now references the sorted array
-    // Access data via 'post.data'
+  {posts.map(post => { 
     const raw = post.data.date; 
     const formatted = raw
       ? new Date(raw).toLocaleDateString(undefined, {day: 'numeric', month: 'short', year: 'numeric' })
@@ -33,7 +32,8 @@ const posts = allPosts.sort((a, b) => {
     return (
       <li>
         {raw ? <time class="post-date" datetime={raw}>{formatted}</time> : <span class="post-date" />}
-        {/* Link using the slug, assuming your site is in the root (which the BaseLayout setup implies) */}
+        {
+        }
         <a href={`/posts/${post.slug}`}>{post.data.title}</a>
       </li>
     );
@@ -42,15 +42,12 @@ const posts = allPosts.sort((a, b) => {
 
 
 <style>
-  /* * UPDATED STYLES FOR ALIGNMENT
-   */
   .posts { 
     list-style: none; 
     padding: 0; 
     margin: 0; 
   }
   
-  /* Use CSS Grid to define a fixed-width column for the date */
   .posts li { 
     display: grid; 
     grid-template-columns: 120px 1fr; /* Adjust the 120px size if dates are longer or shorter */
@@ -64,6 +61,5 @@ const posts = allPosts.sort((a, b) => {
     color: #6b7280; 
     font-size: 0.95rem; 
     text-align: left; 
-    /* margin-right is now unnecessary due to grid gap */
   }
 </style>
