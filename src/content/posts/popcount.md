@@ -291,7 +291,7 @@ Very high-level, we want to say that every bit of the circuit behaves as a certa
 ### proving that parallel prefix sum and *intuitive* sum are equivalent
 
 The last and crucial step of this proof requires showing that the whole parallel prefix sum behaves as the "intuitive" popcount circuit ("*if bit at position `i` is true then add 1, else add 0*"), which is the complex part. 
-The proof is making progess, also thanks to [bollu](https://www.pixel-druid.com), and is the most complex thing I've ever done in Lean (and tbh, with any other language really). 
+The proof is making progess, also thanks to [bollu](https://www.pixel-druid.com)'s help, and is the most complex thing I've ever done in Lean (and tbh, with any other language really). 
 
 The proof proceeds with two steps: 
 1. We want to prove that the sum of the nodes at any depth `d` of the parallel-prefix-sum tree is constant 
