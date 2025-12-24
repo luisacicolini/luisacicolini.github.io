@@ -163,7 +163,7 @@ we need a more general theorem showing that *given two lists `a` and `b`, where
 all the elements in `a` are the results of adding two elements adjacent in `b`, recursive 
 addition on `a` is equivalent to the recursive addition on `b`*.
 ```lean
-def rec_add_eq_rec_add_of (a b : List Nat) (n : Nat)
+theorem rec_add_eq_rec_add_of (a b : List Nat) (n : Nat)
     (hlen : a.length = (b.length + 1) / 2)
     (hn : n = a.length)
     /- as a hypothesis we know that `a` is constructed by adding 
