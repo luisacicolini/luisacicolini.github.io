@@ -56,6 +56,8 @@ Producing as many alternative sentences as possible, with roughly the same meani
 *fixing a sentence is easier than coming up with an entirely new one*. 
 As we start to produce *fixed* alternatives, that we continue to refine and like better, we converge.  
 
+[Here is a very interesting source](https://www.lesswrong.com/s/pC6DYFLPMTCbEwH8W) about this (thanks Arjun!). 
+
 **It's important to stay focused**
 
 I don't manage stress well, I get anxious and tend to become unfocused and splinter my energy in worrying about everything. 
