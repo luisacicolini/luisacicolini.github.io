@@ -1,7 +1,7 @@
 ---
 
 title: "theory of latency-insensitive design"
-date: 2024-10-30l
+date: 2024-10-30
 ---
 # [theory of latency-insensitive design](https://ieeexplore.ieee.org/iel5/43/20450/00945302.pdf)
 ### a paper by l. carloni, k. l. mcmillan, a. sangiovanni-vincentelli

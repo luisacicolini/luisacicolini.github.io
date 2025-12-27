@@ -6,52 +6,53 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('posts');
 
 const posts = allPosts.sort((a, b) => {
-    const da = a.data.date ? new Date(a.data.date) : 0;
-    const db = b.data.date ? new Date(b.data.date) : 0;
-    return db - da;
+    const da = a.data.date ? new Date(a.data.date) : new Date(0);
+    const db = b.data.date ? new Date(b.data.date) : new Date(0);
+    return db.getTime() - da.getTime();
 });
 ---
-
 
 <BaseLayout title="lc">
   <Header/>
   <main>
     <h1>hello 🐢</h1>
-    There's a <a href="read-list">list of books I read</a>, a <a href="reading-list">list of things I want to read</a>, a <a href="about-me">list of things I've been up to</a>.
-    <>And a list of things I'm learning:
-  </main>
+    <p>
+      There's a <a href="read-list">list of books I read</a>, a <a href="reading-list">list of things I want to read</a>, a <a href="about-me">list of things I've been up to</a>.
+    </p>
+    <p>And a list of things I'm learning:</p>
+
+    <ul class="posts">
+      {posts.map(post => { 
+        const raw = post.data.date; 
+        const formatted = raw
+          ? new Date(raw).toLocaleDateString(undefined, {day: 'numeric', month: 'short', year: 'numeric' })
+          : '';
+        
+        return (
+          <li>
+            {raw ? <time class="post-date" datetime={raw.toString()}>{formatted}</time> : <span class="post-date" />}
+            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+          </li>
+        );
+      })}
+    </ul>
+
+    <hr class="my-8" />
+
+
+    </main>
 </BaseLayout>
-
-<p></p>
-<ul class="posts">
-  {posts.map(post => { 
-    const raw = post.data.date; 
-    const formatted = raw
-      ? new Date(raw).toLocaleDateString(undefined, {day: 'numeric', month: 'short', year: 'numeric' })
-      : '';
-    
-    return (
-      <li>
-        {raw ? <time class="post-date" datetime={raw}>{formatted}</time> : <span class="post-date" />}
-        {
-        }
-        <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-      </li>
-    );
-  })}
-</ul>
-
 
 <style>
   .posts { 
     list-style: none; 
     padding: 0; 
-    margin: 0; 
+    margin: 1rem 0; 
   }
   
   .posts li { 
     display: grid; 
-    grid-template-columns: 120px 1fr; /* Adjust the 120px size if dates are longer or shorter */
+    grid-template-columns: 120px 1fr; 
     align-items: center; 
     gap: 0.6rem; 
     padding: 0.25rem 0; 
@@ -62,5 +63,12 @@ const posts = allPosts.sort((a, b) => {
     color: #6b7280; 
     font-size: 0.95rem; 
     text-align: left; 
+  }
+
+  .my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 1px solid #eee;
   }
 </style>
