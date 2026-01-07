@@ -4,6 +4,8 @@ title: "Read List"
 ---
 # Books I read:
 
+## 2026 
+- sequel. la seconda indagine del commissario elfo - nicolo targhetta
 ## 2025 
 - il silenzio è cosa viva - chandra candiani
 - la fata carabina - daniel pennac 
