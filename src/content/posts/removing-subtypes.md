@@ -64,7 +64,7 @@ We note two things:
 Let's build a definition that, given an input list of naturals
 `l : List Nat`, filters the odd numbers out and returns a list `l'`only containing even numbers.
 In the subtyped definition, we equip the result with a proof that every element in the
-output list is in facteven.
+output list is in fact even.
 ```lean4
 def filterList_with_subtype (lin : List Nat) :
     {ls : List Nat // ∀ i (hi : i < ls.length), ls[i] % 2 = 0} :=
