@@ -7,6 +7,7 @@ title: "Read List"
 ## 2026 
 - sequel. la seconda indagine del commissario elfo - nicolo' targhetta
 - the unbearable lightness of being - milan kundera
+- buonanotte signor lenin - tiziano terzani
 ## 2025 
 - il silenzio è cosa viva - chandra candiani
 - la fata carabina - daniel pennac 
