@@ -51,8 +51,11 @@ title: "timeline"
 <ul class="timeline">
   <li>
     <span class="date">apr. 26</span>
-    <span class="activity"> Attending <a href="https://llvm.swoogo.com/2026eurollvm/">EuroLLVM'26</a> in Dublin, 
-      to present our work on the verification of LLVM's RISC-V backend </span>
+    <span class="activity"> Attending <a href="https://llvm.swoogo.com/2026eurollvm/">EuroLLVM'26</a> in Dublin </span>
+  </li>
+  <li>
+    <span class="date">mar. 26</span>
+    <span class="activity"> Presented our work on the verification of LLVM's RISC-V backend at the <a href="https://talks.cam.ac.uk/show/index/178681/">Sandwich seminar</a> 🥪</span>
   </li>
   <li>
     <span class="date">dec. 25</span>
