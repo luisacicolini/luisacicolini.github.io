@@ -9,6 +9,7 @@ title: "Read List"
 - the unbearable lightness of being - milan kundera
 - buonanotte signor lenin - tiziano terzani
 - i baffi - emmanuel carrere
+- signor malaussene - daniel pennac
 ## 2025 
 - il silenzio è cosa viva - chandra candiani
 - la fata carabina - daniel pennac 
