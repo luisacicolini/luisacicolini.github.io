@@ -49,13 +49,22 @@ title: "timeline"
 ## What I've been up to: 
 
 <ul class="timeline">
+
+
+
   <li>
     <span class="date">apr. 26</span>
-    <span class="activity"> Attending <a href="https://llvm.swoogo.com/2026eurollvm/">EuroLLVM'26</a> in Dublin </span>
+    <span class="activity"> Presenting our LLVM backend verification work for the Verified zk(E)VM
+      <a href="https://www.youtube.com/watch?v=QJHtkyBSxaQ">talk series</a> </span>
+  </li>
+  <li>
+    <span class="date">apr. 26</span>
+    <span class="activity"> Attending <a href="https://llvm.swoogo.com/2026eurollvm/">EuroLLVM'26</a> in Dublin and 
+      co-presenting our LLVM backend verification work. </span>
   </li>
   <li>
     <span class="date">mar. 26</span>
-    <span class="activity"> Presented our work on the verification of LLVM's RISC-V backend at the <a href="https://talks.cam.ac.uk/show/index/178681/">Sandwich seminar</a> 🥪</span>
+    <span class="activity"> Presenting our work on the verification of LLVM's RISC-V backend at the <a href="https://talks.cam.ac.uk/show/index/178681/">Sandwich seminar</a> 🥪</span>
   </li>
   <li>
     <span class="date">dec. 25</span>
