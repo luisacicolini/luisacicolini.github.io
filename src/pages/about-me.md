@@ -49,9 +49,6 @@ title: "timeline"
 ## What I've been up to: 
 
 <ul class="timeline">
-
-
-
   <li>
     <span class="date">apr. 26</span>
     <span class="activity"> Presenting our LLVM backend verification work for the Verified zk(E)VM
