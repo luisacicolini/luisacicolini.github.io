@@ -10,6 +10,7 @@ title: "Read List"
 - buonanotte signor lenin - tiziano terzani
 - i baffi - emmanuel carrere
 - signor malaussene - daniel pennac
+- one hundred years of solitude - gabriel garcia marquez
 ## 2025 
 - il silenzio è cosa viva - chandra candiani
 - la fata carabina - daniel pennac 
