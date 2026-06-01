@@ -11,6 +11,7 @@ title: "Read List"
 - i baffi - emmanuel carrere
 - signor malaussene - daniel pennac
 - one hundred years of solitude - gabriel garcia marquez
+- the curious case of the dog in the night time - mark haddon
 ## 2025 
 - il silenzio è cosa viva - chandra candiani
 - la fata carabina - daniel pennac 
