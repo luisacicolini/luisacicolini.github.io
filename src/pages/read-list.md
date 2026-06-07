@@ -12,6 +12,7 @@ title: "Read List"
 - signor malaussene - daniel pennac
 - one hundred years of solitude - gabriel garcia marquez
 - the curious case of the dog in the night time - mark haddon
+- blood river - tim butcher
 ## 2025 
 - il silenzio è cosa viva - chandra candiani
 - la fata carabina - daniel pennac 
