@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { galleryMeta } from '../content/gallery-meta.ts';
 
 const allPosts = await getCollection('posts');
@@ -27,21 +27,33 @@ function titleFromFilename(filename: string) {
   return cleaned || 'Untitled';
 }
 
-const photos = Object.entries(imageFiles)
-  .map(([path, mod]) => {
-    const filename = path.split('/').pop() ?? path;
-    const meta = galleryMeta[filename] ?? {};
-    return {
-      filename,
-      image: mod.default,
-      title: meta.title ?? titleFromFilename(filename),
-      camera: meta.camera,
-      film: meta.film,
-      location: meta.location,
-      date: meta.date,
-    };
-  })
-  .sort((a, b) => a.filename.localeCompare(b.filename));
+const photos = await Promise.all(
+  Object.entries(imageFiles)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(async ([path, mod]) => {
+      const filename = path.split('/').pop() ?? path;
+      const meta = galleryMeta[filename] ?? {};
+      // Full-resolution render for the lightbox, capped at 1920px on the
+      // long edge so it stays sharp on large/retina laptop screens without
+      // shipping the raw multi-MB camera file.
+      const full = await getImage({
+        src: mod.default,
+        width: 1920,
+        format: 'webp',
+        quality: 82,
+      });
+      return {
+        filename,
+        image: mod.default,
+        fullSrc: full.src,
+        title: meta.title ?? titleFromFilename(filename),
+        camera: meta.camera,
+        film: meta.film,
+        location: meta.location,
+        date: meta.date,
+      };
+    })
+);
 ---
 
 <BaseLayout title="lc">
@@ -62,12 +74,14 @@ const photos = Object.entries(imageFiles)
               class="film-thumb"
               type="button"
               data-index={i}
+              data-full={photo.fullSrc}
               aria-label={`Open ${photo.title}`}
             >
               <Image
                 src={photo.image}
                 alt={photo.title}
-                width={400}
+                width={220}
+                densities={[1, 2, 3]}
                 loading={i < 4 ? 'eager' : 'lazy'}
               />
             </button>
@@ -146,7 +160,10 @@ const photos = Object.entries(imageFiles)
     function open(i) {
       current = i;
       const img = thumbs[i].querySelector('img');
-      lightboxImg.src = img.currentSrc || img.src;
+      // Use the precomputed full-resolution render for the lightbox rather
+      // than the small thumbnail image, which would look blurry once
+      // scaled up to fill the screen.
+      lightboxImg.src = thumbs[i].dataset.full || img.currentSrc || img.src;
       lightboxImg.alt = img.alt;
       lightboxCaption.textContent = captionText(i);
       lightbox.hidden = false;
