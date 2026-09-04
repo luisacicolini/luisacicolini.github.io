@@ -4,7 +4,7 @@ date: 2026-02-16
 ---
 
 # [It's a long way](https://www.youtube.com/watch?v=vj_rvLVpqg8) to automata if you want to coinduct
-## Very random notes on my journey to learn coinduction. 
+### Very random notes on my journey to learn coinduction. 
 
 One of the most conceptually challenging things I've learned recently are the coinduction and corecursion, 
 and in particular their connection to the theory of automata. 
