@@ -14,7 +14,7 @@ const SRC_DIR = path.join(ROOT, 'src/assets/gallery');
 const OUT_DIR = path.join(ROOT, 'public/gallery');
 const MANIFEST_PATH = path.join(OUT_DIR, 'manifest.json');
 
-const COPYRIGHT_TEXT = '© L. C.';
+const COPYRIGHT_TEXT = '© L. Cicolini';
 const FORCE = process.argv.includes('--force');
 
 // [suffix, target long-edge width, jpeg/webp quality]
@@ -32,7 +32,7 @@ function escapeXml(str) {
 // Builds a small, semi-transparent watermark badge sized relative to the
 // image, anchored to the bottom-right corner.
 function watermarkSvg(imgWidth, imgHeight) {
-  const fontSize = Math.max(6, Math.round(imgWidth * 0.024));
+  const fontSize = Math.max(8, Math.round(imgWidth * 0.024));
   const paddingX = Math.round(fontSize * 0.7);
   const paddingY = Math.round(fontSize * 0.5);
   const textWidth = Math.round(COPYRIGHT_TEXT.length * fontSize * 0.56);
