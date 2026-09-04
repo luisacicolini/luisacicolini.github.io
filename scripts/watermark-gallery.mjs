@@ -32,12 +32,12 @@ function escapeXml(str) {
 // Builds a small, semi-transparent watermark badge sized relative to the
 // image, anchored to the bottom-right corner.
 function watermarkSvg(imgWidth, imgHeight) {
-  const fontSize = Math.max(8, Math.round(imgWidth * 0.024));
-  const paddingX = Math.round(fontSize * 0.7);
-  const paddingY = Math.round(fontSize * 0.5);
+  const fontSize = Math.max(6, Math.round(imgWidth * 0.014));
+  const paddingX = Math.round(fontSize * 0.6);
+  const paddingY = Math.round(fontSize * 0.45);
   const textWidth = Math.round(COPYRIGHT_TEXT.length * fontSize * 0.56);
   const boxWidth = textWidth + paddingX * 2;
-  const boxHeight = Math.round(fontSize * 1.9);
+  const boxHeight = Math.round(fontSize * 1.7);
   const margin = Math.round(imgWidth * 0.02);
 
   const x = imgWidth - boxWidth - margin;
