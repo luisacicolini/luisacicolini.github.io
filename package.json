@@ -3,10 +3,13 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "predev": "node scripts/watermark-gallery.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/watermark-gallery.mjs",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "watermark": "node scripts/watermark-gallery.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.3",
@@ -17,6 +20,7 @@
     "katex": "^0.16.22",
     "mermaid": "^11.14.0",
     "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "sharp": "^0.34.5"
   }
 }

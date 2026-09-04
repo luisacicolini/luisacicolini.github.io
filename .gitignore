@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# generated gallery renditions (watermarked at build time, see scripts/watermark-gallery.mjs)
+public/gallery/
+
 # generated types
 .astro/
 

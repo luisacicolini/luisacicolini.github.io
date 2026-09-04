@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
-import { Image, getImage } from 'astro:assets';
 import { galleryMeta } from '../content/gallery-meta.ts';
 
 const allPosts = await getCollection('posts');
@@ -13,9 +12,13 @@ const posts = allPosts.sort((a, b) => {
     return db.getTime() - da.getTime();
 });
 
-const imageFiles = import.meta.glob<{ default: ImageMetadata }>(
+// Gallery photos are pre-rendered (resized + watermarked) by
+// scripts/watermark-gallery.mjs into public/gallery/ — see the predev and
+// prebuild npm scripts. We just need the list of source filenames here to
+// look up metadata and derive the rendition URLs.
+const imageFiles = import.meta.glob(
   '../assets/gallery/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
-  { eager: true }
+  { eager: true, query: '?url' }
 );
 
 function titleFromFilename(filename: string) {
@@ -27,33 +30,23 @@ function titleFromFilename(filename: string) {
   return cleaned || 'Untitled';
 }
 
-const photos = await Promise.all(
-  Object.entries(imageFiles)
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(async ([path, mod]) => {
-      const filename = path.split('/').pop() ?? path;
-      const meta = galleryMeta[filename] ?? {};
-      // Full-resolution render for the lightbox, capped at 1920px on the
-      // long edge so it stays sharp on large/retina laptop screens without
-      // shipping the raw multi-MB camera file.
-      const full = await getImage({
-        src: mod.default,
-        width: 1920,
-        format: 'webp',
-        quality: 82,
-      });
-      return {
-        filename,
-        image: mod.default,
-        fullSrc: full.src,
-        title: meta.title ?? titleFromFilename(filename),
-        camera: meta.camera,
-        film: meta.film,
-        location: meta.location,
-        date: meta.date,
-      };
-    })
-);
+const photos = Object.keys(imageFiles)
+  .map((path) => {
+    const filename = path.split('/').pop() ?? path;
+    const base = filename.replace(/\.[^.]+$/, '');
+    const meta = galleryMeta[filename] ?? {};
+    return {
+      filename,
+      thumbSrc: `/gallery/${base}-thumb.webp`,
+      fullSrc: `/gallery/${base}-full.webp`,
+      title: meta.title ?? titleFromFilename(filename),
+      camera: meta.camera,
+      film: meta.film,
+      location: meta.location,
+      date: meta.date,
+    };
+  })
+  .sort((a, b) => a.filename.localeCompare(b.filename));
 ---
 
 <BaseLayout title="lc">
@@ -77,11 +70,9 @@ const photos = await Promise.all(
               data-full={photo.fullSrc}
               aria-label={`Open ${photo.title}`}
             >
-              <Image
-                src={photo.image}
+              <img
+                src={photo.thumbSrc}
                 alt={photo.title}
-                width={220}
-                densities={[1, 2, 3]}
                 loading={i < 4 ? 'eager' : 'lazy'}
               />
             </button>
