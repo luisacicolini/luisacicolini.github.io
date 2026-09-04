@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import { getCollection } from 'astro:content'; 
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { galleryMeta } from '../content/gallery-meta.ts';
 
 const allPosts = await getCollection('posts');
 
@@ -10,6 +12,36 @@ const posts = allPosts.sort((a, b) => {
     const db = b.data.date ? new Date(b.data.date) : new Date(0);
     return db.getTime() - da.getTime();
 });
+
+const imageFiles = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/gallery/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  { eager: true }
+);
+
+function titleFromFilename(filename: string) {
+  const base = filename.replace(/\.[^.]+$/, '');
+  const cleaned = base
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return cleaned || 'Untitled';
+}
+
+const photos = Object.entries(imageFiles)
+  .map(([path, mod]) => {
+    const filename = path.split('/').pop() ?? path;
+    const meta = galleryMeta[filename] ?? {};
+    return {
+      filename,
+      image: mod.default,
+      title: meta.title ?? titleFromFilename(filename),
+      camera: meta.camera,
+      film: meta.film,
+      location: meta.location,
+      date: meta.date,
+    };
+  })
+  .sort((a, b) => a.filename.localeCompare(b.filename));
 ---
 
 <BaseLayout title="lc">
@@ -17,17 +49,47 @@ const posts = allPosts.sort((a, b) => {
   <main>
     <h2>it's dark because you're trying too hard 🐢</h2>
     <p>
-      There's a <a href="read-list">list of books I read</a>, a <a href="reading-list">list of things I want to read</a>, a <a href="about-me">list of things I've been up to</a>, and a <a href="gallery">small gallery of my favorite film photos</a>.
+      There's a <a href="read-list">list of books I read</a>, a <a href="reading-list">list of things I want to read</a>, a <a href="about-me">list of things I've been up to</a>.
     </p>
+
+    <h3>a few favorite frames, shot on film 📷</h3>
+    {photos.length === 0 ? (
+      <p>Nothing here yet — I'm still picking my favorites out of the negatives.</p>
+    ) : (
+      <div class="film-strip">
+        {photos.map((photo, i) => (
+          <figure class="film-item">
+            <button
+              class="film-thumb"
+              type="button"
+              data-index={i}
+              aria-label={`Open ${photo.title}`}
+            >
+              <Image
+                src={photo.image}
+                alt={photo.title}
+                width={400}
+                loading={i < 4 ? 'eager' : 'lazy'}
+              />
+            </button>
+            <figcaption>
+              {photo.title}
+              {photo.location && <span class="film-location">{photo.location}</span>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
+
     <p>And a list of things I'm learning:</p>
 
     <ul class="posts">
-      {posts.map(post => { 
-        const raw = post.data.date; 
+      {posts.map(post => {
+        const raw = post.data.date;
         const formatted = raw
           ? new Date(raw).toLocaleDateString(undefined, {day: 'numeric', month: 'short', year: 'numeric' })
           : '';
-        
+
         return (
           <li>
             {raw ? <time class="post-date" datetime={raw.toString()}>{formatted}</time> : <span class="post-date" />}
@@ -41,28 +103,107 @@ const posts = allPosts.sort((a, b) => {
 
 
     </main>
+
+    {photos.length > 0 && (
+      <div class="lightbox" id="lightbox" hidden>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+        <figure>
+          <img id="lightbox-img" src="" alt="" />
+          <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+      </div>
+    )}
 </BaseLayout>
 
+{photos.length > 0 && (
+  <script define:vars={{
+    captions: photos.map((p) => ({
+      title: p.title,
+      camera: p.camera,
+      film: p.film,
+      location: p.location,
+      date: p.date,
+    })),
+  }}>
+    const thumbs = Array.from(document.querySelectorAll('.film-thumb'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    let current = 0;
+
+    function captionText(i) {
+      const c = captions[i];
+      if (!c) return '';
+      const details = [c.camera, c.film, c.location, c.date].filter(Boolean).join(' · ');
+      return details ? `${c.title} — ${details}` : c.title;
+    }
+
+    function open(i) {
+      current = i;
+      const img = thumbs[i].querySelector('img');
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = captionText(i);
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    function step(delta) {
+      current = (current + delta + thumbs.length) % thumbs.length;
+      open(current);
+    }
+
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => open(i));
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.hidden) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+  </script>
+)}
+
 <style>
-  .posts { 
-    list-style: none; 
-    padding: 0; 
-    margin: 1rem 0; 
+  .posts {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
   }
-  
-  .posts li { 
-    display: grid; 
-    grid-template-columns: 120px 1fr; 
-    align-items: center; 
-    gap: 0.6rem; 
-    padding: 0.25rem 0; 
+
+  .posts li {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.25rem 0;
   }
-  
+
   .post-date {
-    display: block; 
-    color: #6b7280; 
-    font-size: 0.95rem; 
-    text-align: left; 
+    display: block;
+    color: #6b7280;
+    font-size: 0.95rem;
+    text-align: left;
   }
 
   .my-8 {
@@ -72,4 +213,137 @@ const posts = allPosts.sort((a, b) => {
     border-top: 1px solid #eee;
   }
 
+  .film-strip {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5rem 0 1rem;
+    margin: 0.5rem 0 1.5rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .film-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 220px;
+    margin: 0;
+  }
+
+  .film-thumb {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+  }
+
+  .film-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+  }
+
+  .film-thumb:hover img {
+    transform: scale(1.04);
+  }
+
+  .film-item figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #14591D;
+    line-height: 1.3;
+  }
+
+  .film-location {
+    display: block;
+    color: #6b7280;
+    font-size: 0.8rem;
+  }
+
+  .film-strip::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .film-strip::-webkit-scrollbar-thumb {
+    background: #b7c98a;
+    border-radius: 4px;
+  }
+
+  .film-strip::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 2rem;
+  }
+
+  .lightbox[hidden] {
+    display: none;
+  }
+
+  .lightbox figure {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 4px;
+  }
+
+  .lightbox figcaption {
+    color: #EDF7D2;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .lightbox-close,
+  .lightbox-nav {
+    position: absolute;
+    background: none;
+    border: none;
+    color: #EDF7D2;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    line-height: 1;
+  }
+
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-next {
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 </style>
