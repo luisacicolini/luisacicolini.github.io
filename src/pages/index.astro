@@ -49,10 +49,9 @@ const photos = Object.entries(imageFiles)
   <main>
     <h2>it's dark because you're trying too hard 🐢</h2>
     <p>
-      There's a <a href="read-list">list of books I read</a>, a <a href="reading-list">list of things I want to read</a>, a <a href="about-me">list of things I've been up to</a>.
+      There's a <a href="read-list">list of books I read</a>, a <a href="reading-list">list of things I want to read</a>, a <a href="about-me">list of things I've been up to</a>, 
+      a list of analog pics I particularly enjoyed taking:
     </p>
-
-    <h3>a few favorite frames, shot on film 📷</h3>
     {photos.length === 0 ? (
       <p>Nothing here yet — I'm still picking my favorites out of the negatives.</p>
     ) : (
@@ -81,7 +80,7 @@ const photos = Object.entries(imageFiles)
       </div>
     )}
 
-    <p>And a list of things I'm learning:</p>
+    <p>and a list of things I'm learning:</p>
 
     <ul class="posts">
       {posts.map(post => {
