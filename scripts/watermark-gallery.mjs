@@ -5,13 +5,14 @@
 //
 // Run manually with `npm run watermark` (add --force to regenerate everything).
 
-import { readdir, mkdir, stat } from 'node:fs/promises';
+import { readdir, mkdir, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC_DIR = path.join(ROOT, 'src/assets/gallery');
 const OUT_DIR = path.join(ROOT, 'public/gallery');
+const MANIFEST_PATH = path.join(OUT_DIR, 'manifest.json');
 
 const COPYRIGHT_TEXT = '© Luisa Cicolini';
 const FORCE = process.argv.includes('--force');
@@ -72,9 +73,18 @@ async function processImage(filename) {
   const base = filename.replace(/\.[^.]+$/, '');
   const outPaths = RENDITIONS.map((r) => path.join(OUT_DIR, `${base}-${r.suffix}.webp`));
 
+  // The manifest records each rendition's actual pixel dimensions, so the
+  // page can lay out thumbnails at a shared height with the correct
+  // proportional width (instead of cropping every photo into a fixed box).
+  const dims = {};
+
   if (await isUpToDate(srcPath, outPaths)) {
     console.log(`  ↷ ${filename} (up to date)`);
-    return;
+    for (const { suffix } of RENDITIONS) {
+      const meta = await sharp(path.join(OUT_DIR, `${base}-${suffix}.webp`)).metadata();
+      dims[suffix] = { width: meta.width, height: meta.height };
+    }
+    return { base, dims };
   }
 
   for (const { suffix, width, quality } of RENDITIONS) {
@@ -92,9 +102,12 @@ async function processImage(filename) {
       .composite([{ input: watermark, top: 0, left: 0 }])
       .webp({ quality })
       .toFile(path.join(OUT_DIR, `${base}-${suffix}.webp`));
+
+    dims[suffix] = { width: info.width, height: info.height };
   }
 
   console.log(`  ✓ ${filename}`);
+  return { base, dims };
 }
 
 async function main() {
@@ -114,7 +127,14 @@ async function main() {
   }
 
   console.log(`Watermarking ${files.length} gallery photo(s)...`);
-  await Promise.all(files.map(processImage));
+  const results = await Promise.all(files.map(processImage));
+
+  const manifest = {};
+  for (const { base, dims } of results) {
+    manifest[base] = dims;
+  }
+  await writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
+
   console.log('Done.');
 }
 

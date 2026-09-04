@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
@@ -21,6 +23,19 @@ const imageFiles = import.meta.glob(
   { eager: true, query: '?url' }
 );
 
+// Actual pixel dimensions of each generated rendition, written by the same
+// script. Used to lay out thumbnails at a shared height with each photo's
+// true proportional width, instead of cropping everything into a fixed box.
+const manifestPath = path.join(process.cwd(), 'public/gallery/manifest.json');
+const dimensions: Record<string, { thumb: { width: number; height: number } }> =
+  fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf-8')) : {};
+
+// Must match the `.film-thumb { height: ... }` rule below — used to compute
+// each item's exact display width up front, so the figcaption is forced to
+// wrap within the picture's own width instead of stretching the item wider
+// to fit the caption on one line.
+const THUMB_HEIGHT = 160;
+
 function titleFromFilename(filename: string) {
   const base = filename.replace(/\.[^.]+$/, '');
   const cleaned = base
@@ -31,14 +46,19 @@ function titleFromFilename(filename: string) {
 }
 
 const photos = Object.keys(imageFiles)
-  .map((path) => {
-    const filename = path.split('/').pop() ?? path;
+  .map((filePath) => {
+    const filename = filePath.split('/').pop() ?? filePath;
     const base = filename.replace(/\.[^.]+$/, '');
     const meta = galleryMeta[filename] ?? {};
+    const thumbDims = dimensions[base]?.thumb ?? { width: 3, height: 2 };
+    const thumbDisplayWidth = Math.round(THUMB_HEIGHT * (thumbDims.width / thumbDims.height));
     return {
       filename,
       thumbSrc: `/gallery/${base}-thumb.webp`,
       fullSrc: `/gallery/${base}-full.webp`,
+      thumbWidth: thumbDims.width,
+      thumbHeight: thumbDims.height,
+      thumbDisplayWidth,
       title: meta.title ?? titleFromFilename(filename),
       camera: meta.camera,
       film: meta.film,
@@ -55,14 +75,14 @@ const photos = Object.keys(imageFiles)
     <h2>it's dark because you're trying too hard 🐢</h2>
     <p>
       There's a <a href="read-list">list of books I read</a>, a <a href="reading-list">list of things I want to read</a>, a <a href="about-me">list of things I've been up to</a>, 
-      a list of analog pics I particularly enjoyed taking:
+      some of my favorite analog pics,
     </p>
     {photos.length === 0 ? (
       <p>Nothing here yet — I'm still picking my favorites out of the negatives.</p>
     ) : (
       <div class="film-strip">
         {photos.map((photo, i) => (
-          <figure class="film-item">
+          <figure class="film-item" style={`width: ${photo.thumbDisplayWidth}px`}>
             <button
               class="film-thumb"
               type="button"
@@ -73,6 +93,8 @@ const photos = Object.keys(imageFiles)
               <img
                 src={photo.thumbSrc}
                 alt={photo.title}
+                width={photo.thumbWidth}
+                height={photo.thumbHeight}
                 loading={i < 4 ? 'eager' : 'lazy'}
               />
             </button>
@@ -234,27 +256,31 @@ const photos = Object.keys(imageFiles)
   .film-item {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 220px;
+    /* Width is set inline per-photo (see thumbDisplayWidth above) to match
+       the picture's own proportional width at the shared thumbnail height.
+       Pinning it explicitly — rather than letting the flex item size itself
+       to its content — keeps the box exactly as wide as the picture, so the
+       figcaption below is forced to wrap within that width instead of
+       stretching the item wider to fit the caption on one line. */
     margin: 0;
   }
 
   .film-thumb {
     display: block;
-    width: 100%;
     padding: 0;
     border: none;
     background: none;
     cursor: zoom-in;
     border-radius: 6px;
     overflow: hidden;
-    aspect-ratio: 3 / 2;
+    height: 160px;
   }
 
   .film-thumb img {
     display: block;
-    width: 100%;
     height: 100%;
-    object-fit: cover;
+    width: auto;
+    max-width: none;
     transition: transform 0.2s ease;
   }
 
@@ -264,15 +290,16 @@ const photos = Object.keys(imageFiles)
 
   .film-item figcaption {
     margin-top: 0.4rem;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #14591D;
     line-height: 1.3;
+    overflow-wrap: break-word;
   }
 
   .film-location {
     display: block;
     color: #6b7280;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .film-strip::-webkit-scrollbar {
