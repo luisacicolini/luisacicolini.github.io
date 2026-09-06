@@ -3,99 +3,108 @@ layout: ../layouts/BaseLayout.astro
 title: "Reading List"
 ---
 # Misc I want to read:
-- https://vita.had.co.nz/papers/tidy-data.pdf
-- https://kyl.neocities.org/books/%5BTEC%20TUF%5D%20the%20visual%20display%20of%20quantitative%20information.pdf
-- https://mblondin.espaceweb.usherbrooke.ca/automata/files/book_authors.pdf
+- [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf)
+- [The Visual Display of Quantitative Information](https://kyl.neocities.org/books/%5BTEC%20TUF%5D%20the%20visual%20display%20of%20quantitative%20information.pdf)
+- [Automata Theory: An Algorithmic Approach](https://mblondin.espaceweb.usherbrooke.ca/automata/files/book_authors.pdf)
 - https://core.ac.uk/download/pdf/81980704.pdf
-- https://books.google.co.uk/books?hl=en&lr=&id=homqCAAAQBAJ&oi=fnd&pg=PA1&dq=automata+algebra+ring&ots=6cOyw08DRn&sig=fYQ_O2dspczGvdtIMmLd_3u8-Lk&redir_esc=y#v=onepage&q=automata%20algebra%20ring&f=false
-- https://ptolemy.berkeley.edu/publications/papers/91/consistency/LeeConsistency.pdf
-- https://perso.ens-lyon.fr/yannick.zakowski/papers/gpaco.pdf
-- https://dl.acm.org/doi/abs/10.1145/2103621.2103666
-- https://www.jstor.org/stable/1993511
-- https://repositum.tuwien.at/bitstream/20.500.12708/20717/1/Esik-2012-Modern%20Automata%20Theory-ao.pdf
-- https://stem.elearning.unipd.it/pluginfile.php/525538/mod_resource/content/2/dispensa.pdf
-- https://ir.cwi.nl/pub/28550/rutten.pdf 
-- https://link.springer.com/book/10.1007/978-3-0348-0154-6
-- https://ics.uci.edu/~eppstein/junkyard/euler/
-- https://leanprover.github.io/theorem_proving_in_lean/theorem_proving_in_lean.pdf
-- https://cgi.cse.unsw.edu.au/~cs3153/20T1/Week%2002/2Fri/Slides%20Condensed.pdf
-- https://dl.acm.org/doi/pdf/10.1145/3656457
+- [Semirings, Automata, Languages](https://books.google.co.uk/books?hl=en&lr=&id=homqCAAAQBAJ&oi=fnd&pg=PA1&dq=automata+algebra+ring&ots=6cOyw08DRn&sig=fYQ_O2dspczGvdtIMmLd_3u8-Lk&redir_esc=y#v=onepage&q=automata%20algebra%20ring&f=false)
+- [Consistency in Dataflow Graphs](https://ptolemy.berkeley.edu/publications/papers/91/consistency/LeeConsistency.pdf)
+- [An Equational Theory for Weak Bisimulation via Generalized Parameterized Coinduction](https://perso.ens-lyon.fr/yannick.zakowski/papers/gpaco.pdf)
+- [The Marriage of Bisimulations and Kripke Logical Relations](https://dl.acm.org/doi/abs/10.1145/2103621.2103666)
+- [Decision Problems of Finite Automata Design and Related Arithmetics](https://www.jstor.org/stable/1993511)
+- [Modern Automata Theory](https://repositum.tuwien.at/bitstream/20.500.12708/20717/1/Esik-2012-Modern%20Automata%20Theory-ao.pdf)
+- [Logic for Knowledge Representation, Learning, and Inference](https://stem.elearning.unipd.it/pluginfile.php/525538/mod_resource/content/2/dispensa.pdf)
+- [The Method of Coalgebra: Exercises in Coinduction](https://ir.cwi.nl/pub/28550/rutten.pdf)
+- [Frames and Locales: Topology Without Points](https://link.springer.com/book/10.1007/978-3-0348-0154-6)
+- [Twenty-One Proofs of Euler's Formula: V-E+F=2](https://ics.uci.edu/~eppstein/junkyard/euler/)
+- [Theorem Proving in Lean](https://leanprover.github.io/theorem_proving_in_lean/theorem_proving_in_lean.pdf)
+- [COMP3153 Algorithmic Verification — Week 2 Slides](https://cgi.cse.unsw.edu.au/~cs3153/20T1/Week%2002/2Fri/Slides%20Condensed.pdf)
+- [Inductive Approach to Spacer](https://dl.acm.org/doi/pdf/10.1145/3656457)
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9049884&tag=1
-- https://hal.science/hal-01206882/file/arrays_Horn_articleHAL.pdf
-- https://dl.acm.org/doi/abs/10.1145/1217975.1218001
-- https://adriann.github.io/Ullman%20subgraph%20isomorphism.html 
-- https://en.wikipedia.org/wiki/Leonora_Carrington 
-- https://dl.acm.org/doi/full/10.1145/3477053
-- http://www.cs.columbia.edu/~sedwards/papers/edwards2019compositional.pdf
-- https://dl.acm.org/doi/pdf/10.1145/3608102
-- https://dl.acm.org/doi/pdf/10.1145/3609131
-- https://velus.inria.fr/phd-pesin/thesis.pdf
-- https://dl.acm.org/doi/pdf/10.1145/3573105.3575681
-- https://yannherklotz.com/docs/phd-thesis-fvhls.pdf
-- https://www.google.com/search?client=firefox-b-d&q=db+cooper
-- https://inria.hal.science/hal-01238879/file/erts2016_compcert.pdf
-- https://dl.acm.org/doi/pdf/10.1145/3543622.3573196
-- https://dl.acm.org/doi/pdf/10.1145/321526.321527
-- https://www.esquire.com/entertainment/books/a500/incarnations-burned-children-david-foster-wallace-0900/
-- https://rucforsk.ruc.dk/ws/portalfiles/portal/117065/main.pdf
+- [Cell Morphing: From Array Programs to Array-Free Horn Clauses](https://hal.science/hal-01206882/file/arrays_Horn_articleHAL.pdf)
+- [A SAT-Based Procedure for Verifying Finite State Machines in ACL2](https://dl.acm.org/doi/abs/10.1145/1217975.1218001)
+- [Ullman's Subgraph Isomorphism Algorithm](https://adriann.github.io/Ullman%20subgraph%20isomorphism.html)
+- [Leonora Carrington](https://en.wikipedia.org/wiki/Leonora_Carrington)
+- [Buffer Placement and Sizing for High-Performance Dataflow Circuits](https://dl.acm.org/doi/full/10.1145/3477053)
+- [Compositional Dataflow Circuits](http://www.cs.columbia.edu/~sedwards/papers/edwards2019compositional.pdf)
+- [Verified Compilation of Synchronous Dataflow with State Machines](https://dl.acm.org/doi/pdf/10.1145/3608102)
+- [A Constructive State-Based Semantics and Interpreter for a Synchronous Data-Flow Language with State Machines](https://dl.acm.org/doi/pdf/10.1145/3609131)
+- [Verified Compilation of a Synchronous Dataflow Language with State Machines](https://velus.inria.fr/phd-pesin/thesis.pdf)
+- [Mechanised Semantics for Gated Static Single Assignment](https://dl.acm.org/doi/pdf/10.1145/3573105.3575681)
+- [Formal Verification of High-Level Synthesis](https://yannherklotz.com/docs/phd-thesis-fvhls.pdf)
+- [D.B. Cooper](https://www.google.com/search?client=firefox-b-d&q=db+cooper)
+- [CompCert – A Formally Verified Optimizing Compiler](https://inria.hal.science/hal-01238879/file/erts2016_compcert.pdf)
+- [Eliminating Excessive Dynamism of Dataflow Circuits Using Model Checking](https://dl.acm.org/doi/pdf/10.1145/3543622.3573196)
+- [A Simplified Format for the Model Elimination Theorem-Proving Procedure](https://dl.acm.org/doi/pdf/10.1145/321526.321527)
+- [Incarnations of Burned Children](https://www.esquire.com/entertainment/books/a500/incarnations-burned-children-david-foster-wallace-0900/)
+- [Abstract Interpretation over Non-Deterministic Finite Tree Automata for Set-Based Analysis of Logic Programs](https://rucforsk.ruc.dk/ws/portalfiles/portal/117065/main.pdf)
 - https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2d4b2164090e7a189eba740b8a4f834070e39c15
 - https://ieeexplore.ieee.org/abstract/document/1348184
 - https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=1b91c45edbbe85ecc3da100b962232f8b13f9a27
-- https://www.researchgate.net/profile/Neil-Jones-12/publication/234803097_Abstract_interpretation_A_semantics-based_tool_for_program_analysis/links/0046352cac9b729460000000/Abstract-interpretation-A-semantics-based-tool-for-program-analysis.pdf
-- https://drive.google.com/file/d/1BuGeABxsaLdKe6pESf3nZSM0_sBlWu1p/view
-- https://link.springer.com/content/pdf/10.1007/s00224-004-1133-y.pdf
+- [Abstract Interpretation: A Semantics-Based Tool for Program Analysis](https://www.researchgate.net/profile/Neil-Jones-12/publication/234803097_Abstract_interpretation_A_semantics-based_tool_for_program_analysis/links/0046352cac9b729460000000/Abstract-interpretation-A-semantics-based-tool-for-program-analysis.pdf)
+- [RAHFT: A Tool for Verifying Horn Clauses Using Abstract Interpretation and Finite Tree Automata](https://drive.google.com/file/d/1BuGeABxsaLdKe6pESf3nZSM0_sBlWu1p/view)
+- [Finite Presentations of Infinite Structures: Automata and Interpretations](https://link.springer.com/content/pdf/10.1007/s00224-004-1133-y.pdf)
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4397326
-- https://igl.ethz.ch/projects/3dsmocking/3dsmocking_paper.pdf
-- https://dl.acm.org/doi/pdf/10.1145/3592449
-- https://capra.cs.cornell.edu/latte21/paper/19.pdf
+- [Fabric Tessellation: Realizing Freeform Surfaces by Smocking](https://igl.ethz.ch/projects/3dsmocking/3dsmocking_paper.pdf)
+- [Semantics and Scheduling for Machine Knitting Compilers](https://dl.acm.org/doi/pdf/10.1145/3592449)
+- [What Are the Semantics of Hardware?](https://capra.cs.cornell.edu/latte21/paper/19.pdf)
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5185393
-- https://learnyouahaskell.com/modules#data-list 
-- https://www.mynecchi.com/upload/files/IM_NC-103D(H72D1)(EN)(190702).pdf 
-- https://www.janome.com/globalassets/necchi/machine-manuals/inst-book-necchi-ex60.pdf
-- https://www.reddit.com/r/rust/comments/lms0ay/pijul_the_mathematically_sound_version_control/
-- https://pijul.org/model/
-- https://old.reddit.com/r/math/
-- https://james-hanson.github.io/wiki/Monster_model
-- https://old.reddit.com/r/math/comments/1h60or9/whats_the_largest_finite_structure_you_know_or/
-- https://old.reddit.com/r/math/comments/1h4v9yx/how_monstrously_long_papers_are_made/
-- https://old.reddit.com/r/math/comments/1h5wezw/interesting_question_related_to_the_divergence/
-- https://www.sasjournal.org/index.php/home/article/view/68 
-- http://forkinganddividing.com/#_02_52
-- https://www.accesstoinsight.org/lib/authors/various/wheel186.html 
-- https://www.sciencedirect.com/topics/computer-science/hardware-description-languages
-- https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/
-- https://alastairreid.github.io/papers/CAV_16/
-- https://infoscience.epfl.ch/server/api/core/bitstreams/53d40326-975c-4341-9d1c-668ca0784bf8/content
-- https://www.cs.utexas.edu/~moore/acl2/manuals/current/manual/index-seo.php?xkey=SV____SVEX-COMPILATION
-- https://ia903108.us.archive.org/16/items/ThurstonTheGeometryAndTopologyOfThreeManifolds/Thurston__The_Geometry_And_Topology_Of_Three-Manifolds.pdf
-- https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory
-- https://www.cs.utexas.edu/~boyer/ftp/nqthm/
-- https://www.learndatalogtoday.org/
+- [Modules — Learn You a Haskell for Great Good!](https://learnyouahaskell.github.io/modules.html)
+- [NC-103D Instruction Manual](https://www.mynecchi.com/upload/files/IM_NC-103D(H72D1)(EN)(190702).pdf)
+- [Necchi EX60 Instruction Book](https://www.janome.com/globalassets/necchi/machine-manuals/inst-book-necchi-ex60.pdf)
+- [Pijul, the mathematically sound version control system](https://www.reddit.com/r/rust/comments/lms0ay/pijul_the_mathematically_sound_version_control/)
+- [Pijul - Model](https://pijul.org/model/)
+- [r/math](https://old.reddit.com/r/math/)
+- [Monster Model](https://james-hanson.github.io/wiki/Monster_model)
+- [What's the largest finite structure you know, or…](https://old.reddit.com/r/math/comments/1h60or9/whats_the_largest_finite_structure_you_know_or/)
+- [How monstrously long papers are made](https://old.reddit.com/r/math/comments/1h4v9yx/how_monstrously_long_papers_are_made/)
+- [Interesting question related to the divergence…](https://old.reddit.com/r/math/comments/1h5wezw/interesting_question_related_to_the_divergence/)
+- [An Insecure Base: Style of Attachment and Adult Romantic Relationships](https://www.sasjournal.org/index.php/home/article/view/68)
+- [Map of the Universe](http://forkinganddividing.com/#_02_52)
+- [The Three Basic Facts of Existence: I. Impermanence (Anicca)](https://www.accesstoinsight.org/lib/authors/various/wheel186.html)
+- [Hardware Description Languages](https://www.sciencedirect.com/topics/computer-science/hardware-description-languages)
+- [Abstraction, Intuition, and the "Monad Tutorial Fallacy"](https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/)
+- [End-to-End Verification of ARM Processors with ISA-Formal](https://alastairreid.github.io/papers/CAV_16/)
+- [A Dynamically Scheduled HLS Flow in MLIR](https://infoscience.epfl.ch/server/api/core/bitstreams/53d40326-975c-4341-9d1c-668ca0784bf8/content)
+- [ACL2 SV Library: SVEX-COMPILATION](https://www.cs.utexas.edu/~moore/acl2/manuals/current/manual/index-seo.php?xkey=SV____SVEX-COMPILATION)
+- [The Geometry and Topology of Three-Manifolds](https://ia903108.us.archive.org/16/items/ThurstonTheGeometryAndTopologyOfThreeManifolds/Thurston__The_Geometry_And_Topology_Of_Three-Manifolds.pdf)
+- [Kaluza–Klein Theory](https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory)
+- [Nqthm, the Boyer-Moore Prover](https://www.cs.utexas.edu/~boyer/ftp/nqthm/)
+- [Learn Datalog Today!](https://www.learndatalogtoday.org/)
 - acl2::why-4vec-logic
-- https://pimbook.org/
-- https://ncatlab.org/nlab/show/category+theory
-- https://www.cs.ubc.ca/~mrg/cs513/2019-2/reading/ReadingList.html
-- https://fmv.jku.at/papers/BiereArthoSchuppan-FMICS02.pdf
-- https://www.jeremykun.com/2016/03/05/my-graduate-career-in-math/
+- [A Programmer's Introduction to Mathematics](https://pimbook.org/)
+- [Category Theory](https://ncatlab.org/nlab/show/category+theory)
+- [CpSc 513: Reading List](https://www.cs.ubc.ca/~mrg/cs513/2019-2/reading/ReadingList.html)
+- [Liveness Checking as Safety Checking](https://fmv.jku.at/papers/BiereArthoSchuppan-FMICS02.pdf)
+- [My Graduate Career in Math](https://www.jeremykun.com/2025/05/12/my-graduate-career-in-math/)
 - Algebra - Artin
-- https://www.youtube.com/playlist?list=PLzVTusWerVcIzewg9dQxOKl9_62kTgOgI
-- https://link.springer.com/chapter/10.1007/3-540-61780-9_64
-- https://arxiv.org/abs/2205.11703v1#
-- https://iis-people.ee.ethz.ch/~zimmi/publications/sop_synthesis.pdf 
-- https://web.archive.org/web/20190905131552/http://www.hilgart.org/enformy/dma-Chap7.htm
-- https://dl.acm.org/doi/pdf/10.1145/3706628.3708872 
-- https://dl.acm.org/doi/pdf/10.1145/3597614
-- https://blog.regehr.org/
-- https://homotopytypetheory.org/2015/09/25/realcohesion/
-- https://wp.doc.ic.ac.uk/vetss/wp-content/uploads/sites/122/2019/10/Sewell-Fixing-the-Foundations-with-Semantics-and-Capabilities.pdf
-- https://www.cs.ox.ac.uk/tom.melham/pub/Gao-2021-EFV.pdf 
-- https://alastairreid.github.io/papers/cav2016_isa_formal.pdf
-- https://dl.acm.org/doi/pdf/10.1145/3591234
-- https://dl.acm.org/doi/pdf/10.1145/3624722 
-- https://math.stackexchange.com/questions/472134/what-is-the-relation-between-a-banach-space-and-a-hilbert-space
-- https://www.danielgratzer.com/papers/type-theory-book.pdf 
-- https://oeis.org/search?q=Popcount&language=english&go=Search 
-- https://github.com/leanprover/reference-manual/pull/451/files
-- https://tiu-edu.uz/media/books/2024/05/28/1664976801.pdf 
-- https://terrytao.wordpress.com/2025/05/31/a-lean-companion-to-analysis-i/
+- [Abstract Algebra - Benedict Gross (Harvard Extension)](https://www.youtube.com/playlist?list=PLzVTusWerVcIzewg9dQxOKl9_62kTgOgI)
+- [Automating Inversion of Inductive Predicates in Coq](https://link.springer.com/chapter/10.1007/3-540-61780-9_64)
+- [Verified Implementation of an Efficient Term-Rewriting Algorithm for Multiplier Verification on ACL2](https://arxiv.org/abs/2205.11703v1#)
+- [Optimized Synthesis of Sum-of-Products](https://iis-people.ee.ethz.ch/~zimmi/publications/sop_synthesis.pdf)
+- [The Great Whorf Hypothesis Hoax: Sin, Suffering and Redemption in Academe](https://web.archive.org/web/20190905131552/http://www.hilgart.org/enformy/dma-Chap7.htm)
+- [Latency Insensitivity Testing for Dataflow HLS Designs](https://dl.acm.org/doi/pdf/10.1145/3706628.3708872)
+- [Resource Sharing in Dataflow Circuits](https://dl.acm.org/doi/pdf/10.1145/3597614)
+- [Embedded in Academia](https://blog.regehr.org/)
+- [Real-Cohesive Homotopy Type Theory](https://homotopytypetheory.org/2015/09/25/realcohesion/)
+- [Fixing the Foundations with Semantics and Capabilities: ARM, RISC-V, and CHERI](https://wp.doc.ic.ac.uk/vetss/wp-content/uploads/sites/122/2019/10/Sewell-Fixing-the-Foundations-with-Semantics-and-Capabilities.pdf)
+- [End-to-End Formal Verification of a RISC-V Processor Extended with Capability Pointers](https://www.cs.ox.ac.uk/tom.melham/pub/Gao-2021-EFV.pdf)
+- [End-to-End Verification of ARM Processors with ISA-Formal](https://alastairreid.github.io/papers/cav2016_isa_formal.pdf)
+- [Modular Hardware Design with Timeline Types](https://dl.acm.org/doi/pdf/10.1145/3591234)
+- [Rebuttal How-To: Strategies, Tactics, and the Big Picture in Research](https://dl.acm.org/doi/pdf/10.1145/3624722)
+- [What Is the Relation Between a Banach Space and a Hilbert Space?](https://math.stackexchange.com/questions/472134/what-is-the-relation-between-a-banach-space-and-a-hilbert-space)
+- [Principles of Dependent Type Theory](https://www.danielgratzer.com/papers/type-theory-book.pdf)
+- [OEIS: Popcount](https://oeis.org/search?q=Popcount&language=english&go=Search)
+- [feat: `grind` chapter (Lean reference manual #451)](https://github.com/leanprover/reference-manual/pull/451/files)
+- [Analysis I](https://tiu-edu.uz/media/books/2024/05/28/1664976801.pdf)
+- [A Lean Companion to "Analysis I"](https://terrytao.wordpress.com/2025/05/31/a-lean-companion-to-analysis-i/)
 - Modal Logic for Open Minds
+- the score
+- point counter point
+- martyr
+- [Apple Identity Re-Analyzed](https://medium.com/@gassee/apple-identity-re-analyzed-b2c613a0e967)
+- In search of Kazakhstan
+- the bell jar
+- scale - greg evans
+- gulag archipelago
+- [Revisiting Precarity, with Care: Productive and Reproductive Labour in the Era of Flexible Capitalism](https://ephemerajournal.org/contribution/revisiting-precarity-care-productive-and-reproductive-labour-era-flexible-capitalism)
