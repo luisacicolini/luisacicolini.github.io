@@ -77,7 +77,8 @@ const photos = Object.keys(imageFiles)
     A list of <a href="read-list">books</a>, 
     a <a href="reading-list">list of things I want to read</a>, 
     a <a href="about-me">list of things I've been up to</a>. 
-    I spend my time making clothes, music, and analog photography: 
+    When I'm not computer sciencing, I spend my time making clothes and music. 
+    I like analog photography: 
     </p>
     {photos.length === 0 ? (
       <p>Nothing here yet — I'm still picking my favorites out of the negatives.</p>
@@ -108,8 +109,6 @@ const photos = Object.keys(imageFiles)
         ))}
       </div>
     )}
-
-    <p>and I like computers. Some things I'm learning:</p>
 
     <ul class="posts">
       {posts.map(post => {
