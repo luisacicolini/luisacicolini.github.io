@@ -3,6 +3,8 @@ title: "A teeny tiny `rabiés` dictionary"
 date: 2026-09-28
 ---
 
+# A teeny tiny `rabiés` dictionary
+
 [`rabiés`](https://it.wikipedia.org/wiki/Dialetto_rabbiese) is the language of my people. 
 Although I grew up speaking mostly Italian at home, everyone around me spoke our dialect, 
 and I ended up liking it a lot and wanting to speak and learn more of it :) 
@@ -19,6 +21,6 @@ this list as I go
     An _antana_ is one such line. 
 - _bagigi_: peanuts 
 - _barbizoel_: chin 
-_ _chjalcagn_: heel 
+- _chjalcagn_: heel 
 
     
