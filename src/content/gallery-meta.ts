@@ -14,80 +14,88 @@ export type GalleryMeta = {
 };
 
 export const galleryMeta: Record<string, GalleryMeta> = {
-  "l.JPG": {
+  "14.JPG": {
     title: "cambridge sometimes you are magical",
-    location: "Cambridge/ UK/ Jan'25",
+    location: "Cambridge/UK/Jan'25",
   },
-  "c.jpg": {
+  "5.jpg": {
     title: "dad and the snow",
-    location: "Rabbi/ Italy/ Mar'24",
+    location: "Rabbi/Italy/Mar'24",
   },
-  "h.jpg": {
+  "10.jpg": {
     title: "lights and shadows at Lago di Carezza",
-    location: "Dolomites/ Italy/ Mar'25",
+    location: "Dolomites/Italy/Mar'25",
   },
-  "k.jpg": {
+  "00.JPG": {
+    title: "wheat & wales",
+    location: "Wales/UK/Jul'26",
+  },
+  "13.jpg": {
     title: "on the way to skye",
-    location: "Scotland/ UK/ Apr'25",
+    location: "Scotland/UK/Apr'25",
   },
-  "a.JPG": {
+  "3.JPG": {
     title: "my favorite place in the world",
-    location: "Rabbi/ Italy/ Sep'25",
+    location: "Rabbi/Italy/Sep'25",
   },
-  "m.JPG": {
+  "01.JPG": {
+    title: "ಹಲಸಿನ ಹಣ್ಣು",
+    location: "Udupi/India/May'26",
+  },
+  "15.JPG": {
     title: "desmalghjada",
-    location: "Rabbi/ Italy/ Sep'25",
+    location: "Rabbi/Italy/Sep'25",
   },
-  "n.JPG": {
+  "16.JPG": {
     title: "colors of singapore",
-    location: "Singapore/ Oct'25",
+    location: "Singapore/Oct'25",
   },
-  "o.JPG": {
+  "17.JPG": {
     title: "cornwall sunrise with the girls",
-    location: "St. Ives/ UK/ Mar'26",
+    location: "St. Ives/UK/Mar'26",
   },
-  "g.JPG": {
+  "9.JPG": {
     title: "home",
-    location: "Rabbi/ Italy/ Sep'25",
+    location: "Rabbi/Italy/Sep'25",
   },
-  "e.JPG": {
+  "7.JPG": {
     title: "sunset at Malpe",
-    location: "Udupi/ India/ May'26",
+    location: "Udupi/India/May'26",
   },
-  "b.JPG": {
+  "4.JPG": {
     title: "seals",
-    location: "Norfolk coast/ UK/ Feb'26",
+    location: "Norfolk coast/UK/Feb'26",
   },
-  "q.JPG": {
+  "19.JPG": {
     title: "concrete jungle",
-    location: "Bukit Lawang/ Sumatra/ Oct'25",
+    location: "Bukit Lawang/Sumatra/Oct'25",
   },
-  "p.JPG": {
+  "18.JPG": {
     title: "norfolk sea",
-    location: "Norfolk coast/ UK/ Sep'24",
+    location: "Norfolk coast/UK/Sep'24",
   },
-  "r.JPG": {
+  "20.JPG": {
     title: "tea",
-    location: "Munnar/ India/ Dec'24",
+    location: "Munnar/India/Dec'24",
   },
-  "f.JPG": {
+  "8.JPG": {
     title: "hawa mahal",
-    location: "Jaipur/ India/ Dec'24",
+    location: "Jaipur/India/Dec'24",
   },
-  "s.JPG": {
+  "21.JPG": {
     title: "pink dusk",
-    location: "Bangalore/ India/ Dec'24",
+    location: "Bangalore/India/Dec'24",
   },
-  "i.jpg": {
+  "11.jpg": {
     title: "capturing the moment",
-    location: "Istanbul/ Türkiye/ May'25",
+    location: "Istanbul/Türkiye/May'25",
   },
-  "d.jpg": {
+  "6.jpg": {
     title: "skye",
-    location: "Isle of Skye/ Scotland/ Apr'25",
+    location: "Isle of Skye/Scotland/Apr'25",
   },
-  "j.jpg": {
+  "12.jpg": {
     title: "dad",
-    location: "Rabbi/ Italy/ Apr'24",
+    location: "Rabbi/Italy/Apr'24",
   },
 };
