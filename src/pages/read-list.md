@@ -7,6 +7,9 @@ title: "Read List"
 ## 2026 
 - sequel. la seconda indagine del commissario elfo - nicolo' targhetta
 - the unbearable lightness of being - milan kundera
+
+> The heavier the burden, the closer our lives come to the earth, the more real and truthful they become. 
+
 - buonanotte signor lenin - tiziano terzani
 - i baffi - emmanuel carrere
 - signor malaussene - daniel pennac
