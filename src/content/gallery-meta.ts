@@ -18,12 +18,12 @@ export const galleryMeta: Record<string, GalleryMeta> = {
     title: "cambridge sometimes you are magical",
     location: "Cambridge/UK/Jan'25",
   },
-  "5.jpg": {
+  "05.jpg": {
     title: "dad and the snow",
     location: "Rabbi/Italy/Mar'24",
   },
   "10.jpg": {
-    title: "lights and shadows at Lago di Carezza",
+    title: "lights and shadows",
     location: "Dolomites/Italy/Mar'25",
   },
   "00.JPG": {
@@ -34,13 +34,17 @@ export const galleryMeta: Record<string, GalleryMeta> = {
     title: "on the way to skye",
     location: "Scotland/UK/Apr'25",
   },
-  "3.JPG": {
+  "03.JPG": {
     title: "my favorite place in the world",
     location: "Rabbi/Italy/Sep'25",
   },
   "01.JPG": {
     title: "ಹಲಸಿನ ಹಣ್ಣು",
     location: "Udupi/India/May'26",
+  },
+  "02.JPG": {
+    title: "ಹಲಸಿನ ಹಣ್ಣು",
+    location: "Rabbi/Italy/Sep'26",
   },
   "15.JPG": {
     title: "desmalghjada",
@@ -54,17 +58,17 @@ export const galleryMeta: Record<string, GalleryMeta> = {
     title: "cornwall sunrise with the girls",
     location: "St. Ives/UK/Mar'26",
   },
-  "9.JPG": {
+  "09.JPG": {
     title: "home",
     location: "Rabbi/Italy/Sep'25",
   },
-  "7.JPG": {
+  "07.JPG": {
     title: "sunset at Malpe",
     location: "Udupi/India/May'26",
   },
-  "4.JPG": {
+  "04.JPG": {
     title: "seals",
-    location: "Norfolk coast/UK/Feb'26",
+    location: "Norfolk/UK/Feb'26",
   },
   "19.JPG": {
     title: "concrete jungle",
@@ -72,7 +76,7 @@ export const galleryMeta: Record<string, GalleryMeta> = {
   },
   "18.JPG": {
     title: "norfolk sea",
-    location: "Norfolk coast/UK/Sep'24",
+    location: "Norfolk/UK/Sep'24",
   },
   "20.JPG": {
     title: "tea",
