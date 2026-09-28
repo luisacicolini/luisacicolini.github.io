@@ -29,6 +29,13 @@ blockquote > :last-child {
   margin-bottom: 0;
 }
 
+/* quotes nested under a book in the read list */
+li > blockquote {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95em;
+}
+
 h1, h2, h3 {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   color: #14591D; 
