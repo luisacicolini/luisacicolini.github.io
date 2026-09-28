@@ -12,6 +12,23 @@ article {
   line-height: 1.6;
 }
 
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  border-left: 4px solid #14591D;
+  border-radius: 0 6px 6px 0;
+  background-color: rgba(20, 89, 29, 0.08);
+  font-style: italic;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
 h1, h2, h3 {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   color: #14591D; 
