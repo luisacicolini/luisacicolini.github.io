@@ -36,7 +36,7 @@ title: "Read List"
   > The sadness meant: we are at the last station. The happiness meant: we are together. The sadness was form, the happiness content. Happiness filled the space fo sadness.
 
 - buonanotte signor lenin - tiziano terzani
-> Lo spirito di Tamerlano - questo nomade che si costruí una capitale in cui non volle mai vivere e una grande tomba vuota solo per impressionare i suoi discendenti - mi pare sia tutto nell'anonimo tumulo di mattoni e fango, in una cripta che restó per secoli inaccessibile ai visitatori.
+  > Lo spirito di Tamerlano - questo nomade che si costruí una capitale in cui non volle mai vivere e una grande tomba vuota solo per impressionare i suoi discendenti - mi pare sia tutto nell'anonimo tumulo di mattoni e fango, in una cripta che restó per secoli inaccessibile ai visitatori.
 - i baffi - emmanuel carrere
 - signor malaussene - daniel pennac
 - one hundred years of solitude - gabriel garcia marquez
