@@ -23,7 +23,7 @@ export const galleryMeta: Record<string, GalleryMeta> = {
     location: "Udupi/India/May'26",
   },
     "00.JPG": {
-    title: "ಹಲಸಿನ ಹಣ್ಣು",
+    title: "always there",
     location: "Rabbi/Italy/May'26",
   },
   "03.JPG": {

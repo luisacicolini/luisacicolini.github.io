@@ -8,7 +8,6 @@ title: "Read List"
 
 - sequel. la seconda indagine del commissario elfo - nicolo' targhetta
 - the unbearable lightness of being - milan kundera
-
   > The heavier the burden, the closer our lives come to the earth, the more real and truthful they become.
 
   > We can never know what to want, because, living only one life, we can neither compare it with our previous lives nor perfect it in our lives to come.
@@ -34,7 +33,6 @@ title: "Read List"
   > And therein lies the whole of man's plight. Human time does not turn in a circle; it runs ahead in a straight line. That is why man cannot be happy: happiness is the longing for repetition
 
   > The sadness meant: we are at the last station. The happiness meant: we are together. The sadness was form, the happiness content. Happiness filled the space fo sadness.
-
 - buonanotte signor lenin - tiziano terzani
   > Lo spirito di Tamerlano - questo nomade che si costruí una capitale in cui non volle mai vivere e una grande tomba vuota solo per impressionare i suoi discendenti - mi pare sia tutto nell'anonimo tumulo di mattoni e fango, in una cripta che restó per secoli inaccessibile ai visitatori.
 - i baffi - emmanuel carrere
@@ -45,6 +43,7 @@ title: "Read List"
 - shadow of the silk road - colin thubron
 
 ## 2025 
+
 - il silenzio è cosa viva - chandra candiani
 - la fata carabina - daniel pennac 
 - ingegneria della vita adulta - giorgia fumo 
@@ -52,6 +51,7 @@ title: "Read List"
 - a prayer for the crown-shy - becky chambers
 - speaking of siva - allama prabhu, mahadeviyakka, devara dasimayya
 - tha anthropologists - ayşegül savaş
+
 ## 2024
 - il dottor stranamore ovvero: come ho imparato a non preoccuparmi e ad amare la bomba - peter george
 - cronache della galassia - isaac asimov
