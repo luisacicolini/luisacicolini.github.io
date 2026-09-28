@@ -14,92 +14,92 @@ export type GalleryMeta = {
 };
 
 export const galleryMeta: Record<string, GalleryMeta> = {
-  "00.jpg": {
-    title: "dad and the snow",
-    location: "Rabbi/Italy/Mar'24",
-  },
-  "01.jpg": {
-    title: "dad",
-    location: "Rabbi/Italy/Apr'24",
-  },
-  "02.JPG": {
-    title: "norfolk sea",
-    location: "Norfolk/UK/Sep'24",
-  },
-  "03.JPG": {
-    title: "hawa mahal",
-    location: "Jaipur/India/Dec'24",
-  },
-  "04.JPG": {
-    title: "tea",
-    location: "Munnar/India/Dec'24",
-  },
-  "05.JPG": {
-    title: "pink dusk",
-    location: "Bangalore/India/Dec'24",
-  },
-  "06.JPG": {
-    title: "cambridge sometimes you are magical",
-    location: "Cambridge/UK/Jan'25",
-  },
-  "07.jpg": {
-    title: "lights and shadows",
-    location: "Dolomites/Italy/Mar'25",
-  },
-  "08.jpg": {
-    title: "on the way to skye",
-    location: "Scotland/UK/Apr'25",
-  },
-  "09.jpg": {
-    title: "skye",
-    location: "Isle of Skye/Scotland/Apr'25",
-  },
-  "10.jpg": {
-    title: "capturing the moment",
-    location: "Istanbul/Türkiye/May'25",
-  },
-  "11.JPG": {
-    title: "my favorite place in the world",
-    location: "Rabbi/Italy/Sep'25",
-  },
-  "12.JPG": {
-    title: "home",
-    location: "Rabbi/Italy/Sep'25",
-  },
-  "13.JPG": {
-    title: "desmalghjada",
-    location: "Rabbi/Italy/Sep'25",
-  },
-  "14.JPG": {
-    title: "colors of singapore",
-    location: "Singapore/Oct'25",
-  },
-  "15.JPG": {
-    title: "concrete jungle",
-    location: "Bukit Lawang/Sumatra/Oct'25",
-  },
-  "16.JPG": {
-    title: "seals",
-    location: "Norfolk/UK/Feb'26",
-  },
-  "17.JPG": {
-    title: "cornwall sunrise with the girls",
-    location: "St. Ives/UK/Mar'26",
-  },
-  "18.JPG": {
-    title: "ಹಲಸಿನ ಹಣ್ಣು",
-    location: "Udupi/India/May'26",
-  },
-  "19.JPG": {
-    title: "sunset at Malpe",
-    location: "Udupi/India/May'26",
-  },
-  "20.JPG": {
+  "01.JPG": {
     title: "wheat & wales",
     location: "Wales/UK/Jul'26",
   },
-  "21.JPG": {
+  "02.JPG": {
+    title: "sunset at Malpe",
+    location: "Udupi/India/May'26",
+  },
+    "00.JPG": {
     title: "ಹಲಸಿನ ಹಣ್ಣು",
-    location: "Rabbi/Italy/Sep'26",
+    location: "Rabbi/Italy/May'26",
+  },
+  "03.JPG": {
+    title: "ಹಲಸಿನ ಹಣ್ಣು",
+    location: "Udupi/India/May'26",
+  },
+  "04.JPG": {
+    title: "cornwall sunrise with the girls",
+    location: "St. Ives/UK/Mar'26",
+  },
+  "05.JPG": {
+    title: "seals",
+    location: "Norfolk/UK/Feb'26",
+  },
+  "06.JPG": {
+    title: "concrete jungle",
+    location: "Bukit Lawang/Sumatra/Oct'25",
+  },
+  "07.JPG": {
+    title: "colors of singapore",
+    location: "Singapore/Oct'25",
+  },
+  "08.JPG": {
+    title: "desmalghjada",
+    location: "Rabbi/Italy/Sep'25",
+  },
+  "09.JPG": {
+    title: "home",
+    location: "Rabbi/Italy/Sep'25",
+  },
+  "10.JPG": {
+    title: "my favorite place in the world",
+    location: "Rabbi/Italy/Sep'25",
+  },
+  "11.jpg": {
+    title: "capturing the moment",
+    location: "Istanbul/Türkiye/May'25",
+  },
+  "12.jpg": {
+    title: "skye",
+    location: "Isle of Skye/Scotland/Apr'25",
+  },
+  "13.jpg": {
+    title: "on the way to skye",
+    location: "Scotland/UK/Apr'25",
+  },
+  "14.jpg": {
+    title: "lights and shadows",
+    location: "Dolomites/Italy/Mar'25",
+  },
+  "15.JPG": {
+    title: "cambridge sometimes you are magical",
+    location: "Cambridge/UK/Jan'25",
+  },
+  "16.JPG": {
+    title: "pink dusk",
+    location: "Bangalore/India/Dec'24",
+  },
+  "17.JPG": {
+    title: "tea",
+    location: "Munnar/India/Dec'24",
+  },
+  "18.JPG": {
+    title: "hawa mahal",
+    location: "Jaipur/India/Dec'24",
+  },
+  "19.JPG": {
+    title: "norfolk sea",
+    location: "Norfolk/UK/Sep'24",
+  },
+  "20.jpg": {
+    title: "dad",
+    location: "Rabbi/Italy/Apr'24",
+  },
+  "21.jpg": {
+    title: "dad and the snow",
+    location: "Rabbi/Italy/Mar'24",
   },
 };
