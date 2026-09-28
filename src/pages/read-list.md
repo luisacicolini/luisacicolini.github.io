@@ -6,8 +6,8 @@ title: "Read List"
 
 ## 2026 
 
-- sequel. la seconda indagine del commissario elfo - nicolo' targhetta
-- the unbearable lightness of being - milan kundera
+- **sequel. la seconda indagine del commissario elfo**, nicolo' targhetta
+- **the unbearable lightness of being**, milan kundera
   > The heavier the burden, the closer our lives come to the earth, the more real and truthful they become.
 
   > We can never know what to want, because, living only one life, we can neither compare it with our previous lives nor perfect it in our lives to come.
@@ -33,14 +33,14 @@ title: "Read List"
   > And therein lies the whole of man's plight. Human time does not turn in a circle; it runs ahead in a straight line. That is why man cannot be happy: happiness is the longing for repetition
 
   > The sadness meant: we are at the last station. The happiness meant: we are together. The sadness was form, the happiness content. Happiness filled the space fo sadness.
-- buonanotte signor lenin - tiziano terzani
+- **buonanotte signor lenin**, tiziano terzani
   > Lo spirito di Tamerlano - questo nomade che si costruí una capitale in cui non volle mai vivere e una grande tomba vuota solo per impressionare i suoi discendenti - mi pare sia tutto nell'anonimo tumulo di mattoni e fango, in una cripta che restó per secoli inaccessibile ai visitatori.
-- i baffi - emmanuel carrere
-- signor malaussene - daniel pennac
-- one hundred years of solitude - gabriel garcia marquez
-- the curious case of the dog in the night time - mark haddon
-- blood river - tim butcher
-- shadow of the silk road - colin thubron
+- **i baffi**, emmanuel carrere
+- **signor malaussene**, daniel pennac
+- **one hundred years of solitude**, gabriel garcia marquez
+- **the curious case of the dog in the night time**, mark haddon
+- **blood river**, tim butcher
+- **shadow of the silk road**, colin thubron
 
 ## 2025 
 
