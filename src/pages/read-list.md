@@ -2,7 +2,7 @@
 layout: ../layouts/BaseLayout.astro
 title: "Read List"
 ---
-# Books I read:
+# Books & quotes
 
 ## 2026 
 - sequel. la seconda indagine del commissario elfo - nicolo' targhetta
