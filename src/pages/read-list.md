@@ -45,9 +45,6 @@ title: "Read List"
 ## 2025 
 
 - **il silenzio è cosa viva**, chandra candiani
-> ab
-
->abc
 - **la fata carabina**, daniel pennac 
 - ingegneria della vita adulta - giorgia fumo 
 - the man who mistook his wife for a hat - oliver sacks
