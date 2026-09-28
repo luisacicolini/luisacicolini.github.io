@@ -82,7 +82,7 @@ export const galleryMeta: Record<string, GalleryMeta> = {
     title: "tea",
     location: "Munnar/India/Dec'24",
   },
-  "8.JPG": {
+  "08.JPG": {
     title: "hawa mahal",
     location: "Jaipur/India/Dec'24",
   },
@@ -94,7 +94,7 @@ export const galleryMeta: Record<string, GalleryMeta> = {
     title: "capturing the moment",
     location: "Istanbul/Türkiye/May'25",
   },
-  "6.jpg": {
+  "06.jpg": {
     title: "skye",
     location: "Isle of Skye/Scotland/Apr'25",
   },
