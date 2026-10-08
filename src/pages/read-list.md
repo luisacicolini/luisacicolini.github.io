@@ -41,6 +41,9 @@ title: "Read List"
 - **the curious case of the dog in the night time**, mark haddon
 - **blood river**, tim butcher
 - **shadow of the silk road**, colin thubron
+- **wild swans: three daughters of china**, jung chang
+> Amid suffering, ruin, and death, I had above all known love and the indestructible human capacity to survive and to pursue happiness.
+
 
 ## 2025 
 
