@@ -96,6 +96,6 @@ to keep everything together: the fashion, the maths, the frivolous, the coding.
 And how I want to keep track of these moments, write them down, and look back in a few years from now, 
 maybe as a designer - maybe as an engineer. 
 
-**Sometimes,[ keeping it all together](https://www.youtube.com/watch?v=-S03RxeDgNE&t=1159s&pp=ygUObHVpc2EgY2ljb2xpbmk%3D) looks like a flowery jacket in my favorite fabric, 
+**Sometimes, [keeping it all together](https://www.youtube.com/watch?v=-S03RxeDgNE&t=1159s&pp=ygUObHVpc2EgY2ljb2xpbmk%3D) looks like a flowery jacket in my favorite fabric, 
 worn on a conference stage, 
 while talking about LLVM's backend.** 
