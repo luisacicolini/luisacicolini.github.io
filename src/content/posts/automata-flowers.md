@@ -18,9 +18,9 @@ I recently went through those drawings and thinking back about that little girl
 who used to watch runways - religiously - on the only TV channel that would stream them 
 on Sunday afternoons :)
 
-I have scoliosis and had to wear a corset for quite a few years as a teenager. 
+I have scoliosis and had to wear a [brace](https://www.rnoh.nhs.uk/services/scoliosis/conservative-management-scoliosis/spinal-bracing) for quite a few years as a teenager. 
 Needless to say, it made me feel miserable. 
-I remember the only thing I liked about going to the technician for the corset fitting 
+I remember the only thing I liked about going to the technician for the brace fitting 
 and checkups: it was near a fabric store - 
 and my mum and I would sometimes stop ther and buy some fabric after the appointments. 
 I remember my first [Burda](https://www.burdastyle.uk/books-mooks/sewing-magazines), buying some fabric in that store, and I believe somewhere I 
