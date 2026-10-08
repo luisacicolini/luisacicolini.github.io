@@ -78,7 +78,7 @@ Turns out, they are also incredibly pretty, simple,
 and can be drawn to mean a lot of different things. 
 
 <figure>
-  <img src="/automata-flowers.jpeg" alt="Automata drawn as flowers" />
+  <img src="/automata-flowers.jpg" alt="Automata drawn as flowers" />
   <figcaption>Automata can become flowers.</figcaption>
 </figure>
 
