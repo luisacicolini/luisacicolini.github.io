@@ -51,7 +51,7 @@ I like computers, I like maths, I like thinking and writing code.
 Moreover, I feel like fashion and design tend to be associated with femininity, 
 and anything concerning femininity intertwines weirdly with the technical, male-dominated 
 environments. 
-So I don't know if this hiatus I perceive is accentuated by the fact that, being a woman, 
+Maybe this hiatus I perceive is accentuated by the fact that I am a woman, and that
 I am *constantly* scared that people around me might think that I'm not good enough, or that
 I'm only here because *I am a woman*. 
 Partially, I am scared that showing more frivolous aspects of me will hinder my credibility as a researcher. 
