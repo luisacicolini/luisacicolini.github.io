@@ -75,7 +75,7 @@ And my heart went back to my master thesis, and my love for automata theory.
 Automata are an incredibly versatile abstraction in computer science, 
 we can use them to describe so many different things. 
 Turns out, they are also incredibly pretty, simple, 
-and can be drawn to mean a lot of different things. 
+and can be drawn to mean *a lot of different things*. 
 
 <figure>
   <img src="/automata-flowers.jpg" alt="Automata drawn as flowers" />
