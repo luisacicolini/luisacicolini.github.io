@@ -8,7 +8,8 @@ date: 2026-10-08
 I really like fashion and I love making clothes. 
 I am in general a crafty person whose toxic trait is thinking that *anything can be built with any scratch material*. 
 I grew up watching my grandmother making clothes for my dolls and I, 
-until I ended up making them with her and learning a lot in the process. 
+until I ended up making them with her, having fun, and learning the basics. 
+It took so long until I could sew a straight hem!
 My parents' house is full of weird DIY projects, hardly wearable clothes, and drawings, 
 with clothes for any occasion. 
 I guess I was a creative kid, and I clearly remember - during high school - coming home 
@@ -31,7 +32,7 @@ Then, engineering happened, and making clothes became an activity that I had ver
 very few breaks from coursework, when I went back to my parents' house. 
 I used to go visit an old relative who has been a seamstress for her entire life, 
 spend an afternoon with her going over my designs and learning. 
-That's how I really started learning the basics, from *shoulders should alwasy be 12 cm* to *cut with no mercy*. 
+That's how I really started learning the basics, from *"shoulders should always be 12 cm"* to *"cut with no mercy"*. 
 I owe her a lot, and it's with her that I sew the dress I wore for my BSc graduation. 
 The first actually wearable dress I made from scratch :)
 
@@ -39,7 +40,7 @@ A few years later, I moved to the UK and started working.
 Near my city there is a small fabric shop, that used to host classes. 
 I had just moved and decided to go for a shirt-making class. 
 It was my first real sewing class, and I was taught a lot of rules that I never knew existed!
-Coming out of that class, I asked the shop if they had any second-hand sewing machines I could buy: 
+Coming out of there, I asked the shop owners if they had any second-hand sewing machines I could buy: 
 they gave me a phone number and two weeks later I had my first sewing machine, bought with one of my first salaries :)
 
 For the longest time, I kept this part of me separated from my engineering and 
@@ -50,19 +51,20 @@ I like computers, I like maths, I like thinking and writing code.
 Moreover, I feel like fashion and design tend to be associated with femininity, 
 and anything concerning femininity intertwines weirdly with the technical, male-dominated 
 environments. 
-So I don't know if this separation I perceive is accentuated by the fact that, being a woman, 
-I am *constantly* scared that people around me will think I'm not good enough, 
-or that I am only here because I am a woman. 
+So I don't know if this hiatus I perceive is accentuated by the fact that, being a woman, 
+I am *constantly* scared that people around me might think that I'm not good enough, or that
+I'm only here because *I am a woman*. 
+Partially, I am scared that showing more frivolous aspects of me will hinder my credibility as a researcher. 
 *Not that is has actually happened or anything* - I am just scared it might, 
-and end up preemptively trying to prove myself.
-And the more I talk about these matters with my amazing girlfriends in STEM, 
+and end up preemptively trying to prove myself. 
+And the more I talk about these matters with my amazing girlfriends in STEM and academia, 
 the more I realize this is actually a rather shared experience. 
 **So how does one keep everything together?**
 
-A few months I found myself reflecting about these topics, 
+A few months ago I found myself reflecting about these topics, 
 and wondering how can I confidently be someone who likes fashion, design, making clothes - 
 and is also passionate about her research and computer science.
-I was making a jacket with a wonderful silky, olive green velvet that a friend brought me 
+I was making a jacket with a wonderful, silky, olive green velvet that a friend brought me 
 from his mum's store in Singapore. 
 I wanted to wear the jacket at a conference presentation: wearing my garments gives me 
 confidence, makes me feel good and proud. 
