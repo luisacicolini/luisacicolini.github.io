@@ -22,5 +22,7 @@ this list as I go
 - _bagigi_: peanuts 
 - _barbizoel_: chin 
 - _chjalcagn_: heel 
+- _en giande/sgianda_: falling apart 
+- _gatole/gaticiole_: tickling
 
     
