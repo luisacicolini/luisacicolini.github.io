@@ -24,5 +24,6 @@ this list as I go
 - _chjalcagn_: heel 
 - _en giande/sgianda_: falling apart 
 - _gatole/gaticiole_: tickling
+- _lat da smauz_: "milk from _smauz_` is a byproduct of cheesemaking, what remains after adding renner to your milk and straining out the cheese
 
     
