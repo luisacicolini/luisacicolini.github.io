@@ -55,6 +55,10 @@ title: "timeline"
       <a href="https://www.youtube.com/watch?v=QJHtkyBSxaQ">talk series</a> </span>
   </li>
   <li>
+    <span class="date">sept. 26</span>
+    <span class="activity"> I'm super excited to be part of the <a href="https://www.linkedin.com/company/dear-scientist/posts/">Dear Scientist</a> initiative and exchange letters with primary-school kids in Italy! </span>
+  </li>
+  <li>
     <span class="date">apr. 26</span>
     <span class="activity"> Presenting our LLVM backend verification work for the Verified zk(E)VM
       <a href="https://www.youtube.com/watch?v=QJHtkyBSxaQ">talk series</a> </span>
