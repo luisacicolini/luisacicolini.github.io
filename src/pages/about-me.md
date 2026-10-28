@@ -50,6 +50,11 @@ title: "timeline"
 
 <ul class="timeline">
   <li>
+    <span class="date">oct. 26</span>
+    <span class="activity"> Attending LLVM-dev'26 in Santa Clara and resenting our work on CIRCT verification
+      <a href="https://www.youtube.com/watch?v=QJHtkyBSxaQ">talk series</a> </span>
+  </li>
+  <li>
     <span class="date">apr. 26</span>
     <span class="activity"> Presenting our LLVM backend verification work for the Verified zk(E)VM
       <a href="https://www.youtube.com/watch?v=QJHtkyBSxaQ">talk series</a> </span>
