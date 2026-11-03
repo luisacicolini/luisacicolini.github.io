@@ -3,6 +3,7 @@ dist/
 
 # generated gallery renditions (watermarked at build time, see scripts/watermark-gallery.mjs)
 public/gallery/
+public/art/
 
 # generated types
 .astro/
