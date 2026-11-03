@@ -9,8 +9,7 @@ blockquote {
   border-left: 2px solid #14591D;
   border-radius: 0 6px 6px 0;
   background-color: rgba(20, 89, 29, 0.08);
-  font-style: italic;
-  font-family:serif;
+  font-family:monospace;
   margin: 0 0 0.2rem;
   padding: 0 0.5rem 0;
   font-size: 0.9em;
