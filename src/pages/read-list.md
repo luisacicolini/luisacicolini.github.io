@@ -43,6 +43,42 @@ title: "Read List"
 - **shadow of the silk road**, colin thubron
 - **wild swans: three daughters of china**, jung chang
 > Amid suffering, ruin, and death, I had above all known love and the indestructible human capacity to survive and to pursue happiness.
+- **the burnout society**, byung-chul han
+> First and foremost, depression is creative fatigue and exhausted ability. The complaint of the depressive individual "Nothing is possible" can only occur in a society that things "Nothing is impossible". 
+
+> However, the disappearance of domination does not entail freedom. Instead, it makes freedom and constraint coincide. Thus, the *achievement-subject* gives itself over to compulsive freedom - that is, to the free constraint of maximizing achievement.
+
+> We owe the cultural achievements of humanity - which include philosophy - to deep, contemplative attention. Culture presumes an environment in which deep attention is possible. Increasingly, such immersive reflection is being displaced by an entirely different form of attention: hyperattention. 
+
+> The *late-modern* animal laborans does not give up its individuality or ego in order to merge, through the work it perform, with the anonymous life process of the species. 
+
+> If one abandoned one's individuality and dissolved into the life process of the species entirely, one would at least have the serenity of an animal. 
+
+> In this society of compulsion, everyone carries a work camp inside. 
+
+> Learning to see means "getting your eyes used to calm, to patience, to letting things come to you" - that is, making yourself capable of deep and contemplative attention, casting a long and slow gaze. 
+
+> Today it is yielding more and more to offense or annoyance, "having a beef" which proves incapable of effecting decisive change. 
+
+> As its flipside, the society of achievement and activeness is generating excessive tiredness and exhaustion. These psychic conditions characterize a world that is poor in negativity and in turn dominated by excess positivity. They are not immunological reactions presupposing the negativity of the immunologically Other. Rather, they are caused by a too-much of positivity. The excessiveness of performance enhancement leads to psychic infarctions. 
+
+> Deep tiredness loosens the strictures of identity. Things flicker, twinkle, and vibrate at the edges. 
+
+> The modal verb that determines achievement society is not the Freudian Should, but Can. 
+
+> The dialectic of freedomn means developing new constraints, Freedom from the Other switches into narcissistic self-relation, which occasions many of the psychic disturbances affecting today's *achievement-subject*. The absence of relation to the Other causes a crisis of gratification. 
+
+> If one suffers from a narcissistic disorder, one sinks into oneself. When reference to the Other goes missing, no stable self-image can form. 
+
+> In positive terms, such a human being without character is flexible, able to assume any form, play any role, or perform any function. This shapelessness - or, alternatively, flexibility - creates a high degree of economic efficiency.
+
+> Depression - which often culminates in burnout - follows from overexcited, overdriven, excessive self-reference that has assumed destructive traits. 
+
+> In virtual spaces, the ego can practically move independent of the "reality principle" 
+
+> The late-modern *achievement-subject* is subject to no one. In fact, it is no longer a subject in the etymological sense. It positivizes itself; indeed, it liberates itself into a project.
+
+> The mania for health emerges when life has become as flat as a coin and stripped of all narrative content, all value. 
 
 
 ## 2025 
