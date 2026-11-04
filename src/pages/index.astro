@@ -120,7 +120,7 @@ const photos = Object.keys(imageFiles)
         return (
           <li>
             {raw ? <time class="post-date" datetime={raw.toString()}>{formatted}</time> : <span class="post-date" />}
-            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+            <a href={`/posts/${post.id}`}>{post.data.title}</a>
           </li>
         );
       })}
