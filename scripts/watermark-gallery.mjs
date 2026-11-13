@@ -1,7 +1,9 @@
-// Generates watermarked renditions of every photo in src/assets/gallery/
-// into public/gallery/, for the homepage film-strip gallery and its
-// lightbox. Runs automatically before `astro dev` / `astro build` via the
+// Generates watermarked renditions of every image in src/assets/gallery/
+// (homepage film strip) and src/assets/art/ (the /art portfolio) into
+// public/gallery/ and public/art/ respectively. Runs automatically before `astro dev` / `astro build` via the
 // predev/prebuild npm hooks, and skips files that are already up to date.
+// Subfolders are mirrored: src/assets/art/coat/front.jpg becomes
+// public/art/coat/front-{thumb,full}.webp, with manifest key "coat/front".
 //
 // Run manually with `npm run watermark` (add --force to regenerate everything).
 
@@ -10,9 +12,11 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const SRC_DIR = path.join(ROOT, 'src/assets/gallery');
-const OUT_DIR = path.join(ROOT, 'public/gallery');
-const MANIFEST_PATH = path.join(OUT_DIR, 'manifest.json');
+// Each collection gets its own output folder and manifest.json.
+const COLLECTIONS = [
+  { name: 'gallery', src: path.join(ROOT, 'src/assets/gallery'), out: path.join(ROOT, 'public/gallery') },
+  { name: 'art', src: path.join(ROOT, 'src/assets/art'), out: path.join(ROOT, 'public/art') },
+];
 
 const COPYRIGHT_TEXT = '© L. Cicolini';
 const FORCE = process.argv.includes('--force');
@@ -58,9 +62,12 @@ async function isUpToDate(srcPath, outPaths) {
   if (FORCE) return false;
   try {
     const srcStat = await stat(srcPath);
+    // ctime too: renaming a file (e.g. swapping 01.jpg and 02.jpg) keeps its
+    // mtime but bumps its ctime, and must still trigger a re-render.
+    const srcTime = Math.max(srcStat.mtimeMs, srcStat.ctimeMs);
     for (const outPath of outPaths) {
       const outStat = await stat(outPath);
-      if (outStat.mtimeMs < srcStat.mtimeMs) return false;
+      if (outStat.mtimeMs < srcTime) return false;
     }
     return true;
   } catch {
@@ -68,9 +75,10 @@ async function isUpToDate(srcPath, outPaths) {
   }
 }
 
-async function processImage(filename) {
+async function processImage(SRC_DIR, OUT_DIR, filename) {
   const srcPath = path.join(SRC_DIR, filename);
   const base = filename.replace(/\.[^.]+$/, '');
+  await mkdir(path.join(OUT_DIR, path.dirname(filename)), { recursive: true });
   const outPaths = RENDITIONS.map((r) => path.join(OUT_DIR, `${base}-${r.suffix}.webp`));
 
   // The manifest records each rendition's actual pixel dimensions, so the
@@ -110,31 +118,51 @@ async function processImage(filename) {
   return { base, dims };
 }
 
-async function main() {
-  await mkdir(OUT_DIR, { recursive: true });
+// Image paths relative to `dir` (always with '/' separators), recursing
+// into subfolders.
+async function listImages(dir, prefix = '') {
+  const out = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    if (entry.name.startsWith('.')) continue;
+    if (entry.isDirectory()) {
+      out.push(...(await listImages(path.join(dir, entry.name), `${prefix}${entry.name}/`)));
+    } else if (/\.(jpe?g|png|webp)$/i.test(entry.name)) {
+      out.push(prefix + entry.name);
+    }
+  }
+  return out;
+}
 
+async function processCollection({ name, src: SRC_DIR, out: OUT_DIR }) {
   let files;
   try {
-    files = (await readdir(SRC_DIR)).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
+    files = (await listImages(SRC_DIR)).sort();
   } catch {
-    console.log('No src/assets/gallery directory found, skipping watermark generation.');
+    console.log(`No ${path.relative(ROOT, SRC_DIR)} directory found, skipping ${name}.`);
     return;
   }
 
   if (files.length === 0) {
-    console.log('No gallery photos found, skipping watermark generation.');
+    console.log(`No ${name} images found, skipping.`);
     return;
   }
 
-  console.log(`Watermarking ${files.length} gallery photo(s)...`);
-  const results = await Promise.all(files.map(processImage));
+  await mkdir(OUT_DIR, { recursive: true });
+
+  console.log(`Watermarking ${files.length} ${name} image(s)...`);
+  const results = await Promise.all(files.map((f) => processImage(SRC_DIR, OUT_DIR, f)));
 
   const manifest = {};
   for (const { base, dims } of results) {
     manifest[base] = dims;
   }
-  await writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
+  await writeFile(path.join(OUT_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2));
+}
 
+async function main() {
+  for (const collection of COLLECTIONS) {
+    await processCollection(collection);
+  }
   console.log('Done.');
 }
 

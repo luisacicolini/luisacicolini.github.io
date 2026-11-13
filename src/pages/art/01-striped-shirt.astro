@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { pieces } from '../../content/art-pieces.ts';
+
+// 1. Import your asset directly from your src/assets folder
+import myArtImage from '../../assets/art/01-striped-shirt/02.png';
+
+export async function getStaticPaths() {
+  return pieces.map((piece) => ({
+    params: { folder: piece.folder },
+    props: { piece },
+  }));
+}
+
+---
+
+<BaseLayout title={` · art`}>
+  <div class="simple-page">
+    <header>
+      <a href="/art/" class="back">← back</a>
+    </header>
+
+    <main class="content">
+    <div class="text-wrapper">
+        <p>
+           cuffing/collar/interfacing/hemming/tucking/pockets/buttons/buttonholes/...
+           so many techniques in a single (simple?) garment.
+           
+           shirts were my first real sewing class :) 
+           
+           just like in math: theory is not everything, but theory helps. 
+           ordering passages helps, sewing the collar separately helps, 
+           practicing tucks does too. 
+        </p>
+      </div>
+      <div class="image-wrapper">
+        <img 
+          src={myArtImage.src} 
+          width={myArtImage.width} 
+          height={myArtImage.height} 
+        />
+      </div>
+<div class="text-wrapper">
+        <p>
+           and this is the result of a class that got me really really inspired 
+           (and got me buying a sewing machine).
+        </p>
+      </div>
+      
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  :global(body) {
+    background-color: #000000;
+    color: #EDF7D2;
+    margin: 0;
+    font-family: monospace;
+  }
+
+  .simple-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .back {
+    color: #8fa57a;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
+  .text-wrapper h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .summary {
+    font-style: italic;
+    color: #b7c98a;
+    margin: 0 0 1rem 0;
+  }
+
+  .details {
+    color: #8fa57a;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+</style>

@@ -80,6 +80,7 @@ title: "Read List"
 
 > The mania for health emerges when life has become as flat as a coin and stripped of all narrative content, all value. 
 
+- **come se ne esce**, francesco costa 
 
 ## 2025 
 
