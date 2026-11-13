@@ -1,0 +1,1003 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { artEdges } from '../content/art-meta.ts';
+import { pieces, OWNER, YEAR } from '../content/art-pieces.ts';
+
+// Extra transitions as state indices; edges naming a missing folder are dropped.
+const indexOf = (folder: string) => pieces.findIndex((p) => p.folder === folder);
+const edges = artEdges
+  .map((e) => ({ from: indexOf(e.from), to: indexOf(e.to), label: e.label ?? 'ε' }))
+  .filter((e) => e.from >= 0 && e.to >= 0);
+
+const sub = (n: number) => String(n).replace(/\d/g, (d) => '₀₁₂₃₄₅₆₇₈₉'[Number(d)]);
+
+// Horizontal position of each state, as a fraction of the free width
+// (0 = far left, 1 = far right), so the states wander down the page instead
+// of lining up. Captions sit on the side facing the middle of the page.
+const STAGGER = [0.12, 0.78, 0.4, 0.95, 0.05, 0.6, 0.25, 0.88, 0.5, 0.15];
+const placement = (i: number) => {
+  const f = STAGGER[i % STAGGER.length];
+  return { f, side: f < 0.5 ? 'right' : 'left' };
+};
+
+// Chain transitions between consecutive pieces, then the extra arcs.
+const allEdges = [
+  ...pieces.slice(1).map((p, i) => ({ from: i, to: i + 1, label: p.via, kind: 'chain' })),
+  ...edges.map((e) => ({ ...e, kind: e.from === e.to ? 'loop' : e.to < e.from ? 'back' : 'skip' })),
+];
+---
+
+<BaseLayout title="art · aniicca">
+  <Fragment slot="head">
+    <meta name="robots" content="noimageindex, noai, noimageai" />
+    <meta name="copyright" content={`© ${OWNER}. All rights reserved.`} />
+  </Fragment>
+
+  <div class="art-page">
+    <header class="art-header">
+      <a href="/" class="back">← q<sub>home</sub></a>
+      <h1>art</h1>
+      <p class="hint">mostly clothes anyways</p>
+    </header>
+
+    <div class="automaton" id="automaton" aria-label="Art portfolio">
+      <svg class="edges" id="edges" aria-hidden="true">
+        <defs>
+          <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+            <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="currentColor" stroke-width="1.5" />
+          </marker>
+          <radialGradient id="sparkle-glow">
+            <stop offset="0" stop-color="#ffffff" stop-opacity="0.85" />
+            <stop offset="0.3" stop-color="#EDF7D2" stop-opacity="0.4" />
+            <stop offset="1" stop-color="#EDF7D2" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <g id="edge-layer"></g>
+        <g class="sparkle" id="sparkle" opacity="0"></g>
+      </svg>
+
+      {pieces.length === 0 ? (
+        <section class="state accepting" data-side="right" style="--f: 0.3">
+          <div class="node">
+            <span class="state-label">q{sub(0)}</span>
+            <p class="empty">nothing here yet — still in the sketchbook.</p>
+          </div>
+        </section>
+      ) : (
+        // Newest design at the top: render in reverse, but keep the state
+        // numbering (q₀ = oldest) so the automaton flows upwards.
+        pieces.map((piece, i) => ({ piece, i })).reverse().map(({ piece, i }) => (
+          <section
+            class:list={['state', { accepting: i === pieces.length - 1 }]}
+            data-index={i}
+            data-side={placement(i).side}
+            style={`--f: ${placement(i).f}`}
+            aria-label={i === 1 ? 'coming soon' : piece.title}
+          >
+            {i === 1 ? (
+              // The second state is a placeholder: just "coming soon".
+              <div class="node">
+                <p class="empty">coming soon</p>
+              </div>
+            ) : (
+              <Fragment>
+                <div class="node">
+                  <span class="state-label">q{sub(i)}</span>
+                  <a class="art-open" href={`/art/${piece.folder}/`} data-index={i} aria-label={`Open ${piece.title}`} draggable="false">
+                    <img
+                      src={piece.images[0].thumb}
+                      alt={piece.title}
+                      width={piece.images[0].width}
+                      height={piece.images[0].height}
+                      loading="eager"
+                      draggable="false"
+                    />
+                  </a>
+                </div>
+                <div class="caption">
+                  <span class="title">{piece.title}</span>
+                  {piece.summary && <span class="summary">{piece.summary}</span>}
+                  {[piece.medium, piece.size, piece.year].some(Boolean) && (
+                    <span class="details">{[piece.medium, piece.size, piece.year].filter(Boolean).join(' · ')}</span>
+                  )}
+                  {/* {piece.images.length > 1 && (
+                    <span class="count">{piece.images.length} pictures</span>
+                  )} */}
+                  <span class="copy">© {piece.year ?? YEAR} {OWNER}</span>
+                </div>
+              </Fragment>
+            )}
+          </section>
+        ))
+      )}
+    </div>
+
+    <footer class="art-footer">
+      <p>
+        © {YEAR} {OWNER}. All rights reserved. All artworks on this page are
+        protected by copyright and may not be reproduced, distributed, modified,
+        or used (including for training AI models) without my prior written consent.
+        For permissions, <a href="https://www.linkedin.com/in/luisacicolini/">get in touch</a>.
+      </p>
+    </footer>
+    <p class="position" id="position" aria-live="polite"></p>
+  </div>
+
+</BaseLayout>
+
+<script define:vars={{
+  edges: allEdges,
+}}>
+  const container = document.getElementById('automaton');
+  // Indexed by state number (q₀ = oldest), not by position on the page.
+  const states = Array.from(container.querySelectorAll('.state'))
+    .sort((a, b) => (+a.dataset.index || 0) - (+b.dataset.index || 0));
+  const nodes = states.map((s) => s.querySelector('.node'));
+  const position = document.getElementById('position');
+  const svg = document.getElementById('edges');
+  const NS = 'http://www.w3.org/2000/svg';
+  const edgeLayer = document.getElementById('edge-layer');
+  // Drawn transition elements by key, updated in place on every redraw.
+  const transitionEls = new Map();
+  // Visibility of each state (0 = off-screen, 1 = fully in), used to fade
+  // the transitions attached to it; updated by the scrolling loop below.
+  const stateVis = states.map(() => 1);
+
+  function currentState() {
+    const mid = window.innerHeight / 2;
+    let best = 0, bestDist = Infinity;
+    nodes.forEach((n, i) => {
+      const b = n.getBoundingClientRect();
+      const dist = Math.abs(b.top + b.height / 2 - mid);
+      if (dist < bestDist) { best = i; bestDist = dist; }
+    });
+    return best;
+  }
+
+  function updatePosition() {
+    if (states.length === 0) return;
+    const i = currentState();
+    states.forEach((s, j) => s.classList.toggle('active', j === i));
+    svg.querySelectorAll('.edge').forEach((e) => {
+      e.classList.toggle('active', +e.dataset.from === i || +e.dataset.to === i);
+    });
+    position.textContent = `q${i} · ${i + 1} / ${states.length}`;
+  }
+  window.addEventListener('scroll', updatePosition, { passive: true });
+
+  // All transitions are drawn in one SVG over the column. The states drift
+  // around (see `float` below), so the geometry is re-measured every frame
+  // and the existing paths are updated in place.
+  function drawEdges() {
+    const box = container.getBoundingClientRect();
+    svg.setAttribute('width', box.width);
+    svg.setAttribute('height', box.height);
+
+    const circles = nodes.map((n) => {
+      const b = n.getBoundingClientRect();
+      return { cx: b.left - box.left + b.width / 2, cy: b.top - box.top + b.height / 2, r: b.width / 2 };
+    });
+    // Point on circle i at `deg` degrees clockwise from the top, pushed
+    // `out` px beyond the rim.
+    const at = (i, deg, out = 0) => {
+      const { cx, cy, r } = circles[i];
+      const t = (deg * Math.PI) / 180;
+      return { x: cx + (r + out) * Math.sin(t), y: cy - (r + out) * Math.cos(t) };
+    };
+    // Angle on circle i facing point p.
+    const toward = (i, p) => {
+      const { cx, cy } = circles[i];
+      return (Math.atan2(p.x - cx, cy - p.y) * 180) / Math.PI;
+    };
+    const center = (i) => ({ x: circles[i].cx, y: circles[i].cy });
+    const clampX = (x) => Math.max(6, Math.min(box.width - 6, x));
+
+    // `key` identifies the transition for the sparkle: its index in
+    // `edges`, or 'init' for the initial arrow.
+    // `shown` = false hides the transition (it still exists, faded out).
+    const add = (d, label, lx, ly, from, to, key, shown = true) => {
+      let el = transitionEls.get(key);
+      if (!el) {
+        const g = document.createElementNS(NS, 'g');
+        g.setAttribute('class', 'edge');
+        g.dataset.from = from;
+        g.dataset.to = to;
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('marker-end', 'url(#arrowhead)');
+        // A second copy of the path carries the dashes that flow along it.
+        const flow = document.createElementNS(NS, 'path');
+        flow.setAttribute('class', 'flow');
+        g.append(path, flow);
+        let text = null;
+        if (label) {
+          text = document.createElementNS(NS, 'text');
+          text.textContent = label;
+          g.append(text);
+        }
+        edgeLayer.append(g);
+        el = { g, path, flow, text };
+        transitionEls.set(key, el);
+      }
+      el.g.dataset.from = from;
+      el.g.dataset.to = to;
+      el.path.setAttribute('d', d);
+      el.flow.setAttribute('d', d);
+      if (el.text) {
+        el.text.setAttribute('x', lx);
+        el.text.setAttribute('y', ly);
+      }
+      el.vis = shown ? Math.min(stateVis[from] ?? 1, stateVis[to] ?? 1) : 0;
+      el.g.style.opacity = el.vis.toFixed(3);
+    };
+
+    // While scrolling, the states form a loop: the initial transition comes
+    // up from the last state into q0, and every transition points upwards.
+    // Exactly one consecutive pair is "upside down" at any time (the pair
+    // the wrap passes between), and that one transition is hidden.
+    const looping = container.classList.contains('scrolling') && circles.length > 1;
+    const last = circles.length - 1;
+    const upward = (from, to) => !looping || circles[to].cy < circles[from].cy;
+    const LABEL = "it all starts with buying\na sewing machine";
+
+    if (looping) {
+      const a = at(last, toward(last, center(0)));
+      const b = at(0, toward(0, center(last)));
+      const k = (b.y - a.y) * 0.45;
+      add(`M ${a.x} ${a.y} C ${a.x} ${a.y + k}, ${b.x} ${b.y - k}, ${b.x} ${b.y}`,
+        LABEL, (a.x + b.x) / 2 + 12, (a.y + b.y) / 2, last, 0, 'init', upward(last, 0));
+      // Undo the static layout's anchoring (drawn once before scrolling starts).
+      transitionEls.get('init').text.style.textAnchor = '';
+    } else if (circles.length > 0) {
+      // Initial arrow into q0 (at the bottom) from the lower outer side.
+      const outer = states[0].dataset.side === 'right' ? -1 : 1;
+      const a = at(0, outer * 140, 70), b = at(0, outer * 140);
+      add(`M ${a.x} ${a.y} L ${b.x} ${b.y}`, LABEL, a.x, a.y + 20, 0, 0, 'init');
+      // Grow the label away from the page edge the arrow comes from.
+      transitionEls.get('init').g.querySelector('text').style.textAnchor = outer < 0 ? 'start' : 'end';
+    }
+
+    edges.forEach(({ from, to, label, kind }, key) => {
+      if (kind === 'chain') {
+        const a = at(from, toward(from, center(to)));
+        const b = at(to, toward(to, center(from)));
+        const k = (b.y - a.y) * 0.45;
+        add(`M ${a.x} ${a.y} C ${a.x} ${a.y + k}, ${b.x} ${b.y - k}, ${b.x} ${b.y}`,
+          label, (a.x + b.x) / 2 + 12, (a.y + b.y) / 2, from, to, key, upward(from, to));
+      } else if (kind === 'loop') {
+        // Self-loop on the outer side of the circle, away from the caption.
+        const dir = states[from].dataset.side === 'right' ? -1 : 1;
+        const a = at(from, 90 * dir - 12), b = at(from, 90 * dir + 12);
+        const reach = 75 * dir;
+        add(`M ${a.x} ${a.y} C ${a.x + reach} ${a.y - 30}, ${b.x + reach} ${b.y + 30}, ${b.x} ${b.y}`,
+          label, clampX(circles[from].cx + dir * (circles[from].r + 70)), circles[from].cy + 5, from, to, key);
+      } else {
+        // Back edges swing out to the left of everything they pass, skip
+        // edges to the right.
+        const dir = kind === 'back' ? -1 : 1;
+        const span = Math.abs(to - from);
+        const lo = Math.min(from, to), hi = Math.max(from, to);
+        // Also clear any self-loop sticking out on this side.
+        const hasLoop = (i) => edges.some((e) => e.kind === 'loop' && e.from === i
+          && (states[i].dataset.side === 'right' ? -1 : 1) === dir);
+        const extent = (i) => circles[i].r + (hasLoop(i) ? 95 : 0);
+        const range = Array.from({ length: hi - lo + 1 }, (_, k) => lo + k);
+        const edgeX = dir < 0
+          ? Math.min(...range.map((i) => circles[i].cx - extent(i)))
+          : Math.max(...range.map((i) => circles[i].cx + extent(i)));
+        const sideX = clampX(edgeX + dir * (30 + 12 * span));
+        // Leave from the side of the circle facing where the edge is going,
+        // and arrive on the side facing where it came from.
+        const down = circles[to].cy > circles[from].cy;
+        const upper = dir < 0 ? 300 : 60, lower = dir < 0 ? 240 : 120;
+        const a = at(from, down ? lower : upper);
+        const b = at(to, down ? upper : lower);
+        // Out sideways, along the margin, and back in, with rounded corners.
+        const v = Math.sign(b.y - a.y);
+        const R = Math.min(60, Math.abs(b.y - a.y) / 2);
+        add(`M ${a.x} ${a.y} Q ${sideX} ${a.y}, ${sideX} ${a.y + v * R}`
+          + ` L ${sideX} ${b.y - v * R} Q ${sideX} ${b.y}, ${b.x} ${b.y}`,
+          label, sideX + dir * 12, (a.y + b.y) / 2, from, to, key);
+      }
+    });
+    updatePosition();
+  }
+
+  drawEdges();
+  window.addEventListener('resize', drawEdges);
+  window.addEventListener('load', drawEdges);
+
+  // The states scroll upwards in an endless loop inside the automaton's
+  // window: a state leaving at the top comes back in from the bottom. Each
+  // also sways sideways a little. Transitions fade out while either end is
+  // off-screen, so an arrow never jumps across the page when a state wraps.
+  // Scrolling pauses while a state is hovered (so it can be clicked); it
+  // is skipped for reduced motion.
+  const SCROLL_SPEED = 28; // px per second
+  const SWAY = 50; // px, max sideways wander (scaled down on phones)
+  const swayPhase = states.map((_, i) => [i * 2.1 + 0.4, i * 1.3 + 2.2]);
+  let scrollT = 0;
+  let lastFloat = 0;
+  let hovering = false;
+  nodes.forEach((n) => {
+    n.addEventListener('pointerenter', () => { hovering = true; });
+    n.addEventListener('pointerleave', () => { hovering = false; });
+  });
+
+  function float(now) {
+    const dt = Math.min(50, now - (lastFloat || now)) / 1000;
+    lastFloat = now;
+    {
+      if (!hovering) scrollT += dt;
+      const H = container.clientHeight;
+      const h = Math.max(...states.map((s) => s.offsetHeight));
+      const n = states.length;
+      // One lap is at least a full window plus a state, so a wrapping
+      // state is always completely out of view; the states share it evenly.
+      const lap = Math.max(H + h, n * (h + 120));
+      const ax = Math.min(SWAY, window.innerWidth * 0.05);
+      const mod = (a, m) => ((a % m) + m) % m;
+      states.forEach((s, i) => {
+        // Newest (highest index) starts at the top, older ones below it.
+        const y = mod(40 + h + (n - 1 - i) * (lap / n) - SCROLL_SPEED * scrollT, lap) - h;
+        const [p, q] = swayPhase[i];
+        const x = ax * (0.7 * Math.sin(scrollT * 0.23 + p) + 0.3 * Math.sin(scrollT * 0.61 + q));
+        s.style.translate = `${x.toFixed(1)}px ${(y - s.offsetTop).toFixed(1)}px`;
+        const cy = y + s.offsetHeight / 2;
+        stateVis[i] = Math.max(0, Math.min(1, Math.min(cy, H - cy) / (h * 0.5)));
+      });
+      drawEdges();
+    }
+    requestAnimationFrame(float);
+  }
+
+  if (states.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    container.classList.add('scrolling');
+    requestAnimationFrame(float);
+  }
+
+
+  // Sparkles run the automaton like an NFA: one enters along the initial
+  // arrow; at every step each sparkle splits into one per outgoing
+  // transition (lighting up the label it reads), and sparkles landing in
+  // the same state merge. Once a sparkle reaches the accepting state the run
+  // fades out and starts over. Skipped entirely for reduced motion.
+  const sparkle = document.getElementById('sparkle');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const SPEED = 220; // px per second along a transition
+  const REST = 1400; // ms spent in the states between steps
+  const FADE = 900; // ms to fade the run in / out
+  const TRAIL = 9; // glow dots in each sparkle's tail
+  const GAP = 6; // px between tail dots
+  const MAX_STEPS = nodes.length + 4;
+
+  let tokens = [];
+  let phase = 'travel'; // 'travel' | 'rest' | 'fadeout'
+  let wait = 0;
+  let steps = 0;
+  let finish = false; // fade out after this rest
+  let alpha = 0;
+  let last = 0;
+
+  const outgoingFrom = (i) => edges.map((e, k) => (e.from === i ? k : -1)).filter((k) => k >= 0);
+
+  function lightNode(i) {
+    const n = nodes[i];
+    n.classList.remove('lit');
+    void n.getBoundingClientRect(); // restart the animation
+    n.classList.add('lit');
+  }
+
+  function makeToken(key) {
+    const el = transitionEls.get(key);
+    if (!el) return null;
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'token');
+    const trail = Array.from({ length: TRAIL }, (_, j) => {
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('class', 'trail');
+      c.setAttribute('r', (2.4 * (1 - j / (TRAIL + 2))).toFixed(2));
+      c.setAttribute('opacity', (0.45 * (1 - j / TRAIL)).toFixed(2));
+      return c;
+    });
+    const head = document.createElementNS(NS, 'circle');
+    head.setAttribute('class', 'head');
+    head.setAttribute('r', '10');
+    head.setAttribute('fill', 'url(#sparkle-glow)');
+    g.append(...trail.reverse(), head);
+    trail.reverse();
+    sparkle.append(g);
+    el.g.classList.add('reading');
+    const len = el.path.getTotalLength();
+    return {
+      g, trail, head, key,
+      to: key === 'init' ? 0 : edges[key].to,
+      t: 0,
+      duration: Math.min(5000, Math.max(900, (len / SPEED) * 1000)),
+    };
+  }
+
+  function clearTokens() {
+    tokens.forEach((tok) => tok.g.remove());
+    tokens = [];
+  }
+
+  function startStep(keys) {
+    clearTokens();
+    tokens = keys.map(makeToken).filter(Boolean);
+    steps += 1;
+    phase = 'travel';
+  }
+
+  // Put a sparkle `d` px along its transition; with `tail`, the glow dots
+  // trail behind it, otherwise they gather under the head.
+  function placeToken(tok, d, tail) {
+    const el = transitionEls.get(tok.key);
+    if (!el) return;
+    const p = el.path.getPointAtLength(d);
+    tok.g.style.opacity = (el.vis ?? 1).toFixed(3);
+    tok.head.setAttribute('cx', p.x);
+    tok.head.setAttribute('cy', p.y);
+    tok.trail.forEach((c, j) => {
+      const q = tail ? el.path.getPointAtLength(Math.max(0, d - (j + 1) * GAP)) : p;
+      c.setAttribute('cx', q.x);
+      c.setAttribute('cy', q.y);
+    });
+  }
+
+  function arrive() {
+    tokens.forEach((tok) => transitionEls.get(tok.key)?.g.classList.remove('reading'));
+    // Merge sparkles that landed in the same state.
+    const seen = new Set();
+    tokens = tokens.filter((tok) => {
+      if (seen.has(tok.to)) { tok.g.remove(); return false; }
+      seen.add(tok.to);
+      return true;
+    });
+    seen.forEach(lightNode);
+    const accepted = seen.has(nodes.length - 1);
+    const next = [...seen].flatMap(outgoingFrom);
+    finish = accepted || next.length === 0 || steps >= MAX_STEPS;
+    wait = accepted ? REST * 2 : REST;
+    phase = 'rest';
+  }
+
+  function frame(now) {
+    const dt = Math.min(50, now - (last || now));
+    last = now;
+
+    if (phase === 'travel') {
+      alpha = Math.min(1, alpha + dt / FADE);
+      tokens.forEach((tok) => {
+        tok.t = Math.min(1, tok.t + dt / tok.duration);
+        const el = transitionEls.get(tok.key);
+        if (!el) return;
+        const eased = 0.5 - 0.5 * Math.cos(Math.PI * tok.t);
+        placeToken(tok, eased * el.path.getTotalLength(), true);
+      });
+      if (tokens.every((tok) => tok.t >= 1)) arrive();
+    } else {
+      // Resting: keep each sparkle on the rim it arrived at (circles move
+      // on resize), with its tail drawn in.
+      tokens.forEach((tok) => {
+        const el = transitionEls.get(tok.key);
+        if (el) placeToken(tok, el.path.getTotalLength(), false);
+      });
+      if (phase === 'rest') {
+        wait -= dt;
+        if (wait <= 0) {
+          if (finish) phase = 'fadeout';
+          else startStep([...new Set(tokens.map((tok) => tok.to))].flatMap(outgoingFrom));
+        }
+      } else {
+        alpha = Math.max(0, alpha - dt / FADE);
+        if (alpha === 0) {
+          steps = 0;
+          startStep(['init']);
+        }
+      }
+    }
+
+    sparkle.setAttribute('opacity', alpha.toFixed(3));
+    requestAnimationFrame(frame);
+  }
+
+  if (nodes.length > 0 && !reduceMotion.matches) {
+    startStep(['init']);
+    requestAnimationFrame(frame);
+  }
+
+  // Deterrents against casual copying; the watermark baked into every
+  // image is the real protection. Delegated, so it also covers the pictures
+  // the detail view adds later.
+  ['contextmenu', 'dragstart'].forEach((type) => {
+    document.addEventListener(type, (e) => {
+      if (e.target instanceof HTMLImageElement && e.target.closest('.art-page')) {
+        e.preventDefault();
+      }
+    });
+  });
+
+</script>
+
+<style>
+  /* The art page inverts the main site's palette: black background,
+     light green text. */
+  :global(body:has(.art-page)) {
+    background-color: #000000;
+    color: #EDF7D2;
+    max-width: none;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .art-page {
+    --fg: #EDF7D2;
+    --muted: #8fa57a;
+    --line: #b7c98a;
+    --d: min(400px, 64vw);
+    --caption: 220px;
+    --gutter: clamp(16px, 8vw, 110px);
+  }
+
+  .art-page a {
+    color: var(--fg);
+  }
+
+  .art-header {
+    padding: 1.25rem 1.5rem 0;
+  }
+
+  .art-header h1 {
+    color: var(--fg);
+    margin: 0.4rem 0 0;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+  }
+
+  .back {
+    font-family: monospace;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .hint {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
+
+  .automaton {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem var(--gutter) 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(90px, 16vh, 160px);
+  }
+
+  /* Scrolling mode: a fixed window the states loop through, fading out at
+     the top and bottom edges. */
+  .automaton.scrolling {
+    height: max(560px, 100svh - 8rem);
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent);
+  }
+
+  .automaton.scrolling .state {
+    flex-shrink: 0;
+  }
+
+  .edges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: visible;
+    color: var(--line);
+  }
+
+  .edges :global(.edge path) {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    opacity: 0.45;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Small dashes travelling along every transition, in the direction of
+     its arrow. The dash pattern repeats every 16px, so moving the offset by
+     -16 loops seamlessly. */
+  .edges :global(.edge path.flow) {
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-dasharray: 0.5 15.5;
+    opacity: 0.5;
+    animation: flow 1.4s linear infinite;
+  }
+
+  @keyframes flow {
+    to {
+      stroke-dashoffset: -16;
+    }
+  }
+
+  /* The transition the sparkle is currently reading. */
+  .edges :global(.edge.reading path) {
+    opacity: 0.9;
+  }
+
+  .edges :global(.edge.reading text) {
+    fill: var(--fg);
+    opacity: 1;
+  }
+
+  .sparkle :global(.trail) {
+    fill: #EDF7D2;
+  }
+
+  /* A state glows briefly when the sparkle arrives in it. */
+  .node.lit {
+    animation: lit 1.6s ease-out;
+  }
+
+  @keyframes lit {
+    0% { box-shadow: 0 0 0 rgba(237, 247, 210, 0); }
+    25% { box-shadow: 0 0 60px rgba(237, 247, 210, 0.35), inset 0 0 30px rgba(237, 247, 210, 0.12); }
+    100% { box-shadow: 0 0 0 rgba(237, 247, 210, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .edges :global(.edge path.flow) {
+      display: none;
+    }
+
+    .sparkle {
+      display: none;
+    }
+  }
+
+  .edges :global(.edge text) {
+    fill: var(--muted);
+    font-family: monospace;
+    font-size: 15px;
+    text-anchor: middle;
+    paint-order: stroke;
+    stroke: #000;
+    stroke-width: 5px;
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+  }
+
+  .edges :global(.edge.active path),
+  .edges :global(.edge.active text) {
+    opacity: 1;
+  }
+
+  /* Each state is a circle plus its caption, slid to its own horizontal
+     position by --f. */
+  .state {
+    --block: calc(var(--d) + var(--caption) + 1.5rem);
+    width: var(--block);
+    margin-left: calc((100% - var(--block)) * var(--f));
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .state[data-side='left'] {
+    flex-direction: row-reverse;
+  }
+
+  .node {
+    position: relative;
+    flex: 0 0 auto;
+    width: var(--d);
+    height: var(--d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+
+  .state.active .node {
+    box-shadow: 0 0 40px rgba(237, 247, 210, 0.12);
+  }
+
+  .state-label {
+    position: absolute;
+    top: 7%;
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: var(--muted);
+  }
+
+  /* The artwork fits inside the square inscribed in the circle, so it is
+     never cropped. */
+  .art-open {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: calc(var(--d) * 0.66);
+    max-height: calc(var(--d) * 0.66);
+  }
+
+  .art-open img {
+    display: block;
+    max-width: calc(var(--d) * 0.66);
+    max-height: calc(var(--d) * 0.66);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  .empty {
+    max-width: 60%;
+    text-align: center;
+    color: var(--muted);
+    font-family: monospace;
+  }
+
+  .caption {
+    position: relative;
+    z-index: 1;
+    width: var(--caption);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .state[data-side='left'] .caption {
+    text-align: right;
+  }
+
+  .caption .title {
+    font-size: 1.05rem;
+  }
+
+  .caption .summary {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.2rem;
+  }
+
+  .caption .details,
+  .caption .copy {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .caption .copy {
+    font-family: monospace;
+  }
+
+  /* On narrow screens the caption drops below the circle. */
+  @media (max-width: 720px) {
+    .state,
+    .state[data-side='left'] {
+      --block: var(--d);
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .caption,
+    .state[data-side='left'] .caption {
+      width: var(--d);
+      text-align: center;
+      background: #000;
+      padding: 0.25rem 0;
+    }
+  }
+
+  .art-footer {
+    padding: 0 1.5rem 3rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    max-width: 900px;
+  }
+
+  .position {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--fg);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .caption .count {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: monospace;
+  }
+
+  /* Detail view: big picture with a thumbnail strip on the left, the
+     description on the right; stacked on narrow screens. */
+  .detail {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.96);
+    color: #EDF7D2;
+    overflow-y: auto;
+    padding: 3.5rem 2rem 2rem;
+  }
+
+  .detail[hidden] {
+    display: none;
+  }
+
+  .detail-body {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .viewer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .stage img {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  .strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .strip[hidden],
+  .detail-nav[hidden] {
+    display: none;
+  }
+
+  .strip :global(button) {
+    padding: 0;
+    border: 1.5px solid transparent;
+    background: none;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+  }
+
+  .strip :global(button:hover),
+  .strip :global(button.current) {
+    opacity: 1;
+  }
+
+  .strip :global(button.current) {
+    border-color: #b7c98a;
+  }
+
+  .strip :global(img) {
+    display: block;
+    height: 64px;
+    width: auto;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .detail-text {
+    position: sticky;
+    top: 0;
+  }
+
+  .detail-state {
+    font-family: monospace;
+    color: #8fa57a;
+  }
+
+  .detail-text h2 {
+    color: #EDF7D2;
+    font-weight: normal;
+    margin: 0.3rem 0 0.4rem;
+  }
+
+  .detail-summary {
+    margin: 0 0 0.6rem;
+    font-style: italic;
+  }
+
+  .detail-summary[hidden] {
+    display: none;
+  }
+
+  .detail-meta,
+  .detail-copy {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #8fa57a;
+  }
+
+  .detail-copy {
+    font-family: monospace;
+    margin-top: 1.25rem;
+  }
+
+  .detail-desc :global(p) {
+    margin: 1rem 0 0;
+    line-height: 1.55;
+  }
+
+  .detail-close,
+  .detail-nav {
+    background: none;
+    border: none;
+    color: #EDF7D2;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    line-height: 1;
+    flex: 0 0 auto;
+  }
+
+  .detail-close {
+    position: fixed;
+    top: 0.75rem;
+    right: 1rem;
+  }
+
+  @media (max-width: 860px) {
+    .detail {
+      padding: 3.5rem 16px 2rem;
+    }
+
+    .detail-body {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .detail-text {
+      position: static;
+    }
+
+    .stage img {
+      max-height: 60vh;
+    }
+
+    .detail-nav {
+      padding: 0.5rem 0.25rem;
+    }
+  }
+</style>
