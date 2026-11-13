@@ -2,6 +2,8 @@
 // (homepage film strip) and src/assets/art/ (the /art portfolio) into
 // public/gallery/ and public/art/ respectively. Runs automatically before `astro dev` / `astro build` via the
 // predev/prebuild npm hooks, and skips files that are already up to date.
+// Subfolders are mirrored: src/assets/art/coat/front.jpg becomes
+// public/art/coat/front-{thumb,full}.webp, with manifest key "coat/front".
 //
 // Run manually with `npm run watermark` (add --force to regenerate everything).
 
@@ -60,9 +62,12 @@ async function isUpToDate(srcPath, outPaths) {
   if (FORCE) return false;
   try {
     const srcStat = await stat(srcPath);
+    // ctime too: renaming a file (e.g. swapping 01.jpg and 02.jpg) keeps its
+    // mtime but bumps its ctime, and must still trigger a re-render.
+    const srcTime = Math.max(srcStat.mtimeMs, srcStat.ctimeMs);
     for (const outPath of outPaths) {
       const outStat = await stat(outPath);
-      if (outStat.mtimeMs < srcStat.mtimeMs) return false;
+      if (outStat.mtimeMs < srcTime) return false;
     }
     return true;
   } catch {
@@ -73,6 +78,7 @@ async function isUpToDate(srcPath, outPaths) {
 async function processImage(SRC_DIR, OUT_DIR, filename) {
   const srcPath = path.join(SRC_DIR, filename);
   const base = filename.replace(/\.[^.]+$/, '');
+  await mkdir(path.join(OUT_DIR, path.dirname(filename)), { recursive: true });
   const outPaths = RENDITIONS.map((r) => path.join(OUT_DIR, `${base}-${r.suffix}.webp`));
 
   // The manifest records each rendition's actual pixel dimensions, so the
@@ -112,10 +118,25 @@ async function processImage(SRC_DIR, OUT_DIR, filename) {
   return { base, dims };
 }
 
+// Image paths relative to `dir` (always with '/' separators), recursing
+// into subfolders.
+async function listImages(dir, prefix = '') {
+  const out = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    if (entry.name.startsWith('.')) continue;
+    if (entry.isDirectory()) {
+      out.push(...(await listImages(path.join(dir, entry.name), `${prefix}${entry.name}/`)));
+    } else if (/\.(jpe?g|png|webp)$/i.test(entry.name)) {
+      out.push(prefix + entry.name);
+    }
+  }
+  return out;
+}
+
 async function processCollection({ name, src: SRC_DIR, out: OUT_DIR }) {
   let files;
   try {
-    files = (await readdir(SRC_DIR)).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
+    files = (await listImages(SRC_DIR)).sort();
   } catch {
     console.log(`No ${path.relative(ROOT, SRC_DIR)} directory found, skipping ${name}.`);
     return;
