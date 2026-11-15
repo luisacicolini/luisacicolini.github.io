@@ -20,9 +20,14 @@ const placement = (i: number) => {
   return { f, side: f < 0.5 ? 'right' : 'left' };
 };
 
+// A "coming soon" placeholder state always follows the real pieces, so it
+// shows up regardless of which asset folders are committed.
+const SOON = pieces.length;
+
 // Chain transitions between consecutive pieces, then the extra arcs.
 const allEdges = [
   ...pieces.slice(1).map((p, i) => ({ from: i, to: i + 1, label: p.via, kind: 'chain' })),
+  ...(pieces.length > 0 ? [{ from: SOON - 1, to: SOON, label: 'ε', kind: 'chain' }] : []),
   ...edges.map((e) => ({ ...e, kind: e.from === e.to ? 'loop' : e.to < e.from ? 'back' : 'skip' })),
 ];
 ---
@@ -64,22 +69,28 @@ const allEdges = [
           </div>
         </section>
       ) : (
-        // Newest design at the top: render in reverse, but keep the state
-        // numbering (q₀ = oldest) so the automaton flows upwards.
-        pieces.map((piece, i) => ({ piece, i })).reverse().map(({ piece, i }) => (
+        <Fragment>
+        <section
+          class="state accepting"
+          data-index={SOON}
+          data-side={placement(SOON).side}
+          style={`--f: ${placement(SOON).f}`}
+          aria-label="coming soon"
+        >
+          <div class="node">
+            <p class="empty">coming soon</p>
+          </div>
+        </section>
+        {/* Newest design at the top: render in reverse, but keep the state
+            numbering (q₀ = oldest) so the automaton flows upwards. */}
+        {pieces.map((piece, i) => ({ piece, i })).reverse().map(({ piece, i }) => (
           <section
-            class:list={['state', { accepting: i === pieces.length - 1 }]}
+            class="state"
             data-index={i}
             data-side={placement(i).side}
             style={`--f: ${placement(i).f}`}
-            aria-label={i === 1 ? 'coming soon' : piece.title}
+            aria-label={piece.title}
           >
-            {i === 1 ? (
-              // The second state is a placeholder: just "coming soon".
-              <div class="node">
-                <p class="empty">coming soon</p>
-              </div>
-            ) : (
               <Fragment>
                 <div class="node">
                   <span class="state-label">q{sub(i)}</span>
@@ -106,9 +117,9 @@ const allEdges = [
                   <span class="copy">© {piece.year ?? YEAR} {OWNER}</span>
                 </div>
               </Fragment>
-            )}
           </section>
-        ))
+        ))}
+        </Fragment>
       )}
     </div>
 

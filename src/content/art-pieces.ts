@@ -36,13 +36,10 @@ for (const filePath of Object.keys(imageFiles)) {
   folders.set(folder, [...(folders.get(folder) ?? []), file]);
 }
 
-// Only the first MAX_STATES designs (in folder order) are shown; the
-// others stay in src/assets/art/ but get no state. Raise it to show more.
-const MAX_STATES = 2;
-
+// Every folder is a published design, in folder order. The /art page always
+// adds a "coming soon" state after the last one.
 export const pieces = [...folders.keys()]
   .sort((a, b) => a.localeCompare(b))
-  .slice(0, MAX_STATES)
   .map((folder) => {
     const meta = artMeta[folder] ?? {};
     const files = folders.get(folder)!.sort((a, b) => a.localeCompare(b));
