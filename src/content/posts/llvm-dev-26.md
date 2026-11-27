@@ -3,8 +3,7 @@ title: "LLVM-dev'26"
 date: 2026-10-27
 ---
 
-Random notes and thoughts from talks and conversations at LLVM-dev'26
-
+# Notes and thoughts at LLVM-dev'26
 
 ### The future of compilers in the age of AI -- a personal perspective
 
