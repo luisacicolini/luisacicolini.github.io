@@ -9,7 +9,7 @@ Coming from a small village I grew up taking the community around me for granted
 (and sometimes even being burdened by it 🥶). 
 The village is and was always there: sometimes as a peaceful home to come back to, 
 sometimes as a golden cage I desperately wanted to escape - especially as 
-a teenager who struggled to fit inand make friends. 
+a teenager who struggled to fit in and make friends. 
 I indeed *escaped* when I first moved to go to University: 
 I was ambitious,
 curious to try and live in a real city,
