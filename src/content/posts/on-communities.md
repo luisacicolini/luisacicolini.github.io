@@ -1,5 +1,5 @@
 ---
-title: on communities
+title: Thoughts On Communities
 date: 2026-11-27
 ---
 
