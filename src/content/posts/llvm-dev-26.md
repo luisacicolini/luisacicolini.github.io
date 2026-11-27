@@ -5,6 +5,8 @@ date: 2026-10-27
 
 # Notes and thoughts at LLVM-dev'26
 
+## Talks
+
 ### The future of compilers in the age of AI -- a personal perspective
 
 - The elephant in the room: will compilers be needed in the era of AI?
@@ -41,14 +43,14 @@ date: 2026-10-27
 - The vast majority of code should not match the vast majority of rules: we need to choose smart clusters of rules 
 - Some weird rules prevent us from a 10x faster InstCombine: e.g. `hasOneUse`, `phi` nodes, and things that initiate matching generic things 
 
+## Roundtables
 
-
-### RISCV Roundtable
+### RISCV
 
 - I did not know most of the RISCV folks and community and getting to know them was a highlight of LLVM-dev for me for their kindness, competence and inspiration :)
 - It is still unclear where and how extensions are defined, and there are operations that live in multiple, different extensions ☹️
 
-### Formal Specification Roundtable
+### Formal Specification
 
 - New features to llubi 
 - Challenge: having enough infrastructure to describe what we want to describe 
