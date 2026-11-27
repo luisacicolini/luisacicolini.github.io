@@ -22,7 +22,7 @@ and ultimately decided that *yeeting* without looking back was the only sensible
 It's been almost 10 years since then, I've lived in a bunch of different places and ended up looking back. A lot. 
 I owe a lot to that scared and ambitious 18-year-old girl - starting with the audacity to take what 
 felt like a step into the unknown - 
-but I find myself wishing she had taken better care of what was around her.
+but I find myself wishing she had taken better care of what was around her. 
 With enough distance and perspective (and therapy) I realized how I was *missing* that community, 
 wondering where I belong, what belonging even means, but most of all: how does one build a community?
 
