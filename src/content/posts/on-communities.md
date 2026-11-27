@@ -36,6 +36,7 @@ And then a [friend](https://www.lopoukhine.com/) said to me:
 > and the village also includes you 
 
 I didn't really understand what he meant. 
+
 But I kept thinking about this sentence a lot, and slowly I started to accept the discomfort, shame, and contradictions that I felt whenever I went back. 
 As my dad puts it: *you should only be ashamed when you're hurting someone*.
 
