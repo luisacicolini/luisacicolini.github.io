@@ -31,7 +31,7 @@ wondering where I belong, what belonging even means, but most of all: how does o
 When I first moved to the UK, I was talking to some friends about the feeling of stuck-ness
 I had growing up in a small village: going back home I used to feel uncomfortable, thinking of myself like an outcast, feeling ashamed of my life choices - which definitely did not help with building and maintaining whatever relations I had with my peers there. 
 
-And then a friend said to me: 
+And then a [friend](https://www.lopoukhine.com/) said to me: 
 > Even if you feel like you don't fit in, you are still part of the village, 
 > and the village also includes you 
 
