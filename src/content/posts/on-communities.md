@@ -1,6 +1,6 @@
 ---
-title: "on communities"
-date: 2026-09-22
+title: on communities
+date: 2026-11-27
 ---
 
 # On communities
