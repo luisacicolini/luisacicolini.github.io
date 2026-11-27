@@ -23,7 +23,7 @@ I have scoliosis and had to wear a [brace](https://www.rnoh.nhs.uk/services/scol
 Needless to say, it made me feel miserable. 
 I remember the only thing I liked about going to the technician for the brace fitting 
 and checkups: it was near a fabric store - 
-and my mum and I would sometimes stop ther and buy some fabric after the appointments. 
+and my mum and I would sometimes stop there and buy some fabric after the appointments. 
 I remember my first [Burda](https://www.burdastyle.uk/books-mooks/sewing-magazines), buying some fabric in that store, and I believe somewhere I 
 still have that first attempt at a dress. 
 It is all wonky, I could not sew straight, and in my ambitions had picked up a rather hard project. 
